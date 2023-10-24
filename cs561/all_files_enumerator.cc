@@ -42,7 +42,7 @@ int AllFilesEnumerator::EnumerateAll(
   }
   // select a file according to the history
   index = collector.GetVersionForest().GetCompactionFile(
-      level, hash_value, temp.size());
+      level, hash_value, static_cast<int>(temp.size()));
   // check whether we find a file to compact
   if (index != std::numeric_limits<size_t>::max()) {
     // swap the chosen file to the first position
@@ -78,12 +78,12 @@ void AllFilesEnumerator::CollectCompactionInfo(
   if (log_level == 2) {
     CS561Log::LogRegularCompactionInfo(
         collector.GetCompactionsInfo().back(),
-        collector.GetCompactionsInfo().size());
+        static_cast<int>(collector.GetCompactionsInfo().size()));
   }
 }
 
 int AllFilesEnumerator::NextChoiceForManual() {
-  return manual_list[compaction_counter++];
+  return static_cast<int>(manual_list[compaction_counter++]);
 }
 
 void AllFilesEnumerator::SetManualList(

@@ -79,8 +79,8 @@ inline void showProgress(const uint64_t& workload_size,
     fflush(stdout);
   }
   std::cout << std::setfill(' ')
-            << std::setw(101 -
-                         counter / (workload_size / 100));
+            << std::setw(static_cast<int>(101UL -
+                         counter / (workload_size / 100)));
   std::cout << counter * 100 / workload_size << "%";
   fflush(stdout);
 

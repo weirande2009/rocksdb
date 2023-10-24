@@ -130,7 +130,7 @@ void CS561Log::LogCompactionsInfo(
     const std::vector<CompactionInfo>& compactions_info) {
   target << std::endl;
   for (size_t i = 0; i < compactions_info.size(); ++i) {
-    LogCompactionInfo(target, compactions_info[i], i + 1);
+    LogCompactionInfo(target, compactions_info[i], static_cast<int>(i + 1));
   }
 }
 
@@ -163,7 +163,7 @@ void CS561Log::LogCompactionInfo(
          << std::endl;
   for (size_t i = 0;
        i < compaction_info.level_files_info.size(); ++i) {
-    LogCompactionInfoForLevel(target, compaction_info, i);
+    LogCompactionInfoForLevel(target, compaction_info, static_cast<int>(i));
   }
 }
 

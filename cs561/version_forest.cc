@@ -273,8 +273,8 @@ void LevelVersionTree::SetCurrentVersionFullyEnumerated() {
   if (version_nodes[last_version_id]
           .chosen_children.back() !=
       std::numeric_limits<size_t>::max()) {
-    int cur_version_id = version_nodes[last_version_id]
-                             .chosen_children.back();
+    int cur_version_id = static_cast<int>(version_nodes[last_version_id]
+                             .chosen_children.back());
     version_nodes[cur_version_id].fully_enumerated = true;
   }
 }
