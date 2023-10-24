@@ -90,6 +90,8 @@
 #undef WITH_COROUTINES
 // clang-format on
 
+#include "cs561/all_files_enumerator.h"
+
 namespace ROCKSDB_NAMESPACE {
 
 namespace {
@@ -3818,12 +3820,6 @@ void VersionStorageInfo::ComputeFilesMarkedForForcedBlobGC(
 
 namespace {
 
-// used to sort files by size
-struct Fsize {
-  size_t index;
-  FileMetaData* file;
-};
-
 // Comparator that is used to sort files based on their size
 // In normal mode: descending size
 bool CompareCompensatedSizeDescending(const Fsize& first, const Fsize& second) {
@@ -7378,6 +7374,147 @@ uint64_t ReactiveVersionSet::TEST_read_edits_in_atomic_group() const {
 std::vector<VersionEdit>& ReactiveVersionSet::replay_buffer() {
   assert(manifest_tailer_);
   return manifest_tailer_->GetReadBuffer().replay_buffer();
+}
+
+namespace {
+  std::vector<uint64_t> GetFileOverlappingRatio(
+    const InternalKeyComparator& icmp,
+    const std::vector<FileMetaData*>& files,
+    const std::vector<FileMetaData*>& next_level_files,
+    SystemClock* clock, int level, int num_non_empty_levels,
+    uint64_t ttl) {
+  std::vector<uint64_t> file_overlapping_ratio =
+      std::vector<uint64_t>(files.size());
+  auto next_level_it = next_level_files.begin();
+
+  int64_t curr_time;
+  Status status = clock->GetCurrentTime(&curr_time);
+  if (!status.ok()) {
+    // If we can't get time, disable TTL.
+    ttl = 0;
+  }
+
+  FileTtlBooster ttl_booster(
+      static_cast<uint64_t>(curr_time), ttl,
+      num_non_empty_levels, level);
+
+  size_t i = 0;
+  for (auto& file : files) {
+    uint64_t overlapping_bytes = 0;
+    // Skip files in next level that is smaller than current
+    // file
+    while (next_level_it != next_level_files.end() &&
+           icmp.Compare((*next_level_it)->largest,
+                        file->smallest) < 0) {
+      next_level_it++;
+    }
+
+    while (next_level_it != next_level_files.end() &&
+           icmp.Compare((*next_level_it)->smallest,
+                        file->largest) < 0) {
+      overlapping_bytes += (*next_level_it)->fd.file_size;
+
+      if (icmp.Compare((*next_level_it)->largest,
+                       file->largest) > 0) {
+        // next level file cross large boundary of current
+        // file.
+        break;
+      }
+      next_level_it++;
+    }
+
+    uint64_t ttl_boost_score =
+        (ttl > 0) ? ttl_booster.GetBoostScore(file) : 1;
+    assert(ttl_boost_score > 0);
+    assert(file->compensated_file_size != 0);
+    file_overlapping_ratio[i] =
+        overlapping_bytes * 1024U /
+        file->compensated_file_size / ttl_boost_score;
+    ++i;
+  }
+  return file_overlapping_ratio;
+}
+}
+
+// WEI RAN
+void VersionStorageInfo::PickUnselectedFile(
+    const ImmutableOptions& ioptions,
+    const MutableCFOptions& options) {
+
+  // Log current WA first
+  AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
+
+  const int level = 1;
+  const std::vector<FileMetaData*>& files = files_[level];
+
+  // populate a temp vector for sorting based on size
+  std::vector<Fsize> temp(files.size());
+  for (size_t i = 0; i < files.size(); i++) {
+    temp[i].index = i;
+    temp[i].file = files[i];
+  }
+  // get the files_by_compaction_pri[level]
+  auto& files_by_compaction_pri =
+      files_by_compaction_pri_[level];
+  // get the overlapping ratio of each file
+  std::vector<uint64_t> file_overlapping_ratio;
+  if (num_non_empty_levels_ > level + 1) {
+    file_overlapping_ratio = GetFileOverlappingRatio(
+        *internal_comparator_, files_[level],
+        files_[level + 1], ioptions.clock, level,
+        num_non_empty_levels_, options.ttl);
+  } else {
+    file_overlapping_ratio =
+        std::vector<uint64_t>(files_[level].size(), 0);
+  }
+  if (AllFilesEnumerator::GetInstance().strategy !=
+      AllFilesEnumerator::CompactionStrategy::
+          CEnumerateAll && AllFilesEnumerator::GetInstance().strategy !=
+      AllFilesEnumerator::CompactionStrategy::
+          CManual) {  // if not activated, only record
+                            // the choice
+    // collect this seletion
+    AllFilesEnumerator::GetInstance().CollectCompactionInfo(
+        files_, file_overlapping_ratio,
+        num_non_empty_levels_, level,
+        files_by_compaction_pri[0]);
+    return;
+  }
+  // we should clear files_by_compaction_pri
+  files_by_compaction_pri.clear();
+  assert(files_by_compaction_pri.size() == 0);
+  // std::cout << files_by_compaction_pri.size() <<
+  // std::endl;
+
+  // choose an unselected file and put it to the first place
+  int chosen_file_index = 0;
+  switch (AllFilesEnumerator::GetInstance().strategy) {
+    case AllFilesEnumerator::CompactionStrategy::
+        CEnumerateAll:
+      chosen_file_index =
+          AllFilesEnumerator::GetInstance().EnumerateAll(
+              temp, level);
+      break;
+    case AllFilesEnumerator::CompactionStrategy::CManual:
+      chosen_file_index = AllFilesEnumerator::GetInstance()
+                              .NextChoiceForManual();
+      std::cout << "chosen_file_index: " << chosen_file_index << std::endl;
+      break;
+    default:
+      break;
+  }
+  // collect compaction info
+  AllFilesEnumerator::GetInstance().CollectCompactionInfo(
+      files_, file_overlapping_ratio, num_non_empty_levels_,
+      level, chosen_file_index);
+  // initialize files_by_compaction_pri_
+  for (size_t i = 0; i < temp.size(); i++) {
+    files_by_compaction_pri.push_back(
+        static_cast<int>(temp[i].index));
+  }
+  next_file_to_compact_by_size_[level] = 0;
+  assert(files_[level].size() ==
+         files_by_compaction_pri_[level].size());
 }
 
 }  // namespace ROCKSDB_NAMESPACE

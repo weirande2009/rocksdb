@@ -12,7 +12,7 @@ LIB_SOURCES =                                                   \
   cache/secondary_cache.cc                                      \
   cache/secondary_cache_adapter.cc                              \
   cache/sharded_cache.cc                                        \
-  cache/tiered_secondary_cache.cc				\
+  cache/tiered_secondary_cache.cc				                        \
   db/arena_wrapped_db_iter.cc                                   \
   db/blob/blob_contents.cc                                      \
   db/blob/blob_fetcher.cc                                       \
@@ -159,6 +159,11 @@ LIB_SOURCES =                                                   \
   options/options.cc                                            \
   options/options_helper.cc                                     \
   options/options_parser.cc                                     \
+  cs561/all_files_enumerator.cc                                 \
+  cs561/file_serializer.cc                                      \
+  cs561/picking_history_collector.cc                            \
+  cs561/version_forest.cc			                                  \
+  cs561/cs561_log.cc			                                      \
   port/mmap.cc                                                  \
   port/port_posix.cc                                            \
   port/win/env_default.cc                                       \

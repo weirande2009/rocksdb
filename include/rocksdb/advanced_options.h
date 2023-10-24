@@ -57,6 +57,10 @@ enum CompactionPri : char {
   // level. The file picking process will cycle through all the files in a
   // round-robin manner.
   kRoundRobin = 0x4,
+  // WEI RAN
+  // Add a new compaction type which will enumerate all
+  // possible file selections
+  kEnumerateAll = 0x5,
 };
 
 // Compression options for different compression algorithms like Zlib

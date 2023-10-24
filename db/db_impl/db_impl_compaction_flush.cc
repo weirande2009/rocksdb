@@ -25,6 +25,8 @@
 #include "util/concurrent_task_limiter_impl.h"
 #include "util/udt_util.h"
 
+#include "cs561/all_files_enumerator.h"
+
 namespace ROCKSDB_NAMESPACE {
 
 bool DBImpl::EnoughRoomForCompaction(
@@ -3861,7 +3863,16 @@ Status DBImpl::BackgroundCompaction(bool* made_progress,
     TEST_SYNC_POINT_CALLBACK(
         "DBImpl::BackgroundCompaction:NonTrivial:BeforeRun", nullptr);
     // Should handle error?
+    // record the compaction start time
+    auto start_time = std::chrono::system_clock::now();
     compaction_job.Run().PermitUncheckedError();
+    auto end_time = std::chrono::system_clock::now();
+    auto interval_time = std::chrono::duration_cast<
+        std::chrono::microseconds>(end_time - start_time);
+    AllFilesEnumerator::GetInstance()
+        .GetCollector()
+        .UpdateCompactionTime(interval_time.count());
+
     TEST_SYNC_POINT("DBImpl::BackgroundCompaction:NonTrivial:AfterRun");
     mutex_.Lock();
     status =

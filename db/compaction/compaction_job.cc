@@ -57,6 +57,8 @@
 #include "test_util/sync_point.h"
 #include "util/stop_watch.h"
 
+#include "cs561/all_files_enumerator.h"
+
 namespace ROCKSDB_NAMESPACE {
 
 const char* GetCompactionReasonString(CompactionReason compaction_reason) {
@@ -899,6 +901,13 @@ Status CompactionJob::Install(const MutableCFOptions& mutable_cf_options,
     bytes_read_per_sec = bytes_read_all / static_cast<double>(stats.micros);
     bytes_written_per_sec =
         bytes_written_all / static_cast<double>(stats.micros);
+  }
+
+  // WEI RAN
+  AllFilesEnumerator::GetInstance().GetCollector().UpdateWA(bytes_written_all);
+  if (AllFilesEnumerator::GetInstance().strategy ==
+      AllFilesEnumerator::CompactionStrategy::CEnumerateAll) {
+    AllFilesEnumerator::GetInstance().Pruning();
   }
 
   const std::string& column_family_name = cfd->GetName();
