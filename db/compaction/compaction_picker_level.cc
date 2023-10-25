@@ -17,6 +17,8 @@
 #include "logging/log_buffer.h"
 #include "test_util/sync_point.h"
 
+#include "cs561/cs561_log.h"
+
 namespace ROCKSDB_NAMESPACE {
 
 bool LevelCompactionPicker::NeedsCompaction(
@@ -481,6 +483,26 @@ Compaction* LevelCompactionBuilder::PickCompaction() {
     return nullptr;
   }
   assert(start_level_ >= 0 && output_level_ >= 0);
+
+  std::string log_string;
+  log_string += "compaction start level["+std::to_string(start_level_)+"], ";
+  log_string += "compaction files[";
+  for(size_t i=0; i<start_level_inputs_.size(); ++i){
+    if(i != 0) {
+      log_string += ",";
+    }
+    log_string += std::to_string(start_level_inputs_[i]->fd.GetNumber());
+  }
+  log_string += "], ";
+  log_string += "start level files[";
+  for(size_t i=0; i<vstorage_->LevelFiles(start_level_).size(); ++i){
+    if(i != 0) {
+      log_string += ",";
+    }
+    log_string += std::to_string(vstorage_->LevelFiles(start_level_)[i]->fd.GetNumber());
+  }
+  log_string += "]";
+  CS561Log::Log(log_string);
 
   // If it is a L0 -> base level compaction, we need to set up other L0
   // files if needed.
