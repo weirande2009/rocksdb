@@ -337,7 +337,8 @@ std::map<CompactionPri, std::string> OptionsHelper::compaction_pri_to_string = {
     {kOldestLargestSeqFirst, "kOldestLargestSeqFirst"},
     {kOldestSmallestSeqFirst, "kOldestSmallestSeqFirst"},
     {kMinOverlappingRatio, "kMinOverlappingRatio"},
-    {kRoundRobin, "kRoundRobin"}};
+    {kRoundRobin, "kRoundRobin"},
+    {kEnumerateAll, "kEnumerateAll"}};
 
 std::map<CompactionStopStyle, std::string>
     OptionsHelper::compaction_stop_style_to_string = {

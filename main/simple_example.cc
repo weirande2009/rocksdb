@@ -124,7 +124,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
         AllFilesEnumerator::CompactionStrategy::
             CMinOverlappingRatio;
   } else if (compaciton_strategy == "kEnumerateAll") {
-    op.compaction_pri = kEnumerateAll;
+    // op.compaction_pri = kEnumerateAll;
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::
             CEnumerateAll;
