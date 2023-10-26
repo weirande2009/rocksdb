@@ -108,7 +108,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
   std::shared_ptr<rocksdb::RateLimiter> rate_limiter;
   rate_limiter.reset(rocksdb::NewGenericRateLimiter(bytes_per_sec));
 
-  op.rate_limiter = rate_limiter;
+  // op.rate_limiter = rate_limiter;
 
   std::cout << "Compaction strategy: " << compaciton_strategy << std::endl;
 

@@ -484,6 +484,18 @@ Compaction* LevelCompactionBuilder::PickCompaction() {
   }
   assert(start_level_ >= 0 && output_level_ >= 0);
 
+  // If it is a L0 -> base level compaction, we need to set up other L0
+  // files if needed.
+  if (!SetupOtherL0FilesIfNeeded()) {
+    return nullptr;
+  }
+
+  // Pick files in the output level and expand more files in the start level
+  // if needed.
+  if (!SetupOtherInputsIfNeeded()) {
+    return nullptr;
+  }
+
   std::string log_string;
   log_string += "compaction start level["+std::to_string(start_level_)+"], ";
   log_string += "compaction files[";
@@ -503,18 +515,6 @@ Compaction* LevelCompactionBuilder::PickCompaction() {
   }
   log_string += "]";
   CS561Log::Log(log_string);
-
-  // If it is a L0 -> base level compaction, we need to set up other L0
-  // files if needed.
-  if (!SetupOtherL0FilesIfNeeded()) {
-    return nullptr;
-  }
-
-  // Pick files in the output level and expand more files in the start level
-  // if needed.
-  if (!SetupOtherInputsIfNeeded()) {
-    return nullptr;
-  }
 
   // Form a compaction object containing the files we picked.
   Compaction* c = GetCompaction();
