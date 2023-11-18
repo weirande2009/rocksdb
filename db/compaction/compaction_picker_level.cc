@@ -513,7 +513,9 @@ Compaction* LevelCompactionBuilder::PickCompaction() {
     }
     log_string += std::to_string(vstorage_->LevelFiles(start_level_)[i]->fd.GetNumber());
   }
-  log_string += "]";
+  log_string += "], ";
+  log_string += "compactionStrategy["+std::to_string(ioptions_.compaction_style)+"], ";
+  log_string += "baseLevel["+std::to_string(vstorage_->base_level())+"], ";
   CS561Log::Log(log_string);
 
   // Form a compaction object containing the files we picked.

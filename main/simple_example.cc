@@ -104,6 +104,8 @@ void runWorkload(Options& op, WriteOptions& write_op,
   op.max_bytes_for_level_multiplier = 10;
   op.max_bytes_for_level_base = 32 * 1024 * 1024;
 
+  op.level_compaction_dynamic_level_bytes = false;
+
   int64_t bytes_per_sec = 1024 * 1024;
   std::shared_ptr<rocksdb::RateLimiter> rate_limiter;
   rate_limiter.reset(rocksdb::NewGenericRateLimiter(bytes_per_sec));
@@ -114,26 +116,22 @@ void runWorkload(Options& op, WriteOptions& write_op,
 
   // set the compaction strategy
   if (compaciton_strategy == "kRoundRobin") {
-    op.compaction_pri = kRoundRobin;
     AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::CRoundRobin;
+        AllFilesEnumerator::CompactionStrategy::RoundRobin;
   } else if (compaciton_strategy ==
              "kMinOverlappingRatio") {
-    op.compaction_pri = kMinOverlappingRatio;
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::
-            CMinOverlappingRatio;
+            MinOverlappingRatio;
   } else if (compaciton_strategy == "kEnumerateAll") {
-    // op.compaction_pri = kEnumerateAll;
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::
-            CEnumerateAll;
+            EnumerateAll;
   } else if (compaciton_strategy == "kManual") {
-    op.compaction_pri = kEnumerateAll;
     std::string manual_list_path =
         experiment_path + "/manual_list.txt";
     AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::CManual;
+        AllFilesEnumerator::CompactionStrategy::Manual;
     AllFilesEnumerator::GetInstance().SetManualList(
         readManualList(manual_list_path));
   }

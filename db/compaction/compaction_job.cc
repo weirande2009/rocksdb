@@ -906,7 +906,7 @@ Status CompactionJob::Install(const MutableCFOptions& mutable_cf_options,
   // WEI RAN
   AllFilesEnumerator::GetInstance().GetCollector().UpdateWA(bytes_written_all);
   if (AllFilesEnumerator::GetInstance().strategy ==
-      AllFilesEnumerator::CompactionStrategy::CEnumerateAll) {
+      AllFilesEnumerator::CompactionStrategy::EnumerateAll) {
     AllFilesEnumerator::GetInstance().Pruning();
   }
 

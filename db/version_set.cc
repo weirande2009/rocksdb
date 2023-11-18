@@ -4696,6 +4696,7 @@ void VersionStorageInfo::CalculateBaseBytes(const ImmutableOptions& ioptions,
       // No data for L1 and up. L0 compacts to last level directly.
       // No compaction from L1+ needs to be scheduled.
       base_level_ = num_levels_ - 1;
+      std::cout << "base_level_ = " << base_level_ << std::endl;
     } else {
       assert(first_non_empty_level >= 1);
       uint64_t base_bytes_max = options.max_bytes_for_level_base;
@@ -7469,9 +7470,9 @@ void VersionStorageInfo::PickUnselectedFile(
   }
   if (AllFilesEnumerator::GetInstance().strategy !=
       AllFilesEnumerator::CompactionStrategy::
-          CEnumerateAll && AllFilesEnumerator::GetInstance().strategy !=
+          EnumerateAll && AllFilesEnumerator::GetInstance().strategy !=
       AllFilesEnumerator::CompactionStrategy::
-          CManual) {  // if not activated, only record
+          Manual) {  // if not activated, only record
                             // the choice
     // collect this seletion
     AllFilesEnumerator::GetInstance().CollectCompactionInfo(
@@ -7489,13 +7490,10 @@ void VersionStorageInfo::PickUnselectedFile(
   // choose an unselected file and put it to the first place
   int chosen_file_index = 0;
   switch (AllFilesEnumerator::GetInstance().strategy) {
-    case AllFilesEnumerator::CompactionStrategy::
-        CEnumerateAll:
-      chosen_file_index =
-          AllFilesEnumerator::GetInstance().EnumerateAll(
-              temp, level);
+    case AllFilesEnumerator::CompactionStrategy::EnumerateAll:
+      chosen_file_index = AllFilesEnumerator::GetInstance().GetPickingFile(temp, level);
       break;
-    case AllFilesEnumerator::CompactionStrategy::CManual:
+    case AllFilesEnumerator::CompactionStrategy::Manual:
       chosen_file_index = AllFilesEnumerator::GetInstance()
                               .NextChoiceForManual();
       std::cout << "chosen_file_index: " << chosen_file_index << std::endl;
