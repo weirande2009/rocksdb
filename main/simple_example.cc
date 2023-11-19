@@ -337,7 +337,7 @@ int main(int argc, char* argv[]) {
           end_time - start_time);
 
   std::cout << "Total running time: "
-            << durationInMicroseconds.count() << std::endl;
+            << durationInMicroseconds.count() << "us" << std::endl;
   CS561Log::Log(
       "Total running time: " +
       std::to_string(durationInMicroseconds.count()) +

@@ -26,3 +26,9 @@ clean:
 
 librocksdb:
 	cd .. && $(MAKE) static_lib
+
+tools:
+	g++ -o check_finish_enumeration check_finish_enumeration.cpp -std=c++17
+	g++ -o count_workload count_workload.cpp -std=c++17
+	cd ../../k-V-Workload-Generator && $(MAKE)
+	cp ../../k-V-Workload-Generator/load_gen .
