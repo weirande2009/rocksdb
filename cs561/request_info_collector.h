@@ -2,14 +2,12 @@
 
 #include <queue>
 
-namespace ROCKSDB_NAMESPACE {
+namespace rocksdb {
 
 class RequestInfoCollector{
 public:
   RequestInfoCollector(size_t queue_length);
-
   void Add(uint64_t e);
-
   uint64_t Avg();
 
 private:

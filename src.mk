@@ -162,6 +162,7 @@ LIB_SOURCES =                                                   \
   cs561/all_files_enumerator.cc                                 \
   cs561/file_serializer.cc                                      \
   cs561/picking_history_collector.cc                            \
+  cs561/request_info_collector.cc                               \
   cs561/version_forest.cc			                                  \
   cs561/cs561_log.cc			                                      \
   port/mmap.cc                                                  \

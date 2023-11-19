@@ -63,9 +63,9 @@ int AllFilesEnumerator::GetPickingFile(
 int AllFilesEnumerator::GetEstimatedFile(const std::vector<FileMetaData*>* files, int level, int num_level, const Options& op, const InternalKeyComparator& icmp){
   // build simulated file from FileMetaData
   std::vector<std::vector<std::shared_ptr<SimulatedFileMetaData>>> simulated_files(num_level);
-  for(size_t i = 0; i < num_level; ++i) {
+  for(int i = 0; i < num_level; ++i) {
     for(size_t j = 0; j < files[i].size(); ++j) {
-      simulated_files[i].emplace_back(SimulatedFileMetaData(files[i][j]));
+      simulated_files[i].emplace_back(std::make_shared<SimulatedFileMetaData>(files[i][j]));
     }
   }
   
@@ -79,17 +79,17 @@ int AllFilesEnumerator::GetEstimatedFile(const std::vector<FileMetaData*>* files
     estimated_written_bytes[i] += ComputeWrittenBytesForCompaction({level_files[i]}, simulated_files[level+1], icmp);
 
     // remove level_files[i] from this level since we compact it
-    std::vector<std::shared_ptr<SimulatedFileMetaData>> simulated_level_files_in_next_compaction;
-    simulated_level_files_in_next_compaction.reserve(level_files.size()-1);
+    std::vector<std::shared_ptr<SimulatedFileMetaData>> simulated_level_files_after_compaction;
+    simulated_level_files_after_compaction.reserve(level_files.size()-1);
     for(size_t j = 0; j < level_files.size(); ++j) {
       if (j == i) {
         continue;
       }
-      simulated_level_files_in_next_compaction.push_back(level_files[j]);
+      simulated_level_files_after_compaction.push_back(level_files[j]);
     }
 
     // estimate the next level in the next compaction (i.e. after compacting level_files[i] to it)
-    std::vector<std::shared_ptr<SimulatedFileMetaData>> simulated_next_level_files_in_next_compaction = Compaction({level_files[i]}, simulated_files[level+1], level+1, icmp, op);
+    std::vector<std::shared_ptr<SimulatedFileMetaData>> simulated_next_level_files_in_next_compaction = Compaction({level_files[i]}, simulated_files[level+1], level+1, op);
 
     // compute the estimated overlapping bytes from the previous level if we remove level_files[i] in the next compaction
     std::vector<std::shared_ptr<SimulatedFileMetaData>> simulated_prev_level_files_in_next_compaction = simulated_files[level-1];
@@ -97,10 +97,10 @@ int AllFilesEnumerator::GetEstimatedFile(const std::vector<FileMetaData*>* files
     for(size_t j = 0; j < static_cast<size_t>(op.level0_file_num_compaction_trigger) - simulated_files[level-1].size(); ++j) {
       simulated_prev_level_files_in_next_compaction.emplace_back(MakeEstimatedLevel0File());
     }
-    estimated_written_bytes[i] += ComputeWrittenBytesForCompaction(simulated_prev_level_files_in_next_compaction, simulated_level_files_in_next_compaction, icmp);
+    estimated_written_bytes[i] += ComputeWrittenBytesForCompaction(simulated_prev_level_files_in_next_compaction, simulated_level_files_after_compaction, icmp);
     
     // estimate this level after the next compaction
-    std::vector<std::shared_ptr<SimulatedFileMetaData>> simulated_level_files_in_next_compaction = Compaction(simulated_prev_level_files_in_next_compaction, simulated_level_files_in_next_compaction, level, icmp, op);
+    std::vector<std::shared_ptr<SimulatedFileMetaData>> simulated_level_files_in_next_compaction = Compaction(simulated_prev_level_files_in_next_compaction, simulated_level_files_in_next_compaction, level, op);
 
     // find that file with the smallest overlapping bytes and use it to compact
     uint64_t smallest_overlapping_bytes = std::numeric_limits<uint64_t>::max();
@@ -210,7 +210,7 @@ uint64_t AllFilesEnumerator::ComputeOverlappingEntriesForFile(
   return overlapping_entries;
 }
 
-std::vector<size_t> FindOverlappingFiles(
+std::vector<size_t> AllFilesEnumerator::FindOverlappingFiles(
     const std::shared_ptr<SimulatedFileMetaData>& file, 
     const std::vector<std::shared_ptr<SimulatedFileMetaData>>& next_level_files,
     const InternalKeyComparator& icmp) {
@@ -248,7 +248,7 @@ uint64_t AllFilesEnumerator::ComputeWrittenBytesForCompaction(
     const InternalKeyComparator& icmp) {
 
   // find overlapping files
-  std::unordered_set<int> overlapping_files_set;
+  std::unordered_set<size_t> overlapping_files_set;
   for(size_t i = 0; i < input_level_files.size(); ++i) {
     std::vector<size_t> overlapping_files = FindOverlappingFiles(input_level_files[i], target_level_files, icmp);
     for(size_t j = 0; j < overlapping_files.size(); ++j) {
@@ -330,7 +330,7 @@ uint64_t AllFilesEnumerator::Merge(uint64_t unique_num1, uint64_t unique_num2) {
 std::vector<std::shared_ptr<SimulatedFileMetaData>> AllFilesEnumerator::Compaction(
   const std::vector<std::shared_ptr<SimulatedFileMetaData>>& input_files, 
   const std::vector<std::shared_ptr<SimulatedFileMetaData>>& target_level_files,
-  size_t target_level, const InternalKeyComparator& icmp, const Options& op) {
+  size_t target_level, const Options& op) {
 
   // the threshold of file size in bytes difference that we consider two sizes are the same
   const uint64_t FILE_SIZE_DIF_THRESHOLD = 10;
@@ -365,7 +365,7 @@ std::vector<std::shared_ptr<SimulatedFileMetaData>> AllFilesEnumerator::Compacti
   for(size_t i = 0; i < file_num; ++i) {
     uint64_t low = start_key;
     uint64_t high  = largest_key;
-    uint64_t end_key;
+    uint64_t end_key = 0;
 
     while (low < high) {
       uint64_t mid = (low + high) / 2;
@@ -373,8 +373,8 @@ std::vector<std::shared_ptr<SimulatedFileMetaData>> AllFilesEnumerator::Compacti
       for(size_t j = 0; j < files.size(); ++j) {
         file_size += (mid - files_key_interval[j][0]) / (files_key_interval[j][1] - files_key_interval[j][0]) * files[j]->file_size;
       }
-      if (file_size >= per_file_size && (file_size-per_file_size) < FILE_SIZE_DIF_THRESHOLD || 
-          per_file_size > file_size && (per_file_size-file_size) < FILE_SIZE_DIF_THRESHOLD) {
+      if ((file_size >= per_file_size && (file_size-per_file_size) < FILE_SIZE_DIF_THRESHOLD) || 
+          (per_file_size > file_size && (per_file_size-file_size) < FILE_SIZE_DIF_THRESHOLD)) {
         end_key = mid;
         break;
       } else if (file_size > per_file_size) {
@@ -389,17 +389,6 @@ std::vector<std::shared_ptr<SimulatedFileMetaData>> AllFilesEnumerator::Compacti
   }
 
   return files_after_compaction;
-}
-
-uint64_t AllFilesEnumerator::EstimateOneRound(const std::vector<std::shared_ptr<SimulatedFileMetaData>>& prev_level_files,
-    const std::vector<std::shared_ptr<SimulatedFileMetaData>>& level_files,
-    const std::vector<std::shared_ptr<SimulatedFileMetaData>>& next_level_files,
-    size_t file_index, bool manual_picking,
-    std::vector<std::shared_ptr<SimulatedFileMetaData>>& out_prev_level_files,
-    std::vector<std::shared_ptr<SimulatedFileMetaData>>& out_level_files,
-    std::vector<std::shared_ptr<SimulatedFileMetaData>>& out_next_level_files) {
-  
-  return 0;
 }
 
 void AllFilesEnumerator::CollectCompactionInfo(

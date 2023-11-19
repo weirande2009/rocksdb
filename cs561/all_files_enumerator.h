@@ -67,18 +67,6 @@ public:
   int GetEstimatedFile(const std::vector<FileMetaData*>* files, int level, int num_level, const Options& op, const InternalKeyComparator& icmp);
 
   /**
-   * Estimate the written bytes for one round, including a compaction to the next level and a compaction from the
-   * previous level
-  */
-  uint64_t EstimateOneRound(const std::vector<std::shared_ptr<SimulatedFileMetaData>>& prev_level_files,
-    const std::vector<std::shared_ptr<SimulatedFileMetaData>>& level_files,
-    const std::vector<std::shared_ptr<SimulatedFileMetaData>>& next_level_files,
-    size_t file_index, bool manual_picking,
-    std::vector<std::shared_ptr<SimulatedFileMetaData>>& out_prev_level_files,
-    std::vector<std::shared_ptr<SimulatedFileMetaData>>& out_level_files,
-    std::vector<std::shared_ptr<SimulatedFileMetaData>>& out_next_level_files);
-
-  /**
    * Compute the overlapping bytes of a file to the next level
   */
   uint64_t ComputeOverlappingBytesForFile(
@@ -159,7 +147,7 @@ public:
   std::vector<std::shared_ptr<SimulatedFileMetaData>> Compaction(
     const std::vector<std::shared_ptr<SimulatedFileMetaData>>& input_files, 
     const std::vector<std::shared_ptr<SimulatedFileMetaData>>& target_level_files,
-    size_t target_level, const InternalKeyComparator& icmp, const Options& op);
+    size_t target_level, const Options& op);
 
   /**
    * Collect the compaction information
