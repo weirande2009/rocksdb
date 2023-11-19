@@ -292,7 +292,7 @@ uint64_t AllFilesEnumerator::KeyToNumber(const InternalKey& key) {
   uint64_t num = 0;
   uint64_t base = 1;
   std::string_view key_str = key.user_key().ToStringView();
-  for(size_t i = key_str.length()-1; i >= 0ULL; --i) {
+  for(int i = static_cast<int>(key_str.length()-1); i >= 0; --i) {
     num += static_cast<uint64_t>(key_str[i]) * base;
     base *= 256;
   }
