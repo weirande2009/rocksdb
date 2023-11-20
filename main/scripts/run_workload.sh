@@ -72,14 +72,25 @@ initialize_workspace() {
     fi
     if [ ! -d $4/history ]; then
         mkdir $4/history
+        echo -e 'Number of nodes\n0' > $4/history/picking_history_level0
+        echo -e 'Number of nodes\n0' > $4/history/picking_history_level1
     fi
 
-    echo '18446744073709551615 0' > $4/minimum.txt
-    touch $4/log.txt
-    touch $4/version_info.txt
-    touch $4/out.txt
-    echo -e 'Number of nodes\n0' > $4/history/picking_history_level0
-    echo -e 'Number of nodes\n0' > $4/history/picking_history_level1
+    if [ ! -d $4/minimum.txt ]; then
+        echo '18446744073709551615 0' > $4/minimum.txt
+    fi
+
+    if [ ! -d $4/log.txt ]; then
+        touch $4/log.txt
+    fi
+
+    if [ ! -d $4/version_info.txt ]; then
+        touch $4/version_info.txt
+    fi
+
+    if [ ! -d $4/out.txt ]; then
+        touch $4/out.txt
+    fi
 
     # generate workload, if there is already a workload, don't generate a new one
     if [ ! -e $4/workload.txt ]; then
