@@ -33,5 +33,5 @@ mkdir $4/$new_dir_path
 for i in $(seq 1 $6)
 do
     echo 'workload' $i
-    enumerate_a_workload $1 $2 $3 $4/$new_dir_path $5 $7 $8
+    enumerate_a_workload $1 $2 $3 $4/$new_dir_path $5 $7 $8$i
 done
