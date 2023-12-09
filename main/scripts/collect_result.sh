@@ -19,13 +19,15 @@ for folder in "$source_dir"/*; do
   if [ -d "$folder" ]; then
     # Get the folder name
     folder_name=$(basename "$folder")
+    # Count the number of subfolders
+    subfolder_count=1
     # Iterate all folders in the folder
     for subfolder in "$folder"/*; do
       if [ -d "$subfolder" ]; then
-        # Get the subfolder name
-        subfolder_name=$(basename "$subfolder")
+        # Increase the subfolder count
+        subfolder_count=$((subfolder_count+1))
 
-        target_dir="$destination_dir/$folder_name/$subfolder_name"
+        target_dir="$destination_dir/$folder_name/$subfolder_count"
 
         # Create the destination folder recursively if it doesn't exist
         mkdir -p "$target_dir"
