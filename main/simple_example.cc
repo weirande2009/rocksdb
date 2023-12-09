@@ -118,11 +118,13 @@ void runWorkload(Options& op, WriteOptions& write_op,
   if (compaciton_strategy == "kRoundRobin") {
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::RoundRobin;
+    op.compaction_pri = kRoundRobin;
   } else if (compaciton_strategy ==
              "kMinOverlappingRatio") {
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::
             MinOverlappingRatio;
+    op.compaction_pri = kMinOverlappingRatio;
   } else if (compaciton_strategy == "kEnumerateAll") {
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::
@@ -342,5 +344,6 @@ int main(int argc, char* argv[]) {
       "Total running time: " +
       std::to_string(durationInMicroseconds.count()) +
       "us");
+  AllFilesEnumerator::GetInstance().GetCollector().DumpToFile();
   return 0;
 }
