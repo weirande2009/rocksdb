@@ -1,15 +1,15 @@
-2023-12-09 17:48:53 --- (INFO)==================================================
-2023-12-09 17:48:53 --- (INFO)Program information: 
-2023-12-09 17:48:53 --- (INFO)Compaction strategy: kRoundRobin
-2023-12-09 17:48:53 --- (INFO)Total written bytes: 43249208
-2023-12-09 17:48:53 --- (INFO)Database path: mnt/rocksdb
-2023-12-09 17:48:53 --- (INFO)Experiment path: tmp/2023-11-30-21:50:07+4800000I+800000U+2400000D/1
-2023-12-09 17:48:57 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:01 --- (INFO)compaction start level[0], compaction files[25,23,21,19], start level files[25,23,21,19], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:05 --- (INFO)compaction start level[0], compaction files[36,34,32,30], start level files[36,34,32,30], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:09 --- (INFO)compaction start level[0], compaction files[48,46,44,42], start level files[48,46,44,42], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:13 --- (INFO)compaction start level[0], compaction files[60,58,56,54], start level files[60,58,56,54], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:14 --- (INFO)write amplification: 130034610, left bytes: 2855592
+2023-12-10 00:20:42 --- (INFO)==================================================
+2023-12-10 00:20:42 --- (INFO)Program information: 
+2023-12-10 00:20:42 --- (INFO)Compaction strategy: kRoundRobin
+2023-12-10 00:20:42 --- (INFO)Total written bytes: 43249208
+2023-12-10 00:20:42 --- (INFO)Database path: mnt/rocksdb
+2023-12-10 00:20:42 --- (INFO)Experiment path: tmp/2023-11-30-21:50:07+4800000I+800000U+2400000D/1
+2023-12-10 00:20:46 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:20:50 --- (INFO)compaction start level[0], compaction files[25,23,21,19], start level files[25,23,21,19], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:20:54 --- (INFO)compaction start level[0], compaction files[36,34,32,30], start level files[36,34,32,30], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:20:58 --- (INFO)compaction start level[0], compaction files[48,46,44,42], start level files[48,46,44,42], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:02 --- (INFO)compaction start level[0], compaction files[60,58,56,54], start level files[60,58,56,54], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:03 --- (INFO)write amplification: 130034610, left bytes: 2780096
 Compaction 1 in level 1 Choice: file No.0
 Hash value: 8cd963ec45a4bb4d
 Information of files in level 0: 
@@ -23,22 +23,24 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 3			I=~X			YLYf		503343			0				6040116			2013372			0					
 4			YLZ.			^^~g		164837			0				1978044			659348			0					
 
-2023-12-09 17:49:14 --- (INFO)compaction start level[1], compaction files[61,62,63,64], start level files[61,62,63,64,67], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:15 --- (INFO)Total running time: 22571166us
-2023-12-09 17:49:15 --- (INFO)write amplification: 130034610, left bytes: 2855592
-2023-12-09 17:49:15 --- (INFO)compaction_time: 3344937us
-2023-12-09 17:49:15 --- (INFO)==================================================
-2023-12-09 17:49:15 --- (INFO)Program information: 
-2023-12-09 17:49:15 --- (INFO)Compaction strategy: kMinOverlappingRatio
-2023-12-09 17:49:15 --- (INFO)Total written bytes: 43249208
-2023-12-09 17:49:15 --- (INFO)Database path: mnt/rocksdb
-2023-12-09 17:49:15 --- (INFO)Experiment path: tmp/2023-11-30-21:50:07+4800000I+800000U+2400000D/1
-2023-12-09 17:49:20 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:24 --- (INFO)compaction start level[0], compaction files[25,23,21,19], start level files[25,23,21,19], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:28 --- (INFO)compaction start level[0], compaction files[36,34,32,30], start level files[36,34,32,30], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:32 --- (INFO)compaction start level[0], compaction files[48,46,44,42], start level files[48,46,44,42], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:36 --- (INFO)compaction start level[0], compaction files[60,58,56,54], start level files[60,58,56,54], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:37 --- (INFO)write amplification: 130034610, left bytes: 2889208
+2023-12-10 00:21:03 --- (INFO)compaction start level[1], compaction files[61,62,63,64], start level files[61,62,63,64,67], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:04 --- (INFO)Total running time: 22179257us
+2023-12-10 00:21:04 --- (INFO)write amplification: 130034610, left bytes: 2780096
+2023-12-10 00:21:04 --- (INFO)compaction_time: 3346746us
+2023-12-10 00:21:04 --- (INFO)write amplification: 130034610, left bytes: 2780096
+2023-12-10 00:21:04 --- (INFO)compaction_time: 3346746us
+2023-12-10 00:21:04 --- (INFO)==================================================
+2023-12-10 00:21:04 --- (INFO)Program information: 
+2023-12-10 00:21:04 --- (INFO)Compaction strategy: kMinOverlappingRatio
+2023-12-10 00:21:04 --- (INFO)Total written bytes: 43249208
+2023-12-10 00:21:04 --- (INFO)Database path: mnt/rocksdb
+2023-12-10 00:21:04 --- (INFO)Experiment path: tmp/2023-11-30-21:50:07+4800000I+800000U+2400000D/1
+2023-12-10 00:21:08 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:12 --- (INFO)compaction start level[0], compaction files[25,23,21,19], start level files[25,23,21,19], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:16 --- (INFO)compaction start level[0], compaction files[36,34,32,30], start level files[36,34,32,30], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:19 --- (INFO)compaction start level[0], compaction files[48,46,44,42], start level files[48,46,44,42], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:23 --- (INFO)compaction start level[0], compaction files[60,58,56,54], start level files[60,58,56,54], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:24 --- (INFO)write amplification: 130034610, left bytes: 2672168
 Compaction 1 in level 1 Choice: file No.0
 Hash value: 8cd963ec45a4bb4d
 Information of files in level 0: 
@@ -52,7 +54,9 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 3			I=~X			YLYf		503343			0				6040116			2013372			0					
 4			YLZ.			^^~g		164837			0				1978044			659348			0					
 
-2023-12-09 17:49:37 --- (INFO)compaction start level[1], compaction files[61,62,63,64], start level files[61,62,63,64,67], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:49:38 --- (INFO)Total running time: 22898084us
-2023-12-09 17:49:38 --- (INFO)write amplification: 130034610, left bytes: 2889208
-2023-12-09 17:49:38 --- (INFO)compaction_time: 3337076us
+2023-12-10 00:21:24 --- (INFO)compaction start level[1], compaction files[61,62,63,64], start level files[61,62,63,64,67], compactionStrategy[0], baseLevel[1], 
+2023-12-10 00:21:25 --- (INFO)Total running time: 21127769us
+2023-12-10 00:21:25 --- (INFO)write amplification: 130034610, left bytes: 2672168
+2023-12-10 00:21:25 --- (INFO)compaction_time: 3359942us
+2023-12-10 00:21:25 --- (INFO)write amplification: 130034610, left bytes: 2672168
+2023-12-10 00:21:26 --- (INFO)compaction_time: 3359942us

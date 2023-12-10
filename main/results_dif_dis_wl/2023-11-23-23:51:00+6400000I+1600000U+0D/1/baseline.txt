@@ -1,12 +1,12 @@
-2023-12-09 17:25:58 --- (INFO)==================================================
-2023-12-09 17:25:58 --- (INFO)Program information: 
-2023-12-09 17:25:58 --- (INFO)Compaction strategy: kRoundRobin
-2023-12-09 17:25:58 --- (INFO)Total written bytes: 64000000
-2023-12-09 17:25:58 --- (INFO)Database path: mnt/rocksdb
-2023-12-09 17:25:58 --- (INFO)Experiment path: tmp/2023-11-23-23:51:00+6400000I+1600000U+0D/1
-2023-12-09 17:26:02 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:06 --- (INFO)compaction start level[0], compaction files[26,24,22,20], start level files[26,24,22,20], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:07 --- (INFO)write amplification: 64700739, left bytes: 39623992
+2023-12-09 23:58:52 --- (INFO)==================================================
+2023-12-09 23:58:52 --- (INFO)Program information: 
+2023-12-09 23:58:52 --- (INFO)Compaction strategy: kRoundRobin
+2023-12-09 23:58:52 --- (INFO)Total written bytes: 64000000
+2023-12-09 23:58:52 --- (INFO)Database path: mnt/rocksdb
+2023-12-09 23:58:52 --- (INFO)Experiment path: tmp/2023-11-23-23:51:00+6400000I+1600000U+0D/1
+2023-12-09 23:58:57 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:00 --- (INFO)compaction start level[0], compaction files[26,24,22,20], start level files[26,24,22,20], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:01 --- (INFO)write amplification: 64700739, left bytes: 39355264
 Compaction 1 in level 1 Choice: file No.0
 Hash value: 71b85ceb3316d90f
 Information of files in level 0: 
@@ -21,10 +21,115 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 4			P9n`			^0Fx		504181			0				6050172			2016724			0					
 5			^0G*			^^~W		27304			0				327648			109216			0					
 
-2023-12-09 17:26:07 --- (INFO)compaction start level[1], compaction files[27,28,29,30], start level files[27,28,29,30,31,34], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:10 --- (INFO)compaction start level[0], compaction files[40,38,36,33], start level files[40,38,36,33], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:14 --- (INFO)compaction start level[0], compaction files[51,49,47,45], start level files[51,49,47,45], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:15 --- (INFO)write amplification: 144252462, left bytes: 17768480
+2023-12-09 23:59:01 --- (INFO)compaction start level[1], compaction files[27,28], start level files[27,28,29,30,31,34], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:04 --- (INFO)compaction start level[0], compaction files[40,38,36,33], start level files[40,38,36,33], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:05 --- (INFO)write amplification: 110493184, left bytes: 28532488
+Compaction 2 in level 1 Choice: file No.2
+Hash value: 63248ca99a281997
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0			!!!,			^^}U		332275			0				3987300			1329100			0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0			!!!"			4L&=		515275			0				6183300			2061100			1996				
+1			4L&L			4L&L		1				0				12				4				0					
+2*			4L&`			GVwo		1011047			0				12132564		4044188			0					
+3			GVw{			[$=}		1011060			0				12132720		4044240			0					
+4			[$>&			^^~{		207671			0				2492052			830684			0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0			!!!!			*K3{		505653			0				6067836			2022612			0					
+1			*K45			4L&F		505334			0				6064008			2021336			0					
+
+2023-12-09 23:59:05 --- (INFO)compaction start level[1], compaction files[43,44,47], start level files[41,42,43,44,47], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:08 --- (INFO)compaction start level[0], compaction files[53,51,49,46], start level files[53,51,49,46], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:12 --- (INFO)compaction start level[0], compaction files[66,64,62,60], start level files[66,64,62,60], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:13 --- (INFO)write amplification: 188810334, left bytes: 6767208
+Compaction 3 in level 1 Choice: file No.0
+Hash value: 52dc4ae3620ca9b7
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0			!!!X			^^{9		331454			0				3977448			1325816			0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0*			!!!"			*K3{		712080			0				8544960			2848320			728					
+1			*K4!			4L&A		709445			0				8513340			2837780			730					
+2			4L&L			GVw`		678057			0				8136684			2712228			1522				
+3			GVw{			[$=z		678032			0				8136384			2712128			1522				
+4			[$>6			^^~}		139792			0				1677504			559168			1516				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0			!!!!			*K3{		505653			0				6067836			2022612			0					
+1			*K45			4L&F		505334			0				6064008			2021336			0					
+2			4L&`			GVwo		1011047			0				12132564		4044188			0					
+3			GVw{			[$=}		1011060			0				12132720		4044240			0					
+4			[$>&			^^~{		207671			0				2492052			830684			0					
+
+2023-12-09 23:59:13 --- (INFO)compaction start level[1], compaction files[67,68], start level files[67,68,69,72,73], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:15 --- (INFO)compaction start level[0], compaction files[84,82,79,71], start level files[84,82,79,71], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:16 --- (INFO)write amplification: 269464936, left bytes: 0
+Compaction 4 in level 1 Choice: file No.2
+Hash value: 99ea8a48b2e44a70
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0							4L&7		492167			0				5906000			1968664			4603				
+1			4L&L			4L&L		1				0				12				4				0					
+2*			4L&e			GVwl		959354			0				11512248		3837416			1078				
+3			GVwp			[$=z		959717			0				11516604		3838868			1078				
+4			[$>6			^^~}		197180			0				2366160			788720			1078				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0			!!!!			%94D		507339			0				6088068			2029356			0					
+1			%94F			)Pwd		507339			0				6088068			2029356			0					
+2			)Pwg			.+)0		507339			0				6088068			2029356			0					
+3			.+):			2C&i		507339			0				6088068			2029356			0					
+4			2C&m			4L&F		206498			0				2477976			825992			0					
+5			4L&`			GVwo		1011047			0				12132564		4044188			0					
+6			GVw{			[$=}		1011060			0				12132720		4044240			0					
+7			[$>&			^^~{		207671			0				2492052			830684			0					
+
+2023-12-09 23:59:16 --- (INFO)compaction start level[1], compaction files[87], start level files[85,86,87,88,89], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:17 --- (INFO)Total running time: 24560444us
+2023-12-09 23:59:17 --- (INFO)write amplification: 298574293, left bytes: 0
+2023-12-09 23:59:17 --- (INFO)compaction_time: 6340973us
+2023-12-09 23:59:17 --- (INFO)write amplification: 298574293, left bytes: 0
+2023-12-09 23:59:17 --- (INFO)compaction_time: 6340973us
+2023-12-09 23:59:17 --- (INFO)==================================================
+2023-12-09 23:59:17 --- (INFO)Program information: 
+2023-12-09 23:59:17 --- (INFO)Compaction strategy: kMinOverlappingRatio
+2023-12-09 23:59:17 --- (INFO)Total written bytes: 64000000
+2023-12-09 23:59:17 --- (INFO)Database path: mnt/rocksdb
+2023-12-09 23:59:17 --- (INFO)Experiment path: tmp/2023-11-23-23:51:00+6400000I+1600000U+0D/1
+2023-12-09 23:59:21 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:25 --- (INFO)compaction start level[0], compaction files[26,24,22,20], start level files[26,24,22,20], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:26 --- (INFO)write amplification: 64700739, left bytes: 39272792
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 71b85ceb3316d90f
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0			!!#w			^^zL		332594			0				3991128			1330376			0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
+0*			!!!!			*K3{		505653			0				6067836			2022612			0					
+1			*K45			4L&F		505334			0				6064008			2021336			0					
+2			4L&`			BB]C		504206			0				6050472			2016824			0					
+3			BB]H			P9nZ		504213			0				6050556			2016852			0					
+4			P9n`			^0Fx		504181			0				6050172			2016724			0					
+5			^0G*			^^~W		27304			0				327648			109216			0					
+
+2023-12-09 23:59:26 --- (INFO)compaction start level[1], compaction files[27,28,29,30], start level files[27,28,29,30,33,34], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:28 --- (INFO)compaction start level[0], compaction files[40,38,36,32], start level files[40,38,36,32], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:32 --- (INFO)compaction start level[0], compaction files[51,49,47,45], start level files[51,49,47,45], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:33 --- (INFO)write amplification: 144252462, left bytes: 17383808
 Compaction 2 in level 1 Choice: file No.4
 Hash value: 2b0d446063ac51c8
 Information of files in level 0: 
@@ -46,9 +151,9 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 2			4L&`			BB]C		504206			0				6050472			2016824			0					
 3			BB]H			P9nZ		504213			0				6050556			2016852			0					
 
-2023-12-09 17:26:15 --- (INFO)compaction start level[1], compaction files[56], start level files[52,53,54,55,56], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:18 --- (INFO)compaction start level[0], compaction files[64,62,60,58], start level files[64,62,60,58], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:20 --- (INFO)write amplification: 196077103, left bytes: 6881032
+2023-12-09 23:59:33 --- (INFO)compaction start level[1], compaction files[58], start level files[52,53,54,55,58], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:36 --- (INFO)compaction start level[0], compaction files[64,62,60,57], start level files[64,62,60,57], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:37 --- (INFO)write amplification: 196077103, left bytes: 6532280
 Compaction 3 in level 1 Choice: file No.0
 Hash value: 0774b16fdc871df7
 Information of files in level 0: 
@@ -71,8 +176,8 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 3			BB]H			P9nZ		504213			0				6050556			2016852			0					
 4			P9n^			^^~}		985328			0				11823936		3941312			0					
 
-2023-12-09 17:26:20 --- (INFO)compaction start level[1], compaction files[65], start level files[65,66,67,68,71], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:20 --- (INFO)write amplification: 214665636, left bytes: 5893328
+2023-12-09 23:59:37 --- (INFO)compaction start level[1], compaction files[65], start level files[65,66,67,70,71], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:37 --- (INFO)write amplification: 214665636, left bytes: 5416696
 Compaction 4 in level 1 Choice: file No.1
 Hash value: f45aaa8ccbf79eab
 Information of files in level 0: 
@@ -96,9 +201,9 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 5			BB]H			P9nZ		504213			0				6050556			2016852			0					
 6			P9n^			^^~}		985328			0				11823936		3941312			0					
 
-2023-12-09 17:26:20 --- (INFO)compaction start level[1], compaction files[67], start level files[66,67,68,71], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:22 --- (INFO)compaction start level[0], compaction files[83,81,78,70], start level files[83,81,78,70], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:23 --- (INFO)write amplification: 279633483, left bytes: 0
+2023-12-09 23:59:37 --- (INFO)compaction start level[1], compaction files[67], start level files[66,67,70,71], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:39 --- (INFO)compaction start level[0], compaction files[83,81,77,69], start level files[83,81,77,69], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:40 --- (INFO)write amplification: 279633483, left bytes: 0
 Compaction 5 in level 1 Choice: file No.0
 Hash value: 5f25fa21d01aae7f
 Information of files in level 0: 
@@ -122,135 +227,9 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 7			BB]H			P9nZ		504213			0				6050556			2016852			0					
 8			P9n^			^^~}		985328			0				11823936		3941312			0					
 
-2023-12-09 17:26:23 --- (INFO)compaction start level[1], compaction files[84], start level files[84,85,86], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:24 --- (INFO)Total running time: 26066181us
-2023-12-09 17:26:24 --- (INFO)write amplification: 319901314, left bytes: 0
-2023-12-09 17:26:24 --- (INFO)compaction_time: 6661572us
-2023-12-09 17:26:24 --- (INFO)==================================================
-2023-12-09 17:26:24 --- (INFO)Program information: 
-2023-12-09 17:26:24 --- (INFO)Compaction strategy: kMinOverlappingRatio
-2023-12-09 17:26:24 --- (INFO)Total written bytes: 64000000
-2023-12-09 17:26:24 --- (INFO)Database path: mnt/rocksdb
-2023-12-09 17:26:24 --- (INFO)Experiment path: tmp/2023-11-23-23:51:00+6400000I+1600000U+0D/1
-2023-12-09 17:26:28 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:32 --- (INFO)compaction start level[0], compaction files[26,24,22,20], start level files[26,24,22,20], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:33 --- (INFO)write amplification: 64700739, left bytes: 39499992
-Compaction 1 in level 1 Choice: file No.0
-Hash value: 71b85ceb3316d90f
-Information of files in level 0: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-
-Information of files in level 1: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0*			!!!!			*K3{		505653			0				6067836			2022612			0					
-1			*K45			4L&F		505334			0				6064008			2021336			0					
-2			4L&`			BB]C		504206			0				6050472			2016824			0					
-3			BB]H			P9nZ		504213			0				6050556			2016852			0					
-4			P9n`			^0Fx		504181			0				6050172			2016724			0					
-5			^0G*			^^~W		27304			0				327648			109216			0					
-
-2023-12-09 17:26:33 --- (INFO)compaction start level[1], compaction files[27,28,29,30], start level files[27,28,29,30,31,34], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:36 --- (INFO)compaction start level[0], compaction files[40,38,36,33], start level files[40,38,36,33], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:40 --- (INFO)compaction start level[0], compaction files[51,49,47,45], start level files[51,49,47,45], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:41 --- (INFO)write amplification: 144252462, left bytes: 17652184
-Compaction 2 in level 1 Choice: file No.4
-Hash value: 2b0d446063ac51c8
-Information of files in level 0: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!J			^^|X		331821			0				3981852			1327284			0					
-
-Information of files in level 1: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!"			*K3v		496277			0				5955324			1985108			1043				
-1			*K4,			4L&A		494311			0				5931732			1977244			1046				
-2			4L&L			BB]C		495169			0				5942028			1980676			1042				
-3			BB]O			P9n?		494689			0				5936268			1978756			1043				
-4*			P9n^			^^~}		985328			0				11823936		3941312			0					
-
-Information of files in level 2: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!!			*K3{		505653			0				6067836			2022612			0					
-1			*K45			4L&F		505334			0				6064008			2021336			0					
-2			4L&`			BB]C		504206			0				6050472			2016824			0					
-3			BB]H			P9nZ		504213			0				6050556			2016852			0					
-
-2023-12-09 17:26:41 --- (INFO)compaction start level[1], compaction files[56], start level files[52,53,54,55,56], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:44 --- (INFO)compaction start level[0], compaction files[64,62,60,58], start level files[64,62,60,58], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:45 --- (INFO)write amplification: 196077103, left bytes: 6795088
-Compaction 3 in level 1 Choice: file No.0
-Hash value: 0774b16fdc871df7
-Information of files in level 0: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!X			^^{9		331454			0				3977448			1325816			0					
-
-Information of files in level 1: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0*			!!!"			*K3{		712080			0				8544960			2848320			728					
-1			*K4!			4L&A		709445			0				8513340			2837780			730					
-2			4L&L			BB]C		710095			0				8521140			2840380			729					
-3			BB]G			P9nH		709173			0				8510076			2836692			729					
-4			P9nn			^^~:		268896			0				3226752			1075584			3704				
-
-Information of files in level 2: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!!			*K3{		505653			0				6067836			2022612			0					
-1			*K45			4L&F		505334			0				6064008			2021336			0					
-2			4L&`			BB]C		504206			0				6050472			2016824			0					
-3			BB]H			P9nZ		504213			0				6050556			2016852			0					
-4			P9n^			^^~}		985328			0				11823936		3941312			0					
-
-2023-12-09 17:26:45 --- (INFO)compaction start level[1], compaction files[65], start level files[65,66,67,68,71], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:45 --- (INFO)write amplification: 214665636, left bytes: 5751800
-Compaction 4 in level 1 Choice: file No.1
-Hash value: f45aaa8ccbf79eab
-Information of files in level 0: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!X			^^{9		331454			0				3977448			1325816			0					
-
-Information of files in level 1: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			*K4!			4L&A		709445			0				8513340			2837780			730					
-1*			4L&L			BB]C		710095			0				8521140			2840380			729					
-2			BB]G			P9nH		709173			0				8510076			2836692			729					
-3			P9nn			^^~:		268896			0				3226752			1075584			3704				
-
-Information of files in level 2: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!!			%94D		507339			0				6088068			2029356			0					
-1			%94F			)Pwd		507339			0				6088068			2029356			0					
-2			)Pwg			*K3{		104875			0				1258500			419500			0					
-3			*K45			4L&F		505334			0				6064008			2021336			0					
-4			4L&`			BB]C		504206			0				6050472			2016824			0					
-5			BB]H			P9nZ		504213			0				6050556			2016852			0					
-6			P9n^			^^~}		985328			0				11823936		3941312			0					
-
-2023-12-09 17:26:45 --- (INFO)compaction start level[1], compaction files[67], start level files[66,67,68,71], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:48 --- (INFO)compaction start level[0], compaction files[83,81,78,70], start level files[83,81,78,70], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:49 --- (INFO)write amplification: 279633483, left bytes: 0
-Compaction 5 in level 1 Choice: file No.0
-Hash value: 5f25fa21d01aae7f
-Information of files in level 0: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-
-Information of files in level 1: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0*							2[Qr		1011432			0				12137180		4045724			1642				
-1			2[Q|			L8}P		1009221			0				12110652		4036884			2151				
-2			L8}Y			^^~}		762796			0				9153552			3051184			1995				
-
-Information of files in level 2: 
-File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	Overlapping ratio	
-0			!!!!			%94D		507339			0				6088068			2029356			0					
-1			%94F			)Pwd		507339			0				6088068			2029356			0					
-2			)Pwg			*K3{		104875			0				1258500			419500			0					
-3			*K45			4L&F		505334			0				6064008			2021336			0					
-4			4L&L			:^b#		506845			0				6082140			2027380			0					
-5			:^b4			A2HR		506844			0				6082128			2027376			0					
-6			A2HT			BB]C		101915			0				1222980			407660			0					
-7			BB]H			P9nZ		504213			0				6050556			2016852			0					
-8			P9n^			^^~}		985328			0				11823936		3941312			0					
-
-2023-12-09 17:26:49 --- (INFO)compaction start level[1], compaction files[84], start level files[84,85,86], compactionStrategy[0], baseLevel[1], 
-2023-12-09 17:26:49 --- (INFO)Total running time: 25291285us
-2023-12-09 17:26:49 --- (INFO)write amplification: 319901314, left bytes: 0
-2023-12-09 17:26:49 --- (INFO)compaction_time: 6648494us
+2023-12-09 23:59:40 --- (INFO)compaction start level[1], compaction files[84], start level files[84,85,86], compactionStrategy[0], baseLevel[1], 
+2023-12-09 23:59:41 --- (INFO)Total running time: 23999902us
+2023-12-09 23:59:41 --- (INFO)write amplification: 319901314, left bytes: 0
+2023-12-09 23:59:41 --- (INFO)compaction_time: 6739035us
+2023-12-09 23:59:41 --- (INFO)write amplification: 319901314, left bytes: 0
+2023-12-09 23:59:41 --- (INFO)compaction_time: 6739035us
