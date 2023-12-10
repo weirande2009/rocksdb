@@ -19,45 +19,55 @@ destination_dir="$2"
 
 # Iterate through each folder in the source directory
 for folder in "$source_dir"/*; do
-  if [ -d "$folder" ]; then
-    # Get the folder name
-    folder_name=$(basename "$folder")
-    # Count the number of subfolders
-    subfolder_count=1
-    # Iterate all folders in the folder
-    for subfolder in "$folder"/*; do
-      if [ -d "$subfolder" ]; then
-        tmp_dir="$folder/$subfolder_count"
-        mkdir -p "$tmp_dir"
-        # Get the workload file to tmp dir
-        cp "$subfolder"/workload.txt "$tmp_dir"
-
-        # Run the workload
-        initialize_workspace 0 0 0 $tmp_dir
-
-        # Run count_workload to compute the number of bytes that will be inserted to database
-        ./count_workload $tmp_dir > $tmp_dir/out.txt
-        while IFS='=' read -r key value; do
-          # Set the variable based on the key-value pair
-          eval "$key=$value"
-        done < $tmp_dir/"workload_count.txt" 
-
-        # run baseline
-        run_baseline $total_written_bytes mnt/rocksdb $tmp_dir
-
-        target_dir="$destination_dir/$folder_name/$subfolder_count"
-
-        # Create the destination folder recursively if it doesn't exist
-        mkdir -p "$target_dir"
-
-        # Copy the specific files from the subfolder to the destination folder
-        cp "$subfolder"/minimum.txt "$target_dir"
-        cp "$subfolder"/log.txt "$target_dir"
-        cp "$tmp_dir"/log.txt "$target_dir"/baseline.txt
-
-        # Increase the subfolder count
-        subfolder_count=$((subfolder_count+1))
-      fi
-    done
-  fi
+    if [ -d "$folder" ]; then
+        # Iterate all folders in the folder
+        for subfolder in "$folder"/*; do
+            # Remove folder whose name is a number
+            if [[ $(basename "$subfolder") =~ ^[0-9]+$ ]]; then
+                echo "$subfolder"
+                rm -rf "$subfolder"
+            fi
+        done
+        # Get the folder name
+        folder_name=$(basename "$folder")
+        # Count the number of subfolders
+        subfolder_count=1
+        # Iterate all folders in the folder
+        for subfolder in "$folder"/*; do
+            if [ -d "$subfolder" ]; then
+                tmp_dir="$folder/$subfolder_count"
+                mkdir -p "$tmp_dir"
+                # Get the workload file to tmp dir
+                cp "$subfolder"/workload.txt "$tmp_dir"
+            
+                # Run the workload
+                initialize_workspace 0 0 0 $tmp_dir
+            
+                # Run count_workload to compute the number of bytes that will be inserted to database
+                ./count_workload $tmp_dir > $tmp_dir/out.txt
+                while IFS='=' read -r key value; do
+                  # Set the variable based on the key-value pair
+                  eval "$key=$value"
+                done < $tmp_dir/"workload_count.txt" 
+            
+                # run baseline
+                run_baseline $total_written_bytes mnt/rocksdb $tmp_dir
+            
+                target_dir="$destination_dir/$folder_name/$subfolder_count"
+            
+                # Create the destination folder recursively if it doesn't exist
+                mkdir -p "$target_dir"
+            
+                # Copy the specific files from the subfolder to the destination folder
+                cp "$subfolder"/minimum.txt "$target_dir"
+                cp "$subfolder"/log.txt "$target_dir"
+                cp "$tmp_dir"/log.txt "$target_dir"/baseline.txt
+            
+                rm -rf "$tmp_dir"
+            
+                # Increase the subfolder count
+                subfolder_count=$((subfolder_count+1))
+            fi
+        done
+    fi
 done
