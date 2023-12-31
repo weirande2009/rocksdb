@@ -3,7 +3,7 @@
 source ./scripts/tools.sh
 source ./scripts/run_workload.sh
 
-if ! [ $# -eq 6 ]; then
+if ! [ $# -eq 7 ]; then
     echo 'in this shell script, there will be nine parameters, which are:'
     echo '1. the number of inserts in the workload'
     echo '2. the number of updates in the workload'
@@ -11,6 +11,7 @@ if ! [ $# -eq 6 ]; then
     echo '4. the path of rocksdb'
     echo '5. the path of the experiment workspace'
     echo '6. running method (kRoundRobin, kMinOverlappingRatio, kEnumerateAll, kManual)'
+    echo '7. the workload entry size'
     exit 1
 fi
 
@@ -19,13 +20,8 @@ if [ ! -d $5 ]; then
     mkdir $5
 fi
 
-# generate workload
-if [ ! -e $5/workload.txt ]; then
-    ./load_gen -I $1 -U $2 -D $3 --DIR $5 > $5/out.txt
-fi
-
 # initialize the workspace
-initialize_workspace $1 $2 $3 $5
+initialize_workspace $1 $2 $3 $5 $7
 
 # Run count_workload to compute the number of bytes that will be inserted to database
 # and write the result into file "workload_count.txt"
