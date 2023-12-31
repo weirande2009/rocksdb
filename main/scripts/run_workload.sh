@@ -58,12 +58,13 @@ run_enumerate() {
 }
 
 initialize_workspace() {
-    if ! [ $# -eq 4 ]; then
+    if ! [ $# -eq 5 ]; then
         echo 'in this shell script, there will be seven parameters, which are:'
         echo '1. the number of inserted in the workload'
         echo '2. the number of updates in the workload'
         echo '3. the number of deletes in the workload'
         echo '4. the path of the experiment workspace'
+        echo '5. the workload entry size'
         exit 1
     fi
 
@@ -94,7 +95,7 @@ initialize_workspace() {
 
     # generate workload, if there is already a workload, don't generate a new one
     if [ ! -e $4/workload.txt ]; then
-        ./load_gen -I $1 -U $2 -D $3 --DIR $4 > $4/out.txt
+        ./load_gen -E $5 -I $1 -U $2 -D $3 --DIR $4 > $4/out.txt
     fi
 
     # check whether workload.txt exists
@@ -105,7 +106,7 @@ initialize_workspace() {
 }
 
 enumerate_a_workload() {
-    if ! [ $# -eq 7 ]; then
+    if ! [ $# -eq 8 ]; then
         echo 'in this shell script, there will be seven parameters, which are:'
         echo '1. the number of inserted in the workload'
         echo '2. the number of updates in the workload'
@@ -114,11 +115,12 @@ enumerate_a_workload() {
         echo '5. the number of times to run kEnumerate'
         echo '6. the path of rocksdb'
         echo '7. the path of the experiment workspace'
+        echo '8. the workload entry size'
         exit 1
     fi
 
     # initialize the workspace
-    initialize_workspace $1 $2 $3 $7
+    initialize_workspace $1 $2 $3 $7 $8
 
     # Run count_workload to compute the number of bytes that will be inserted to database
     # and write the result into file "workload_count.txt"
