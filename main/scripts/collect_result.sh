@@ -13,6 +13,8 @@ source_dir="$1"
 
 # Set the destination directory where the files will be copied
 destination_dir="$2"
+# Make the destination directory if it doesn't exist
+mkdir -p "$destination_dir"
 
 # Iterate through each folder in the source directory
 for folder in "$source_dir"/*; do
