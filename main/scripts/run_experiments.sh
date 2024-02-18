@@ -24,12 +24,22 @@
 # ./scripts/run_for_a_type.sh 4000000 3000000 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
 
 # 3 compactions
-./scripts/run_for_a_type.sh 5500000 0 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
-./scripts/run_for_a_type.sh 4000000 3500000 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
-./scripts/run_for_a_type.sh 3500000 4000000 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
-./scripts/run_for_a_type.sh 3000000 4500000 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
+# ./scripts/run_for_a_type.sh 5500000 0 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
+# ./scripts/run_for_a_type.sh 4000000 3500000 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
+# ./scripts/run_for_a_type.sh 3500000 4000000 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
+# ./scripts/run_for_a_type.sh 3000000 4500000 0 tmp/same_compaction_times_5 800 1 mnt/rocksdb/ experiment 8
 
-# ./scripts/run_for_a_type.sh 8000000 0 0 tmp 800 1 mnt/rocksdb/ experiment 8
+# same type of workload
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/same_type_of_workload_all_insert 800 1 mnt/rocksdb/ experiment 8
 # ./scripts/run_for_a_type.sh 8000000 800000 0 tmp 800 1 mnt/rocksdb/ experiment 8
 # ./scripts/run_for_a_type.sh 8000000 1600000 0 tmp 800 1 mnt/rocksdb/ experiment 8
 # ./scripts/run_for_a_type.sh 8000000 2400000 0 tmp 800 1 mnt/rocksdb/ experiment 8
