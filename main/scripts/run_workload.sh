@@ -59,7 +59,7 @@ run_enumerate() {
 
 initialize_workspace() {
     if ! [ $# -eq 5 ]; then
-        echo 'in this shell script, there will be seven parameters, which are:'
+        echo 'in this shell script, there will be five parameters, which are:'
         echo '1. the number of inserted in the workload'
         echo '2. the number of updates in the workload'
         echo '3. the number of deletes in the workload'
@@ -107,7 +107,7 @@ initialize_workspace() {
 
 enumerate_a_workload() {
     if ! [ $# -eq 8 ]; then
-        echo 'in this shell script, there will be seven parameters, which are:'
+        echo 'in this shell script, there will be eight parameters, which are:'
         echo '1. the number of inserted in the workload'
         echo '2. the number of updates in the workload'
         echo '3. the number of deletes in the workload'

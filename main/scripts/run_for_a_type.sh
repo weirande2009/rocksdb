@@ -3,8 +3,8 @@
 source ./scripts/tools.sh
 source ./scripts/run_workload.sh
 
-if ! [ $# -eq 9 ]; then
-    echo 'in this shell script, there will be nine parameters, which are:'
+if ! [ $# -eq 11 ]; then
+    echo 'in this shell script, there will be eleven parameters, which are:'
     echo '1. the number of inserts in the workload'
     echo '2. the number of updates in the workload'
     echo '3. the number of deletes in the workload'
@@ -14,6 +14,8 @@ if ! [ $# -eq 9 ]; then
     echo '7. the path of rocksdb'
     echo '8. the path of the experiment workspace'
     echo '9. the workload entry size'
+    echo '10. whether to use the extra parameter for workload generation'
+    echo '11. the extra parameter for workload generation'
     exit 1
 fi
 
@@ -34,5 +36,12 @@ mkdir $4/$new_dir_path
 for i in $(seq 1 $6)
 do
     echo 'workload' $i
+    # if to use the extra parameter for workload generation
+    if [ $10 -eq 1 ]; then
+        if [ ! -d $7 ]; then
+            mkdir $7
+        fi
+        ./load_gen -E $9 -I $1 -U $2 -D $3 --DIR $7 $11 > $7/out.txt
+    fi
     enumerate_a_workload $1 $2 $3 $4/$new_dir_path $5 $7 $8$i $9
 done
