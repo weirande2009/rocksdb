@@ -1,37 +1,37 @@
 # workload of 16 bytes entry size
-./scripts/run_for_a_type.sh 8000000 0 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 7200000 800000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 3200000 4800000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 2400000 5600000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 1600000 6400000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 800000 7200000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 8000000 0 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 7200000 800000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 3200000 4800000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 2400000 5600000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 1600000 6400000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 800000 7200000 0 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
 
-./scripts/run_for_a_type.sh 7200000 0 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 6400000 0 1600000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 5600000 0 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 4800000 0 3200000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 4000000 0 4000000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 7200000 0 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 6400000 0 1600000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 5600000 0 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4800000 0 3200000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4000000 0 4000000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
 
-./scripts/run_for_a_type.sh 6400000 800000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 5600000 1600000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 4800000 2400000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 4000000 3200000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 3200000 4000000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 2400000 4800000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 1600000 5600000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 800000 6400000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 6400000 800000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 5600000 1600000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4800000 2400000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4000000 3200000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 3200000 4000000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 2400000 4800000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 1600000 5600000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 800000 6400000 800000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
 
-./scripts/run_for_a_type.sh 4800000 800000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 4000000 1600000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 3200000 2400000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 2400000 3200000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4800000 800000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4000000 1600000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 3200000 2400000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 2400000 3200000 2400000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
 
-./scripts/run_for_a_type.sh 4000000 800000 3200000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
-./scripts/run_for_a_type.sh 3200000 1600000 3200000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 4000000 800000 3200000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
+# ./scripts/run_for_a_type.sh 3200000 1600000 3200000 tmp/results_dif_dis_wl_entry_size_16_new 800 1 mnt/rocksdb/ experiment 16 0 --UD\ 0
 
 
 # 6 compactions
@@ -96,3 +96,25 @@
 # ./scripts/run_for_a_type.sh 500000 0 0 tmp 800 1 mnt/rocksdb/ experiment 128
 # ./scripts/run_for_a_type.sh 250000 0 0 tmp 800 1 mnt/rocksdb/ experiment 256
 # ./scripts/run_for_a_type.sh 125000 0 0 tmp 800 1 mnt/rocksdb/ experiment 512
+
+# run different update distribution
+./scripts/run_for_a_type.sh 7200000 800000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 7200000 800000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 7200000 800000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 7200000 800000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/update_normal_50_1 800 1 mnt/roocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/update_normal_50_1 800 1 mnt/roocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/update_normal_50_1 800 1 mnt/roocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/update_normal_50_1 800 1 mnt/roocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
