@@ -37,11 +37,13 @@ for i in $(seq 1 $6)
 do
     echo 'workload' $i
     # if to use the extra parameter for workload generation
-    if [ $10 -eq 1 ]; then
-        if [ ! -d $7 ]; then
-            mkdir $7
+    if [ ${10} -eq 1 ]; then
+        echo 'workload' $i 'generating'
+        if [ ! -d $8$i ]; then
+            mkdir $8$i
         fi
-        ./load_gen -E $9 -I $1 -U $2 -D $3 --DIR $7 $11 > $7/out.txt
+        ./load_gen -E $9 -I $1 -U $2 -D $3 --DIR $8$i ${11} > $8$i/out.txt
     fi
+    echo 'workload' $i 'generated'
     enumerate_a_workload $1 $2 $3 $4/$new_dir_path $5 $7 $8$i $9
 done

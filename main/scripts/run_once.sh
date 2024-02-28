@@ -24,6 +24,7 @@ fi
 
 # if to use the extra parameter for workload generation
 if [ $8 -eq 1 ]; then
+    echo 'workload generating'
     ./load_gen -E $7 -I $1 -U $2 -D $3 --DIR $5 $9 > $5/out.txt
 fi
 
