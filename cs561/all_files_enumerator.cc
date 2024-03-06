@@ -76,7 +76,7 @@ int AllFilesEnumerator::MaybeSelectLastSimilarFile(const std::vector<FileMetaDat
     if (file_overlapping_ratio[i] < threshold) {
       candidate_files.push_back(i);
     }
-  // }
+  }
   // std::cout << "candidate_files.size(): " << candidate_files.size() << std::endl;
   // for (size_t i = 0; i < candidate_files.size(); ++i) {
   //   std::cout << "candidate_files[" << i << "]: " << candidate_files[i] << std::endl;
