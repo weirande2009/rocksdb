@@ -107,16 +107,16 @@ mkdir -p $output_dir/1000000_256_50_50_0
 for k in {1..10}
 do
     echo $k
-    ./scripts/run_multiple_strategy.sh 1000000 0 0 mnt/rocksdb experimentk 256 0 0
+    ./scripts/run_multiple_strategy.sh 1000000 0 0 mnt/rocksdb experiment$k 256 0 0
     mv experiment $output_dir/1000000_256_100_0_0/
-    ./scripts/run_multiple_strategy.sh 900000 100000 0 mnt/rocksdb experimentk 256 0 0
+    ./scripts/run_multiple_strategy.sh 900000 100000 0 mnt/rocksdb experiment$k 256 0 0
     mv experiment $output_dir/1000000_256_90_10_0/
-    ./scripts/run_multiple_strategy.sh 800000 200000 0 mnt/rocksdb experimentk 256 0 0
+    ./scripts/run_multiple_strategy.sh 800000 200000 0 mnt/rocksdb experiment$k 256 0 0
     mv experiment $output_dir/1000000_256_80_20_0/
-    ./scripts/run_multiple_strategy.sh 700000 300000 0 mnt/rocksdb experimentk 256 0 0
+    ./scripts/run_multiple_strategy.sh 700000 300000 0 mnt/rocksdb experiment$k 256 0 0
     mv experiment $output_dir/1000000_256_70_30_0/
-    ./scripts/run_multiple_strategy.sh 600000 400000 0 mnt/rocksdb experimentk 256 0 0
+    ./scripts/run_multiple_strategy.sh 600000 400000 0 mnt/rocksdb experiment$k 256 0 0
     mv experiment $output_dir/1000000_256_60_40_0/
-    ./scripts/run_multiple_strategy.sh 500000 500000 0 mnt/rocksdb experimentk 256 0 0
+    ./scripts/run_multiple_strategy.sh 500000 500000 0 mnt/rocksdb experiment$k 256 0 0
     mv experiment $output_dir/1000000_256_50_50_0/
 done
