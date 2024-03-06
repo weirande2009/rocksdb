@@ -387,6 +387,10 @@ int main(int argc, char* argv[]) {
     result_file << "MinOverlappingRatio: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
   } else if(compaction_strategy == "kTwoStepsSearch") {
     result_file << "TwoStepsSearch: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
+  } else if(compaction_strategy == "kSelectLastSimilar") {
+    result_file << "SelectLastSimilar: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
+  } else if(compaction_strategy == "kManual") {
+    result_file << "Manual: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
   }
   return 0;
 }
