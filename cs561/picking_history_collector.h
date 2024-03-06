@@ -123,6 +123,11 @@ class PickingHistoryCollector {
    * Get the vector of compaction information
    */
   std::vector<CompactionInfo>& GetCompactionsInfo();
+
+  /**
+   * Get the current WA
+   */
+  size_t GetWA();
 };
 
 }  // namespace ROCKSDB_NAMESPACE

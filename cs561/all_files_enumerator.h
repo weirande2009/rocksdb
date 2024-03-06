@@ -21,10 +21,21 @@ struct SimulatedFileMetaData {
                         uint64_t num_entries_, 
                         uint64_t num_deletions_,
                         uint64_t file_size_) : 
-    smallest(smallest_), largest(largest_), num_entries(num_entries_), num_deletions(num_deletions_), file_size(file_size_) {}
+    smallest(smallest_), largest(largest_), num_entries(num_entries_), 
+    num_deletions(num_deletions_), file_size(file_size_) {}
+
+  SimulatedFileMetaData(const std::string& smallest_, 
+                        const std::string& largest_, 
+                        uint64_t num_entries_, 
+                        uint64_t num_deletions_,
+                        uint64_t file_size_) : 
+    smallest(InternalKey(Slice(smallest_), 0, kTypeValue)), 
+    largest(InternalKey(Slice(largest_), 0, kTypeValue)), 
+    num_entries(num_entries_), num_deletions(num_deletions_), file_size(file_size_) {}
 
   SimulatedFileMetaData(const FileMetaData* file) :
-    smallest(file->smallest), largest(file->largest), num_entries(file->num_entries), num_deletions(file->num_deletions), file_size(file->fd.file_size) {}
+    smallest(file->smallest), largest(file->largest), num_entries(file->num_entries), 
+    num_deletions(file->num_deletions), file_size(file->fd.file_size) {}
 
 };
 
@@ -35,14 +46,18 @@ public:
     MinOverlappingRatio,
     EnumerateAll,
     Manual,
+    TwoStepsSearch,
+    SelectLastSimilar,
   };
 
   // Compaction strategy
   CompactionStrategy strategy;
 
   static AllFilesEnumerator& GetInstance() {
-    static AllFilesEnumerator instance;
-    return instance;
+      if (instance == nullptr) {
+          instance = new AllFilesEnumerator();
+      }
+      return *instance;
   }
 
   /**
@@ -55,6 +70,8 @@ public:
    */
   int GetPickingFile(std::vector<Fsize>& temp, int level);
 
+  int MaybeSelectLastSimilarFile(const std::vector<FileMetaData*>& files, const std::vector<uint64_t>& file_overlapping_ratio);
+
   /**
    * according to the algorithm we provided, choose a new file
    * with the smallest estimated WA as the first file
@@ -64,7 +81,9 @@ public:
    * 
    * @return the index of the chosen file in its level
   */
-  int GetEstimatedFile(const std::vector<FileMetaData*>* files, int level, int num_level, const Options& op, const InternalKeyComparator& icmp);
+  int GetEstimatedFile(const std::vector<FileMetaData*>* files, int level, int num_level, const MutableCFOptions& op, const InternalKeyComparator& icmp);
+
+  int GetEstimatedFile(const std::vector<std::vector<std::shared_ptr<SimulatedFileMetaData>>>& simulated_files, int level, int num_level, const MutableCFOptions& op, const InternalKeyComparator& icmp);
 
   /**
    * Compute the overlapping bytes of a file to the next level
@@ -121,25 +140,19 @@ public:
 
   /**
    * Compute the unique number of keys in p request
-   * @param request_num the number of request
-   * @return the unique number of keys
   */
   uint64_t Unique(uint64_t request_num);
 
   /**
    * Compute the number of requests needed to achieve p unique keys
-   * @param unique_num the number of unique keys
-   * @return the number of requests needed
   */
   uint64_t UniqueInversed(uint64_t unique_num);
 
   /**
    * Compute the number of unique keys after merging two overlapping files
-   * @param unique_num1 the number of unique keys in file1
-   * @param unique_num2 the number of unique keys in file2
-   * @return the number of unique keys after merging
   */
   uint64_t Merge(uint64_t unique_num1, uint64_t unique_num2);
+
 
   /**
    * Compute the simulated files after compaction
@@ -147,7 +160,7 @@ public:
   std::vector<std::shared_ptr<SimulatedFileMetaData>> Compaction(
     const std::vector<std::shared_ptr<SimulatedFileMetaData>>& input_files, 
     const std::vector<std::shared_ptr<SimulatedFileMetaData>>& target_level_files,
-    size_t target_level, const Options& op);
+    size_t target_level, const InternalKeyComparator& icm, const MutableCFOptions& op);
 
   /**
    * Collect the compaction information
@@ -173,11 +186,13 @@ public:
   void SetLogLevel(int log_level_);
   bool CheckFinishEnumeration();
 
-  void CollectInfo(uint64_t entry_num);
+  void CollectInfo(uint64_t entry_num, uint64_t deletion_num, uint64_t file_size);
+  void SetKeySpaceSize(uint64_t size);
+  void SetKeyRange(const InternalKey& smallest, const InternalKey& largest);
 
 private:
   const size_t INFO_COLLECTOR_SIZE = 10;
-  const uint64_t KEY_SPACE_SIZE = 1e7;
+  uint64_t key_space_size_ = 1e7;
 
   // record the last version of of each level, if the
   // version remains unchanged, there is no compaction
@@ -213,8 +228,12 @@ private:
   // compactions
   int compaction_counter;
 
+  static AllFilesEnumerator* instance;
+
   AllFilesEnumerator();
-  ~AllFilesEnumerator();
+  AllFilesEnumerator(const AllFilesEnumerator&) = delete;
+  AllFilesEnumerator& operator=(const AllFilesEnumerator&) = delete;
+
 };
 
 }  // namespace ROCKSDB_NAMESPACE

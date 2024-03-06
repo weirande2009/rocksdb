@@ -7444,7 +7444,7 @@ void VersionStorageInfo::PickUnselectedFile(
 
   // Log current WA first
   AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
-
+  
   const int level = 1;
   const std::vector<FileMetaData*>& files = files_[level];
 
@@ -7468,12 +7468,8 @@ void VersionStorageInfo::PickUnselectedFile(
     file_overlapping_ratio =
         std::vector<uint64_t>(files_[level].size(), 0);
   }
-  if (AllFilesEnumerator::GetInstance().strategy !=
-      AllFilesEnumerator::CompactionStrategy::
-          EnumerateAll && AllFilesEnumerator::GetInstance().strategy !=
-      AllFilesEnumerator::CompactionStrategy::
-          Manual) {  // if not activated, only record
-                            // the choice
+  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::RoundRobin
+      || AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::MinOverlappingRatio) { 
     // collect this seletion
     AllFilesEnumerator::GetInstance().CollectCompactionInfo(
         files_, file_overlapping_ratio,
@@ -7481,13 +7477,19 @@ void VersionStorageInfo::PickUnselectedFile(
         files_by_compaction_pri[0]);
     return;
   }
+
+  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::TwoStepsSearch
+      && files_[level+1].size() == 0) {
+    return;
+  }
+
   // we should clear files_by_compaction_pri
   files_by_compaction_pri.clear();
   assert(files_by_compaction_pri.size() == 0);
   // std::cout << files_by_compaction_pri.size() <<
   // std::endl;
 
-  // choose an unselected file and put it to the first place
+  // choose a file and put it to the first place
   int chosen_file_index = 0;
   switch (AllFilesEnumerator::GetInstance().strategy) {
     case AllFilesEnumerator::CompactionStrategy::EnumerateAll:
@@ -7498,6 +7500,13 @@ void VersionStorageInfo::PickUnselectedFile(
                               .NextChoiceForManual();
       std::cout << "chosen_file_index: " << chosen_file_index << std::endl;
       break;
+    case AllFilesEnumerator::CompactionStrategy::TwoStepsSearch:
+      chosen_file_index = AllFilesEnumerator::GetInstance().GetEstimatedFile(files_, level, num_levels_, options, *internal_comparator_);
+      std::cout << "chosen_file_index: " << chosen_file_index << std::endl;
+      break;
+    case AllFilesEnumerator::CompactionStrategy::SelectLastSimilar:
+      chosen_file_index = AllFilesEnumerator::GetInstance().MaybeSelectLastSimilarFile(files, file_overlapping_ratio);
+      break;
     default:
       break;
   }
@@ -7506,6 +7515,9 @@ void VersionStorageInfo::PickUnselectedFile(
       files_, file_overlapping_ratio, num_non_empty_levels_,
       level, chosen_file_index);
   // initialize files_by_compaction_pri_
+  Fsize tmp = temp[chosen_file_index];
+  temp[chosen_file_index] = temp[0];
+  temp[0] = tmp;
   for (size_t i = 0; i < temp.size(); i++) {
     files_by_compaction_pri.push_back(
         static_cast<int>(temp[i].index));

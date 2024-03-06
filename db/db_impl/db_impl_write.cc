@@ -17,6 +17,8 @@
 #include "test_util/sync_point.h"
 #include "util/cast_util.h"
 
+#include "cs561/all_files_enumerator.h"
+
 namespace ROCKSDB_NAMESPACE {
 // Convenience methods
 Status DBImpl::Put(const WriteOptions& o, ColumnFamilyHandle* column_family,
@@ -2290,6 +2292,10 @@ Status DBImpl::SwitchMemtable(ColumnFamilyData* cfd, WriteContext* context) {
 
   cfd->mem()->SetNextLogNumber(logfile_number_);
   assert(new_mem != nullptr);
+  // TODO(ran): add the memory table info to collector here for cfd->mem()
+  AllFilesEnumerator::GetInstance().CollectInfo(cfd->mem()->num_entries(),
+                                                cfd->mem()->num_deletes(),
+                                                cfd->mem()->get_data_size());
   cfd->imm()->Add(cfd->mem(), &context->memtables_to_free_);
   new_mem->Ref();
   cfd->SetMemtable(new_mem);

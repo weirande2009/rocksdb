@@ -18,7 +18,7 @@ uint64_t RequestInfoCollector::Avg() {
       sum += q.front();
       q.pop();
   }
-  sum /= q.size();
+  sum /= q_.size();
   return sum;
 }
 

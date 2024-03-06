@@ -27,6 +27,7 @@ PickingHistoryCollector::PickingHistoryCollector()
 }
 
 PickingHistoryCollector::~PickingHistoryCollector() {
+  std::cout << "PickingHistoryCollector destructor" << std::endl;
   DumpToFile();
 }
 
@@ -128,6 +129,10 @@ void PickingHistoryCollector::CollectCompactionInfo(
 std::vector<CompactionInfo>&
 PickingHistoryCollector::GetCompactionsInfo() {
   return compactions_info;
+}
+
+size_t PickingHistoryCollector::GetWA() {
+  return WA + WA_corresponding_left_bytes;
 }
 
 }  // namespace ROCKSDB_NAMESPACE

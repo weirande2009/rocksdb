@@ -92,7 +92,7 @@ inline void showProgress(const uint64_t& workload_size,
 
 void runWorkload(Options& op, WriteOptions& write_op,
                  ReadOptions& read_op,
-                 std::string compaciton_strategy,
+                 std::string compaction_strategy,
                  uint64_t total_written_bytes,
                  const std::string& experiment_path) {
   DB* db;
@@ -100,46 +100,55 @@ void runWorkload(Options& op, WriteOptions& write_op,
   op.create_if_missing = true;
   op.write_buffer_size = 8 * 1024 * 1024;
   op.target_file_size_base = 8 * 1024 * 1024;
+  // op.target_file_size_multiplier = 1;
   op.level0_file_num_compaction_trigger = 4;
   op.max_bytes_for_level_multiplier = 4;
   op.max_bytes_for_level_base = 32 * 1024 * 1024;
 
   op.level_compaction_dynamic_level_bytes = false;
+  // op.level_compaction_dynamic_file_size = true;
 
-  int64_t bytes_per_sec = 1024 * 1024;
-  std::shared_ptr<rocksdb::RateLimiter> rate_limiter;
-  rate_limiter.reset(rocksdb::NewGenericRateLimiter(bytes_per_sec));
-
+  // int64_t bytes_per_sec = 1024 * 1024;
+  // std::shared_ptr<rocksdb::RateLimiter> rate_limiter;
+  // rate_limiter.reset(rocksdb::NewGenericRateLimiter(bytes_per_sec));
   // op.rate_limiter = rate_limiter;
 
-  std::cout << "Compaction strategy: " << compaciton_strategy << std::endl;
+  std::cout << "Compaction strategy: " << compaction_strategy << std::endl;
 
   // set the compaction strategy
-  if (compaciton_strategy == "kRoundRobin") {
+  if (compaction_strategy == "kRoundRobin") {
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::RoundRobin;
     op.compaction_pri = kRoundRobin;
-  } else if (compaciton_strategy ==
+  } else if (compaction_strategy ==
              "kMinOverlappingRatio") {
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::
             MinOverlappingRatio;
     op.compaction_pri = kMinOverlappingRatio;
-  } else if (compaciton_strategy == "kEnumerateAll") {
+  } else if (compaction_strategy == "kEnumerateAll") {
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::
             EnumerateAll;
-  } else if (compaciton_strategy == "kManual") {
+  } else if (compaction_strategy == "kManual") {
     std::string manual_list_path =
         experiment_path + "/manual_list.txt";
     AllFilesEnumerator::GetInstance().strategy =
         AllFilesEnumerator::CompactionStrategy::Manual;
     AllFilesEnumerator::GetInstance().SetManualList(
         readManualList(manual_list_path));
+  } else if (compaction_strategy == "kTwoStepsSearch") {
+    AllFilesEnumerator::GetInstance().strategy =
+        AllFilesEnumerator::CompactionStrategy::TwoStepsSearch;
+  } else if (compaction_strategy == "kSelectLastSimilar") {
+    AllFilesEnumerator::GetInstance().strategy =
+        AllFilesEnumerator::CompactionStrategy::SelectLastSimilar;
+  } else {
+    std::cerr << "Invalid compaction strategy" << std::endl;
+    exit(-1);
   }
   AllFilesEnumerator::GetInstance().SetLogLevel(2);
   // set the total bytes to be inserted to database
-  // uint64_t total_bytes = 128000000;
   uint64_t total_bytes = total_written_bytes;
 
   {
@@ -183,23 +192,42 @@ void runWorkload(Options& op, WriteOptions& write_op,
   // doing a first pass to get the workload size
   uint32_t entry_size = 8;
   uint64_t workload_size = 0;
-  uint64_t insert_update_size = 9000000;
   uint64_t inserted_bytes = 0;
-  std::string line;
-  while (std::getline(workload_file, line)) ++workload_size;
+  InternalKey smallest, largest;
+  bool first_key = true;
+  while (!workload_file.eof()) {
+    ++workload_size;
+    char instruction;
+    workload_file >> instruction;
+    std::string value, key;
+    workload_file >> key >> value;
+    if (first_key) {
+      smallest = InternalKey(Slice(key), 0, kTypeValue);
+      largest = InternalKey(Slice(key), 0, kTypeValue);
+      first_key = false;
+    } else {
+      if (smallest.user_key().compare(Slice(key)) > 0) {
+        smallest = InternalKey(Slice(key), 0, kTypeValue);
+      }
+      if (largest.user_key().compare(Slice(key)) < 0) {
+        largest = InternalKey(Slice(key), 0, kTypeValue);
+      }
+    }
+  }
   workload_file.close();
+  AllFilesEnumerator::GetInstance().SetKeyRange(smallest, largest);
+  AllFilesEnumerator::GetInstance().SetKeySpaceSize(81450625UL); // 95^4
 
   workload_file.open(workload_path);
   assert(workload_file);
 
-  //    // Clearing the system cache
-  //    std::cout << "Clearing system cache ..." <<
-  //    std::endl; int clean_flag = system("sudo sh -c 'echo
-  //    3
-  //    >/proc/sys/vm/drop_caches'"); if (clean_flag) {
-  //        std::cerr << "Cannot clean the system cache" <<
-  //        std::endl; exit(0);
-  //    }
+  // Clearing the system cache
+  // std::cout << "Clearing system cache ..." << std::endl; 
+  // int clean_flag = system("sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches'"); 
+  // if (clean_flag) {
+  //     std::cerr << "Cannot clean the system cache" << std::endl; 
+  //     exit(0);
+  // }
 
   AllFilesEnumerator::GetInstance()
       .GetCollector()
@@ -345,5 +373,20 @@ int main(int argc, char* argv[]) {
       std::to_string(durationInMicroseconds.count()) +
       "us");
   AllFilesEnumerator::GetInstance().GetCollector().DumpToFile();
+  std::string experiment_path = argv[4];
+  std::string result_path = experiment_path + "/result.txt";
+  std::ofstream result_file;
+  result_file.open(result_path, std::ios::app);
+  if (!result_file.is_open()) {
+    std::cerr << "Cannot open result file" << std::endl;
+    exit(-1);
+  }
+  if (compaction_strategy == "kRoundRobin") {
+    result_file << "RoundRobin: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
+  } else if(compaction_strategy == "kMinOverlappingRatio") {
+    result_file << "MinOverlappingRatio: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
+  } else if(compaction_strategy == "kTwoStepsSearch") {
+    result_file << "TwoStepsSearch: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
+  }
   return 0;
 }

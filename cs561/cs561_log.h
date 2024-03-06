@@ -17,6 +17,7 @@ struct FileInfo {
   uint64_t raw_key_size = 0;
   uint64_t raw_value_size = 0;
   uint64_t overlapping_bytes = 0;
+  uint64_t file_size = 0;
 
   FileInfo(const FileMetaData* file,
            uint64_t overlapping_bytes_ = 0)
@@ -26,7 +27,8 @@ struct FileInfo {
         num_deletions(file->num_deletions),
         raw_key_size(file->raw_key_size),
         raw_value_size(file->raw_value_size),
-        overlapping_bytes(overlapping_bytes_) {}
+        overlapping_bytes(overlapping_bytes_),
+        file_size(file->fd.file_size) {}
 };
 
 struct CompactionInfo {

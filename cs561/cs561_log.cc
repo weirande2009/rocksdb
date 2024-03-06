@@ -186,6 +186,8 @@ void CS561Log::LogCompactionInfoForLevel(
          << "\t"
          << "Raw value size"
          << "\t"
+         << "File size"
+         << "\t"
          << "Overlapping ratio"
          << "\t" << std::endl;
   for (size_t j = 0;
@@ -227,6 +229,11 @@ void CS561Log::LogCompactionInfoForLevel(
             compaction_info.level_files_info[level][j]
                 .raw_value_size));
     AlignOutput(
+        target, "File size",
+        std::to_string(
+            compaction_info.level_files_info[level][j]
+                .file_size));
+    AlignOutput(
         target, "Overlapping ratio",
         std::to_string(compaction_info.level_files_info[level][j]
                 .overlapping_bytes));
@@ -238,14 +245,11 @@ void CS561Log::LogCompactionInfoForLevel(
 void CS561Log::AlignOutput(std::ofstream& of,
                            const std::string& align_target,
                            const std::string& output) {
-  size_t align_length =
-      (floor(static_cast<double>(align_target.length()) /
-             4) +
-       1) *
-      4;
-  size_t number_of_extra_tab = ceil(
-      static_cast<double>(align_length - output.length()) /
-      4);
+  size_t align_length = (floor(static_cast<double>(align_target.length()) / 4) + 1) * 4;
+  size_t number_of_extra_tab = ceil(static_cast<double>(align_length - output.length()) / 4);
+  if (align_length <= output.length()) {
+    number_of_extra_tab = 1;
+  }
   of << output;
   for (size_t i = 0; i < number_of_extra_tab; i++) {
     of << "\t";
