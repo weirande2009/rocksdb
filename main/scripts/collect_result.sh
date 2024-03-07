@@ -37,6 +37,7 @@ for folder in "$source_dir"/*; do
         # Copy the specific files from the subfolder to the destination folder
         cp "$subfolder"/minimum.txt "$target_dir"
         cp "$subfolder"/log.txt "$target_dir"
+        cp "$subfolder"/result.txt "$target_dir"
       fi
     done
   fi
