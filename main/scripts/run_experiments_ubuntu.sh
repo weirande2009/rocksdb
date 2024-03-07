@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # run multiple times
 # ./scripts/run_for_a_type.sh 8000000 0 0 result_multiple_times_delete 800 1 mnt/rocksdb/ experiment 8
 # ./scripts/run_for_a_type.sh 8000000 0 0 result_multiple_times_delete 800 1 mnt/rocksdb/ experiment 8
@@ -50,7 +52,7 @@
 # ./scripts/run_for_a_type.sh 4000000 4000000 0 result_multiple_times_delete 800 1 mnt/rocksdb/ experiment 16
 # ./scripts/run_for_a_type.sh 4000000 4000000 0 result_multiple_times_delete 800 1 mnt/rocksdb/ experiment 16
 
-output_dir=tmp/select_last_similar_for_different_workload/second
+output_dir=tmp/select_last_similar_for_different_workload/third
 mkdir -p $output_dir
 mkdir -p $output_dir/8000000_8_100_0_0
 mkdir -p $output_dir/8000000_8_90_10_0
@@ -58,6 +60,7 @@ mkdir -p $output_dir/8000000_8_80_20_0
 mkdir -p $output_dir/8000000_8_70_30_0
 mkdir -p $output_dir/8000000_8_60_40_0
 mkdir -p $output_dir/8000000_8_50_50_0
+
 for i in {1..10}
 do
     echo $i
@@ -82,6 +85,7 @@ mkdir -p $output_dir/6000000_32_80_20_0
 mkdir -p $output_dir/6000000_32_70_30_0
 mkdir -p $output_dir/6000000_32_60_40_0
 mkdir -p $output_dir/6000000_32_50_50_0
+
 for j in {1..10}
 do
     echo $j
@@ -106,6 +110,7 @@ mkdir -p $output_dir/1000000_256_80_20_0
 mkdir -p $output_dir/1000000_256_70_30_0
 mkdir -p $output_dir/1000000_256_60_40_0
 mkdir -p $output_dir/1000000_256_50_50_0
+
 for k in {1..10}
 do
     echo $k
