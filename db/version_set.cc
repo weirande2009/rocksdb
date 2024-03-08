@@ -7439,13 +7439,18 @@ namespace {
 
 // WEI RAN
 void VersionStorageInfo::PickUnselectedFile(
+    int start_level, int output_level, 
     const ImmutableOptions& ioptions,
     const MutableCFOptions& options) {
+  if (!(AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::SelectLastSimilar
+    || (start_level == 1 && output_level == 2)) || start_level == 0) {
+    return;
+  }
 
   // Log current WA first
   AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
   
-  const int level = 1;
+  int level = start_level;
   const std::vector<FileMetaData*>& files = files_[level];
 
   // populate a temp vector for sorting based on size

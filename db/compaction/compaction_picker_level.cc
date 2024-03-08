@@ -799,10 +799,7 @@ bool LevelCompactionBuilder::PickFileToCompact() {
   // if the start_level is L1 and output_level is L2, we use
   // our AllFilesEnumerator to put an unselected file to the
   // first place
-  if (start_level_ == 1 && output_level_ == 2) {
-    vstorage_->PickUnselectedFile(ioptions_,
-                                  mutable_cf_options_);
-  }
+  vstorage_->PickUnselectedFile(start_level_, output_level_, ioptions_, mutable_cf_options_);
 
   const std::vector<FileMetaData*>& level_files =
       vstorage_->LevelFiles(start_level_);

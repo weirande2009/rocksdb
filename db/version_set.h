@@ -142,7 +142,7 @@ class VersionStorageInfo {
 
   // WEI RAN
   // Pick an unselected file for compaction from L1 to L2
-  void PickUnselectedFile(const ImmutableOptions& ioptions,
+  void PickUnselectedFile(int start_level, int output_level, const ImmutableOptions& ioptions,
                           const MutableCFOptions& options);
 
   void Reserve(int level, size_t size) { files_[level].reserve(size); }
