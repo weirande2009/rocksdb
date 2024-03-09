@@ -38,8 +38,16 @@ output_dir=tmp/select_last_similar_for_different_workload_all_insert/second
 mkdir -p $output_dir
 for i in {1..10}
 do
-    ./scripts/run_once.sh 8000000 0 0 mnt/rocksdb experiment kSelectLastSimilar 8 0 0
-    mv experiment $output_dir/$i
+    echo $i
+    # ./scripts/run_once.sh 8000000 0 0 mnt/rocksdb experiment kSelectLastSimilar 8 0 0
+    # mv experiment $output_dir/$i
+done
+
+for i in {1..10}
+do
+    echo $i
+    # ./scripts/run_once.sh 8000000 0 0 mnt/rocksdb experiment kSelectLastSimilar 8 0 0
+    # mv experiment $output_dir/$i
 done
 
 
