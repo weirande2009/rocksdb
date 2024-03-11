@@ -98,11 +98,11 @@
 # ./scripts/run_for_a_type.sh 125000 0 0 tmp 800 1 mnt/rocksdb/ experiment 512
 
 # run different update distribution
-# ./scripts/run_for_a_type.sh 7200000 800000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
-# ./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
-# ./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
-# ./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/update_normal_50_1 800 1 mnt/roocksdb/ experiment 8 1 --UD\ 1
-# ./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 7200000 800000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 5600000 2400000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4800000 3200000 0 tmp/update_normal_50_1 800 1 mnt/roocksdb/ experiment 8 1 --UD\ 1
+./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
 
 # ./scripts/run_for_a_type.sh 7200000 800000 0 tmp/update_beta_1_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 2
 # ./scripts/run_for_a_type.sh 6400000 1600000 0 tmp/update_beta_1_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 2
@@ -137,8 +137,8 @@
 # ./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
 # ./scripts/run_for_a_type.sh 4000000 4000000 0 tmp/update_normal_50_1 800 1 mnt/rocksdb/ experiment 8 1 --UD\ 1
 
-./scripts/run_for_a_type.sh 5400000 0 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
-./scripts/run_for_a_type.sh 4800000 600000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
-./scripts/run_for_a_type.sh 4200000 1200000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
-./scripts/run_for_a_type.sh 3600000 1800000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
-./scripts/run_for_a_type.sh 3000000 2400000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
+# ./scripts/run_for_a_type.sh 5400000 0 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
+# ./scripts/run_for_a_type.sh 4800000 600000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
+# ./scripts/run_for_a_type.sh 4200000 1200000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
+# ./scripts/run_for_a_type.sh 3600000 1800000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
+# ./scripts/run_for_a_type.sh 3000000 2400000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
