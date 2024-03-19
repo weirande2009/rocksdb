@@ -142,6 +142,9 @@ class CS561Log {
   static void Log(const std::string& content,
                   LogLevel log_level = INFO);
 
+  static void LogContent(std::ofstream& of, const std::string& content,
+                  LogLevel log_level = INFO);
+
   /**
    * Record the total WA for a certain run
    * @param WA write amplification of a run

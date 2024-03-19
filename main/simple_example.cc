@@ -392,5 +392,6 @@ int main(int argc, char* argv[]) {
   } else if(compaction_strategy == "kManual") {
     result_file << "Manual: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
   }
+  AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
   return 0;
 }

@@ -38,6 +38,7 @@ for folder in "$source_dir"/*; do
         cp "$subfolder"/minimum.txt "$target_dir"
         cp "$subfolder"/log.txt "$target_dir"
         cp "$subfolder"/result.txt "$target_dir"
+        cp "$subfolder"/content.txt "$target_dir"
         rm -rf "$subfolder"/workload.txt
       fi
     done

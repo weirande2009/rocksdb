@@ -43,6 +43,8 @@
 #include "util/coding.h"
 #include "util/mutexlock.h"
 
+#include "cs561/cs561_log.h"
+
 namespace ROCKSDB_NAMESPACE {
 
 ImmutableMemTableOptions::ImmutableMemTableOptions(
@@ -213,6 +215,12 @@ bool MemTable::ShouldFlushNow() {
   // flush earlier even though we still have much available memory left.
   if (allocated_memory >
       write_buffer_size + kArenaBlockSize * kAllowOverAllocationRatio) {
+    // std::string log_str = "Memtable is too big: " +
+    //                       std::to_string(allocated_memory) + " > " +
+    //                       std::to_string(write_buffer_size) + " + " +
+    //                       std::to_string(kArenaBlockSize) + " * " +
+    //                       std::to_string(kAllowOverAllocationRatio);
+    // CS561Log::Log(log_str);
     return true;
   }
 
@@ -241,6 +249,19 @@ bool MemTable::ShouldFlushNow() {
   // NOTE: the average percentage of waste space of this approach can be counted
   // as: "arena block size * 0.25 / write buffer size". User who specify a small
   // write buffer size and/or big arena block size may suffer.
+  if (arena_.AllocatedAndUnused() < kArenaBlockSize / 4) {
+    // std::string log_str = "arena_.AllocatedAndUnused() < kArenaBlockSize / 4, where " +
+    //                       std::to_string(arena_.AllocatedAndUnused()) + " < " +
+    //                       std::to_string(kArenaBlockSize) + " / 4"; 
+    // CS561Log::Log(log_str);
+    // log_str = "allocated_memory = " + std::to_string(allocated_memory) + ", table_->ApproximateMemoryUsage() = " + std::to_string(table_->ApproximateMemoryUsage()) + ", range_del_table_->ApproximateMemoryUsage() = " + std::to_string(range_del_table_->ApproximateMemoryUsage()) + ", arena_.MemoryAllocatedBytes() = " + std::to_string(arena_.MemoryAllocatedBytes());
+    // CS561Log::Log(log_str);
+    // log_str = std::to_string(allocated_memory) + " > " +
+    //                       std::to_string(write_buffer_size) + " + " +
+    //                       std::to_string(kArenaBlockSize) + " * " +
+    //                       std::to_string(kAllowOverAllocationRatio);
+    // CS561Log::Log(log_str);
+  }
   return arena_.AllocatedAndUnused() < kArenaBlockSize / 4;
 }
 

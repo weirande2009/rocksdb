@@ -7488,6 +7488,11 @@ void VersionStorageInfo::PickUnselectedFile(
     return;
   }
 
+  // if the min element of file_overlapping_ratio is 0, we should skip
+  // if (*std::min_element(file_overlapping_ratio.begin(), file_overlapping_ratio.end()) == 0) {
+  //   return;
+  // }
+
   // we should clear files_by_compaction_pri
   files_by_compaction_pri.clear();
   assert(files_by_compaction_pri.size() == 0);

@@ -275,10 +275,10 @@ bool CompactionOutputs::ShouldStopBefore(const CompactionIterator& c_iter) {
 
   // reach the max file size
   if (current_output_file_size_ >= compaction_->max_output_file_size()) {
-    log_string = "current_output_file_size_ >= compaction_->max_output_file_size()";
-    CS561Log::Log(log_string);
-    log_string = "current_output_file_size_: " + std::to_string(current_output_file_size_) + ", max_output_file_size: " + std::to_string(compaction_->max_output_file_size());
-    CS561Log::Log(log_string);
+    // log_string = "current_output_file_size_ >= compaction_->max_output_file_size()";
+    // CS561Log::Log(log_string);
+    // log_string = "current_output_file_size_: " + std::to_string(current_output_file_size_) + ", max_output_file_size: " + std::to_string(compaction_->max_output_file_size());
+    // CS561Log::Log(log_string);
     return true;
   }
 
@@ -295,18 +295,18 @@ bool CompactionOutputs::ShouldStopBefore(const CompactionIterator& c_iter) {
   // only check if the current key is going to cross the grandparents file
   // boundary (either the file beginning or ending).
   if (num_grandparent_boundaries_crossed > 0) {
-    log_string = "num_grandparent_boundaries_crossed > 0 when " + internal_key.ToString() + " is being processed";
-    CS561Log::Log(log_string);
+    // log_string = "num_grandparent_boundaries_crossed > 0 when " + internal_key.ToString() + " is being processed";
+    // CS561Log::Log(log_string);
     // Cut the file before the current key if the size of the current output
     // file + its overlapped grandparent files is bigger than
     // max_compaction_bytes. Which is to prevent future bigger than
     // max_compaction_bytes compaction from the current output level.
     if (grandparent_overlapped_bytes_ + current_output_file_size_ >
         compaction_->max_compaction_bytes()) {
-      log_string = "grandparent_overlapped_bytes_ + current_output_file_size_ > compaction_->max_compaction_bytes()";
-      CS561Log::Log(log_string);
-      log_string = "num_grandparent_boundaries_crossed: " + std::to_string(num_grandparent_boundaries_crossed);
-      CS561Log::Log(log_string);
+      // log_string = "grandparent_overlapped_bytes_ + current_output_file_size_ > compaction_->max_compaction_bytes()";
+      // CS561Log::Log(log_string);
+      // log_string = "num_grandparent_boundaries_crossed: " + std::to_string(num_grandparent_boundaries_crossed);
+      // CS561Log::Log(log_string);
       return true;
     }
 
@@ -335,12 +335,12 @@ bool CompactionOutputs::ShouldStopBefore(const CompactionIterator& c_iter) {
             num_skippable_boundaries_crossed &&
         grandparent_overlapped_bytes_ - previous_overlapped_bytes >
             compaction_->target_output_file_size() / 8) {
-      log_string = "cut file in first condition";
-      CS561Log::Log(log_string);
-      log_string = "num_grandparent_boundaries_crossed: " + std::to_string(num_grandparent_boundaries_crossed);
-      log_string += ", grandparent_overlapped_bytes_: " + std::to_string(grandparent_overlapped_bytes_);
-      log_string += ", previous_overlapped_bytes: " + std::to_string(previous_overlapped_bytes);
-      CS561Log::Log(log_string);
+      // log_string = "cut file in first condition";
+      // CS561Log::Log(log_string);
+      // log_string = "num_grandparent_boundaries_crossed: " + std::to_string(num_grandparent_boundaries_crossed);
+      // log_string += ", grandparent_overlapped_bytes_: " + std::to_string(grandparent_overlapped_bytes_);
+      // log_string += ", previous_overlapped_bytes: " + std::to_string(previous_overlapped_bytes);
+      // CS561Log::Log(log_string);
       return true;
     }
 
@@ -356,11 +356,11 @@ bool CompactionOutputs::ShouldStopBefore(const CompactionIterator& c_iter) {
     // target file size. The test shows it can generate larger files than a
     // static threshold like 75% and has a similar write amplification
     // improvement.
-    log_string = "current_output_file_size_: " + std::to_string(current_output_file_size_);
-    log_string += ", threshold: " + std::to_string(((compaction_->target_output_file_size() + 99) / 100) * (50 + std::min(grandparent_boundary_switched_num_ * 5, size_t{40})));
-    log_string += ", grandparent_boundary_switched_num_: " + std::to_string(grandparent_boundary_switched_num_);
-    log_string += ", num_grandparent_boundaries_crossed: " + std::to_string(num_grandparent_boundaries_crossed);
-    CS561Log::Log(log_string);
+    // log_string = "current_output_file_size_: " + std::to_string(current_output_file_size_);
+    // log_string += ", threshold: " + std::to_string(((compaction_->target_output_file_size() + 99) / 100) * (50 + std::min(grandparent_boundary_switched_num_ * 5, size_t{40})));
+    // log_string += ", grandparent_boundary_switched_num_: " + std::to_string(grandparent_boundary_switched_num_);
+    // log_string += ", num_grandparent_boundaries_crossed: " + std::to_string(num_grandparent_boundaries_crossed);
+    // CS561Log::Log(log_string);
     if (compaction_->immutable_options()->compaction_style ==
             kCompactionStyleLevel &&
         compaction_->immutable_options()->level_compaction_dynamic_file_size &&
@@ -368,8 +368,8 @@ bool CompactionOutputs::ShouldStopBefore(const CompactionIterator& c_iter) {
             ((compaction_->target_output_file_size() + 99) / 100) *
                 (50 + std::min(grandparent_boundary_switched_num_ * 5,
                                size_t{40}))) {
-      log_string = "cut file in second condition";
-      CS561Log::Log(log_string);
+      // log_string = "cut file in second condition";
+      // CS561Log::Log(log_string);
       return true;
     }
   }

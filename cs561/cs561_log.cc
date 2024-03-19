@@ -25,6 +25,11 @@ void CS561Log::Log(const std::string& content,
                    LogLevel log_level) {
   std::ofstream log_file(LOG_ROOT + "/" + LOG_FILEPATH,
                          std::ios::app);
+  LogContent(log_file, content, log_level);
+}
+
+void CS561Log::LogContent(std::ofstream& of, const std::string& content,
+                   LogLevel log_level) {
   const auto now = std::chrono::system_clock::to_time_t(
       std::chrono::system_clock::now());
   const auto local_time = std::localtime(&now);
@@ -43,16 +48,19 @@ void CS561Log::Log(const std::string& content,
       log_type = "NONE";
       break;
   }
-  log_file << std::put_time(local_time, "%Y-%m-%d %H:%M:%S")
+  of << std::put_time(local_time, "%Y-%m-%d %H:%M:%S")
            << " --- "
            << "(" << log_type << ")" << content
            << std::endl;
-  log_file.flush();
+  of.flush();
 }
 
 void CS561Log::LogResult(size_t WA, size_t left_bytes) {
   Log("write amplification: " + std::to_string(WA) +
       ", left bytes: " + std::to_string(left_bytes));
+  std::ofstream content_file(LOG_ROOT + "/content.txt",
+                         std::ios::app);
+  LogContent(content_file, "write amplification: " + std::to_string(WA));
 }
 
 void CS561Log::LogMinimum(

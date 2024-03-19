@@ -832,14 +832,26 @@
 #     mv $experiment_name $output_dir/1500000_512_10_90_0_zipf_default/
 # done
 
-output_dir=tmp/select_last_similar_for_different_workload/level3
-mkdir -p $output_dir/1200000_256_10_90_0
+# output_dir=tmp/select_last_similar_for_different_workload/level3
+# mkdir -p $output_dir/1200000_256_10_90_0
 
-for j in {1..10}
+# for j in {1..10}
+# do
+#     echo $j
+#     experiment_name=experiment$j
+#     ./scripts/run_multiple_strategy.sh 120000 1080000 0 mnt/rocksdb $experiment_name 256 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1200000_256_10_90_0/
+# done
+
+output_dir=tmp/select_last_similar_for_different_workload/test_more
+mkdir -p $output_dir/1200000_256_80_20_0
+
+for k in {1..10}
 do
-    echo $j
-    experiment_name=experiment$j
-    ./scripts/run_multiple_strategy.sh 120000 1080000 0 mnt/rocksdb $experiment_name 256 0 0
+    echo $k
+    experiment_name=experiment$k
+    ./scripts/run_multiple_strategy.sh 960000 240000 0 mnt/rocksdb $experiment_name 256 1 --UD\ 2
     rm -rf $experiment_name/workload.txt
-    mv $experiment_name $output_dir/1200000_256_10_90_0/
+    mv $experiment_name $output_dir/1200000_256_80_20_0_beta_default/
 done

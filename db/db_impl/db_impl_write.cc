@@ -2292,10 +2292,17 @@ Status DBImpl::SwitchMemtable(ColumnFamilyData* cfd, WriteContext* context) {
 
   cfd->mem()->SetNextLogNumber(logfile_number_);
   assert(new_mem != nullptr);
-  // TODO(ran): add the memory table info to collector here for cfd->mem()
+  // WEI RAN
+  // add the memory table info to collector here for cfd->mem()
   AllFilesEnumerator::GetInstance().CollectInfo(cfd->mem()->num_entries(),
                                                 cfd->mem()->num_deletes(),
                                                 cfd->mem()->get_data_size());
+  // std::string log_str = "new memory table size: " +
+  //                       std::to_string(cfd->mem()->get_data_size());
+  // CS561Log::Log(log_str);
+  // log_str = "new memory table number of entries: " +
+  //           std::to_string(cfd->mem()->num_entries());
+  // CS561Log::Log(log_str);
   cfd->imm()->Add(cfd->mem(), &context->memtables_to_free_);
   new_mem->Ref();
   cfd->SetMemtable(new_mem);
