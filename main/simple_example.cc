@@ -392,6 +392,8 @@ int main(int argc, char* argv[]) {
   } else if(compaction_strategy == "kManual") {
     result_file << "Manual: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
   }
+  // Record the duration to result.txt
+  result_file << "Total running time: " << durationInMicroseconds.count() << " us" << std::endl;
   AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
   return 0;
 }
