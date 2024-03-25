@@ -857,7 +857,56 @@
 # done
 
 # time test
-output_dir=tmp/select_last_similar_for_different_workload/level4_time
+# output_dir=tmp/select_last_similar_for_different_workload/level4_time
+
+# mkdir -p $output_dir/1500000_512_100_0_0
+# mkdir -p $output_dir/1500000_512_90_10_0
+# mkdir -p $output_dir/1500000_512_80_20_0
+# mkdir -p $output_dir/1500000_512_70_30_0
+# mkdir -p $output_dir/1500000_512_60_40_0
+# mkdir -p $output_dir/1500000_512_50_50_0
+# mkdir -p $output_dir/1500000_512_40_60_0
+# mkdir -p $output_dir/1500000_512_30_70_0
+# mkdir -p $output_dir/1500000_512_20_80_0
+# mkdir -p $output_dir/1500000_512_10_90_0
+
+# for k in {1..10}
+# do
+#     echo $k
+#     experiment_name=experiment$k
+#     ./scripts/run_multiple_strategy.sh 1500000 0 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_100_0_0/
+#     ./scripts/run_multiple_strategy.sh 1350000 150000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_90_10_0/
+#     ./scripts/run_multiple_strategy.sh 1200000 300000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_80_20_0/
+#     ./scripts/run_multiple_strategy.sh 1050000 450000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_70_30_0/
+#     ./scripts/run_multiple_strategy.sh 900000 600000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_60_40_0/
+#     ./scripts/run_multiple_strategy.sh 750000 750000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_50_50_0/
+#     ./scripts/run_multiple_strategy.sh 600000 900000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_40_60_0/
+#     ./scripts/run_multiple_strategy.sh 450000 1050000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_30_70_0/
+#     ./scripts/run_multiple_strategy.sh 300000 1200000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_20_80_0/
+#     ./scripts/run_multiple_strategy.sh 150000 1350000 0 mnt/rocksdb $experiment_name 512 0 0
+#     rm -rf $experiment_name/workload.txt
+#     mv $experiment_name $output_dir/1500000_512_10_90_0/
+# done
+
+output_dir=tmp/select_last_similar_for_different_workload/level4_v2
 
 mkdir -p $output_dir/1500000_512_100_0_0
 mkdir -p $output_dir/1500000_512_90_10_0

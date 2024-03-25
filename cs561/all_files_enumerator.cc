@@ -90,11 +90,11 @@ int AllFilesEnumerator::MaybeSelectLastSimilarFile(const std::vector<FileMetaDat
   }
 
   // select the file whose next file has the largest overlapping ratio. 
-  uint64_t max_next_file_overlap = std::numeric_limits<uint64_t>::min();
+  uint64_t min_combined_or = std::numeric_limits<uint64_t>::max();
   size_t selected_file_index = 0;
   for(size_t i = 0; i < candidate_files.size(); ++i) {
-    if (file_overlapping_ratio[candidate_files[i]+1] > max_next_file_overlap) {
-      max_next_file_overlap = file_overlapping_ratio[candidate_files[i]+1];
+    if (file_overlapping_ratio[candidate_files[i]] * 0.05 - file_overlapping_ratio[candidate_files[i]+1] < min_combined_or) {
+      min_combined_or = file_overlapping_ratio[candidate_files[i]] * 0.05 - file_overlapping_ratio[candidate_files[i]+1];
       selected_file_index = candidate_files[i];
     }
   }
