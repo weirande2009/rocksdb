@@ -144,11 +144,12 @@
 # ./scripts/run_for_a_type.sh 3000000 2400000 0 tmp/16_entry_bytes_dif_workloads 800 1 mnt/rocksdb/ experiment 16 0 0
 
 
-./scripts/run_for_a_type.sh 1500000 0 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
-./scripts/run_for_a_type.sh 1350000 150000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
-./scripts/run_for_a_type.sh 1200000 300000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
-./scripts/run_for_a_type.sh 1050000 450000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
-./scripts/run_for_a_type.sh 900000 600000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
-./scripts/run_for_a_type.sh 750000 750000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
+# ./scripts/run_for_a_type.sh 1500000 0 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
+# ./scripts/run_for_a_type.sh 1350000 150000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
+# ./scripts/run_for_a_type.sh 1200000 300000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
+# ./scripts/run_for_a_type.sh 1050000 450000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
+# ./scripts/run_for_a_type.sh 900000 600000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
+# ./scripts/run_for_a_type.sh 750000 750000 0 tmp/level4_opt 800 1 mnt/rocksdb experiment 512 1 -L\ 0.0078125
 
-
+# ./scripts/run_once.sh 5200000 0 0 mnt/rocksdb experiment kMinOverlappingRatio 32 1 -L\ 0.125
+./scripts/run_for_a_type.sh 5200000 0 0 tmp/compaction_12 800 1 mnt/rocksdb experiment 32 1 -L\ 0.125
