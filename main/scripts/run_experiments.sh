@@ -255,7 +255,7 @@ do
 done
 
 # larger workload down to level 3
-output_dir=tmp/select_last_similar_for_different_workload/level3
+output_dir=tmp/select_last_similar_for_different_workload/level3_zoe
 mkdir -p $output_dir/8000000_32_100_0_0
 mkdir -p $output_dir/8000000_32_90_10_0
 mkdir -p $output_dir/8000000_32_80_20_0
