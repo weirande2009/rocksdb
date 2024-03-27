@@ -329,11 +329,10 @@
 #     ./scripts/run_multiple_strategy.sh 120000 1080000 0 mnt/rocksdb $experiment_name 256 0 0
 #     mv $experiment_name $output_dir/1200000_256_10_90_0/
 # done
+./scripts/run_for_a_type.sh 8000000 0 0 tmp/dif_wl_8m_32 800 1 mnt/rocksdb experiment 32 0 0
+./scripts/run_for_a_type.sh 7200000 800000 0 tmp/dif_wl_8m_32 800 1 mnt/rocksdb experiment 32 0 0
+./scripts/run_for_a_type.sh 6800000 800000 400000 tmp/dif_wl_8m_32 800 1 mnt/rocksdb experiment 32 0 0
 
-./scripts/run_for_a_type.sh 8000000 0 0 tmp/dif_wl_8m_32 800 1 mnt/rocksdb experiment 32 1 0 0
-./scripts/run_for_a_type.sh 7200000 800000 0 tmp/dif_wl_8m_32 800 1 mnt/rocksdb experiment 32 1 0 0
-./scripts/run_for_a_type.sh 6800000 800000 400000 tmp/dif_wl_8m_32 800 1 mnt/rocksdb experiment 32 1 0 0
-
-./scripts/run_for_a_type.sh 16000000 0 0 tmp/dif_16m_8 800 1 mnt/rocksdb experiment 8 1 0 0
-./scripts/run_for_a_type.sh 14400000 1600000 0 tmp/dif_16m_8 800 1 mnt/rocksdb experiment 8 1 0 0
-./scripts/run_for_a_type.sh 13600000 1600000 800000 tmp/dif_16m_8 800 1 mnt/rocksdb experiment 8 1 0 0
+./scripts/run_for_a_type.sh 16000000 0 0 tmp/dif_16m_8 800 1 mnt/rocksdb experiment 8 0 0
+./scripts/run_for_a_type.sh 14400000 1600000 0 tmp/dif_16m_8 800 1 mnt/rocksdb experiment 8 0 0
+./scripts/run_for_a_type.sh 13600000 1600000 800000 tmp/dif_16m_8 800 1 mnt/rocksdb experiment 8 0 0
