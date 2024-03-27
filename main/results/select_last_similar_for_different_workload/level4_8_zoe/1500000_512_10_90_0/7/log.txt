@@ -1,0 +1,1387 @@
+2024-03-27 01:55:29 --- (INFO)==================================================
+2024-03-27 01:55:29 --- (INFO)Program information: 
+2024-03-27 01:55:29 --- (INFO)Compaction strategy: kMinOverlappingRatio
+2024-03-27 01:55:29 --- (INFO)Total written bytes: 768000000
+2024-03-27 01:55:29 --- (INFO)Database path: mnt/rocksdb
+2024-03-27 01:55:29 --- (INFO)Experiment path: experiment5
+2024-03-27 01:55:30 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:30 --- (INFO)compaction start level[0], compaction files[27,25,21,18], start level files[27,25,21,18], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:30 --- (INFO)write amplification: 72951320, left bytes: 660023808
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 6ded7808ea97e2fc
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!8,			^^DA		14761			0				177132			7498588			7763808		0					
+1			!!8P			^^I<		14756			0				177072			7496048			7761054		0					
+2			!!/i			^^jw		14776			0				177312			7506208			7771632		0					
+3			!!/i			^^qq		14774			0				177288			7505192			7770585		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+3			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+4			L</M			YF'R		16017			0				192204			8136636			8420898		0					
+5			YF1P			^^~b		6583			0				78996			3344164			3461299		0					
+
+2024-03-27 01:55:30 --- (INFO)compaction start level[1], compaction files[28,31,32,35], start level files[28,31,32,35,39,41], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:30 --- (INFO)compaction start level[0], compaction files[43,40,37,34,30], start level files[43,40,37,34,30], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:31 --- (INFO)write amplification: 112290413, left bytes: 632720384
+Compaction 2 in level 1 Choice: file No.4
+Hash value: 4ae7021759892551
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!=(			^^wh		14766			0				177192			7501128			7766363		0					
+1			!!92			^^I<		14788			0				177456			7512304			7777943		0					
+2			!!.!			^^c}		14772			0				177264			7504176			7769461		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!/i			)T@F		11339			0				136068			5760212			5961535		1446				
+1			)TC/			2K&g		11330			0				135960			5755640			5956876		1447				
+2			2K-]			?9TH		11159			0				133908			5668772			5867305		1469				
+3			?9])			L<,G		11321			0				135852			5751068			5952581		1448				
+4*			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+3			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+
+2024-03-27 01:55:31 --- (INFO)compaction start level[1], compaction files[52], start level files[44,47,48,51,52], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:31 --- (INFO)compaction start level[0], compaction files[56,54,50,46], start level files[56,54,50,46], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:31 --- (INFO)write amplification: 154892484, left bytes: 591450112
+Compaction 3 in level 1 Choice: file No.0
+Hash value: 4168e3c1276f891c
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!<5			^^c}		14747			0				176964			7491476			7756427		0					
+1			!!8,			^^w#		14744			0				176928			7489952			7754808		0					
+2			!!/i			^^RY		14755			0				177060			7495540			7760538		0					
+3			!!0e			^^wh		14775			0				177300			7505700			7771140		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!.!			)T@F		17045			0				204540			8658860			8960413		962					
+1			)TC/			2K&g		17015			0				204180			8643620			8944647		963					
+2			2K-]			?9V6		16877			0				202524			8573516			8872892		971					
+3			?9WO			L<,G		16949			0				203388			8610092			8910698		967					
+4			L</M			^^wh		13148			0				157776			6679184			6913421		2310				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+3			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+4			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:31 --- (INFO)compaction start level[1], compaction files[57], start level files[57,60,63,66,69], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:31 --- (INFO)compaction start level[0], compaction files[71,68,65,62,59], start level files[71,68,65,62,59], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:31 --- (INFO)write amplification: 219393244, left bytes: 546034688
+Compaction 4 in level 1 Choice: file No.1
+Hash value: 1457b334a7b7cece
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!8,			^^01		14712			0				176544			7473696			7737908		0					
+1			!!.!			^^~|		14794			0				177528			7515352			7781009		0					
+2			!!0e			^^DA		14792			0				177504			7514336			7780004		0					
+3			!!/i			^^wh		14759			0				177108			7497572			7762644		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T>6		11231			0				134772			5705348			5904813		2147				
+1*			)TC/			2K+)		21358			0				256296			10849864		11227064	767					
+2			2K-]			?9V6		21359			0				256308			10850372		11228571	767					
+3			?9WO			L<,G		21378			0				256536			10860024		11238525	767					
+4			L</M			^^wh		23807			0				285684			12093956		12516094	1276				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			'"{4		16025			0				192300			8140700			8423609		0					
+1			'"}@			)T@F		7537			0				90444			3828796			3962084		0					
+2			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+3			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+4			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+5			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:31 --- (INFO)compaction start level[1], compaction files[79], start level files[76,79,81,83,86], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:31 --- (INFO)compaction start level[0], compaction files[91,88,85,82,78,75], start level files[91,88,85,82,78,75], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:32 --- (INFO)write amplification: 291389181, left bytes: 493028352
+Compaction 5 in level 1 Choice: file No.3
+Hash value: e40c465b19633622
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			^^wh		14814			0				177768			7525512			7791556		0					
+1			!!.!			^^~|		14766			0				177192			7501128			7766359		0					
+2			!!8P			^^|c		14727			0				176724			7481316			7745873		0					
+3			!!/i			^^I<		14790			0				177480			7513320			7778974		0					
+4			!!8,			^^qq		14761			0				177132			7498588			7763669		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			'"{4		12913			0				154956			6559804			6788244		1270				
+1			'"~J			/;+p		14175			0				170100			7200900			7451982		1701				
+2			/;04			?9V6		29035			0				348420			14749780		15263443	892					
+3*			?9WO			L<,G		24451			0				293412			12421108		12853655	670					
+4			L</M			^^~|		31065			0				372780			15781020		16330732	978					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			'"{4		16025			0				192300			8140700			8423609		0					
+1			'"}@			)T@F		7537			0				90444			3828796			3962084		0					
+2			)TBN			/;,H		16025			0				192300			8140700			8423435		0					
+3			/;,^			2K+)		9292			0				111504			4720336			4884446		0					
+4			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+5			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+6			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:32 --- (INFO)compaction start level[1], compaction files[103], start level files[95,96,99,103,106], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:32 --- (INFO)compaction start level[0], compaction files[112,109,107,104,101,98,94], start level files[112,109,107,104,101,98,94], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:32 --- (INFO)write amplification: 368361516, left bytes: 437865984
+Compaction 6 in level 1 Choice: file No.2
+Hash value: ddecd56fa839eb1a
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!;1			^^qq		14782			0				177384			7509256			7774761		0					
+1			!!92			^]{(		14773			0				177276			7504684			7770059		0					
+2			!!=(			^^S_		14812			0				177744			7524496			7790482		0					
+3			!!2v			^^RY		14773			0				177276			7504684			7770091		0					
+4			!!/i			^^PL		14775			0				177300			7505700			7771122		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			'"{4		15919			0				191028			8086852			8367843		1030				
+1			'"~J			/;+p		20625			0				247500			10477500		10841620	1169				
+2*			/;-f			>G@q		32041			0				384492			16276828		16842979	808					
+3			>GC9			L<,G		15922			0				191064			8088376			8371019		2736				
+4			L</M			].y@		32033			0				384396			16272764		16839063	948					
+5			].ye			^^~|		3340			0				40080			1696720			1756298		9095				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			'"{4		16025			0				192300			8140700			8423609		0					
+1			'"}@			)T@F		7537			0				90444			3828796			3962084		0					
+2			)TBN			/;,H		16025			0				192300			8140700			8423435		0					
+3			/;,^			2K+)		9292			0				111504			4720336			4884446		0					
+4			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+5			?9WO			G3!{		16017			0				192204			8136636			8419977		0					
+6			G3%&			L<,G		10526			0				126312			5347208			5533536		0					
+7			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:32 --- (INFO)compaction start level[1], compaction files[120], start level files[114,117,120,124,127,130], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:32 --- (INFO)compaction start level[0], compaction files[134,131,128,125,122,119,116], start level files[134,131,128,125,122,119,116], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:33 --- (INFO)write amplification: 450538608, left bytes: 376565248
+Compaction 7 in level 1 Choice: file No.0
+Hash value: 10e137e60b39185d
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!92			^^w#		14733			0				176796			7484364			7749030		0					
+1			!!/i			^^|c		14748			0				176976			7491984			7756873		0					
+2			!!NS			^^~|		14768			0				177216			7502144			7767385		0					
+3			!!/i			^^qq		14785			0				177420			7510780			7776371		0					
+4			!!8P			^^~|		14778			0				177336			7507224			7772599		0					
+5			!!<5			^^>=		14768			0				177216			7502144			7767427		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!$'			'"{4		17437			0				209244			8857996			9165517		941					
+1			'"}@			/;,H		23616			0				283392			11996928		12413373	1021				
+2			/;-f			=!K@		16902			0				202824			8586216			8886103		1941				
+3			=!KY			G3!{		16226			0				194712			8242808			8530278		1288				
+4			G3%&			X/YI		32033			0				384396			16272764		16839174	1285				
+5			X/YX			^^~|		13668			0				164016			6943344			7185189		2223				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			'"{4		16025			0				192300			8140700			8423609		0					
+1			'"}@			)T@F		7537			0				90444			3828796			3962084		0					
+2			)TBN			/;,H		16025			0				192300			8140700			8423435		0					
+3			/;,^			51[*		16025			0				192300			8140700			8423531		0					
+4			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+5			=!KY			?9V6		4393			0				52716			2231644			2309791		0					
+6			?9WO			G3!{		16017			0				192204			8136636			8419977		0					
+7			G3%&			L<,G		10526			0				126312			5347208			5533536		0					
+8			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:33 --- (INFO)compaction start level[1], compaction files[139], start level files[139,140,143,146,149,153], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:33 --- (INFO)compaction start level[0], compaction files[156,154,151,148,145,142,138], start level files[156,154,151,148,145,142,138], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:33 --- (INFO)write amplification: 527127274, left bytes: 316882944
+Compaction 8 in level 1 Choice: file No.6
+Hash value: 378246d2877d0dff
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!8,			^^WC		14775			0				177300			7505700			7771117		0					
+1			!!.!			^]{g		14750			0				177000			7493000			7757962		0					
+2			!!0e			^^lz		14735			0				176820			7485380			7750093		0					
+3			!!0e			^^wh		14704			0				176448			7469632			7733754		0					
+4			!!=(			^]{2		14725			0				176700			7480300			7744873		0					
+5			!!8P			^^qq		14809			0				177708			7522972			7788969		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!.!			)T@F		18252			0				219024			9272016			9594548		1474				
+1			)TC/			/;,H		16538			0				198456			8401304			8692968		992					
+2			/;-f			51[*		12557			0				150684			6378956			6601129		1306				
+3			51_6			=!K@		12434			0				149208			6316472			6536940		1319				
+4			=!KY			G3!{		19189			0				230268			9748012			10087522	1089				
+5			G3%&			L<,G		9703			0				116436			4929124			5101054		1110				
+6*			L</M			[\~1		32033			0				384396			16272764		16838898	948					
+7			[\~A			^^~|		6249			0				74988			3174492			3285306		4862				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		16025			0				192300			8140700			8423151		0					
+1			&)gx			'"{4		2714			0				32568			1378712			1427150		0					
+2			'"}@			)T@F		7537			0				90444			3828796			3962084		0					
+3			)TBN			/;,H		16025			0				192300			8140700			8423435		0					
+4			/;,^			51[*		16025			0				192300			8140700			8423531		0					
+5			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+6			=!KY			?9V6		4393			0				52716			2231644			2309791		0					
+7			?9WO			G3!{		16017			0				192204			8136636			8419977		0					
+8			G3%&			L<,G		10526			0				126312			5347208			5533536		0					
+9			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:33 --- (INFO)compaction start level[1], compaction files[175,179], start level files[161,162,165,168,171,172,175,179], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:33 --- (INFO)compaction start level[0], compaction files[186,183,180,177,174,170,167,164,160], start level files[186,183,180,177,174,170,167,164,160], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:34 --- (INFO)write amplification: 613819703, left bytes: 243559424
+Compaction 9 in level 1 Choice: file No.1
+Hash value: d84055fa6812e85c
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!4U			^^jw		14771			0				177252			7503668			7768885		0					
+1			!!8,			^^|c		14720			0				176640			7477760			7742131		0					
+2			!!CA			^]I?		14738			0				176856			7486904			7751676		0					
+3			!!2v			^^WC		14786			0				177432			7511288			7776856		0					
+4			!!:X			^^|c		14780			0				177360			7508240			7773713		0					
+5			!"<@			^^6H		14762			0				177144			7499096			7764209		0					
+6			!!CT			^]lb		14760			0				177120			7498080			7763238		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		13162			0				157944			6686296			6918768		1246				
+1*			&)hN			/;,H		28114			0				337368			14281912		14777235	957					
+2			/;,^			51[*		14847			0				178164			7542276			7804478		1105				
+3			51_6			=!K@		14846			0				178152			7541768			7804534		1105				
+4			=!KY			G3!{		20819			0				249828			10576052		10944046	1003				
+5			G3%&			L<,G		10486			0				125832			5326888			5512553		1027				
+6			L</M			T'&A		9738			0				116856			4946904			5119892		1684				
+7			T'0r			[L,[		9742			0				116904			4948936			5121929		1684				
+8			[L-H			^^~b		4191			0				50292			2129028			2203761		1689				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		16025			0				192300			8140700			8423151		0					
+1			&)gx			'"{4		2714			0				32568			1378712			1427150		0					
+2			'"}@			)T@F		7537			0				90444			3828796			3962084		0					
+3			)TBN			/;,H		16025			0				192300			8140700			8423435		0					
+4			/;,^			51[*		16025			0				192300			8140700			8423531		0					
+5			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+6			=!KY			?9V6		4393			0				52716			2231644			2309791		0					
+7			?9WO			G3!{		16017			0				192204			8136636			8419977		0					
+8			G3%&			L<,G		10526			0				126312			5347208			5533536		0					
+9			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+10			T'0r			[L,[		16025			0				192300			8140700			8424127		0					
+11			[L-H			^^~|		6918			0				83016			3514344			3636968		0					
+
+2024-03-27 01:55:34 --- (INFO)compaction start level[1], compaction files[191], start level files[188,191,195,197,200,203,206,209,210], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:34 --- (INFO)compaction start level[0], compaction files[216,212,208,205,202,199,196,193,190], start level files[216,212,208,205,202,199,196,193,190], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:34 --- (INFO)write amplification: 697170914, left bytes: 173294080
+Compaction 10 in level 1 Choice: file No.4
+Hash value: 188e70822089249b
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!2v			^^jw		14750			0				177000			7493000			7757893		0					
+1			!!=u			^^tx		14749			0				176988			7492492			7757368		0					
+2			!!8P			^^~|		14763			0				177156			7499604			7764727		0					
+3			!!C"			^^&R		14746			0				176952			7490968			7755868		0					
+4			!!0e			^^|c		14774			0				177288			7505192			7770617		0					
+5			!!:X			^^S_		14764			0				177168			7500112			7765354		0					
+6			!!1J			^^c}		14738			0				176856			7486904			7751724		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		14980			0				179760			7609840			7874088		1095				
+1			&)hN			+1#D		9733			0				116796			4944364			5116799		1685				
+2			+1$P			51[*		23676			0				284112			12027408		12445439	1260				
+3			51_6			=!K@		15729			0				188748			7990332			8268547		1043				
+4*			=!KY			G3!{		21479			0				257748			10911332		11290977	973					
+5			G3%&			L<,G		10811			0				129732			5491988			5683367		997					
+6			L</M			T'&A		13562			0				162744			6889496			7129757		1209				
+7			T'0r			[L,[		13542			0				162504			6879336			7119146		1211				
+8			[L-H			^^~b		5899			0				70788			2996692			3101485		1200				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		16025			0				192300			8140700			8423151		0					
+1			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+2			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+3			/;,^			51[*		16025			0				192300			8140700			8423531		0					
+4			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+5			=!KY			?9V6		4393			0				52716			2231644			2309791		0					
+6			?9WO			G3!{		16017			0				192204			8136636			8419977		0					
+7			G3%&			L<,G		10526			0				126312			5347208			5533536		0					
+8			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+9			T'0r			[L,[		16025			0				192300			8140700			8424127		0					
+10			[L-H			^^~|		6918			0				83016			3514344			3636968		0					
+
+2024-03-27 01:55:34 --- (INFO)compaction start level[1], compaction files[227], start level files[217,220,223,226,227,230,233,236,239], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:34 --- (INFO)compaction start level[0], compaction files[242,238,235,232,229,225,222,219], start level files[242,238,235,232,229,225,222,219], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:35 --- (INFO)write amplification: 777870091, left bytes: 106120192
+Compaction 11 in level 1 Choice: file No.6
+Hash value: d5fcf8311e529716
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!<5			^^~|		14734			0				176808			7484872			7749514		0					
+1			!!@@			^]tb		14756			0				177072			7496048			7761169		0					
+2			!!d@			^^c}		14760			0				177120			7498080			7763254		0					
+3			!!/i			^^WC		14776			0				177312			7506208			7771642		0					
+4			!!.!			^^tx		14766			0				177192			7501128			7766323		0					
+5			!!8P			^^wh		14793			0				177516			7514844			7780587		0					
+6			!!8,			^^~b		14767			0				177204			7501636			7766873		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		15658			0				187896			7954264			8230381		1047				
+1			&)hN			+1#D		13319			0				159828			6766052			7001354		1231				
+2			+1$P			/;,H		10876			0				130512			5525008			5717142		1235				
+3			/;,^			51[*		16063			0				192756			8160004			8443461		1021				
+4			51_6			=!K@		16078			0				192936			8167624			8451986		1020				
+5			=!LQ			G3!{		12308			0				147696			6252464			6471076		1819				
+6*			G3%&			L<,G		10918			0				131016			5546344			5739582		987					
+7			L</M			T'&A		14957			0				179484			7598156			7862806		1097				
+8			T'0r			[L,[		14977			0				179724			7608316			7873336		1095				
+9			[L-H			^^~|		6483			0				77796			3293364			3408388		1092				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		16025			0				192300			8140700			8423151		0					
+1			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+2			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+3			/;,^			51[*		16025			0				192300			8140700			8423531		0					
+4			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+5			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+6			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+7			G3%&			L<,G		10526			0				126312			5347208			5533536		0					
+8			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+9			T'0r			[L,[		16025			0				192300			8140700			8424127		0					
+10			[L-H			^^~|		6918			0				83016			3514344			3636968		0					
+
+2024-03-27 01:55:35 --- (INFO)compaction start level[1], compaction files[260], start level files[246,249,250,253,256,258,260,263,264,267], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:35 --- (INFO)compaction start level[0], compaction files[269,266,262,259,255,252,248,245], start level files[269,266,262,259,255,252,248,245], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:35 --- (INFO)write amplification: 855739071, left bytes: 42766848
+Compaction 12 in level 1 Choice: file No.3
+Hash value: 1de0860b4bc64be5
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!2v			^^~|		14800			0				177600			7518400			7784208		0					
+1			!!A<			^^jw		14781			0				177372			7508748			7774246		0					
+2			!!2v			^^|c		14777			0				177324			7506716			7772142		0					
+3			!!L"			^^~b		14695			0				176340			7465060			7729039		0					
+4			!!8P			^^jw		14769			0				177228			7502652			7767980		0					
+5			!!$'			^^|c		14810			0				177720			7523480			7789552		0					
+6			!!A[			^^CN		14779			0				177348			7507732			7773208		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		15917			0				191004			8085836			8366487		1030				
+1			&)gx			+1#D		14844			0				178128			7540752			7802611		1105				
+2			+1$P			/;,H		12130			0				145560			6162040			6376135		1107				
+3*			/;,^			51[*		16224			0				194688			8241792			8528066		1011				
+4			51_6			=!K@		16230			0				194760			8244840			8531899		1011				
+5			=!KY			DB6u		12985			0				155820			6596380			6826473		1263				
+6			DB:>			T'&A		26458			0				317496			13440664		13908912	1272				
+7			T'0r			[L,[		15601			0				187212			7925308			8201261		1051				
+8			[L-H			^^~|		6741			0				80892			3424428			3543954		1050				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		16025			0				192300			8140700			8423151		0					
+1			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+2			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+3			/;,^			51[*		16025			0				192300			8140700			8423531		0					
+4			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+5			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+6			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+7			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+8			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+9			T'0r			[L,[		16025			0				192300			8140700			8424127		0					
+10			[L-H			^^~|		6918			0				83016			3514344			3636968		0					
+
+2024-03-27 01:55:35 --- (INFO)compaction start level[1], compaction files[280], start level files[271,274,277,280,281,284,287,291,293], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:35 --- (INFO)compaction start level[0], compaction files[295,292,289,286,283,279,276,273], start level files[295,292,289,286,283,279,276,273], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 936554727, left bytes: 0
+Compaction 13 in level 1 Choice: file No.0
+Hash value: 7d4b470fe736a76f
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							^^~b		8399			0				100784			4266184			4418304		0					
+1			!!8P			^^~|		14780			0				177360			7508240			7773781		0					
+2			!!2v			^^RY		14791			0				177492			7513828			7779505		0					
+3			!!C"			^^w#		14762			0				177144			7499096			7764223		0					
+4			!!0e			^^~|		14735			0				176820			7485380			7750075		0					
+5			!!:X			^^tx		14739			0				176868			7487412			7752134		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!$'			&)fn		16051			0				192612			8153908			8436912		1022				
+1			&)gx			+1#D		15528			0				186336			7888224			8162068		1056				
+2			+1$P			/;,H		12690			0				152280			6446520			6670408		1059				
+3			/;,^			=!K@		25548			0				306576			12978384		13430244	1296				
+4			=!KY			DB6u		14700			0				176400			7467600			7727666		1116				
+5			DB8,			L<,G		14292			0				171504			7260336			7513385		1207				
+6			L</M			T'&A		15855			0				190260			8054340			8334808		1034				
+7			T'0r			[L,[		15880			0				190560			8067040			8347936		1033				
+8			[L-H			^^~|		6859			0				82308			3484372			3605947		1032				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&)fn		16025			0				192300			8140700			8423151		0					
+1			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+2			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+3			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+4			5(Lt			51[*		308				0				3696			156464			162878		0					
+5			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+6			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+7			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+8			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+9			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+10			T'0r			[L,[		16025			0				192300			8140700			8424127		0					
+11			[L-H			^^~|		6918			0				83016			3514344			3636968		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[298], start level files[298,301,304,307,311,313,316,317,318], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 945047221, left bytes: 0
+Compaction 14 in level 1 Choice: file No.7
+Hash value: 3d0b389c1df79d79
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							^^~b		8399			0				100784			4266184			4418304		0					
+1			!!8P			^^~|		14780			0				177360			7508240			7773781		0					
+2			!!2v			^^RY		14791			0				177492			7513828			7779505		0					
+3			!!C"			^^w#		14762			0				177144			7499096			7764223		0					
+4			!!0e			^^~|		14735			0				176820			7485380			7750075		0					
+5			!!:X			^^tx		14739			0				176868			7487412			7752134		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			&)gx			+1#D		15528			0				186336			7888224			8162068		1056				
+1			+1$P			/;,H		12690			0				152280			6446520			6670408		1059				
+2			/;,^			=!K@		25548			0				306576			12978384		13430244	1296				
+3			=!KY			DB6u		14700			0				176400			7467600			7727666		1116				
+4			DB8,			L<,G		14292			0				171504			7260336			7513385		1207				
+5			L</M			T'&A		15855			0				190260			8054340			8334808		1034				
+6			T'0r			[L,[		15880			0				190560			8067040			8347936		1033				
+7*			[L-H			^^~|		6859			0				82308			3484372			3605947		1032				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&&uL		16025			0				192300			8140700			8423159		0					
+1			&&vS			&)fn		130				0				1560			66040			69335		0					
+2			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+3			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+4			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+5			5(Lt			51[*		308				0				3696			156464			162878		0					
+6			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+7			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+8			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+9			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+10			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+11			T'0r			[L,[		16025			0				192300			8140700			8424127		0					
+12			[L-H			^^~|		6918			0				83016			3514344			3636968		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[318], start level files[301,304,307,311,313,316,317,318], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 948698911, left bytes: 0
+Compaction 15 in level 1 Choice: file No.6
+Hash value: fe89f99569d47aa0
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							^^~b		8399			0				100784			4266184			4418304		0					
+1			!!8P			^^~|		14780			0				177360			7508240			7773781		0					
+2			!!2v			^^RY		14791			0				177492			7513828			7779505		0					
+3			!!C"			^^w#		14762			0				177144			7499096			7764223		0					
+4			!!0e			^^~|		14735			0				176820			7485380			7750075		0					
+5			!!:X			^^tx		14739			0				176868			7487412			7752134		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			&)gx			+1#D		15528			0				186336			7888224			8162068		1056				
+1			+1$P			/;,H		12690			0				152280			6446520			6670408		1059				
+2			/;,^			=!K@		25548			0				306576			12978384		13430244	1296				
+3			=!KY			DB6u		14700			0				176400			7467600			7727666		1116				
+4			DB8,			L<,G		14292			0				171504			7260336			7513385		1207				
+5			L</M			T'&A		15855			0				190260			8054340			8334808		1034				
+6*			T'0r			[L,[		15880			0				190560			8067040			8347936		1033				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&&uL		16025			0				192300			8140700			8423159		0					
+1			&&vS			&)fn		130				0				1560			66040			69335		0					
+2			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+3			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+4			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+5			5(Lt			51[*		308				0				3696			156464			162878		0					
+6			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+7			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+8			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+9			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+10			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+11			T'0r			[L,[		16025			0				192300			8140700			8424127		0					
+12			[L-H			^^~|		6946			0				83352			3528568			3651690		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[317], start level files[301,304,307,311,313,316,317], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 957152431, left bytes: 0
+Compaction 16 in level 1 Choice: file No.5
+Hash value: 89f26b02c847e7dc
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							^^~b		8399			0				100784			4266184			4418304		0					
+1			!!8P			^^~|		14780			0				177360			7508240			7773781		0					
+2			!!2v			^^RY		14791			0				177492			7513828			7779505		0					
+3			!!C"			^^w#		14762			0				177144			7499096			7764223		0					
+4			!!0e			^^~|		14735			0				176820			7485380			7750075		0					
+5			!!:X			^^tx		14739			0				176868			7487412			7752134		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			&)gx			+1#D		15528			0				186336			7888224			8162068		1056				
+1			+1$P			/;,H		12690			0				152280			6446520			6670408		1059				
+2			/;,^			=!K@		25548			0				306576			12978384		13430244	1296				
+3			=!KY			DB6u		14700			0				176400			7467600			7727666		1116				
+4			DB8,			L<,G		14292			0				171504			7260336			7513385		1207				
+5*			L</M			T'&A		15855			0				190260			8054340			8334808		1034				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&&uL		16025			0				192300			8140700			8423159		0					
+1			&&vS			&)fn		130				0				1560			66040			69335		0					
+2			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+3			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+4			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+5			5(Lt			51[*		308				0				3696			156464			162878		0					
+6			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+7			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+8			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+9			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+10			L</M			T'&A		16025			0				192300			8140700			8424138		0					
+11			T'0r			[Jcz		16025			0				192300			8140700			8424133		0					
+12			[Jg+			[L,[		54				0				648				27432			29387		0					
+13			[L-H			^^~|		6946			0				83352			3528568			3651690		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[316], start level files[301,304,307,311,313,316], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)compaction start level[0], compaction files[315,312,309,306,303,300], start level files[315,312,309,306,303,300], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 1024578696, left bytes: 0
+Compaction 17 in level 1 Choice: file No.3
+Hash value: c4807ea2f07c690d
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							+1#D		22849			0				274184			11606784		12010279	1442				
+1			+1$P			/;,H		12860			0				154320			6532880			6759733		1045				
+2			/;,^			5(Ev		12146			0				145752			6170168			6385072		1350				
+3*			5(Lt			=!K@		16551			0				198612			8407908			8700644		1010				
+4			=!KY			DB6u		15268			0				183216			7756144			8026244		1074				
+5			DB8,			L<,G		15380			0				184560			7813040			8085138		1121				
+6			L<7X			[J^q		14004			0				168048			7114032			7363031		2347				
+7			[Jj0			^^~|		3120			0				37440			1584960			1640965		2297				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&&uL		16025			0				192300			8140700			8423159		0					
+1			&&vS			&)fn		130				0				1560			66040			69335		0					
+2			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+3			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+4			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+5			5(Lt			51[*		308				0				3696			156464			162878		0					
+6			51_6			=!K@		16025			0				192300			8140700			8424136		0					
+7			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+8			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+9			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+10			L</M			T%/r		16017			0				192204			8136636			8419977		0					
+11			T%/}			T'&A		65				0				780				33020			35182		0					
+12			T'0r			[Jcz		16025			0				192300			8140700			8424133		0					
+13			[Jg+			[L,[		54				0				648				27432			29387		0					
+14			[L-H			^^~|		6946			0				83352			3528568			3651690		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[329], start level files[326,327,328,329,330,331,332,333], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 1033329689, left bytes: 0
+Compaction 18 in level 1 Choice: file No.1
+Hash value: 7ba123258d37a747
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							+1#D		22849			0				274184			11606784		12010279	1442				
+1*			+1$P			/;,H		12860			0				154320			6532880			6759733		1045				
+2			/;,^			5(Ev		12146			0				145752			6170168			6385072		1350				
+3			=!KY			DB6u		15268			0				183216			7756144			8026244		1074				
+4			DB8,			L<,G		15380			0				184560			7813040			8085138		1121				
+5			L<7X			[J^q		14004			0				168048			7114032			7363031		2347				
+6			[Jj0			^^~|		3120			0				37440			1584960			1640965		2297				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&&uL		16025			0				192300			8140700			8423159		0					
+1			&&vS			&)fn		130				0				1560			66040			69335		0					
+2			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+3			+1$P			/;,H		13124			0				157488			6666992			6898408		0					
+4			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+5			5(Lt			<M5c		16025			0				192300			8140700			8424165		0					
+6			<M:a			=!K@		620				0				7440			314960			326828		0					
+7			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+8			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+9			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+10			L</M			T%/r		16017			0				192204			8136636			8419977		0					
+11			T%/}			T'&A		65				0				780				33020			35182		0					
+12			T'0r			[Jcz		16025			0				192300			8140700			8424133		0					
+13			[Jg+			[L,[		54				0				648				27432			29387		0					
+14			[L-H			^^~|		6946			0				83352			3528568			3651690		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[327], start level files[326,327,328,330,331,332,333], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 1040233337, left bytes: 0
+Compaction 19 in level 1 Choice: file No.2
+Hash value: 65767a51afc52eda
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							+1#D		22849			0				274184			11606784		12010279	1442				
+1			/;,^			5(Ev		12146			0				145752			6170168			6385072		1350				
+2*			=!KY			DB6u		15268			0				183216			7756144			8026244		1074				
+3			DB8,			L<,G		15380			0				184560			7813040			8085138		1121				
+4			L<7X			[J^q		14004			0				168048			7114032			7363031		2347				
+5			[Jj0			^^~|		3120			0				37440			1584960			1640965		2297				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&&uL		16025			0				192300			8140700			8423159		0					
+1			&&vS			&)fn		130				0				1560			66040			69335		0					
+2			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+3			+1$P			/;,H		13134			0				157608			6672072			6903648		0					
+4			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+5			5(Lt			<M5c		16025			0				192300			8140700			8424165		0					
+6			<M:a			=!K@		620				0				7440			314960			326828		0					
+7			=!KY			DB6u		16025			0				192300			8140700			8424074		0					
+8			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+9			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+10			L</M			T%/r		16017			0				192204			8136636			8419977		0					
+11			T%/}			T'&A		65				0				780				33020			35182		0					
+12			T'0r			[Jcz		16025			0				192300			8140700			8424133		0					
+13			[Jg+			[L,[		54				0				648				27432			29387		0					
+14			[L-H			^^~|		6946			0				83352			3528568			3651690		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[330], start level files[326,328,330,331,332,333], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)write amplification: 1048662083, left bytes: 0
+Compaction 20 in level 1 Choice: file No.2
+Hash value: e523f5cbb9de52a1
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							+1#D		22849			0				274184			11606784		12010279	1442				
+1			/;,^			5(Ev		12146			0				145752			6170168			6385072		1350				
+2*			DB8,			L<,G		15380			0				184560			7813040			8085138		1121				
+3			L<7X			[J^q		14004			0				168048			7114032			7363031		2347				
+4			[Jj0			^^~|		3120			0				37440			1584960			1640965		2297				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&&uL		16025			0				192300			8140700			8423159		0					
+1			&&vS			&)fn		130				0				1560			66040			69335		0					
+2			&)gx			+1#D		16025			0				192300			8140700			8423198		0					
+3			+1$P			/;,H		13134			0				157608			6672072			6903648		0					
+4			/;,^			5(Ev		16025			0				192300			8140700			8423404		0					
+5			5(Lt			<M5c		16025			0				192300			8140700			8424165		0					
+6			<M:a			=!K@		620				0				7440			314960			326828		0					
+7			=!KY			DA|E		16025			0				192300			8140700			8424068		0					
+8			DB%e			DB6u		7				0				84				3556			4678		0					
+9			DB8,			G3!{		5850			0				70200			2971800			3075591		0					
+10			G3%&			L<,G		11001			0				132012			5588508			5783182		0					
+11			L</M			T%/r		16017			0				192204			8136636			8419977		0					
+12			T%/}			T'&A		65				0				780				33020			35182		0					
+13			T'0r			[Jcz		16025			0				192300			8140700			8424133		0					
+14			[Jg+			[L,[		54				0				648				27432			29387		0					
+15			[L-H			^^~|		6946			0				83352			3528568			3651690		0					
+
+2024-03-27 01:55:36 --- (INFO)compaction start level[1], compaction files[331], start level files[326,328,331,332,333], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:36 --- (INFO)Total running time: 7700880us
+2024-03-27 01:55:36 --- (INFO)write amplification: 1057524964, left bytes: 0
+2024-03-27 01:55:36 --- (INFO)compaction_time: 6178509us
+2024-03-27 01:55:36 --- (INFO)write amplification: 1057524964, left bytes: 0
+2024-03-27 01:55:37 --- (INFO)==================================================
+2024-03-27 01:55:37 --- (INFO)Program information: 
+2024-03-27 01:55:37 --- (INFO)Compaction strategy: kSelectLastSimilar
+2024-03-27 01:55:37 --- (INFO)Total written bytes: 768000000
+2024-03-27 01:55:37 --- (INFO)Database path: mnt/rocksdb
+2024-03-27 01:55:37 --- (INFO)Experiment path: experiment5
+2024-03-27 01:55:38 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:38 --- (INFO)compaction start level[0], compaction files[27,25,22,18], start level files[27,25,22,18], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:38 --- (INFO)write amplification: 72951320, left bytes: 658542592
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 6ded7808ea97e2fc
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!2v			^^~|		14790			0				177480			7513320			7778963		0					
+1			!!8,			^^DA		14761			0				177132			7498588			7763808		0					
+2			!!8P			^^I<		14756			0				177072			7496048			7761054		0					
+3			!!/i			^^jw		14776			0				177312			7506208			7771632		0					
+4			!!/i			^^qq		14774			0				177288			7505192			7770585		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+3			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+4			L</M			YF'R		16017			0				192204			8136636			8420898		0					
+5			YF1P			^^~b		6583			0				78996			3344164			3461299		0					
+
+2024-03-27 01:55:38 --- (INFO)compaction start level[1], compaction files[29,31,34,37], start level files[29,31,34,37,40,43], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:38 --- (INFO)compaction start level[0], compaction files[42,39,36,33,30], start level files[42,39,36,33,30], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:38 --- (INFO)write amplification: 112290413, left bytes: 631506944
+Compaction 2 in level 1 Choice: file No.4
+Hash value: 4ae7021759892551
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!=(			^^wh		14766			0				177192			7501128			7766363		0					
+1			!!92			^^I<		14788			0				177456			7512304			7777943		0					
+2			!!.!			^^c}		14772			0				177264			7504176			7769461		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!/i			)T@F		11339			0				136068			5760212			5961535		1446				
+1			)TC/			2K&g		11330			0				135960			5755640			5956876		1447				
+2			2K-]			?9TH		11159			0				133908			5668772			5867305		1469				
+3			?9])			L<,G		11321			0				135852			5751068			5952581		1448				
+4*			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+3			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+
+2024-03-27 01:55:38 --- (INFO)compaction start level[1], compaction files[53], start level files[44,47,49,51,53], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:38 --- (INFO)compaction start level[0], compaction files[56,54,50,46], start level files[56,54,50,46], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:39 --- (INFO)write amplification: 154892484, left bytes: 595832832
+Compaction 3 in level 1 Choice: file No.3
+Hash value: 4168e3c1276f891c
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!8,			^^w#		14744			0				176928			7489952			7754808		0					
+1			!!/i			^^RY		14755			0				177060			7495540			7760538		0					
+2			!!0e			^^wh		14775			0				177300			7505700			7771140		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!.!			)T@F		17045			0				204540			8658860			8960413		962					
+1			)TC/			2K&g		17015			0				204180			8643620			8944647		963					
+2			2K-]			?9V6		16877			0				202524			8573516			8872892		971					
+3*			?9WO			L<,G		16949			0				203388			8610092			8910698		967					
+4			L</M			^^wh		13148			0				157776			6679184			6913421		2310				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+3			?9WO			L<,G		16017			0				192204			8136636			8420914		0					
+4			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:39 --- (INFO)compaction start level[1], compaction files[66], start level files[57,60,63,66,67], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:39 --- (INFO)compaction start level[0], compaction files[72,69,65,62,59], start level files[72,69,65,62,59], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:39 --- (INFO)write amplification: 219359672, left bytes: 545948672
+Compaction 4 in level 1 Choice: file No.2
+Hash value: 104a6b8fb2e366bc
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!NS			^^W:		14779			0				177348			7507732			7773279		0					
+1			!!8,			^^01		14712			0				176544			7473696			7737908		0					
+2			!!.!			^^~|		14794			0				177528			7515352			7781009		0					
+3			!!0e			^^DA		14792			0				177504			7514336			7780004		0					
+4			!!/i			^^wh		14759			0				177108			7497572			7762644		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		21462			0				257544			10902696		11281639	764					
+1			)TC/			2K+)		21358			0				256296			10849864		11227064	767					
+2*			2K-]			?9V6		21359			0				256308			10850372		11228571	767					
+3			?9WO			L<,G		11219			0				134628			5699252			5898906		2137				
+4			L</M			^^wh		23807			0				285684			12093956		12516094	1276				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			?9V6		16017			0				192204			8136636			8420860		0					
+3			?9WO			H5`'		16017			0				192204			8136636			8420235		0					
+4			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+5			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:39 --- (INFO)compaction start level[1], compaction files[80], start level files[76,77,80,83,86], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:39 --- (INFO)compaction start level[0], compaction files[90,88,85,82,79,75], start level files[90,88,85,82,79,75], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:39 --- (INFO)write amplification: 291286233, left bytes: 492597248
+Compaction 5 in level 1 Choice: file No.1
+Hash value: a384040e220a8b79
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			^^wh		14814			0				177768			7525512			7791556		0					
+1			!!.!			^^~|		14766			0				177192			7501128			7766359		0					
+2			!!8P			^^|c		14727			0				176724			7481316			7745873		0					
+3			!!/i			^^I<		14790			0				177480			7513320			7778974		0					
+4			!!8,			^^qq		14761			0				177132			7498588			7763669		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		24380			0				292560			12385040		12814967	672					
+1*			)TC/			2K+)		24367			0				292404			12378436		12808240	673					
+2			2K21			?9SI		12803			0				153636			6503924			6731479		2021				
+3			?9WO			H5`'		12994			0				155928			6600952			6831385		1262				
+4			H5g+			\#C=		32033			0				384396			16272764		16839697	1185				
+5			\#Cw			^^~|		4963			0				59556			2521204			2609456		6122				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			2K+)		16017			0				192204			8136636			8420133		0					
+2			2K-]			:Gp<		16017			0				192204			8136636			8420005		0					
+3			:Gp]			?9V6		9266			0				111192			4707128			4871332		0					
+4			?9WO			H5`'		16017			0				192204			8136636			8420235		0					
+5			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+6			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:39 --- (INFO)compaction start level[1], compaction files[98], start level files[95,98,101,104,105,109], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:39 --- (INFO)compaction start level[0], compaction files[113,110,107,103,100,97,94], start level files[113,110,107,103,100,97,94], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:40 --- (INFO)write amplification: 368243685, left bytes: 443050496
+Compaction 6 in level 1 Choice: file No.0
+Hash value: b24eb577b845c8ee
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!;1			^^qq		14782			0				177384			7509256			7774761		0					
+1			!!92			^]{(		14773			0				177276			7504684			7770059		0					
+2			!!=(			^^S_		14812			0				177744			7524496			7790482		0					
+3			!!2v			^^RY		14773			0				177276			7504684			7770091		0					
+4			!!/i			^^PL		14775			0				177300			7505700			7771122		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!$'			)T@F		26128			0				313536			13273024		13733505	627					
+1			)TD[			2K%8		14322			0				171864			7275576			7529343		1896				
+2			2K21			:Gp<		12989			0				155868			6598412			6828614		1262				
+3			:Gp]			H5`'		23682			0				284184			12030456		12449529	1093				
+4			H5g+			Y8Q^		32033			0				384396			16272764		16839203	1185				
+5			Y8R5			^^~|		10715			0				128580			5443220			5633016		2835				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			)T@F		16017			0				192204			8136636			8420198		0					
+1			)TBN			/+-0		16025			0				192300			8140700			8423329		0					
+2			/+/-			2K+)		10503			0				126036			5335524			5520913		0					
+3			2K-]			:Gp<		16017			0				192204			8136636			8420005		0					
+4			:Gp]			?9V6		9266			0				111192			4707128			4871332		0					
+5			?9WO			H5`'		16017			0				192204			8136636			8420235		0					
+6			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+7			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:40 --- (INFO)compaction start level[1], compaction files[117], start level files[117,120,121,124,126,129], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:40 --- (INFO)compaction start level[0], compaction files[136,133,130,127,123,119,116], start level files[136,133,130,127,123,119,116], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:40 --- (INFO)write amplification: 447193822, left bytes: 387372544
+Compaction 7 in level 1 Choice: file No.3
+Hash value: eeb70f88abebda4a
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!/i			^^|c		14748			0				176976			7491984			7756873		0					
+1			!!NS			^^~|		14768			0				177216			7502144			7767385		0					
+2			!!/i			^^qq		14785			0				177420			7510780			7776371		0					
+3			!!8P			^^~|		14778			0				177336			7507224			7772599		0					
+4			!!<5			^^>=		14768			0				177216			7502144			7767427		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!/i			)T>6		14358			0				172296			7293864			7548261		1940				
+1			)TC/			/+-0		12811			0				153732			6507988			6734425		1280				
+2			/+/-			:Gp<		23782			0				285384			12081256		12501577	1141				
+3*			:Gp]			H5`'		26542			0				318504			13483336		13952639	975					
+4			H5g+			X6(x		32033			0				384396			16272764		16839010	1185				
+5			X6,*			^^~|		13448			0				161376			6831584			7069502		2259				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			/+-0		16025			0				192300			8140700			8423329		0					
+3			/+/-			2K+)		10503			0				126036			5335524			5520913		0					
+4			2K-]			:Gp<		16017			0				192204			8136636			8420005		0					
+5			:Gp]			?9V6		9266			0				111192			4707128			4871332		0					
+6			?9WO			H5`'		16017			0				192204			8136636			8420235		0					
+7			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+8			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:40 --- (INFO)compaction start level[1], compaction files[144], start level files[137,140,141,144,148,151], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:40 --- (INFO)compaction start level[0], compaction files[158,155,152,149,146,143,139], start level files[158,155,152,149,146,143,139], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:41 --- (INFO)write amplification: 527641506, left bytes: 323581952
+Compaction 8 in level 1 Choice: file No.3
+Hash value: b7b07adfdd3cf7d1
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!8,			^^WC		14775			0				177300			7505700			7771117		0					
+1			!!.!			^]{g		14750			0				177000			7493000			7757962		0					
+2			!!0e			^^lz		14735			0				176820			7485380			7750093		0					
+3			!!0e			^^wh		14704			0				176448			7469632			7733754		0					
+4			!!=(			^]{2		14725			0				176700			7480300			7744873		0					
+5			!!8P			^^qq		14809			0				177708			7522972			7788969		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!.!			&.%\		12472			0				149664			6335776			6556194		1315				
+1			&.&l			/+-0		23622			0				283464			11999976		12416763	1179				
+2			/+/-			2K)3		9752			0				117024			4954016			5126287		1102				
+3*			2K-]			:Gp<		16464			0				197568			8363712			8654907		996					
+4			:Gqa			H5WM		15120			0				181440			7680960			7949476		1955				
+5			H5g+			WY:2		32033			0				384396			16272764		16838882	1185				
+6			WY;*			^^~|		14700			0				176400			7467600			7727613		2067				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			/+-0		16025			0				192300			8140700			8423329		0					
+3			/+/-			2K+)		10503			0				126036			5335524			5520913		0					
+4			2K-]			:Gp<		16017			0				192204			8136636			8420005		0					
+5			:Gp]			B0A/		16025			0				192300			8140700			8424013		0					
+6			B0Fi			H5`'		12847			0				154164			6526276			6753549		0					
+7			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+8			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:41 --- (INFO)compaction start level[1], compaction files[168], start level files[159,162,165,168,171,172,176], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:41 --- (INFO)compaction start level[0], compaction files[180,177,174,170,167,164,161], start level files[180,177,174,170,167,164,161], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:41 --- (INFO)write amplification: 604924537, left bytes: 259971072
+Compaction 9 in level 1 Choice: file No.3
+Hash value: 0cccfec11462c458
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!CA			^]I?		14738			0				176856			7486904			7751676		0					
+1			!!2v			^^WC		14786			0				177432			7511288			7776856		0					
+2			!!:X			^^|c		14780			0				177360			7508240			7773713		0					
+3			!"<@			^^6H		14762			0				177144			7499096			7764209		0					
+4			!!CT			^]lb		14760			0				177120			7498080			7763238		0					
+5			!!$'			^^jw		14767			0				177204			7501636			7766851		0					
+6			!"Fl			^^WC		14791			0				177492			7513828			7779442		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!.!			&.%\		14555			0				174660			7393940			7650873		1127				
+1			&.&l			)T@F		10152			0				121824			5157216			5336507		1128				
+2			)TC/			/+-0		15847			0				190164			8050276			8329838		1035				
+3*			/+/-			2K+)		10394			0				124728			5280152			5463686		1034				
+4			2K-]			B0A/		21320			0				255840			10830560		11208561	1609				
+5			B0Fi			H5`'		9937			0				119244			5047996			5224224		1323				
+6			H5g+			WLeA		32041			0				384492			16276828		16842956	1185				
+7			WLeF			^^~|		15278			0				183336			7761224			8031420		1989				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			/+-0		16025			0				192300			8140700			8423329		0					
+3			/+/-			2K+)		10503			0				126036			5335524			5520913		0					
+4			2K-]			9[nR		16025			0				192300			8140700			8424076		0					
+5			9[nm			:Gp<		1465			0				17580			744220			770890		0					
+6			:Gp]			B0A/		16025			0				192300			8140700			8424013		0					
+7			B0Fi			H5`'		12847			0				154164			6526276			6753549		0					
+8			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+9			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:41 --- (INFO)compaction start level[1], compaction files[191], start level files[184,185,188,191,192,195,198,202], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:41 --- (INFO)compaction start level[0], compaction files[205,203,200,197,194,190,187,183], start level files[205,203,200,197,194,190,187,183], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:42 --- (INFO)write amplification: 682475158, left bytes: 189779456
+Compaction 10 in level 1 Choice: file No.2
+Hash value: 4d0559a38535a3a3
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!8P			^^~|		14763			0				177156			7499604			7764727		0					
+1			!!C"			^^&R		14746			0				176952			7490968			7755868		0					
+2			!!0e			^^|c		14774			0				177288			7505192			7770617		0					
+3			!!:X			^^S_		14764			0				177168			7500112			7765354		0					
+4			!!1J			^^c}		14738			0				176856			7486904			7751724		0					
+5			!!=u			^^~b		14712			0				176544			7473696			7738001		0					
+6			!!$'			^^tx		14741			0				176892			7488428			7753250		0					
+7			!!4U			^^jw		14771			0				177252			7503668			7768885		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		15564			0				186768			7906512			8181008		1054				
+1			&.&l			)T@F		10828			0				129936			5500624			5691785		1058				
+2*			)TBN			/+-0		16399			0				196788			8330692			8619804		1000				
+3			/+/:			9[lB		18870			0				226440			9585960			9920062		1463				
+4			9[sW			B0A/		15614			0				187368			7931912			8208247		1147				
+5			B0Fi			H5`'		11669			0				140028			5927852			6134493		1127				
+6			H5g+			WEn;		32041			0				384492			16276828		16842960	1185				
+7			WEnR			^^~|		15588			0				187056			7918704			8194327		1949				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			/+-0		16025			0				192300			8140700			8423329		0					
+3			/+/-			2K+)		10954			0				131448			5564632			5757935		0					
+4			2K-]			9[nR		16025			0				192300			8140700			8424076		0					
+5			9[nm			:Gp<		1465			0				17580			744220			770890		0					
+6			:Gp]			B0A/		16025			0				192300			8140700			8424013		0					
+7			B0Fi			H5`'		12847			0				154164			6526276			6753549		0					
+8			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+9			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:42 --- (INFO)compaction start level[1], compaction files[213], start level files[207,210,213,216,219,222,225,228], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:42 --- (INFO)compaction start level[0], compaction files[233,230,227,224,221,218,215,212,209], start level files[233,230,227,224,221,218,215,212,209], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:42 --- (INFO)write amplification: 764025388, left bytes: 124671488
+Compaction 11 in level 1 Choice: file No.5
+Hash value: 53a6c8d61308ab85
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!d@			^^c}		14760			0				177120			7498080			7763254		0					
+1			!!/i			^^WC		14776			0				177312			7506208			7771642		0					
+2			!!.!			^^tx		14766			0				177192			7501128			7766323		0					
+3			!!8P			^^wh		14793			0				177516			7514844			7780587		0					
+4			!!8,			^^~b		14767			0				177204			7501636			7766873		0					
+5			!!CT			^^W:		14735			0				176820			7485380			7750078		0					
+6			!!2v			^^jw		14750			0				177000			7493000			7757893		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16027			0				192324			8141716			8424274		1023				
+1			&.&l			)T@F		11166			0				133992			5672328			5869265		1026				
+2			)TBN			.ZT<		9698			0				116376			4926584			5098436		1691				
+3			.ZV@			9[nR		24363			0				292356			12376404		12806767	1165				
+4			9[sW			B0A/		16866			0				202392			8567928			8866177		1061				
+5*			B0Fi			H5`'		12458			0				149496			6328664			6549193		1055				
+6			H5g+			WC:4		32041			0				384492			16276828		16842994	1185				
+7			WC;S			^^~|		15733			0				188796			7992364			8270576		1931				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+3			.ZV@			/+-0		758				0				9096			385064			399323		0					
+4			/+/-			2K+)		10954			0				131448			5564632			5757935		0					
+5			2K-]			9[nR		16025			0				192300			8140700			8424076		0					
+6			9[nm			:Gp<		1465			0				17580			744220			770890		0					
+7			:Gp]			B0A/		16025			0				192300			8140700			8424013		0					
+8			B0Fi			H5`'		12847			0				154164			6526276			6753549		0					
+9			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+10			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:42 --- (INFO)compaction start level[1], compaction files[248], start level files[237,238,241,244,247,248,251,255], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:42 --- (INFO)compaction start level[0], compaction files[258,256,253,250,246,243,240,236], start level files[258,256,253,250,246,243,240,236], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:43 --- (INFO)write amplification: 844155779, left bytes: 54861824
+Compaction 12 in level 1 Choice: file No.6
+Hash value: 1495ebd0f2d34a7a
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!A<			^^jw		14781			0				177372			7508748			7774246		0					
+1			!!2v			^^|c		14777			0				177324			7506716			7772142		0					
+2			!!L"			^^~b		14695			0				176340			7465060			7729039		0					
+3			!!8P			^^jw		14769			0				177228			7502652			7767980		0					
+4			!!$'			^^|c		14810			0				177720			7523480			7789552		0					
+5			!!A[			^^CN		14779			0				177348			7507732			7773208		0					
+6			!!=(			^^w#		14771			0				177252			7503668			7768994		0					
+7			!!<5			^^~|		14734			0				176808			7484872			7749514		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16182			0				194184			8220456			8505756		1014				
+1			&.&l			)T@F		11283			0				135396			5731764			5930788		1015				
+2			)TBN			.ZT<		13312			0				159744			6762496			6997557		1232				
+3			.ZV@			9[nR		26299			0				315588			13359892		13824108	1080				
+4			9[nm			B0A/		17301			0				207612			8788908			9094777		1035				
+5			B0Fi			L<,G		16034			0				192408			8145272			8429272		1300				
+6*			L</M			[ITb		32041			0				384492			16276828		16843054	948					
+7			[IU;			^^~|		7034			0				84408			3573272			3697968		4319				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+3			.ZV@			/+-0		758				0				9096			385064			399323		0					
+4			/+/-			2K+)		10954			0				131448			5564632			5757935		0					
+5			2K-]			9[nR		16025			0				192300			8140700			8424076		0					
+6			9[nm			:Gp<		1465			0				17580			744220			770890		0					
+7			:Gp]			B0A/		16025			0				192300			8140700			8424013		0					
+8			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+9			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+10			L</M			^^~|		29676			0				356112			15075408		15600796	0					
+
+2024-03-27 01:55:43 --- (INFO)compaction start level[1], compaction files[278,282], start level files[260,263,266,269,272,275,278,282], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:43 --- (INFO)compaction start level[0], compaction files[289,286,283,280,277,274,271,268,265,262], start level files[289,286,283,280,277,274,271,268,265,262], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:43 --- (INFO)write amplification: 934314727, left bytes: 0
+Compaction 13 in level 1 Choice: file No.5
+Hash value: c398b2ff2617639b
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							^^~b		8399			0				100784			4266184			4418304		0					
+1			!!8P			^^~|		14780			0				177360			7508240			7773781		0					
+2			!!2v			^^RY		14791			0				177492			7513828			7779505		0					
+3			!!C"			^^w#		14762			0				177144			7499096			7764223		0					
+4			!!0e			^^~|		14735			0				176820			7485380			7750075		0					
+5			!!:X			^^tx		14739			0				176868			7487412			7752134		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16275			0				195300			8267700			8554679		1008				
+1			&.&l			)T@F		11359			0				136308			5770372			5970772		1008				
+2			)TBN			.ZT<		15078			0				180936			7659624			7925557		1088				
+3			.ZV@			2K+)		11411			0				136932			5796788			5998095		1051				
+4			2K-]			9[nR		15870			0				190440			8061960			8342508		1034				
+5*			9[nm			B0A/		17511			0				210132			8895588			9205146		1022				
+6			B0Fi			H5`'		10908			0				130896			5541264			5734586		1215				
+7			H5g+			T%/}		19114			0				229368			9709912			10048386	1254				
+8			T%4X			[Hc7		10341			0				124092			5253228			5436794		1586				
+9			[Hdj			^^~|		4536			0				54432			2304288			2385090		1594				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+3			.ZV@			/+-0		758				0				9096			385064			399323		0					
+4			/+/-			2K+)		10954			0				131448			5564632			5757935		0					
+5			2K-]			9[nR		16025			0				192300			8140700			8424076		0					
+6			9[nm			:Gp<		1465			0				17580			744220			770890		0					
+7			:Gp]			B0A/		16025			0				192300			8140700			8424013		0					
+8			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+9			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+10			L</M			T%/}		16017			0				192204			8136636			8420006		0					
+11			T%4X			[Hc7		16025			0				192300			8140700			8424133		0					
+12			[Hdj			^^~|		7063			0				84756			3588004			3713196		0					
+
+2024-03-27 01:55:43 --- (INFO)compaction start level[1], compaction files[304], start level files[293,294,297,300,303,304,307,310,311,312], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:43 --- (INFO)write amplification: 943581150, left bytes: 0
+Compaction 14 in level 1 Choice: file No.4
+Hash value: 0a314bec348fe5c4
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							^^~b		8399			0				100784			4266184			4418304		0					
+1			!!8P			^^~|		14780			0				177360			7508240			7773781		0					
+2			!!2v			^^RY		14791			0				177492			7513828			7779505		0					
+3			!!C"			^^w#		14762			0				177144			7499096			7764223		0					
+4			!!0e			^^~|		14735			0				176820			7485380			7750075		0					
+5			!!:X			^^tx		14739			0				176868			7487412			7752134		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16275			0				195300			8267700			8554679		1008				
+1			&.&l			)T@F		11359			0				136308			5770372			5970772		1008				
+2			)TBN			.ZT<		15078			0				180936			7659624			7925557		1088				
+3			.ZV@			2K+)		11411			0				136932			5796788			5998095		1051				
+4*			2K-]			9[nR		15870			0				190440			8061960			8342508		1034				
+5			B0Fi			H5`'		10908			0				130896			5541264			5734586		1215				
+6			H5g+			T%/}		19114			0				229368			9709912			10048386	1254				
+7			T%4X			[Hc7		10341			0				124092			5253228			5436794		1586				
+8			[Hdj			^^~|		4536			0				54432			2304288			2385090		1594				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+3			.ZV@			/+-0		758				0				9096			385064			399323		0					
+4			/+/-			2K+)		10954			0				131448			5564632			5757935		0					
+5			2K-]			9[nR		16025			0				192300			8140700			8424076		0					
+6			9[nm			A>?b		16025			0				192300			8140700			8424013		0					
+7			A>BF			B0A/		1601			0				19212			813308			842410		0					
+8			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+9			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+10			L</M			T%/}		16017			0				192204			8136636			8420006		0					
+11			T%4X			[Hc7		16025			0				192300			8140700			8424133		0					
+12			[Hdj			^^~|		7063			0				84756			3588004			3713196		0					
+
+2024-03-27 01:55:43 --- (INFO)compaction start level[1], compaction files[303], start level files[293,294,297,300,303,307,310,311,312], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:43 --- (INFO)write amplification: 952032997, left bytes: 0
+Compaction 15 in level 1 Choice: file No.3
+Hash value: ac422bc2d8e0f192
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							^^~b		8399			0				100784			4266184			4418304		0					
+1			!!8P			^^~|		14780			0				177360			7508240			7773781		0					
+2			!!2v			^^RY		14791			0				177492			7513828			7779505		0					
+3			!!C"			^^w#		14762			0				177144			7499096			7764223		0					
+4			!!0e			^^~|		14735			0				176820			7485380			7750075		0					
+5			!!:X			^^tx		14739			0				176868			7487412			7752134		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16275			0				195300			8267700			8554679		1008				
+1			&.&l			)T@F		11359			0				136308			5770372			5970772		1008				
+2			)TBN			.ZT<		15078			0				180936			7659624			7925557		1088				
+3*			.ZV@			2K+)		11411			0				136932			5796788			5998095		1051				
+4			B0Fi			H5`'		10908			0				130896			5541264			5734586		1215				
+5			H5g+			T%/}		19114			0				229368			9709912			10048386	1254				
+6			T%4X			[Hc7		10341			0				124092			5253228			5436794		1586				
+7			[Hdj			^^~|		4536			0				54432			2304288			2385090		1594				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+3			.ZV@			/+-0		758				0				9096			385064			399323		0					
+4			/+/-			2K+)		10954			0				131448			5564632			5757935		0					
+5			2K-]			9Z&o		16025			0				192300			8140700			8424030		0					
+6			9Z'#			9[nR		51				0				612				25908			27817		0					
+7			9[nm			A>?b		16025			0				192300			8140700			8424013		0					
+8			A>BF			B0A/		1601			0				19212			813308			842410		0					
+9			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+10			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+11			L</M			T%/}		16017			0				192204			8136636			8420006		0					
+12			T%4X			[Hc7		16025			0				192300			8140700			8424133		0					
+13			[Hdj			^^~|		7063			0				84756			3588004			3713196		0					
+
+2024-03-27 01:55:43 --- (INFO)compaction start level[1], compaction files[300], start level files[293,294,297,300,307,310,311,312], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:43 --- (INFO)compaction start level[0], compaction files[309,306,302,299,296,292], start level files[309,306,302,299,296,292], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:44 --- (INFO)write amplification: 1018594621, left bytes: 0
+Compaction 16 in level 1 Choice: file No.1
+Hash value: dfc3ff301a7c47fe
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							&.%\		16297			0				195560			8278368			8565614		1006				
+1*			&.&l			)T@F		11377			0				136524			5779516			5980207		1007				
+2			)TBN			.ZT<		15471			0				185652			7859268			8132077		1060				
+3			.ZXz			9Z&o		12188			0				146256			6191504			6408033		2331				
+4			9Z'#			H5`'		19485			0				233820			9898380			10243631	1609				
+5			H5g+			T%/}		21542			0				258504			10943336		11324460	1113				
+6			T%4X			[Hc7		12855			0				154260			6530340			6758065		1276				
+7			[Hdj			^^~|		5680			0				68160			2885440			2986353		1273				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11189			0				134268			5684012			5881450		0					
+2			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+3			.ZV@			2K+)		11725			0				140700			5956300			6163184		0					
+4			2K-]			9Z&o		16025			0				192300			8140700			8424030		0					
+5			9Z'#			9[nR		51				0				612				25908			27817		0					
+6			9[nm			A>?b		16025			0				192300			8140700			8424013		0					
+7			A>BF			B0A/		1601			0				19212			813308			842410		0					
+8			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+9			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+10			L</M			T%/}		16017			0				192204			8136636			8420006		0					
+11			T%4X			[Hc7		16025			0				192300			8140700			8424133		0					
+12			[Hdj			^^~|		7063			0				84756			3588004			3713196		0					
+
+2024-03-27 01:55:44 --- (INFO)compaction start level[1], compaction files[319], start level files[318,319,320,321,322,323,324,325], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:44 --- (INFO)write amplification: 1024584824, left bytes: 0
+Compaction 17 in level 1 Choice: file No.0
+Hash value: f6432ef1e43088a6
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*							&.%\		16297			0				195560			8278368			8565614		1006				
+1			)TBN			.ZT<		15471			0				185652			7859268			8132077		1060				
+2			.ZXz			9Z&o		12188			0				146256			6191504			6408033		2331				
+3			9Z'#			H5`'		19485			0				233820			9898380			10243631	1609				
+4			H5g+			T%/}		21542			0				258504			10943336		11324460	1113				
+5			T%4X			[Hc7		12855			0				154260			6530340			6758065		1276				
+6			[Hdj			^^~|		5680			0				68160			2885440			2986353		1273				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$'			&.%\		16025			0				192300			8140700			8423273		0					
+1			&.&l			)T@F		11396			0				136752			5789168			5990203		0					
+2			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+3			.ZV@			2K+)		11725			0				140700			5956300			6163184		0					
+4			2K-]			9Z&o		16025			0				192300			8140700			8424030		0					
+5			9Z'#			9[nR		51				0				612				25908			27817		0					
+6			9[nm			A>?b		16025			0				192300			8140700			8424013		0					
+7			A>BF			B0A/		1601			0				19212			813308			842410		0					
+8			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+9			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+10			L</M			T%/}		16017			0				192204			8136636			8420006		0					
+11			T%4X			[Hc7		16025			0				192300			8140700			8424133		0					
+12			[Hdj			^^~|		7063			0				84756			3588004			3713196		0					
+
+2024-03-27 01:55:44 --- (INFO)compaction start level[1], compaction files[318], start level files[318,320,321,322,323,324,325], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:44 --- (INFO)write amplification: 1033169303, left bytes: 0
+Compaction 18 in level 1 Choice: file No.0
+Hash value: 024af506bf164720
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			)TBN			.ZT<		15471			0				185652			7859268			8132077		1060				
+1			.ZXz			9Z&o		12188			0				146256			6191504			6408033		2331				
+2			9Z'#			H5`'		19485			0				233820			9898380			10243631	1609				
+3			H5g+			T%/}		21542			0				258504			10943336		11324460	1113				
+4			T%4X			[Hc7		12855			0				154260			6530340			6758065		1276				
+5			[Hdj			^^~|		5680			0				68160			2885440			2986353		1273				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							&&uL		16026			0				192308			8140700			8423170		0					
+1			&&vS			&.%\		305				0				3660			154940			161309		0					
+2			&.&l			)T@F		11396			0				136752			5789168			5990203		0					
+3			)TBN			.ZT<		16025			0				192300			8140700			8423225		0					
+4			.ZV@			2K+)		11725			0				140700			5956300			6163184		0					
+5			2K-]			9Z&o		16025			0				192300			8140700			8424030		0					
+6			9Z'#			9[nR		51				0				612				25908			27817		0					
+7			9[nm			A>?b		16025			0				192300			8140700			8424013		0					
+8			A>BF			B0A/		1601			0				19212			813308			842410		0					
+9			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+10			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+11			L</M			T%/}		16017			0				192204			8136636			8420006		0					
+12			T%4X			[Hc7		16025			0				192300			8140700			8424133		0					
+13			[Hdj			^^~|		7063			0				84756			3588004			3713196		0					
+
+2024-03-27 01:55:44 --- (INFO)compaction start level[1], compaction files[320], start level files[320,321,322,323,324,325], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:44 --- (INFO)write amplification: 1041595608, left bytes: 0
+Compaction 19 in level 1 Choice: file No.2
+Hash value: 71c3c7230ece9eae
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			.ZXz			9Z&o		12188			0				146256			6191504			6408033		2331				
+1			9Z'#			H5`'		19485			0				233820			9898380			10243631	1609				
+2*			H5g+			T%/}		21542			0				258504			10943336		11324460	1113				
+3			T%4X			[Hc7		12855			0				154260			6530340			6758065		1276				
+4			[Hdj			^^~|		5680			0				68160			2885440			2986353		1273				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0							&&uL		16026			0				192308			8140700			8423170		0					
+1			&&vS			&.%\		305				0				3660			154940			161309		0					
+2			&.&l			)T@F		11396			0				136752			5789168			5990203		0					
+3			)TBN			.ZJ<		16025			0				192300			8140700			8423193		0					
+4			.ZL'			.ZT<		4				0				48				2032			3112		0					
+5			.ZV@			2K+)		11725			0				140700			5956300			6163184		0					
+6			2K-]			9Z&o		16025			0				192300			8140700			8424030		0					
+7			9Z'#			9[nR		51				0				612				25908			27817		0					
+8			9[nm			A>?b		16025			0				192300			8140700			8424013		0					
+9			A>BF			B0A/		1601			0				19212			813308			842410		0					
+10			B0Fi			H5`'		12949			0				155388			6578092			6807111		0					
+11			H5g+			L<,G		7408			0				88896			3763264			3894679		0					
+12			L</M			T%/}		16017			0				192204			8136636			8420006		0					
+13			T%4X			[Hc7		16025			0				192300			8140700			8424133		0					
+14			[Hdj			^^~|		7063			0				84756			3588004			3713196		0					
+
+2024-03-27 01:55:44 --- (INFO)compaction start level[1], compaction files[323], start level files[321,322,323,324,325], compactionStrategy[0], baseLevel[1], 
+2024-03-27 01:55:44 --- (INFO)Total running time: 7532771us
+2024-03-27 01:55:44 --- (INFO)write amplification: 1054619676, left bytes: 0
+2024-03-27 01:55:44 --- (INFO)compaction_time: 6026749us
+2024-03-27 01:55:44 --- (INFO)write amplification: 1054619676, left bytes: 0
