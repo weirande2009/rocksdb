@@ -42,6 +42,7 @@ while IFS='=' read -r key value; do
 done < $5/"workload_count.txt" 
 
 # run once
+run_once $total_written_bytes $4 $5 kRoundRobin
 run_once $total_written_bytes $4 $5 kMinOverlappingRatio
 run_once $total_written_bytes $4 $5 kSelectLastSimilar
 
