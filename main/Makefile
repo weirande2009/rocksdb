@@ -12,6 +12,8 @@ ifneq ($(USE_RTTI), 1)
 	CXXFLAGS += -fno-rtti
 endif
 
+CXXFLAGS += -lstdc++fs
+
 CFLAGS += -Wstrict-prototypes
 
 .PHONY: clean librocksdb
@@ -32,3 +34,6 @@ tools:
 	g++ -o count_workload count_workload.cpp -std=c++17
 	cd ../../k-V-Workload-Generator && $(MAKE)
 	cp ../../k-V-Workload-Generator/load_gen .
+
+new_strategy_test: librocksdb new_strategy_test.cc
+	$(CXX) $(CXXFLAGS) -g $@.cc -o$@ ../librocksdb.a -I../include -I.. -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
