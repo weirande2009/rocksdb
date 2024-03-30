@@ -303,8 +303,9 @@ int main(int argc, char* argv[]) {
   CS561Log::Log("Program information: ");
   CS561Log::Log("Compaction strategy: " + compaction_strategy);
   CS561Log::Log("Total workload size: " + std::to_string(total_written_bytes));
-  CS561Log::Log("Database path: " + std::string(argv[3]));
-  CS561Log::Log("Experiment path: " + std::string(argv[4]));
+  CS561Log::Log("Database path: " + kDBPath);
+  CS561Log::Log("Experiment path: " + experiment_path);
+  CS561Log::Log("Workload path: " + workload_path);
   
   AllFilesEnumerator::GetInstance();
 
