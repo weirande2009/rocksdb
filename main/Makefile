@@ -12,7 +12,7 @@ ifneq ($(USE_RTTI), 1)
 	CXXFLAGS += -fno-rtti
 endif
 
-CXXFLAGS += -lstdc++fs
+# CXXFLAGS += -lstdc++fs
 
 CFLAGS += -Wstrict-prototypes
 
@@ -21,7 +21,7 @@ CFLAGS += -Wstrict-prototypes
 all: simple_example
 
 simple_example: librocksdb simple_example.cc
-	$(CXX) $(CXXFLAGS) -g $@.cc -o$@ ../librocksdb.a -I../include -I.. -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
+	$(CXX) $(CXXFLAGS) $@.cc -o$@ ../librocksdb.a -I../include -I.. -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS) -lstdc++fs
 
 clean:
 	rm -rf ./simple_example
@@ -32,8 +32,8 @@ librocksdb:
 tools:
 	g++ -o check_finish_enumeration check_finish_enumeration.cpp -std=c++17
 	g++ -o count_workload count_workload.cpp -std=c++17
-	cd ../../k-V-Workload-Generator && $(MAKE)
-	cp ../../k-V-Workload-Generator/load_gen .
+	cd ../../K-V-Workload-Generator && $(MAKE)
+	cp ../../K-V-Workload-Generator/load_gen .
 
 new_strategy_test: librocksdb new_strategy_test.cc
 	$(CXX) $(CXXFLAGS) -g $@.cc -o$@ ../librocksdb.a -I../include -I.. -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
