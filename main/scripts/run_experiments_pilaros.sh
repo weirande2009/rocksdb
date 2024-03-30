@@ -1,8 +1,8 @@
 workload_dir=workloads/test/2000000_0_0_64_0125
-./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -L 0.125
-./load_gen --output_path $workload_dir/2.txt -I 2000000 -U 0 -D 0 -E 64 -L 0.125
-./load_gen --output_path $workload_dir/3.txt -I 2000000 -U 0 -D 0 -E 64 -L 0.125
-./load_gen --output_path $workload_dir/4.txt -I 2000000 -U 0 -D 0 -E 64 -L 0.125
+./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/2.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/3.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/4.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
 total_bytes=128000000
 
 # test speed of nvm0 and memory by running run_once
