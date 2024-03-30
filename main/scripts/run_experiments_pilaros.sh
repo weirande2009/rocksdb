@@ -24,6 +24,7 @@
 workload_dir=workloads/test/2000000_0_0_64_0125
 mkdir -p $workload_dir
 ./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+total_bytes=128000000
 
 ./run_once_existing.sh /scratchNVM1/ranw/rocksdb1/ experiment1 kMinOverlappingRatio $total_bytes workloads/1.txt &
 ./run_once_existing.sh /scratchNVM1/ranw/rocksdb2/ experiment2 kMinOverlappingRatio $total_bytes workloads/1.txt &
