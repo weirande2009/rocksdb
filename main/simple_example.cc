@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <filesystem>
 
 #include "cs561/all_files_enumerator.h"
 #include "rocksdb/advanced_options.h"
