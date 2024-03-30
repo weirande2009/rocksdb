@@ -7,9 +7,9 @@ total_bytes=128000000
 
 # test speed of nvm0 and memory by running run_once
 echo 'memory test'
-time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment_memory kMinOverlappingRatio $total_bytes $workload_dir/1.txt
+time ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb/ experiment_memory kMinOverlappingRatio $total_bytes $workload_dir/1.txt
 echo 'nvm test'
-time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment_nvm kMinOverlappingRatio $total_bytes $workload_dir/1.txt
+time ./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb/ experiment_nvm kMinOverlappingRatio $total_bytes $workload_dir/1.txt
 
 # test concurrent runs' consistency in memory
 # ./run_once_existing.sh mnt/rocksdb/ experiment1 kMinOverlappingRatio $total_bytes workloads/1.txt &
