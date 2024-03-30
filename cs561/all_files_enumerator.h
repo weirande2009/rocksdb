@@ -42,11 +42,9 @@ struct SimulatedFileMetaData {
 class AllFilesEnumerator {
 public:
   enum CompactionStrategy {
-    RoundRobin,
-    MinOverlappingRatio,
+    Rocksdb,
     EnumerateAll,
     Manual,
-    TwoStepsSearch,
     SelectLastSimilar,
   };
 

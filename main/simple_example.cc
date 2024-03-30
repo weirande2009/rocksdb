@@ -65,36 +65,12 @@ void backgroundJobMayComplete(DB* db) {
   }
 }
 
-inline void showProgress(const uint64_t& workload_size,
-                         const uint64_t& counter) {
-  if (counter / (workload_size / 100) >= 1) {
-    for (int i = 0; i < 104; i++) {
-      std::cout << "\b";
-      fflush(stdout);
-    }
-  }
-  for (int i = 0; i < counter / (workload_size / 100);
-       i++) {
-    std::cout << "=";
-    fflush(stdout);
-  }
-  std::cout << std::setfill(' ')
-            << std::setw(static_cast<int>(101UL -
-                         counter / (workload_size / 100)));
-  std::cout << counter * 100 / workload_size << "%";
-  fflush(stdout);
-
-  if (counter == workload_size) {
-    std::cout << "\n";
-    return;
-  }
-}
-
 void runWorkload(Options& op, WriteOptions& write_op,
                  ReadOptions& read_op,
                  std::string compaction_strategy,
                  uint64_t total_written_bytes,
-                 const std::string& experiment_path) {
+                 const std::string& experiment_path,
+                 const std::string& workload_path) {
   DB* db;
 
   op.create_if_missing = true;
@@ -106,43 +82,33 @@ void runWorkload(Options& op, WriteOptions& write_op,
   op.max_bytes_for_level_base = 32 * 1024 * 1024;
 
   op.level_compaction_dynamic_level_bytes = false;
-  // op.level_compaction_dynamic_file_size = true;
 
   // int64_t bytes_per_sec = 1024 * 1024;
   // std::shared_ptr<rocksdb::RateLimiter> rate_limiter;
   // rate_limiter.reset(rocksdb::NewGenericRateLimiter(bytes_per_sec));
   // op.rate_limiter = rate_limiter;
 
-  std::cout << "Compaction strategy: " << compaction_strategy << std::endl;
-
   // set the compaction strategy
   if (compaction_strategy == "kRoundRobin") {
-    AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::RoundRobin;
+    AllFilesEnumerator::GetInstance().strategy = AllFilesEnumerator::CompactionStrategy::Rocksdb;
     op.compaction_pri = kRoundRobin;
-  } else if (compaction_strategy ==
-             "kMinOverlappingRatio") {
-    AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::
-            MinOverlappingRatio;
+  } else if (compaction_strategy == "kMinOverlappingRatio") {
+    AllFilesEnumerator::GetInstance().strategy = AllFilesEnumerator::CompactionStrategy::Rocksdb;
     op.compaction_pri = kMinOverlappingRatio;
+  } else if (compaction_strategy == "kOldestLargestSeqFirst") {
+    AllFilesEnumerator::GetInstance().strategy = AllFilesEnumerator::CompactionStrategy::Rocksdb;
+    op.compaction_pri = kOldestLargestSeqFirst;
+  } else if (compaction_strategy == "kOldestSmallestSeqFirst") {
+    AllFilesEnumerator::GetInstance().strategy = AllFilesEnumerator::CompactionStrategy::Rocksdb;
+    op.compaction_pri = kOldestSmallestSeqFirst;
   } else if (compaction_strategy == "kEnumerateAll") {
-    AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::
-            EnumerateAll;
+    AllFilesEnumerator::GetInstance().strategy = AllFilesEnumerator::CompactionStrategy::EnumerateAll;
   } else if (compaction_strategy == "kManual") {
-    std::string manual_list_path =
-        experiment_path + "/manual_list.txt";
-    AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::Manual;
-    AllFilesEnumerator::GetInstance().SetManualList(
-        readManualList(manual_list_path));
-  } else if (compaction_strategy == "kTwoStepsSearch") {
-    AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::TwoStepsSearch;
+    std::string manual_list_path = experiment_path + "/manual_list.txt";
+    AllFilesEnumerator::GetInstance().strategy = AllFilesEnumerator::CompactionStrategy::Manual;
+    AllFilesEnumerator::GetInstance().SetManualList(readManualList(manual_list_path));
   } else if (compaction_strategy == "kSelectLastSimilar") {
-    AllFilesEnumerator::GetInstance().strategy =
-        AllFilesEnumerator::CompactionStrategy::SelectLastSimilar;
+    AllFilesEnumerator::GetInstance().strategy = AllFilesEnumerator::CompactionStrategy::SelectLastSimilar;
   } else {
     std::cerr << "Invalid compaction strategy" << std::endl;
     exit(-1);
@@ -180,46 +146,25 @@ void runWorkload(Options& op, WriteOptions& write_op,
   // op.table_factory.reset(NewBlockBasedTableFactory(table_options));
 
   Status s = DB::Open(op, kDBPath, &db);
-  if (!s.ok()) std::cerr << s.ToString() << std::endl;
-  assert(s.ok());
-  std::cout << "Start running workload" << std::endl;
+  if (!s.ok()) {
+    std::cerr << s.ToString() << std::endl;
+    exit(-1);
+  }
+
   // opening workload file for the first time
-  std::string workload_path =
-      experiment_path + "/workload.txt";
-  std::ifstream workload_file;
-  workload_file.open(workload_path);
-  assert(workload_file);
-  // doing a first pass to get the workload size
-  uint32_t entry_size = 8;
-  uint64_t workload_size = 0;
-  uint64_t inserted_bytes = 0;
-  InternalKey smallest, largest;
-  bool first_key = true;
-  while (!workload_file.eof()) {
-    ++workload_size;
-    char instruction;
-    workload_file >> instruction;
-    std::string value, key;
-    workload_file >> key >> value;
-    if (first_key) {
-      smallest = InternalKey(Slice(key), 0, kTypeValue);
-      largest = InternalKey(Slice(key), 0, kTypeValue);
-      first_key = false;
-    } else {
-      if (smallest.user_key().compare(Slice(key)) > 0) {
-        smallest = InternalKey(Slice(key), 0, kTypeValue);
-      }
-      if (largest.user_key().compare(Slice(key)) < 0) {
-        largest = InternalKey(Slice(key), 0, kTypeValue);
-      }
-    }
+  std::ifstream workload_file(workload_path);
+  if (!workload_file.is_open()) {
+    std::cerr << "Cannot open workload file" << std::endl;
+    exit(-1);
+  }
+
+  // read the whole workload
+  std::vector<std::string> workload;
+  std::string line;
+  while (std::getline(workload_file, line)) {
+    workload.push_back(line);
   }
   workload_file.close();
-  AllFilesEnumerator::GetInstance().SetKeyRange(smallest, largest);
-  AllFilesEnumerator::GetInstance().SetKeySpaceSize(81450625UL); // 95^4
-
-  workload_file.open(workload_path);
-  assert(workload_file);
 
   // Clearing the system cache
   // std::cout << "Clearing system cache ..." << std::endl; 
@@ -229,40 +174,37 @@ void runWorkload(Options& op, WriteOptions& write_op,
   //     exit(0);
   // }
 
-  AllFilesEnumerator::GetInstance()
-      .GetCollector()
-      .UpdateLeftBytes(total_bytes);
+  AllFilesEnumerator::GetInstance().GetCollector().UpdateLeftBytes(total_bytes);
 
-  Iterator* it =
-      db->NewIterator(read_op);  // for range reads
-  uint64_t counter = 0;          // for progress bar
+  Iterator* it = db->NewIterator(read_op);  // for range reads
+  uint64_t inserted_bytes = 0;
 
-  while (!workload_file.eof()) {
+  auto start_time = std::chrono::system_clock::now();
+  for (size_t i = 0; i < workload.size(); i++){
+    std::stringstream ss(workload[i]);
     char instruction;
     std::string value, key, start_key, end_key;
-    workload_file >> instruction;
+    ss >> instruction;
     switch (instruction) {
       case 'I':  // insert
       case 'U':  // update
-        workload_file >> key >> value;
+        ss >> key >> value;
         inserted_bytes += key.length() + value.length();
         // Put key-value
         s = db->Put(write_op, key, value);
         if (!s.ok()) std::cerr << s.ToString() << std::endl;
         assert(s.ok());
-        counter++;
         break;
 
       case 'Q':  // probe: point query
-        workload_file >> key;
+        ss >> key;
         s = db->Get(read_op, key, &value);
         // if (!s.ok()) std::cerr << s.ToString() << "key =
         // " << key << std::endl; assert(s.ok());
-        counter++;
         break;
 
       case 'S':  // scan: range query
-        workload_file >> start_key >> end_key;
+        ss >> start_key >> end_key;
         it->Refresh();
         assert(it->status().ok());
         for (it->Seek(start_key); it->Valid(); it->Next()) {
@@ -275,10 +217,9 @@ void runWorkload(Options& op, WriteOptions& write_op,
         if (!it->status().ok()) {
           std::cerr << it->status().ToString() << std::endl;
         }
-        counter++;
         break;
       case 'D':
-        workload_file >> key;
+        ss >> key;
         s = db->Delete(write_op, key);
         if (!s.ok()) std::cerr << s.ToString() << std::endl;
         assert(s.ok());
@@ -291,109 +232,85 @@ void runWorkload(Options& op, WriteOptions& write_op,
     }
 
     if (total_bytes >= inserted_bytes)
-      AllFilesEnumerator::GetInstance()
-          .GetCollector()
-          .UpdateLeftBytes(total_bytes - inserted_bytes);
-
-    if (workload_size < 100) workload_size = 100;
-    if (counter % (workload_size / 100) == 0) {
-      // showProgress(workload_size, counter);
-    }
+      AllFilesEnumerator::GetInstance().GetCollector().UpdateLeftBytes(total_bytes - inserted_bytes);
   }
-
-  workload_file.close();
 
   FlushOptions flush_options;
   db->Flush(flush_options);
   backgroundJobMayComplete(db);
 
+  auto end_time = std::chrono::system_clock::now();
+  auto durationInMicroseconds = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);   
+
   s = db->Close();
   if (!s.ok()) std::cerr << s.ToString() << std::endl;
   assert(s.ok());
   delete db;
-  return;
-}
 
-int main(int argc, char* argv[]) {
-  if (argc != 5) {
-    std::cout << "There should three parameters: "
-              << std::endl;
-    std::cout << "1. Compaction strategy (kRoundRobin, "
-                 "kMinOverlappingRatio, "
-                 "kEnumerateAll, kManual)"
-              << std::endl;
-    std::cout << "2. Total written bytes in the workload"
-              << std::endl;
-    std::cout << "3. The database path" << std::endl;
-    std::cout << "4. The experiment root path" << std::endl;
-    return -1;
-  }
-  // parse compaction strategy
-  std::string compaction_strategy = argv[1];
-  uint64_t total_written_bytes = std::stoi(argv[2]);
-  kDBPath = argv[3];
-  std::cout << argv[4] << std::endl;
-  CS561Log::SetLogRootPath(argv[4]);
-
-  CS561Log::Log(
-      "==================================================");
-  // std::cout << "Program information: " << std::endl;
-  CS561Log::Log("Program information: ");
-  // std::cout << "Compaction strategy: " <<
-  // compaction_strategy << std::endl;
-  CS561Log::Log("Compaction strategy: " +
-                compaction_strategy);
-  // std::cout << "Total written bytes: " <<
-  // total_written_bytes << std::endl;
-  CS561Log::Log("Total written bytes: " +
-                std::to_string(total_written_bytes));
-  // std::cout << "Database path: " << argv[3] << std::endl;
-  CS561Log::Log("Database path: " + std::string(argv[3]));
-  // std::cout << "Experiment path: " << argv[4] <<
-  // std::endl;
-  CS561Log::Log("Experiment path: " + std::string(argv[4]));
-  auto start_time = std::chrono::system_clock::now();
-  AllFilesEnumerator::GetInstance();
-  Options options;
-  WriteOptions write_op;
-  ReadOptions read_op;
-  runWorkload(options, write_op, read_op,
-              compaction_strategy, total_written_bytes,
-              argv[4]);
-
-  auto end_time = std::chrono::system_clock::now();
-  auto durationInMicroseconds =
-      std::chrono::duration_cast<std::chrono::microseconds>(
-          end_time - start_time);
-
-  std::cout << "Total running time: "
-            << durationInMicroseconds.count() << "us" << std::endl;
-  CS561Log::Log(
-      "Total running time: " +
-      std::to_string(durationInMicroseconds.count()) +
-      "us");
+  // std::cout << "Total running time: " << durationInMicroseconds.count() << "us" << std::endl;
+  CS561Log::Log("Total running time: " + std::to_string(durationInMicroseconds.count()) + "us");
   AllFilesEnumerator::GetInstance().GetCollector().DumpToFile();
-  std::string experiment_path = argv[4];
+
   std::string result_path = experiment_path + "/result.txt";
+  // if the file does not exist, create it
+  if (!std::filesystem::exists(result_path)) {
+    // create the file
+    std::ofstream result_file;
+    result_file.open(result_path, std::ios::app);
+    if (!result_file.is_open()) {
+      std::cerr << "Cannot open result file" << std::endl;
+      exit(-1);
+    }
+    result_file << "Strategy\tWB\tDuration" << std::endl;
+    result_file.close();
+  }
   std::ofstream result_file;
   result_file.open(result_path, std::ios::app);
   if (!result_file.is_open()) {
     std::cerr << "Cannot open result file" << std::endl;
     exit(-1);
   }
-  if (compaction_strategy == "kRoundRobin") {
-    result_file << "RoundRobin: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
-  } else if(compaction_strategy == "kMinOverlappingRatio") {
-    result_file << "MinOverlappingRatio: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
-  } else if(compaction_strategy == "kTwoStepsSearch") {
-    result_file << "TwoStepsSearch: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
-  } else if(compaction_strategy == "kSelectLastSimilar") {
-    result_file << "SelectLastSimilar: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
-  } else if(compaction_strategy == "kManual") {
-    result_file << "Manual: " << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << std::endl;
+
+  // strategy WA duration
+  if (compaction_strategy != "kEnumerateAll"){
+    result_file << compaction_strategy << "\t" << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << "\t" << durationInMicroseconds.count() << std::endl;
   }
-  // Record the duration to result.txt
-  result_file << "Total running time: " << durationInMicroseconds.count() << " us" << std::endl;
-  AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
+
+  return;
+}
+
+int main(int argc, char* argv[]) {
+  if (argc != 6) {
+    std::cout << "There should three parameters: " << std::endl;
+    std::cout << "1. Compaction strategy" << std::endl;
+    std::cout << "2. Total written bytes in the workload" << std::endl;
+    std::cout << "3. The database path" << std::endl;
+    std::cout << "4. The experiment root path" << std::endl;
+    std::cout << "5. The workload path" << std::endl;
+    return -1;
+  }
+  // parse parameter
+  std::string compaction_strategy = argv[1];
+  uint64_t total_written_bytes = std::stoi(argv[2]);
+  kDBPath = argv[3];
+  std::string experiment_path = argv[4];
+  std::string workload_path = argv[5];
+
+  CS561Log::SetLogRootPath(experiment_path);
+
+  CS561Log::Log( "==================================================");
+  CS561Log::Log("Program information: ");
+  CS561Log::Log("Compaction strategy: " + compaction_strategy);
+  CS561Log::Log("Total workload size: " + std::to_string(total_written_bytes));
+  CS561Log::Log("Database path: " + std::string(argv[3]));
+  CS561Log::Log("Experiment path: " + std::string(argv[4]));
+  
+  AllFilesEnumerator::GetInstance();
+
+  Options options;
+  WriteOptions write_op;
+  ReadOptions read_op;
+  runWorkload(options, write_op, read_op, compaction_strategy, total_written_bytes, experiment_path, workload_path);
+  
   return 0;
 }

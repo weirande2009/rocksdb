@@ -56,11 +56,11 @@ void CS561Log::LogContent(std::ofstream& of, const std::string& content,
 }
 
 void CS561Log::LogResult(size_t WA, size_t left_bytes) {
-  Log("write amplification: " + std::to_string(WA) +
+  Log("total written bytes: " + std::to_string(WA) +
       ", left bytes: " + std::to_string(left_bytes));
-  std::ofstream content_file(LOG_ROOT + "/content.txt",
-                         std::ios::app);
-  LogContent(content_file, "write amplification: " + std::to_string(WA));
+  // std::ofstream content_file(LOG_ROOT + "/content.txt",
+  //                        std::ios::app);
+  // LogContent(content_file, "total written bytes: " + std::to_string(WA));
 }
 
 void CS561Log::LogMinimum(

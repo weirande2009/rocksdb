@@ -7442,13 +7442,16 @@ void VersionStorageInfo::PickUnselectedFile(
     int start_level, int output_level, 
     const ImmutableOptions& ioptions,
     const MutableCFOptions& options) {
+  
+  // Only select last similar file for L0->L1 compaction
+  // except for the case of SelectLastSimilar strategy
   if (!(AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::SelectLastSimilar
     || (start_level == 1 && output_level == 2)) || start_level == 0) {
     return;
   }
 
   // Log current WA first
-  AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
+  // AllFilesEnumerator::GetInstance().GetCollector().DumpWAResult();
   
   int level = start_level;
   const std::vector<FileMetaData*>& files = files_[level];
@@ -7460,44 +7463,26 @@ void VersionStorageInfo::PickUnselectedFile(
     temp[i].file = files[i];
   }
   // get the files_by_compaction_pri[level]
-  auto& files_by_compaction_pri =
-      files_by_compaction_pri_[level];
+  auto& files_by_compaction_pri = files_by_compaction_pri_[level];
   // get the overlapping ratio of each file
   std::vector<uint64_t> file_overlapping_ratio;
   if (num_non_empty_levels_ > level + 1) {
-    file_overlapping_ratio = GetFileOverlappingRatio(
-        *internal_comparator_, files_[level],
-        files_[level + 1], ioptions.clock, level,
-        num_non_empty_levels_, options.ttl);
+    file_overlapping_ratio = GetFileOverlappingRatio(*internal_comparator_, files_[level],
+        files_[level + 1], ioptions.clock, level, num_non_empty_levels_, options.ttl);
   } else {
-    file_overlapping_ratio =
-        std::vector<uint64_t>(files_[level].size(), 0);
-  }
-  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::RoundRobin
-      || AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::MinOverlappingRatio) { 
-    // collect this seletion
-    AllFilesEnumerator::GetInstance().CollectCompactionInfo(
-        files_, file_overlapping_ratio,
-        num_non_empty_levels_, level,
-        files_by_compaction_pri[0]);
-    return;
+    file_overlapping_ratio = std::vector<uint64_t>(files_[level].size(), 0);
   }
 
-  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::TwoStepsSearch
-      && files_[level+1].size() == 0) {
+  // Only collect compaction info if the compaction strategy is within Rocksdb
+  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::Rocksdb) {
+    AllFilesEnumerator::GetInstance().CollectCompactionInfo(files_, file_overlapping_ratio, 
+      num_non_empty_levels_, level, files_by_compaction_pri[0]);
     return;
   }
-
-  // if the min element of file_overlapping_ratio is 0, we should skip
-  // if (*std::min_element(file_overlapping_ratio.begin(), file_overlapping_ratio.end()) == 0) {
-  //   return;
-  // }
 
   // we should clear files_by_compaction_pri
   files_by_compaction_pri.clear();
   assert(files_by_compaction_pri.size() == 0);
-  // std::cout << files_by_compaction_pri.size() <<
-  // std::endl;
 
   // choose a file and put it to the first place
   int chosen_file_index = 0;
@@ -7506,12 +7491,7 @@ void VersionStorageInfo::PickUnselectedFile(
       chosen_file_index = AllFilesEnumerator::GetInstance().GetPickingFile(temp, level);
       break;
     case AllFilesEnumerator::CompactionStrategy::Manual:
-      chosen_file_index = AllFilesEnumerator::GetInstance()
-                              .NextChoiceForManual();
-      std::cout << "chosen_file_index: " << chosen_file_index << std::endl;
-      break;
-    case AllFilesEnumerator::CompactionStrategy::TwoStepsSearch:
-      chosen_file_index = AllFilesEnumerator::GetInstance().GetEstimatedFile(files_, level, num_levels_, options, *internal_comparator_);
+      chosen_file_index = AllFilesEnumerator::GetInstance().NextChoiceForManual();
       std::cout << "chosen_file_index: " << chosen_file_index << std::endl;
       break;
     case AllFilesEnumerator::CompactionStrategy::SelectLastSimilar:
@@ -7524,17 +7504,17 @@ void VersionStorageInfo::PickUnselectedFile(
   AllFilesEnumerator::GetInstance().CollectCompactionInfo(
       files_, file_overlapping_ratio, num_non_empty_levels_,
       level, chosen_file_index);
+  
   // initialize files_by_compaction_pri_
   Fsize tmp = temp[chosen_file_index];
   temp[chosen_file_index] = temp[0];
   temp[0] = tmp;
+
   for (size_t i = 0; i < temp.size(); i++) {
-    files_by_compaction_pri.push_back(
-        static_cast<int>(temp[i].index));
+    files_by_compaction_pri.push_back(static_cast<int>(temp[i].index));
   }
   next_file_to_compact_by_size_[level] = 0;
-  assert(files_[level].size() ==
-         files_by_compaction_pri_[level].size());
+  assert(files_[level].size() == files_by_compaction_pri_[level].size());
 }
 
 }  // namespace ROCKSDB_NAMESPACE
