@@ -44,7 +44,7 @@ workspace_dir=workspace/test/2000000_0_0_64_8
 mkdir -p $workspace_dir
 
 for i in {1..5}
-    ./scripts/run_for_a_type.sh 360 /mnt/ramd/ranw/rocksdb$i/ $workspace_dir/experiment$i $workload_dir/$i.txt $total_bytes &
+    ./scripts/run_for_a_type.sh 360 /mnt/ramd/ranw/rocksdb$i/ $workspace_dir/experiment$i $workload_dir/1.txt $total_bytes &
 done
 
 echo 'Running 5 experiments in parallel'
