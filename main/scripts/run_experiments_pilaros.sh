@@ -29,8 +29,8 @@ total_bytes=128000000
 workspace_dir=workspace/test/2000000_0_0_64_0125
 mkdir -p $workspace_dir
 
-# ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb1/ $workspace_dir/experiment1 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
-# ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb2/ $workspace_dir/experiment2 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
-# ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb3/ $workspace_dir/experiment3 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
+./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb1/ $workspace_dir/experiment1 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
+./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb2/ $workspace_dir/experiment2 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
+./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb3/ $workspace_dir/experiment3 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
 ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb4/ $workspace_dir/experiment4 kMinOverlappingRatio $total_bytes $workload_dir/1.txt
 
