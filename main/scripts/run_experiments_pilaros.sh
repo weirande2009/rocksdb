@@ -26,8 +26,10 @@ mkdir -p $workload_dir
 ./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
 total_bytes=128000000
 
-./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb1/ experiment1 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
-./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb2/ experiment2 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
-./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb3/ experiment3 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
-./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb4/ experiment3 kMinOverlappingRatio $total_bytes $workload_dir/1.txt
+workspace_dir=workspace/test/2000000_0_0_64_0125
+
+./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb1/ $workspace_dir/experiment1 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
+./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb2/ $workspace_dir/experiment2 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
+./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb3/ $workspace_dir/experiment3 kMinOverlappingRatio $total_bytes $workload_dir/1.txt &
+./scripts/run_once_existing.sh /scratchNVM1/ranw/rocksdb4/ $workspace_dir/experiment3 kMinOverlappingRatio $total_bytes $workload_dir/1.txt
 
