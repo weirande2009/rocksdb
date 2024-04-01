@@ -168,7 +168,7 @@ mkdir -p $workspace_dir_skip
 ./load_gen --output_path $workload_dir_test_skip/type3.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
 total_bytes=$((2000000 * 64))
 
-enumeration_runs=2
+enumeration_runs=4000
 rocksdb_dir=/scratchNVM1/ranw
 ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 0 &
 ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 0 &
