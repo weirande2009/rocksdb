@@ -153,6 +153,23 @@
 # ./scripts/run_for_a_type.sh 5600000 2400000 0 $output_dir 800 1 mnt/rocksdb experiment 16 0 0
 # ./scripts/run_for_a_type.sh 4800000 3200000 0 $output_dir 800 1 mnt/rocksdb experiment 16 0 0
 
-./load_gen --output_path workloads/1.txt -I 2000000 -U 0 -D 0 -E 64 -L 0.125
-./scripts/run_for_a_type.sh tmp/test_new_script/ 3000 mnt/rocksdb/ experiment workloads/1.txt 128000000
+# ./load_gen --output_path workloads/1.txt -I 2000000 -U 0 -D 0 -E 64 -L 0.125
+# ./scripts/run_for_a_type.sh 3000 mnt/rocksdb/ experiment1 workloads/1.txt 128000000
 
+# ./load_gen --output_path workloads/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+# total_bytes=$((2000000 * 64))
+# output_dir=tmp/test_workload_compaction_times/
+
+# ./scripts/run_for_a_type.sh 3000 mnt/rocksdb/ experiment1 workloads/1.txt $total_bytes
+
+# ./load_gen --output_path workloads/1.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
+# ./load_gen --output_path workloads/1.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
+# ./load_gen --output_path workloads/1.txt -I 2500000 -U 0 -D 0 -E 64 -K 8
+# total_bytes=$((2500000 * 64))
+# # time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment1 kMinOverlappingRatio $total_bytes workloads/1.txt
+# ./scripts/run_for_a_type.sh 1000 mnt/rocksdb/ experiment1 workloads/1.txt $total_bytes
+
+./load_gen --output_path workloads/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+total_bytes=$((2000000 * 64))
+./scripts/run_for_a_type.sh 1 mnt/rocksdb/ experiment_non_skip workloads/1.txt $total_bytes 0
+./scripts/run_for_a_type.sh 1 mnt/rocksdb/ experiment_skip workloads/1.txt $total_bytes 1

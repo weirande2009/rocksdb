@@ -181,10 +181,10 @@ void runWorkload(Options& op, WriteOptions& write_op,
   uint64_t inserted_bytes = 0;
 
   auto start_time = std::chrono::system_clock::now();
+  char instruction;
+  std::string value, key, start_key, end_key;
   for (size_t i = 0; i < workload.size(); i++){
     std::stringstream ss(workload[i]);
-    char instruction;
-    std::string value, key, start_key, end_key;
     ss >> instruction;
     switch (instruction) {
       case 'I':  // insert
@@ -281,13 +281,14 @@ void runWorkload(Options& op, WriteOptions& write_op,
 }
 
 int main(int argc, char* argv[]) {
-  if (argc != 6) {
+  if (argc != 7) {
     std::cout << "There should three parameters: " << std::endl;
     std::cout << "1. Compaction strategy" << std::endl;
     std::cout << "2. Total written bytes in the workload" << std::endl;
     std::cout << "3. The database path" << std::endl;
     std::cout << "4. The experiment root path" << std::endl;
     std::cout << "5. The workload path" << std::endl;
+    std::cout << "6. Skip trivial move" << std::endl;
     return -1;
   }
   // parse parameter
@@ -296,6 +297,7 @@ int main(int argc, char* argv[]) {
   kDBPath = argv[3];
   std::string experiment_path = argv[4];
   std::string workload_path = argv[5];
+  bool skip_trivial_move = std::stoi(argv[6]);
 
   CS561Log::SetLogRootPath(experiment_path);
 
@@ -306,8 +308,10 @@ int main(int argc, char* argv[]) {
   CS561Log::Log("Database path: " + kDBPath);
   CS561Log::Log("Experiment path: " + experiment_path);
   CS561Log::Log("Workload path: " + workload_path);
+  CS561Log::Log("Skip trivial move: " + std::to_string(skip_trivial_move));
   
   AllFilesEnumerator::GetInstance();
+  AllFilesEnumerator::GetInstance().skip_trivial_move = skip_trivial_move;
 
   Options options;
   WriteOptions write_op;

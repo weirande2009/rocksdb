@@ -50,6 +50,8 @@ public:
 
   // Compaction strategy
   CompactionStrategy strategy;
+  // Whether to skip trivial move when enumeration
+  bool skip_trivial_move;
 
   static AllFilesEnumerator& GetInstance() {
       if (instance == nullptr) {

@@ -7475,15 +7475,24 @@ void VersionStorageInfo::PickUnselectedFile(
 
   // Check whether there is at least a file that has zero overlapping ratio
   bool has_zero_overlapping_ratio = false;
-  for (size_t i = 0; i < file_overlapping_ratio.size(); i++) {
-    if (file_overlapping_ratio[i] == 0) {
-      has_zero_overlapping_ratio = true;
-      break;
+  if (AllFilesEnumerator::GetInstance().skip_trivial_move) {
+    for (size_t i = 0; i < file_overlapping_ratio.size(); i++) {
+      if (file_overlapping_ratio[i] == 0) {
+        has_zero_overlapping_ratio = true;
+        break;
+      }
     }
   }
 
+  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::EnumerateAll && has_zero_overlapping_ratio) {
+    AllFilesEnumerator::GetInstance().CollectCompactionInfo(files_, file_overlapping_ratio, 
+      num_non_empty_levels_, level, files_by_compaction_pri[0]);
+    CS561Log::Log("EnumerateAll: has_zero_overlapping_ratio");
+    return;
+  }
+
   // Only collect compaction info if the compaction strategy is within Rocksdb
-  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::Rocksdb || has_zero_overlapping_ratio) {
+  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::Rocksdb) {
     AllFilesEnumerator::GetInstance().CollectCompactionInfo(files_, file_overlapping_ratio, 
       num_non_empty_levels_, level, files_by_compaction_pri[0]);
     return;

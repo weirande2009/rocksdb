@@ -11,7 +11,7 @@ run_once() {
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example $4 $1 $2 $3 $5
+    ./simple_example $4 $1 $2 $3 $5 0
 }
 
 run_baseline() {
@@ -24,10 +24,10 @@ run_baseline() {
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example kRoundRobin $1 $2 $3
+    ./simple_example kRoundRobin $1 $2 $3 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kMinOverlappingRatio $1 $2 $3 $4
+    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0
 }
 
 run_all_baselines() {
@@ -40,33 +40,34 @@ run_all_baselines() {
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example kRoundRobin $1 $2 $3 $4
+    ./simple_example kRoundRobin $1 $2 $3 $4 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kMinOverlappingRatio $1 $2 $3 $4
+    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kOldestLargestSeqFirst $1 $2 $3 $4
+    ./simple_example kOldestLargestSeqFirst $1 $2 $3 $4 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kOldestSmallestSeqFirst $1 $2 $3 $4
+    ./simple_example kOldestSmallestSeqFirst $1 $2 $3 $4 0
 }
 
 run_enumerate() {
-    if ! [ $# -eq 5 ]; then
-        echo 'in this shell script, there will be four parameters, which are:'
+    if ! [ $# -eq 6 ]; then
+        echo 'in this shell script, there will be six parameters, which are:'
         echo '1. the number of runs'
         echo '2. the number of all inserted bytes'
         echo '3. the path of the rocksdb'
         echo '4. the path of the experiment workspace'
         echo '5. the workload path'
+        echo '6. whether to skip trivial move'
         exit 1
     fi
     for i in $(seq 1 $1)
     do
         echo 'run' $i
         find $3 -mindepth 1 -delete
-        ./simple_example kEnumerateAll $2 $3 $4 $5
+        ./simple_example kEnumerateAll $2 $3 $4 $5 $6
 
         # check whether to stop
         ./check_finish_enumeration $4
