@@ -35,7 +35,7 @@
 
 # echo 'Finished running 6 experiments in parallel'
 
-mory/complete_test_concurrent_3_test_skip
+workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip
 workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip/non_skip
 workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip/skip
 # mkdir -p $workload_dir_test_skip
