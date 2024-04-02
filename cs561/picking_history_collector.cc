@@ -18,16 +18,18 @@ PickingHistoryCollector::PickingHistoryCollector()
           "/history/picking_history_level1"),
       forests(VersionForest(
           {DUMP_FILEPATH_LEVEL0, DUMP_FILEPATH_LEVEL1})) {
+  // CS561Log::Log("Begin PickingHistoryCollector constructor");
   auto p = CS561Log::LoadMinimum();
   global_min_WA = p.first;
   global_min_WA_corresponding_left_bytes = p.second;
   WA = 0;
   left_bytes = 0;
   compaction_time = 0;
+  // CS561Log::Log("Finish PickingHistoryCollector constructor");
 }
 
 PickingHistoryCollector::~PickingHistoryCollector() {
-  std::cout << "PickingHistoryCollector destructor" << std::endl;
+  // std::cout << "PickingHistoryCollector destructor" << std::endl;
   DumpToFile();
 }
 

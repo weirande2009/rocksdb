@@ -53,7 +53,9 @@ struct VersionNode {
       : id(id_),
         parent_id(parent_id_),
         hash_value(hash_value_),
-        file_num(file_num_) {}
+        file_num(file_num_) {
+    chosen_children.resize(file_num, std::numeric_limits<size_t>::max()-1);
+  }
 
   friend std::ostream& operator<<(std::ostream& os,
                                   const VersionNode& node);
@@ -64,29 +66,7 @@ struct VersionNode {
 
 // version forest of a level
 class LevelVersionTree {
-  private:
-  // a list of version nodes
-  std::vector<VersionNode> version_nodes;
-  // map hash value of a version to the id of the
-  // VersionNode in version_nodes
-  std::unordered_map<size_t, size_t> hash_to_id;
-  // version id of the last compaction
-  size_t last_version_id =
-      std::numeric_limits<size_t>::max();
-  // file path of this LevelVersionForest
-  // Important: file_path cannot contain ',' '\n'
-  const std::string file_path;
-
-  // TODO: Peixu
-  // load forest from file
-  void LoadFromFile();
-
-  // TODO: Ran
-  // add when doesn't exist the version node of the hash
-  // value this will only happen when
-  void AddNode(size_t hash_value, int file_num);
-
-  public:
+public:
   // TODO: Peixu
   explicit LevelVersionTree(const std::string& fp);
 
@@ -110,12 +90,34 @@ class LevelVersionTree {
   /**
    * Set the current version to be fully enumerated
    */
-  void SetCurrentVersionFullyEnumerated();
+  void SetCurrentVersionFullyEnumerated(size_t index);
 
   /**
    * Check whether the version exists
    */
   bool IsVersionExist(size_t hash_value);
+
+private:
+  // a list of version nodes
+  std::vector<VersionNode> version_nodes;
+  // map hash value of a version to the id of the
+  // VersionNode in version_nodes
+  std::unordered_map<size_t, size_t> hash_to_id;
+  // version id of the last compaction
+  size_t last_version_id = std::numeric_limits<size_t>::max();
+  size_t last_chosen_file_index = std::numeric_limits<size_t>::max();
+  // file path of this LevelVersionForest
+  // Important: file_path cannot contain ',' '\n'
+  const std::string file_path;
+
+  // TODO: Peixu
+  // load forest from file
+  void LoadFromFile();
+
+  // TODO: Ran
+  // add when doesn't exist the version node of the hash
+  // value this will only happen when
+  void AddNode(size_t hash_value, int file_num);
 };
 
 // Contain tree for each level
@@ -132,8 +134,7 @@ class VersionForest {
 
   public:
   // TODO: Peixu
-  explicit VersionForest(
-      const std::vector<std::string>& level_file_path);
+  explicit VersionForest(const std::vector<std::string>& level_file_path);
 
   // TODO: Peixu
   ~VersionForest() = default;

@@ -30,15 +30,15 @@ std::ostream& operator<<(std::ostream& os,
     os << "no" << TAB << TAB << TAB << TAB << TAB;
   }
 
-  os << node.chosen_children.size() << TAB << TAB << TAB
-     << TAB << TAB;
-
   // std::stringstream ss;
   // ss << node.id << " chosen children: ";
   for (size_t child_id : node.chosen_children) {
     if (child_id == std::numeric_limits<size_t>::max()) {
       // ss << -1 << " ";
       os << -1 << TAB;
+    } else if (child_id == std::numeric_limits<size_t>::max() - 1) {
+      // ss << -2 << " ";
+      os << -2 << TAB;
     } else {
       // ss << child_id << " ";
       os << child_id << TAB;
@@ -73,20 +73,18 @@ std::istream& operator>>(std::istream& is,
   } else {
     node.fully_enumerated = false;
   }
-  size_t sz;
-  is >> sz;
 
   node.chosen_children.clear();
-  node.chosen_children.reserve(sz);
+  node.chosen_children.reserve(node.file_num);
   std::string str_child_id;
-  for (size_t i = 0; i < sz; ++i) {
+  for (int i = 0; i < node.file_num; ++i) {
     is >> str_child_id;
     if (str_child_id == "-1") {
-      node.chosen_children.push_back(
-          std::numeric_limits<size_t>::max());
+      node.chosen_children.push_back(std::numeric_limits<size_t>::max());
+    } else if (str_child_id == "-2") {
+      node.chosen_children.push_back(std::numeric_limits<size_t>::max() - 1);
     } else {
-      node.chosen_children.push_back(
-          std::stoull(str_child_id));
+      node.chosen_children.push_back(std::stoull(str_child_id));
     }
   }
 
@@ -96,7 +94,7 @@ std::istream& operator>>(std::istream& is,
 void LevelVersionTree::LoadFromFile() {
   assert(!file_path.empty());
 
-  std::fstream f(file_path);
+  std::ifstream f(file_path);
 
   // skip line
   std::string skip_line;
@@ -151,8 +149,7 @@ void LevelVersionTree::DumpToFile() {
   // the first line
   f << "ID" << TAB << "PID" << TAB << "Hash_Value" << TAB
     << TAB << TAB << "File_Number" << TAB
-    << "Fully_Enumerated" << TAB << "Number_of_children"
-    << TAB << "Children" << std::endl;
+    << "Fully_Enumerated" << TAB << "Children" << std::endl;
 
   for (const auto& vn : version_nodes) {
     f << vn;
@@ -178,9 +175,8 @@ void LevelVersionTree::AddNode(size_t hash_value, int file_num) {
   // this is the first compaction, there will no last
   // version and we should not set the index
   if (last_version_id !=std::numeric_limits<size_t>::max()) {
-    assert(!version_nodes[last_version_id].chosen_children.empty());
     // update the index of the new node to the children of last node
-    version_nodes[last_version_id].chosen_children.back() = version_nodes.size() - 1;
+    version_nodes[last_version_id].chosen_children[last_chosen_file_index] = version_nodes.size() - 1;
   }
 }
 
@@ -191,11 +187,10 @@ size_t LevelVersionTree::GetCompactionFile( size_t hash_value, int file_num) {
     AddNode(hash_value, file_num);
   }
   size_t index = hash_to_id[hash_value];
-  if (last_version_id != std::numeric_limits<size_t>::max()) {
-    assert(!version_nodes[last_version_id].chosen_children.empty());
-    // update the index of the new node to the children of last node
-    version_nodes[last_version_id].chosen_children.back() = index;
-  }
+  // if (last_version_id != std::numeric_limits<size_t>::max()) {
+  //   // update the index of the new node to the children of last node
+  //   version_nodes[last_version_id].chosen_children[last_chosen_file_index] = index;
+  // }
   // iterate the file that has been selected and check
   // whether the children node has already iterate over all
   // its files. If not, find the best as the compaction file
@@ -205,79 +200,61 @@ size_t LevelVersionTree::GetCompactionFile( size_t hash_value, int file_num) {
     // if child is long max, it's a leaf, we can't choose.
     if (child == std::numeric_limits<size_t>::max()) {
       continue;
-    }
-    // if the child is still not fully enumerated, we still
-    // want to go to this child
-    if (!version_nodes[child].fully_enumerated) {
+    } else if (child == std::numeric_limits<size_t>::max() - 1) {
+      compaction_file_index = i;
+      break;
+    } else if (!version_nodes[child].fully_enumerated) {
       // the size will the index of the next
       compaction_file_index = i;
       break;
     }
   }
   // check whether we have found the file to compact
-  if (compaction_file_index == std::numeric_limits<size_t>::max()) {  // if we didn't find one, we need to use the next file
-    // if we have selected all files, return long max
-    if (version_nodes[index].chosen_children.size() == static_cast<size_t>(version_nodes[index].file_num)) {
-      version_nodes[index].fully_enumerated = true;
-      std::stringstream ss;
-      ss << std::setfill('0') << std::setw(sizeof(size_t) * 2) << std::hex << hash_value;
-      CS561Log::Log("Terminate reason: all files of version " + ss.str() + " has been selected.");
-      return std::numeric_limits<size_t>::max();
-    }
-    // size is the next index
-    compaction_file_index = version_nodes[index].chosen_children.size();
-    // add child, use long max as temporary id
-    version_nodes[index].chosen_children.push_back(std::numeric_limits<size_t>::max());
-    // log chosen children
-    // std::stringstream ss;
-    // ss << "Choose a new child for version " << std::setfill('0') << std::setw(sizeof(size_t) * 2) << std::hex << hash_value << " with index " << compaction_file_index;
-    // CS561Log::Log(ss.str());
-    // ss.clear();
-    // ss << "Current chosen children: ";
-    // for (size_t i = 0; i < version_nodes[index].chosen_children.size(); i++) {
-    //   ss << version_nodes[index].chosen_children[i] << " ";
-    // }
-    // CS561Log::Log(ss.str());
+  if (compaction_file_index == std::numeric_limits<size_t>::max()) {
+    version_nodes[index].fully_enumerated = true;
+    std::stringstream ss;
+    ss << std::setfill('0') << std::setw(sizeof(size_t) * 2) << std::hex << hash_value;
+    CS561Log::Log("Terminate reason: all files of version " + ss.str() + " has been selected.");
+    return std::numeric_limits<size_t>::max();
+  }
+  // set the chosen child to be -1, because we are not sure whether there is a compaction after this
+  if (version_nodes[index].chosen_children[compaction_file_index] == std::numeric_limits<size_t>::max() -1) {
+    version_nodes[index].chosen_children[compaction_file_index] = std::numeric_limits<size_t>::max();
   }
   // set the last version
   last_version_id = index;
+  last_chosen_file_index = compaction_file_index;
 
   return compaction_file_index;
 }
 
 LevelVersionTree::LevelVersionTree(const std::string& fp)
     : file_path(fp) {
+  // CS561Log::Log("Load version tree from file: " + file_path);
   LoadFromFile();
+  // CS561Log::Log("Finish loading from file: " + file_path);
 }
 
-LevelVersionTree::~LevelVersionTree() noexcept {
-  DumpToFile();
-}
+LevelVersionTree::~LevelVersionTree() noexcept {}
 
-void LevelVersionTree::SetCurrentVersionFullyEnumerated() {
-  if (last_version_id ==
-      std::numeric_limits<size_t>::max()) {
+void LevelVersionTree::SetCurrentVersionFullyEnumerated(size_t index) {
+  if (last_version_id == std::numeric_limits<size_t>::max()) {
     return;
   }
-  // current version is the last version's last child
-  if (version_nodes[last_version_id]
-          .chosen_children.back() !=
-      std::numeric_limits<size_t>::max()) {
-    int cur_version_id = static_cast<int>(version_nodes[last_version_id]
-                             .chosen_children.back());
-    version_nodes[cur_version_id].fully_enumerated = true;
-  }
+  version_nodes[last_version_id].chosen_children[index] = std::numeric_limits<size_t>::max();
+  // if (version_nodes[last_version_id].chosen_children[last_chosen_file_index] != std::numeric_limits<size_t>::max()) {
+  //   int cur_version_id = static_cast<int>(version_nodes[last_version_id].chosen_children.back());
+  //   version_nodes[cur_version_id].fully_enumerated = true;
+  // }
 }
 
 bool LevelVersionTree::IsVersionExist(size_t hash_value) {
   return hash_to_id.find(hash_value) != hash_to_id.end();
 }
 
-VersionForest::VersionForest(
-    const std::vector<std::string>& level_file_path) {
+VersionForest::VersionForest(const std::vector<std::string>& level_file_path) {
   for (const auto& path : level_file_path)
-    level_version_trees.emplace_back(
-        LevelVersionTree(path));
+    level_version_trees.emplace_back(LevelVersionTree(path));
 }
 
 size_t VersionForest::GetCompactionFile(int level,

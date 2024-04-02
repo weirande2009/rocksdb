@@ -7,41 +7,34 @@ namespace ROCKSDB_NAMESPACE {
 AllFilesEnumerator* AllFilesEnumerator::instance = nullptr;
 
 AllFilesEnumerator::AllFilesEnumerator()
-    : last_version(std::vector<std::size_t>(
-          2, std::numeric_limits<size_t>::max())),
-      collector(),
+    : collector(),
       entry_num_collector(INFO_COLLECTOR_SIZE),
       deletion_num_collector(INFO_COLLECTOR_SIZE),
       file_size_collector(INFO_COLLECTOR_SIZE),
       log_level(1),
-      compaction_counter(0) {}
+      compaction_counter(0) {
+  // CS561Log::Log("AllFilesEnumerator is created");
+  }
 
 int AllFilesEnumerator::GetPickingFile(
-    std::vector<rocksdb::Fsize>& temp, int level) {
+    std::vector<rocksdb::Fsize>& temp, int level, 
+    const std::vector<uint64_t>& file_overlapping_ratio) {
   size_t index = std::numeric_limits<size_t>::max();
   // compute hash of the current version
   static std::hash<std::vector<ROCKSDB_NAMESPACE::Fsize>>
       hasher;
   std::size_t hash_value = hasher(temp);
-  // if temp is empty or the version of temp remains
-  // unchanged, just return
-  if (temp.empty() || hash_value == last_version[level]) {
-    return -1;
-  }
-  last_version[level] = hash_value;
   ++compaction_counter;
   // if this is a new version, record the file information
   // of this version to disk
-  if (!collector.GetVersionForest().IsVersionExist(
-          level, hash_value)) {
+  if (!collector.GetVersionForest().IsVersionExist(level, hash_value)) {
     CS561Log::LogVersion(temp, hash_value);
   }
   // log
   if (log_level == 1) {
-    CS561Log::Log(
-        "Level: " + std::to_string(level) +
-        ", Version: " + std::to_string(hash_value) +
-        ", File index: " + std::to_string(index));
+    CS561Log::Log("Level: " + std::to_string(level) +
+                  ", Version: " + std::to_string(hash_value) +
+                  ", File index: " + std::to_string(index));
   }
   // select a file according to the history
   index = collector.GetVersionForest().GetCompactionFile(
@@ -49,12 +42,15 @@ int AllFilesEnumerator::GetPickingFile(
   
   // check whether we find a file to compact
   if (index == std::numeric_limits<size_t>::max()) {
-    // we need to terminate the program because we don't
-    // need to continue
-    CS561Log::Log("Terminate reason: all files of version " +
-                  std::to_string(hash_value) +
-                  " has been selected.");
+    // we can terminate the program because we don't need to continue
     Terminate();
+  }
+  // record this compaction
+  chosen_file_index_ = index;
+  // record the involved bytes
+  for (size_t i = 0; i < temp.size(); ++i) {
+    double estimated_bytes = temp[i].file->fd.file_size * (1.0 + static_cast<double>(file_overlapping_ratio[i]) / 1024);
+    involved_bytes_.push_back(static_cast<uint64_t>(estimated_bytes));
   }
   return static_cast<int>(index);
 }
@@ -818,15 +814,21 @@ void AllFilesEnumerator::Terminate() {
 void AllFilesEnumerator::Pruning() {
   // Check whether current WA already exceeds global min
   if (!collector.CheckContinue()) {
-    // Set the current version to be fully enumerated (not
-    // need to explore further)
-    collector.GetVersionForest()
-        .GetLevelVersionTree(1)
-        .SetCurrentVersionFullyEnumerated();
+    // Set the current version to be fully enumerated (no need to explore further)
+    collector.GetVersionForest().GetLevelVersionTree(1).SetCurrentVersionFullyEnumerated(chosen_file_index_);
     // set the flag of the current node
-    CS561Log::Log(
-        "Terminate reason: current WA already exceeds the "
-        "minimum");
+    CS561Log::Log("Terminate reason: current WA already exceeds the minimum");
+    // check other file choices in the same compaction
+    uint64_t threshold = involved_bytes_[chosen_file_index_];
+    for (size_t i = chosen_file_index_ + 1; i < involved_bytes_.size(); i++) {
+      if (involved_bytes_[i] >= threshold) {
+        // Set the current version to be fully enumerated (no need to explore further)
+        collector.GetVersionForest().GetLevelVersionTree(1).SetCurrentVersionFullyEnumerated(i);
+        // set the flag of the current node
+        CS561Log::Log("Set file " + std::to_string(i) + " of last compaction to be fully enumerated");
+        break;
+      }
+    }
     Terminate();
   }
 }

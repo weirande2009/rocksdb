@@ -7506,7 +7506,7 @@ void VersionStorageInfo::PickUnselectedFile(
   int chosen_file_index = 0;
   switch (AllFilesEnumerator::GetInstance().strategy) {
     case AllFilesEnumerator::CompactionStrategy::EnumerateAll:
-      chosen_file_index = AllFilesEnumerator::GetInstance().GetPickingFile(temp, level);
+      chosen_file_index = AllFilesEnumerator::GetInstance().GetPickingFile(temp, level, file_overlapping_ratio);
       break;
     case AllFilesEnumerator::CompactionStrategy::Manual:
       chosen_file_index = AllFilesEnumerator::GetInstance().NextChoiceForManual();

@@ -907,7 +907,9 @@ Status CompactionJob::Install(const MutableCFOptions& mutable_cf_options,
   // log the current wa
   AllFilesEnumerator::GetInstance().GetCollector().UpdateWA(bytes_written_all);
   if (compact_->compaction->output_level() == 2) {
-    std::string log_str = "Current written bytes after compact to level 2: " + std::to_string(AllFilesEnumerator::GetInstance().GetCollector().GetWA());
+    std::string log_str = "Written bytes for this compaction to level 2: " + std::to_string(bytes_written_all);
+    CS561Log::Log(log_str);
+    log_str = "Current written bytes after compact to level 2: " + std::to_string(AllFilesEnumerator::GetInstance().GetCollector().GetWA());
     CS561Log::Log(log_str);
   }
   if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::EnumerateAll) {

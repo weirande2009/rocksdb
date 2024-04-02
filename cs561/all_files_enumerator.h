@@ -68,7 +68,7 @@ public:
    *
    * @return the index of the chosen file
    */
-  int GetPickingFile(std::vector<Fsize>& temp, int level);
+  int GetPickingFile(std::vector<Fsize>& temp, int level, const std::vector<uint64_t>& file_overlapping_ratio);
 
   int MaybeSelectLastSimilarFile(const std::vector<FileMetaData*>& files, const std::vector<uint64_t>& file_overlapping_ratio);
 
@@ -194,11 +194,8 @@ private:
   const size_t INFO_COLLECTOR_SIZE = 10;
   uint64_t key_space_size_ = 1e7;
 
-  // record the last version of of each level, if the
-  // version remains unchanged, there is no compaction
-  // happening in this level, so we don't need to do
-  // anything to this level
-  std::vector<std::size_t> last_version;
+  std::vector<uint64_t> involved_bytes_;
+  size_t chosen_file_index_;
 
   // history collector
   PickingHistoryCollector collector;
