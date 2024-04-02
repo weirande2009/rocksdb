@@ -826,7 +826,6 @@ void AllFilesEnumerator::Pruning() {
         collector.GetVersionForest().GetLevelVersionTree(1).SetCurrentVersionFullyEnumerated(i);
         // set the flag of the current node
         CS561Log::Log("Set file " + std::to_string(i) + " of last compaction to be fully enumerated");
-        break;
       }
     }
     Terminate();
