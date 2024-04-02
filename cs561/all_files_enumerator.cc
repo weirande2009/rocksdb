@@ -51,6 +51,9 @@ int AllFilesEnumerator::GetPickingFile(
   if (index == std::numeric_limits<size_t>::max()) {
     // we need to terminate the program because we don't
     // need to continue
+    CS561Log::Log("Terminate reason: all files of version " +
+                  std::to_string(hash_value) +
+                  " has been selected.");
     Terminate();
   }
   return static_cast<int>(index);

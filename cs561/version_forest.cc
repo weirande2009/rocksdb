@@ -156,15 +156,12 @@ void LevelVersionTree::DumpToFile() {
   // no need for dumping hash_to_id
 }
 
-void LevelVersionTree::AddNode(size_t hash_value,
-                               int file_num) {
+void LevelVersionTree::AddNode(size_t hash_value, int file_num) {
   // check whether hash_value is a new version
   assert(hash_to_id.find(hash_value) == hash_to_id.end());
   // the id is the index in version_nodes which is the size
   // of current version_nodes
-  version_nodes.emplace_back(
-      VersionNode(version_nodes.size(), last_version_id,
-                  hash_value, file_num));
+  version_nodes.emplace_back(VersionNode(version_nodes.size(), last_version_id, hash_value, file_num));
   // FIXME: it may not emplace to the hashmap
   // after emplace back, the index become the
   // version_nodes.size()-1 hash_to_id.insert(hash_value,
@@ -173,43 +170,30 @@ void LevelVersionTree::AddNode(size_t hash_value,
   // we should check whether there is a last version, if
   // this is the first compaction, there will no last
   // version and we should not set the index
-  if (last_version_id !=
-      std::numeric_limits<size_t>::max()) {
-    assert(!version_nodes[last_version_id]
-                .chosen_children.empty());
-    // update the index of the new node to the children of
-    // last node
-    version_nodes[last_version_id].chosen_children.back() =
-        version_nodes.size() - 1;
+  if (last_version_id !=std::numeric_limits<size_t>::max()) {
+    assert(!version_nodes[last_version_id].chosen_children.empty());
+    // update the index of the new node to the children of last node
+    version_nodes[last_version_id].chosen_children.back() = version_nodes.size() - 1;
   }
 }
 
-size_t LevelVersionTree::GetCompactionFile(
-    size_t hash_value, int file_num) {
-  // first check whether the version of hash_value already
-  // exists
+size_t LevelVersionTree::GetCompactionFile( size_t hash_value, int file_num) {
+  // first check whether the version of hash_value already exists
   if (hash_to_id.find(hash_value) == hash_to_id.end()) {
     // create a new version
     AddNode(hash_value, file_num);
   }
   size_t index = hash_to_id[hash_value];
-  if (last_version_id !=
-      std::numeric_limits<size_t>::max()) {
-    assert(!version_nodes[last_version_id]
-                .chosen_children.empty());
-    // update the index of the new node to the children of
-    // last node
-    version_nodes[last_version_id].chosen_children.back() =
-        index;
+  if (last_version_id != std::numeric_limits<size_t>::max()) {
+    assert(!version_nodes[last_version_id].chosen_children.empty());
+    // update the index of the new node to the children of last node
+    version_nodes[last_version_id].chosen_children.back() = index;
   }
   // iterate the file that has been selected and check
   // whether the children node has already iterate over all
   // its files. If not, find the best as the compaction file
-  size_t compaction_file_index =
-      std::numeric_limits<size_t>::max();
-  for (size_t i = 0;
-       i < version_nodes[index].chosen_children.size();
-       i++) {
+  size_t compaction_file_index = std::numeric_limits<size_t>::max();
+  for (size_t i = 0; i < version_nodes[index].chosen_children.size(); i++) {
     size_t child = version_nodes[index].chosen_children[i];
     // if child is long max, it's a leaf, we can't choose.
     if (child == std::numeric_limits<size_t>::max()) {
@@ -224,30 +208,23 @@ size_t LevelVersionTree::GetCompactionFile(
     }
   }
   // check whether we have found the file to compact
-  if (compaction_file_index ==
-      std::numeric_limits<
-          size_t>::max()) {  // if we didn't find one, we
-                             // need to use the next file
+  if (compaction_file_index == std::numeric_limits<size_t>::max()) {  // if we didn't find one, we need to use the next file
     // if we have selected all files, return long max
-    if (version_nodes[index].chosen_children.size() ==
-        static_cast<size_t>(
-            version_nodes[index].file_num)) {
+    if (version_nodes[index].chosen_children.size() == static_cast<size_t>(version_nodes[index].file_num)) {
       version_nodes[index].fully_enumerated = true;
       std::stringstream ss;
-      ss << std::setfill('0')
-         << std::setw(sizeof(size_t) * 2) << std::hex
-         << hash_value;
-      CS561Log::Log(
-          "Terminate reason: all files of version " +
-          ss.str() + " has been selected.");
+      ss << std::setfill('0') << std::setw(sizeof(size_t) * 2) << std::hex << hash_value;
+      CS561Log::Log("Terminate reason: all files of version " + ss.str() + " has been selected.");
       return std::numeric_limits<size_t>::max();
     }
     // size is the next index
-    compaction_file_index =
-        version_nodes[index].chosen_children.size();
+    compaction_file_index = version_nodes[index].chosen_children.size();
     // add child, use long max as temporary id
-    version_nodes[index].chosen_children.push_back(
-        std::numeric_limits<size_t>::max());
+    version_nodes[index].chosen_children.push_back(std::numeric_limits<size_t>::max());
+    // log chosen children
+    std::stringstream ss;
+    ss << "Chosen a new child for version " << std::setfill('0') << std::setw(sizeof(size_t) * 2) << std::hex << hash_value << " with index " << compaction_file_index;
+    CS561Log::Log(ss.str());
   }
   // set the last version
   last_version_id = index;
