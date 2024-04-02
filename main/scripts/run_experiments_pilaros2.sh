@@ -3,14 +3,15 @@
 # # ./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
 # total_bytes=$((2000000 * 64))
 
-# workspace_dir=workspace/stability_checking/2000000_0_0_64_8_nvm1/concurrent_6
-# mkdir -p $workspace_dir
+workspace_dir=workspace/stability_checking/2000000_0_0_64_8_memory_both/concurrent_6
+./load_gen --output_path $workspace_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+mkdir -p $workspace_dir
 
-# for i in {14..18}
-# do
-#     ./scripts/run_for_a_type.sh 500 /scratchNVM1/ranw/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 &
-# done
-# ./scripts/run_for_a_type.sh 500 /scratchNVM1/ranw/rocksdb6/ $workspace_dir/run19 $workload_dir/1.txt $total_bytes 0
+for i in {1..5}
+do
+    ./scripts/run_for_a_type.sh 500 /scratchNVM1/ranw/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 &
+done
+./scripts/run_for_a_type.sh 500 /scratchNVM1/ranw/rocksdb6/ $workspace_dir/run6 $workload_dir/1.txt $total_bytes 0
 
 # echo 'Finished running 6 experiments in parallel'
 
@@ -35,23 +36,23 @@
 
 # echo 'Finished running 6 experiments in parallel'
 
-workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip
-workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip/non_skip
-workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip/skip
-mkdir -p $workload_dir_test_skip
-mkdir -p $workspace_dir_non_skip
-mkdir -p $workspace_dir_skip
-./load_gen --output_path $workload_dir_test_skip/type1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir_test_skip/type2.txt -I 1500000 -U 500000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir_test_skip/type3.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
-total_bytes=$((2000000 * 64))
+# workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip
+# workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip/non_skip
+# workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip/skip
+# mkdir -p $workload_dir_test_skip
+# mkdir -p $workspace_dir_non_skip
+# mkdir -p $workspace_dir_skip
+# ./load_gen --output_path $workload_dir_test_skip/type1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+# ./load_gen --output_path $workload_dir_test_skip/type2.txt -I 1500000 -U 500000 -D 0 -E 64 -K 8
+# ./load_gen --output_path $workload_dir_test_skip/type3.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
+# total_bytes=$((2000000 * 64))
 
-enumeration_runs=100
-rocksdb_dir=/mnt/ramd/ranw
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir_non_skip/run3 $workload_dir_test_skip/type3.txt $total_bytes 0
+# enumeration_runs=100
+# rocksdb_dir=/mnt/ramd/ranw
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 0 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 0 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir_non_skip/run3 $workload_dir_test_skip/type3.txt $total_bytes 0
 
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 1 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 1 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run3 $workload_dir_test_skip/type3.txt $total_bytes 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run3 $workload_dir_test_skip/type3.txt $total_bytes 1 &
