@@ -86,17 +86,21 @@
 # done
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb12/ $workspace_dir/run12 $workload_dir/1.txt $total_bytes 0
 
-workload_dir=workloads/stability_checking/2000000_0_0_64_8_nvm1_test_enumeration/old/concurrent_6
-mkdir -p $workload_dir
-./load_gen --output_path $workload_dir/1.txt -I 8000000 -U 0 -D 0 -E 8 -K 4
+# workload_dir=workloads/stability_checking/2000000_0_0_64_8_nvm1_test_enumeration/old/concurrent_6
+# mkdir -p $workload_dir
+# ./load_gen --output_path $workload_dir/1.txt -I 8000000 -U 0 -D 0 -E 8 -K 4
+# total_bytes=$((8000000 * 8))
+
+# workspace_dir=workspace/stability_checking/2000000_0_0_64_8_nvm1_test_enumeration/old/concurrent_6
+# mkdir -p $workspace_dir
+
+# enumeration_runs=800
+# rocksdb_dir=/scratchNVM1/ranw
+# for i in {1..3}
+# do
+#     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 &
+# done
+
+./load_gen --output_path workloads/1.txt -I 8000000 -U 0 -D 0 -E 8 -K 4
 total_bytes=$((8000000 * 8))
-
-workspace_dir=workspace/stability_checking/2000000_0_0_64_8_nvm1_test_enumeration/old/concurrent_6
-mkdir -p $workspace_dir
-
-enumeration_runs=800
-rocksdb_dir=/scratchNVM1/ranw
-for i in {1..3}
-do
-    ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 &
-done
+./scripts/run_for_a_type.sh 800 /scratchNVM1/ranw/rocksdb/ experiment_non_skip workloads/1.txt $total_bytes 0
