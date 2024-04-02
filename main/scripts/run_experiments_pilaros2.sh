@@ -50,7 +50,7 @@ enumeration_runs=10
 rocksdb_dir=/mnt/ramd/ranw
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 0 &
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb8/ $workspace_dir_non_skip/run5 $workload_dir_test_skip/type3.txt $total_bytes 0
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb8/ $workspace_dir_non_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 0
 
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 1 &
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 1 &
