@@ -318,5 +318,6 @@ int main(int argc, char* argv[]) {
   ReadOptions read_op;
   runWorkload(options, write_op, read_op, compaction_strategy, total_written_bytes, experiment_path, workload_path);
   
+  AllFilesEnumerator::GetInstance().GetCollector().GetVersionForest().DumpToFile();
   return 0;
 }

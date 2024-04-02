@@ -33,13 +33,18 @@ std::ostream& operator<<(std::ostream& os,
   os << node.chosen_children.size() << TAB << TAB << TAB
      << TAB << TAB;
 
+  // std::stringstream ss;
+  // ss << node.id << " chosen children: ";
   for (size_t child_id : node.chosen_children) {
     if (child_id == std::numeric_limits<size_t>::max()) {
+      // ss << -1 << " ";
       os << -1 << TAB;
     } else {
+      // ss << child_id << " ";
       os << child_id << TAB;
     }
   }
+  // CS561Log::Log(ss.str());
   os << std::endl;
 
   return os;
@@ -153,6 +158,8 @@ void LevelVersionTree::DumpToFile() {
     f << vn;
   }
 
+  f.flush();
+
   // no need for dumping hash_to_id
 }
 
@@ -222,9 +229,15 @@ size_t LevelVersionTree::GetCompactionFile( size_t hash_value, int file_num) {
     // add child, use long max as temporary id
     version_nodes[index].chosen_children.push_back(std::numeric_limits<size_t>::max());
     // log chosen children
-    std::stringstream ss;
-    ss << "Chosen a new child for version " << std::setfill('0') << std::setw(sizeof(size_t) * 2) << std::hex << hash_value << " with index " << compaction_file_index;
-    CS561Log::Log(ss.str());
+    // std::stringstream ss;
+    // ss << "Choose a new child for version " << std::setfill('0') << std::setw(sizeof(size_t) * 2) << std::hex << hash_value << " with index " << compaction_file_index;
+    // CS561Log::Log(ss.str());
+    // ss.clear();
+    // ss << "Current chosen children: ";
+    // for (size_t i = 0; i < version_nodes[index].chosen_children.size(); i++) {
+    //   ss << version_nodes[index].chosen_children[i] << " ";
+    // }
+    // CS561Log::Log(ss.str());
   }
   // set the last version
   last_version_id = index;

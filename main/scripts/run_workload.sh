@@ -78,6 +78,7 @@ run_enumerate() {
             rm $4/over
             break
         fi
+        # sleep 0.1
     done
 
     echo 'Finish all runs'

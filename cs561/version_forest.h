@@ -120,6 +120,10 @@ class LevelVersionTree {
 
 // Contain tree for each level
 class VersionForest {
+  public:
+  // Dump to file
+  void DumpToFile();
+
   private:
   // file path of the version node in disk
   std::string file_path;
@@ -139,9 +143,6 @@ class VersionForest {
   // certain level
   size_t GetCompactionFile(int level, size_t hash_value,
                            int file_num);
-
-  // Dump to file
-  void DumpToFile();
 
   /**
    * Get LevelVersionForest
