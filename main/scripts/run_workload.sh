@@ -66,6 +66,7 @@ run_enumerate() {
     for i in $(seq 1 $1)
     do
         echo 'run' $i
+        echo 'run' $i >> $4/out.txt
         find $3 -mindepth 1 -delete
         ./simple_example kEnumerateAll $2 $3 $4 $5 $6
 

@@ -160,12 +160,12 @@
 workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again
 workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/non_skip
 workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/skip
-mkdir -p $workload_dir_test_skip
-mkdir -p $workspace_dir_non_skip
-mkdir -p $workspace_dir_skip
-./load_gen --output_path $workload_dir_test_skip/type1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir_test_skip/type2.txt -I 1500000 -U 500000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir_test_skip/type3.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
+# mkdir -p $workload_dir_test_skip
+# mkdir -p $workspace_dir_non_skip
+# mkdir -p $workspace_dir_skip
+# ./load_gen --output_path $workload_dir_test_skip/type1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+# ./load_gen --output_path $workload_dir_test_skip/type2.txt -I 1500000 -U 500000 -D 0 -E 64 -K 8
+# ./load_gen --output_path $workload_dir_test_skip/type3.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
 total_bytes=$((2000000 * 64))
 
 enumeration_runs=4000
