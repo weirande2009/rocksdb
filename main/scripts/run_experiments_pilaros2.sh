@@ -35,9 +35,9 @@
 
 # echo 'Finished running 6 experiments in parallel'
 
-workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_memory/test_ok_complete_test_concurrent_3_test_skip
-workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_ok_complete_test_concurrent_3_test_skip/non_skip
-workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_ok_complete_test_concurrent_3_test_skip/skip
+workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip
+workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip/non_skip
+workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_memory/test_both_test_concurrent_3_test_skip/skip
 mkdir -p $workload_dir_test_skip
 mkdir -p $workspace_dir_non_skip
 mkdir -p $workspace_dir_skip
@@ -46,7 +46,7 @@ mkdir -p $workspace_dir_skip
 ./load_gen --output_path $workload_dir_test_skip/type3.txt -I 1000000 -U 1000000 -D 0 -E 64 -K 8
 total_bytes=$((2000000 * 64))
 
-enumeration_runs=10
+enumeration_runs=100
 rocksdb_dir=/mnt/ramd/ranw
 ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run1 $workload_dir_test_skip/type1.txt $total_bytes 0 &
 ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 0 &
