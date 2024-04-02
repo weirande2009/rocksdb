@@ -2843,3 +2843,434 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 2024-04-01 23:55:58 --- (INFO)compaction start level[0], compaction files[65,63,61,59], start level files[65,63,61,59], compactionStrategy[0], baseLevel[1], 
 2024-04-01 23:55:58 --- (INFO)Terminate reason: all files of version cdcf742215955e10 has been selected.
 2024-04-01 23:55:58 --- (INFO)Terminate reason: all files of version 14830199787694153232 has been selected.
+2024-04-02 11:18:20 --- (INFO)==================================================
+2024-04-02 11:18:20 --- (INFO)Program information: 
+2024-04-02 11:18:20 --- (INFO)Compaction strategy: kRoundRobin
+2024-04-02 11:18:20 --- (INFO)Total workload size: 128000000
+2024-04-02 11:18:20 --- (INFO)Database path: /scratchNVM1/ranw/rocksdb6/
+2024-04-02 11:18:20 --- (INFO)Experiment path: workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/skip/run3
+2024-04-02 11:18:20 --- (INFO)Workload path: workloads/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/type3.txt
+2024-04-02 11:18:20 --- (INFO)Skip trivial move: 0
+2024-04-02 11:18:22 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:24 --- (INFO)compaction start level[0], compaction files[27,25,23,21], start level files[27,25,23,21], compactionStrategy[0], baseLevel[1], 
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 0015a19d3eac1b0e
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!}zB-J		^^zUlcEB	92582			0				1481312			5184592			6829434		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+4			M;c/Jx_D		ZP&mtUw8	114690			0				1835040			6422640			8418365		0					
+5			ZP)d.7<I		^^~1BJ/4	36158			0				578528			2024848			2655803		0					
+
+2024-04-02 11:18:24 --- (INFO)compaction start level[1], compaction files[28,29], start level files[28,29,30,31,34,35], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:26 --- (INFO)compaction start level[0], compaction files[41,39,37,33], start level files[41,39,37,33], compactionStrategy[0], baseLevel[1], 
+Compaction 2 in level 1 Choice: file No.1
+Hash value: acf1559c29ed14ea
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		2XztIq]2	126051			0				2016816			7058856			9259718		1861				
+1*			2X{Op~_S		G-)}Vntt	229674			0				3674784			12861744		16837463	0					
+2			G-*.H#g)		[LuBd>HX	229646			0				3674336			12860176		16836201	0					
+3			[Lv7BvnQ		^^~x1>,H	36725			0				587600			2056600			2693067		0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+
+2024-04-02 11:18:26 --- (INFO)compaction start level[1], compaction files[43,44,47], start level files[42,43,44,47], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:28 --- (INFO)compaction start level[0], compaction files[53,51,49,46], start level files[53,51,49,46], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:29 --- (INFO)compaction start level[0], compaction files[66,64,62,60], start level files[66,64,62,60], compactionStrategy[0], baseLevel[1], 
+Compaction 3 in level 1 Choice: file No.1
+Hash value: b1a07f70bdc9b3be
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		^^|54Lf]	83502			0				1336032			4676112			6160928		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		)[@VIn&)	140095			0				2241520			7845320			10257477	840					
+1*			)[A-End[		2XztIq]2	140305			0				2244880			7857080			10272942	839					
+2			2X|'[]QD		G-)}Vntt	162888			0				2606208			9121728			11959134	1441				
+3			G-+\kpe"		[Lu5988U	162609			0				2601744			9106104			11939032	1444				
+4			[LvX$1tG		^^~x1>,H	26205			0				419280			1467480			1925393		1432				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		G-)}Vntt	229674			0				3674784			12861744		16837463	0					
+3			G-*.H#g)		[LuBd>HX	229646			0				3674336			12860176		16836201	0					
+4			[Lv7BvnQ		^^~x1>,H	36725			0				587600			2056600			2693067		0					
+
+2024-04-02 11:18:30 --- (INFO)compaction start level[1], compaction files[68,69], start level files[67,68,69,72,73], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:30 --- (INFO)Current written bytes after compact to level 2: 227815462
+2024-04-02 11:18:30 --- (INFO)Total running time: 10046076us
+2024-04-02 11:18:30 --- (INFO)total written bytes: 227815462, left bytes: 0
+2024-04-02 11:18:30 --- (INFO)compaction_time: 2206127us
+2024-04-02 11:18:30 --- (INFO)==================================================
+2024-04-02 11:18:30 --- (INFO)Program information: 
+2024-04-02 11:18:30 --- (INFO)Compaction strategy: kMinOverlappingRatio
+2024-04-02 11:18:30 --- (INFO)Total workload size: 128000000
+2024-04-02 11:18:30 --- (INFO)Database path: /scratchNVM1/ranw/rocksdb6/
+2024-04-02 11:18:30 --- (INFO)Experiment path: workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/skip/run3
+2024-04-02 11:18:30 --- (INFO)Workload path: workloads/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/type3.txt
+2024-04-02 11:18:30 --- (INFO)Skip trivial move: 0
+2024-04-02 11:18:33 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:34 --- (INFO)compaction start level[0], compaction files[27,25,23,21], start level files[27,25,23,21], compactionStrategy[0], baseLevel[1], 
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 0015a19d3eac1b0e
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!}zB-J		^^zUlcEB	92582			0				1481312			5184592			6829434		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+4			M;c/Jx_D		ZP&mtUw8	114690			0				1835040			6422640			8418365		0					
+5			ZP)d.7<I		^^~1BJ/4	36158			0				578528			2024848			2655803		0					
+
+2024-04-02 11:18:35 --- (INFO)compaction start level[1], compaction files[28,29,30,31], start level files[28,29,30,31,32,35], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:36 --- (INFO)compaction start level[0], compaction files[41,39,37,34], start level files[41,39,37,34], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:38 --- (INFO)compaction start level[0], compaction files[52,50,48,46], start level files[52,50,48,46], compactionStrategy[0], baseLevel[1], 
+Compaction 2 in level 1 Choice: file No.4
+Hash value: 30fc8499c677b1c0
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!#3Xu=1		^^y`+<3n	91980			0				1471680			5150880			6785221		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		)[@VIn&)	108659			0				1738544			6084904			7963902		1082				
+1			)[BL[Uw#		2XztIq]2	108923			0				1742768			6099688			7983250		1079				
+2			2X|I1$}v		@"n#'*4X	108556			0				1736896			6079136			7969421		1081				
+3			@"oQ8=hh		M;a/)u1h	107925			0				1726800			6043800			7923951		1088				
+4*			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+
+2024-04-02 11:18:38 --- (INFO)compaction start level[1], compaction files[57], start level files[53,54,55,56,57], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:40 --- (INFO)compaction start level[0], compaction files[65,63,61,59], start level files[65,63,61,59], compactionStrategy[0], baseLevel[1], 
+Compaction 3 in level 1 Choice: file No.1
+Hash value: cdcf742215955e10
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		)[@VIn&)	140095			0				2241520			7845320			10257477	840					
+1*			)[A-End[		2XztIq]2	140305			0				2244880			7857080			10272942	839					
+2			2X|'[]QD		@"n#'*4X	139772			0				2236352			7827232			10249587	840					
+3			@"oQ8=hh		M;a/)u1h	139276			0				2228416			7799456			10214475	844					
+4			M;a|p(gg		^^|wbb><	80706			0				1291296			4519536			5937688		2862				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+4			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+2024-04-02 11:18:40 --- (INFO)compaction start level[1], compaction files[67], start level files[66,67,68,69,72], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:40 --- (INFO)Current written bytes after compact to level 2: 212150231
+Compaction 4 in level 1 Choice: file No.0
+Hash value: cbef25278f9df5b4
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		^^|54Lf]	83502			0				1336032			4676112			6160928		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!$J|C-		)[@VIn&)	140095			0				2241520			7845320			10257477	840					
+1			2X|'[]QD		@"n#'*4X	139772			0				2236352			7827232			10249587	840					
+2			@"oQ8=hh		M;a/)u1h	139276			0				2228416			7799456			10214475	844					
+3			M;a|p(gg		^^|wbb><	80706			0				1291296			4519536			5937688		2862				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[A-End[		/>+V66JV	115081			0				1841296			6444536			8417471		0					
+2			/>,.f:CI		2X{*lo-^	71574			0				1145184			4008144			5235385		0					
+3			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+4			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+5			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+2024-04-02 11:18:40 --- (INFO)compaction start level[1], compaction files[66], start level files[66,68,69,72], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:40 --- (INFO)Current written bytes after compact to level 2: 225787231
+2024-04-02 11:18:40 --- (INFO)Total running time: 9767517us
+2024-04-02 11:18:40 --- (INFO)total written bytes: 225787231, left bytes: 0
+2024-04-02 11:18:40 --- (INFO)compaction_time: 2137243us
+2024-04-02 11:18:40 --- (INFO)==================================================
+2024-04-02 11:18:40 --- (INFO)Program information: 
+2024-04-02 11:18:40 --- (INFO)Compaction strategy: kOldestLargestSeqFirst
+2024-04-02 11:18:40 --- (INFO)Total workload size: 128000000
+2024-04-02 11:18:40 --- (INFO)Database path: /scratchNVM1/ranw/rocksdb6/
+2024-04-02 11:18:40 --- (INFO)Experiment path: workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/skip/run3
+2024-04-02 11:18:40 --- (INFO)Workload path: workloads/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/type3.txt
+2024-04-02 11:18:40 --- (INFO)Skip trivial move: 0
+2024-04-02 11:18:43 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:45 --- (INFO)compaction start level[0], compaction files[27,25,23,21], start level files[27,25,23,21], compactionStrategy[0], baseLevel[1], 
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 0015a19d3eac1b0e
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!}zB-J		^^zUlcEB	92582			0				1481312			5184592			6829434		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+4			M;c/Jx_D		ZP&mtUw8	114690			0				1835040			6422640			8418365		0					
+5			ZP)d.7<I		^^~1BJ/4	36158			0				578528			2024848			2655803		0					
+
+2024-04-02 11:18:45 --- (INFO)compaction start level[1], compaction files[28,29,30,31], start level files[28,29,30,31,32,35], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:46 --- (INFO)compaction start level[0], compaction files[41,39,37,34], start level files[41,39,37,34], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:48 --- (INFO)compaction start level[0], compaction files[52,50,48,46], start level files[52,50,48,46], compactionStrategy[0], baseLevel[1], 
+Compaction 2 in level 1 Choice: file No.0
+Hash value: 30fc8499c677b1c0
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!#3Xu=1		^^y`+<3n	91980			0				1471680			5150880			6785221		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!$J|C-		)[@VIn&)	108659			0				1738544			6084904			7963902		1082				
+1			)[BL[Uw#		2XztIq]2	108923			0				1742768			6099688			7983250		1079				
+2			2X|I1$}v		@"n#'*4X	108556			0				1736896			6079136			7969421		1081				
+3			@"oQ8=hh		M;a/)u1h	107925			0				1726800			6043800			7923951		1088				
+4			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+
+2024-04-02 11:18:49 --- (INFO)compaction start level[1], compaction files[53], start level files[53,54,55,56,57], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:49 --- (INFO)Current written bytes after compact to level 2: 183028435
+Compaction 3 in level 1 Choice: file No.0
+Hash value: af40ab2692f27d3c
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!#3Xu=1		^^y`+<3n	91980			0				1471680			5150880			6785221		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			)[BL[Uw#		2XztIq]2	108923			0				1742768			6099688			7983250		1079				
+1			2X|I1$}v		@"n#'*4X	108556			0				1736896			6079136			7969421		1081				
+2			@"oQ8=hh		M;a/)u1h	107925			0				1726800			6043800			7923951		1088				
+3			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		&\&v]lK:	115081			0				1841296			6444536			8419510		0					
+1			&\''ac)p		)[@rwL"m	57735			0				923760			3233160			4224455		0					
+2			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+3			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+4			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+
+2024-04-02 11:18:49 --- (INFO)compaction start level[1], compaction files[54], start level files[54,55,56,57], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:49 --- (INFO)Current written bytes after compact to level 2: 193227518
+2024-04-02 11:18:50 --- (INFO)compaction start level[0], compaction files[69,67,64,59], start level files[69,67,64,59], compactionStrategy[0], baseLevel[1], 
+Compaction 4 in level 1 Choice: file No.4
+Hash value: 63ed2cc7efb0fcb6
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		/Y,.%YY8	102669			0				1642704			5749464			7542660		2859				
+1			/Y-FqjPp		@"n#'*4X	160300			0				2564800			8976800			11757653	1103				
+2			@"oQ8=hh		M;a/)u1h	139276			0				2228416			7799456			10214475	844					
+3			M;a|p(gg		]]e((?`:	229817			0				3677072			12869752		16834252	0					
+4*			]]e-<\w"		^^~x1>,H	14293			0				228688			800408			1047703		0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		&\&v]lK:	115081			0				1841296			6444536			8419510		0					
+1			&\''ac)p		)[@rwL"m	57735			0				923760			3233160			4224455		0					
+2			)[Af)cl3		/Y,.%YY8	115081			0				1841296			6444536			8419698		0					
+3			/Y,s/vV;		2X{*lo-^	58083			0				929328			3252648			4249785		0					
+4			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+5			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+
+2024-04-02 11:18:50 --- (INFO)compaction start level[1], compaction files[73,76], start level files[70,71,72,73,76], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:50 --- (INFO)Total running time: 9602835us
+2024-04-02 11:18:50 --- (INFO)total written bytes: 224275397, left bytes: 0
+2024-04-02 11:18:50 --- (INFO)compaction_time: 2156709us
+2024-04-02 11:18:51 --- (INFO)==================================================
+2024-04-02 11:18:51 --- (INFO)Program information: 
+2024-04-02 11:18:51 --- (INFO)Compaction strategy: kOldestSmallestSeqFirst
+2024-04-02 11:18:51 --- (INFO)Total workload size: 128000000
+2024-04-02 11:18:51 --- (INFO)Database path: /scratchNVM1/ranw/rocksdb6/
+2024-04-02 11:18:51 --- (INFO)Experiment path: workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/skip/run3
+2024-04-02 11:18:51 --- (INFO)Workload path: workloads/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/type3.txt
+2024-04-02 11:18:51 --- (INFO)Skip trivial move: 0
+2024-04-02 11:18:53 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:55 --- (INFO)compaction start level[0], compaction files[27,25,23,21], start level files[27,25,23,21], compactionStrategy[0], baseLevel[1], 
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 0015a19d3eac1b0e
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!}zB-J		^^zUlcEB	92582			0				1481312			5184592			6829434		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+4			M;c/Jx_D		ZP&mtUw8	114690			0				1835040			6422640			8418365		0					
+5			ZP)d.7<I		^^~1BJ/4	36158			0				578528			2024848			2655803		0					
+
+2024-04-02 11:18:55 --- (INFO)compaction start level[1], compaction files[28,29,30,31], start level files[28,29,30,31,32,35], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:57 --- (INFO)compaction start level[0], compaction files[41,39,37,34], start level files[41,39,37,34], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:18:58 --- (INFO)compaction start level[0], compaction files[52,50,48,46], start level files[52,50,48,46], compactionStrategy[0], baseLevel[1], 
+Compaction 2 in level 1 Choice: file No.4
+Hash value: 30fc8499c677b1c0
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!#3Xu=1		^^y`+<3n	91980			0				1471680			5150880			6785221		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		)[@VIn&)	108659			0				1738544			6084904			7963902		1082				
+1			)[BL[Uw#		2XztIq]2	108923			0				1742768			6099688			7983250		1079				
+2			2X|I1$}v		@"n#'*4X	108556			0				1736896			6079136			7969421		1081				
+3			@"oQ8=hh		M;a/)u1h	107925			0				1726800			6043800			7923951		1088				
+4*			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+
+2024-04-02 11:18:59 --- (INFO)compaction start level[1], compaction files[57], start level files[53,54,55,56,57], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:00 --- (INFO)compaction start level[0], compaction files[65,63,61,59], start level files[65,63,61,59], compactionStrategy[0], baseLevel[1], 
+Compaction 3 in level 1 Choice: file No.1
+Hash value: cdcf742215955e10
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		)[@VIn&)	140095			0				2241520			7845320			10257477	840					
+1*			)[A-End[		2XztIq]2	140305			0				2244880			7857080			10272942	839					
+2			2X|'[]QD		@"n#'*4X	139772			0				2236352			7827232			10249587	840					
+3			@"oQ8=hh		M;a/)u1h	139276			0				2228416			7799456			10214475	844					
+4			M;a|p(gg		^^|wbb><	80706			0				1291296			4519536			5937688		2862				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+4			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+2024-04-02 11:19:00 --- (INFO)compaction start level[1], compaction files[67], start level files[66,67,68,69,72], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:00 --- (INFO)Current written bytes after compact to level 2: 212150231
+Compaction 4 in level 1 Choice: file No.0
+Hash value: cbef25278f9df5b4
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		^^|54Lf]	83502			0				1336032			4676112			6160928		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!$J|C-		)[@VIn&)	140095			0				2241520			7845320			10257477	840					
+1			2X|'[]QD		@"n#'*4X	139772			0				2236352			7827232			10249587	840					
+2			@"oQ8=hh		M;a/)u1h	139276			0				2228416			7799456			10214475	844					
+3			M;a|p(gg		^^|wbb><	80706			0				1291296			4519536			5937688		2862				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[A-End[		/>+V66JV	115081			0				1841296			6444536			8417471		0					
+2			/>,.f:CI		2X{*lo-^	71574			0				1145184			4008144			5235385		0					
+3			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+4			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+5			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+2024-04-02 11:19:00 --- (INFO)compaction start level[1], compaction files[66], start level files[66,68,69,72], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:00 --- (INFO)Current written bytes after compact to level 2: 225787231
+2024-04-02 11:19:01 --- (INFO)Total running time: 9747179us
+2024-04-02 11:19:01 --- (INFO)total written bytes: 225787231, left bytes: 0
+2024-04-02 11:19:01 --- (INFO)compaction_time: 2162723us
+2024-04-02 11:19:01 --- (INFO)==================================================
+2024-04-02 11:19:01 --- (INFO)Program information: 
+2024-04-02 11:19:01 --- (INFO)Compaction strategy: kEnumerateAll
+2024-04-02 11:19:01 --- (INFO)Total workload size: 128000000
+2024-04-02 11:19:01 --- (INFO)Database path: /scratchNVM1/ranw/rocksdb6/
+2024-04-02 11:19:01 --- (INFO)Experiment path: workspace/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/skip/run3
+2024-04-02 11:19:01 --- (INFO)Workload path: workloads/consistency_checking/2000000_0_0_64_8_memory/complete_test_concurrent_3_test_skip_again/type3.txt
+2024-04-02 11:19:01 --- (INFO)Skip trivial move: 1
+2024-04-02 11:19:03 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:05 --- (INFO)compaction start level[0], compaction files[27,25,23,21], start level files[27,25,23,21], compactionStrategy[0], baseLevel[1], 
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 0015a19d3eac1b0e
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!}zB-J		^^zUlcEB	92582			0				1481312			5184592			6829434		0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+4			M;c/Jx_D		ZP&mtUw8	114690			0				1835040			6422640			8418365		0					
+5			ZP)d.7<I		^^~1BJ/4	36158			0				578528			2024848			2655803		0					
+
+2024-04-02 11:19:05 --- (INFO)EnumerateAll: has_zero_overlapping_ratio
+2024-04-02 11:19:05 --- (INFO)compaction start level[1], compaction files[28,29,30,31], start level files[28,29,30,31,32,35], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:07 --- (INFO)compaction start level[0], compaction files[41,39,37,34], start level files[41,39,37,34], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:08 --- (INFO)compaction start level[0], compaction files[52,50,48,46], start level files[52,50,48,46], compactionStrategy[0], baseLevel[1], 
+Compaction 2 in level 1 Choice: file No.4
+Hash value: 30fc8499c677b1c0
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!$J|C-		)[@VIn&)	108659			0				1738544			6084904			7963902		1082				
+1			)[BL[Uw#		2XztIq]2	108923			0				1742768			6099688			7983250		1079				
+2			2X|I1$}v		@"n#'*4X	108556			0				1736896			6079136			7969421		1081				
+3			@"oQ8=hh		M;a/)u1h	107925			0				1726800			6043800			7923951		1088				
+4*			M;a|p(gg		^^~x1>,H	226525			0				3624400			12685400		16597958	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!<FK+W		)[@rwL"m	114886			0				1838176			6433616			8418560		0					
+1			)[Af)cl3		2X{*lo-^	114886			0				1838176			6433616			8418380		0					
+2			2X{Op~_S		@"n#'*4X	114694			0				1835104			6422864			8417730		0					
+3			@"n6!RQ&		M;a9B_HH	114703			0				1835248			6423368			8423386		0					
+
+2024-04-02 11:19:08 --- (INFO)EnumerateAll: has_zero_overlapping_ratio
+2024-04-02 11:19:08 --- (INFO)compaction start level[1], compaction files[57], start level files[53,54,55,56,57], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:10 --- (INFO)compaction start level[0], compaction files[65,63,61,59], start level files[65,63,61,59], compactionStrategy[0], baseLevel[1], 
+2024-04-02 11:19:10 --- (INFO)Terminate reason: all files of version cdcf742215955e10 has been selected.
+2024-04-02 11:19:10 --- (INFO)Terminate reason: all files of version 14830199787694153232 has been selected.
