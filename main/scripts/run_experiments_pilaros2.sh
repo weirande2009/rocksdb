@@ -4,8 +4,8 @@
 # total_bytes=$((2000000 * 64))
 
 workspace_dir=workspace/stability_checking/2000000_0_0_64_8_memory_both/concurrent_6
-./load_gen --output_path $workspace_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
 mkdir -p $workspace_dir
+./load_gen --output_path $workspace_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
 
 for i in {1..5}
 do
