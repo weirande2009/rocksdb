@@ -246,13 +246,21 @@ void LevelVersionTree::SetCurrentVersionFullyEnumerated(size_t index) {
   bool all_fully_enumerated = true;
   for (size_t i = 0; i < version_nodes[last_version_id].chosen_children.size(); i++) {
     size_t child_version_id = version_nodes[last_version_id].chosen_children[i];
-    if (child_version_id == std::numeric_limits<size_t>::max() || version_nodes[child_version_id].fully_enumerated) {
+    if (child_version_id == std::numeric_limits<size_t>::max()) {
+      continue;
+    }
+    if(child_version_id == std::numeric_limits<size_t>::max() - 1) {
+      all_fully_enumerated = false;
+      break;
+    }
+    if (version_nodes[child_version_id].fully_enumerated) {
       continue;
     }
     all_fully_enumerated = false;
     break;
   }
   if (all_fully_enumerated) {
+    CS561Log::Log("Current version is fully enumerated.");
     version_nodes[last_version_id].fully_enumerated = true;
   }
   // if (version_nodes[last_version_id].chosen_children[last_chosen_file_index] != std::numeric_limits<size_t>::max()) {

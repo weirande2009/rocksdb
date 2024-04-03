@@ -48,6 +48,7 @@ int AllFilesEnumerator::GetPickingFile(
   // record this compaction
   chosen_file_index_ = index;
   // record the involved bytes
+  involved_bytes_.clear();
   for (size_t i = 0; i < temp.size(); ++i) {
     double estimated_bytes = temp[i].file->fd.file_size * (1.0 + static_cast<double>(file_overlapping_ratio[i]) / 1024);
     involved_bytes_.push_back(static_cast<uint64_t>(estimated_bytes));
