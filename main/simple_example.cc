@@ -5,6 +5,7 @@
 #include <filesystem>
 
 #include "cs561/all_files_enumerator.h"
+#include "cs561/cs561_option.h"
 #include "rocksdb/advanced_options.h"
 #include "rocksdb/cache.h"
 #include "rocksdb/db.h"
@@ -160,12 +161,14 @@ void runWorkload(Options& op, WriteOptions& write_op,
   }
 
   // read the whole workload
+  CS561Log::Log("Reading workload ...");
   std::vector<std::string> workload;
   std::string line;
   while (std::getline(workload_file, line)) {
     workload.push_back(line);
   }
   workload_file.close();
+  CS561Log::Log("Finish reading workload");
 
   // Clearing the system cache
   // std::cout << "Clearing system cache ..." << std::endl; 
@@ -183,6 +186,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
   auto start_time = std::chrono::system_clock::now();
   char instruction;
   std::string value, key, start_key, end_key;
+  CS561Log::Log("Start running workload ...");
   for (size_t i = 0; i < workload.size(); i++){
     std::stringstream ss(workload[i]);
     ss >> instruction;
@@ -281,7 +285,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
 }
 
 int main(int argc, char* argv[]) {
-  if (argc != 7) {
+  if (argc != 8) {
     std::cout << "There should three parameters: " << std::endl;
     std::cout << "1. Compaction strategy" << std::endl;
     std::cout << "2. Total written bytes in the workload" << std::endl;
@@ -289,6 +293,7 @@ int main(int argc, char* argv[]) {
     std::cout << "4. The experiment root path" << std::endl;
     std::cout << "5. The workload path" << std::endl;
     std::cout << "6. Skip trivial move" << std::endl;
+    std::cout << "7. Skip extend non-L0 trivial move" << std::endl;
     return -1;
   }
   // parse parameter
@@ -298,6 +303,7 @@ int main(int argc, char* argv[]) {
   std::string experiment_path = argv[4];
   std::string workload_path = argv[5];
   bool skip_trivial_move = std::stoi(argv[6]);
+  bool skip_extend_non_l0_trivial_move = std::stoi(argv[7]);
 
   CS561Log::SetLogRootPath(experiment_path);
 
@@ -309,9 +315,11 @@ int main(int argc, char* argv[]) {
   CS561Log::Log("Experiment path: " + experiment_path);
   CS561Log::Log("Workload path: " + workload_path);
   CS561Log::Log("Skip trivial move: " + std::to_string(skip_trivial_move));
+  CS561Log::Log("Skip extend non-L0 trivial move: " + std::to_string(skip_extend_non_l0_trivial_move));
   
   AllFilesEnumerator::GetInstance();
-  AllFilesEnumerator::GetInstance().skip_trivial_move = skip_trivial_move;
+  CS561Option::skip_trivial_move = skip_trivial_move;
+  CS561Option::skip_extend_non_l0_trivial_move = skip_extend_non_l0_trivial_move;
 
   Options options;
   WriteOptions write_op;

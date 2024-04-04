@@ -91,6 +91,7 @@
 // clang-format on
 
 #include "cs561/all_files_enumerator.h"
+#include "cs561/cs561_option.h"
 
 namespace ROCKSDB_NAMESPACE {
 
@@ -7475,7 +7476,7 @@ void VersionStorageInfo::PickUnselectedFile(
 
   // Check whether there is at least a file that has zero overlapping ratio
   bool has_zero_overlapping_ratio = false;
-  if (AllFilesEnumerator::GetInstance().skip_trivial_move) {
+  if (CS561Option::skip_trivial_move) {
     for (size_t i = 0; i < file_overlapping_ratio.size(); i++) {
       if (file_overlapping_ratio[i] == 0) {
         has_zero_overlapping_ratio = true;

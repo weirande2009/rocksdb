@@ -823,10 +823,10 @@ void AllFilesEnumerator::Pruning() {
     uint64_t threshold = involved_bytes_[chosen_file_index_];
     for (size_t i = chosen_file_index_ + 1; i < involved_bytes_.size(); i++) {
       if (involved_bytes_[i] >= threshold) {
-        // Set the current version to be fully enumerated (no need to explore further)
-        collector.GetVersionForest().GetLevelVersionTree(1).SetCurrentVersionFullyEnumerated(i);
         // set the flag of the current node
         CS561Log::Log("Set file " + std::to_string(i) + " of last compaction to be fully enumerated");
+        // Set the current version to be fully enumerated (no need to explore further)
+        collector.GetVersionForest().GetLevelVersionTree(1).SetCurrentVersionFullyEnumerated(i);
       }
     }
     Terminate();

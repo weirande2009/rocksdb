@@ -18,6 +18,7 @@
 #include "test_util/sync_point.h"
 
 #include "cs561/cs561_log.h"
+#include "cs561/cs561_option.h"
 
 namespace ROCKSDB_NAMESPACE {
 
@@ -388,6 +389,7 @@ void LevelCompactionBuilder::SetupOtherFilesWithRoundRobinExpansion() {
                 vstorage_, ioptions_, start_level_, output_level_))) {
       // Constraint 1a
       tmp_start_level_inputs.clear();
+      CS561Log::Log("Early stop in RoundRobin trivial move for constraint 1a-1: " + std::to_string(start_level_inputs_.size()));
       return;
     }
 
@@ -405,6 +407,7 @@ void LevelCompactionBuilder::SetupOtherFilesWithRoundRobinExpansion() {
                                                     &output_level_inputs)) {
       // Constraint 1a
       tmp_start_level_inputs.clear();
+      CS561Log::Log("Early stop in RoundRobin trivial move for constraint 1a-2: " + std::to_string(start_level_inputs_.size()));
       return;
     }
 
@@ -415,12 +418,14 @@ void LevelCompactionBuilder::SetupOtherFilesWithRoundRobinExpansion() {
     if (curr_bytes_to_compact > mutable_cf_options_.max_compaction_bytes) {
       // Constraint 2
       tmp_start_level_inputs.clear();
+      CS561Log::Log("Early stop in RoundRobin trivial move for constraint 2: " + std::to_string(start_level_inputs_.size()));
       return;
     }
 
     start_level_inputs_.files = tmp_start_level_inputs.files;
     // Constraint 3
     if (start_lvl_curr_bytes_to_compact > start_lvl_max_bytes_to_compact) {
+      CS561Log::Log("Early stop in RoundRobin trivial move for constraint 3 (" + std::to_string(start_lvl_curr_bytes_to_compact) + ")");
       return;
     }
   }
@@ -431,6 +436,7 @@ bool LevelCompactionBuilder::SetupOtherInputsIfNeeded() {
   // spans of files that do not interact with any pending compactions, so don't
   // need to consider other levels.
   if (output_level_ != 0) {
+    CS561Log::Log("File number in before SetupOtherInputsIfNeeded(): " + std::to_string(start_level_inputs_.size()));
     output_level_inputs_.level = output_level_;
     bool round_robin_expanding =
         ioptions_.compaction_pri == kRoundRobin &&
@@ -438,6 +444,7 @@ bool LevelCompactionBuilder::SetupOtherInputsIfNeeded() {
     if (round_robin_expanding) {
       SetupOtherFilesWithRoundRobinExpansion();
     }
+    CS561Log::Log("File number after SetupOtherFilesWithRoundRobinExpansion(): " + std::to_string(start_level_inputs_.size()));
     if (!is_l0_trivial_move_ &&
         !compaction_picker_->SetupOtherInputs(
             cf_name_, mutable_cf_options_, vstorage_, &start_level_inputs_,
@@ -445,6 +452,7 @@ bool LevelCompactionBuilder::SetupOtherInputsIfNeeded() {
             round_robin_expanding)) {
       return false;
     }
+    CS561Log::Log("File number after SetupOtherInputs(): " + std::to_string(start_level_inputs_.size()));
 
     compaction_inputs_.push_back(start_level_inputs_);
     if (!output_level_inputs_.empty()) {
@@ -479,6 +487,7 @@ Compaction* LevelCompactionBuilder::PickCompaction() {
   // Pick up the first file to start compaction. It may have been extended
   // to a clean cut.
   SetupInitialFiles();
+  CS561Log::Log("File number in after SetupInitialFiles(): " + std::to_string(start_level_inputs_.size()));
   if (start_level_inputs_.empty()) {
     return nullptr;
   }
@@ -699,6 +708,7 @@ bool LevelCompactionBuilder::TryExtendNonL0TrivialMove(int start_index,
     // much compaction pressure for the next level.
     // Ignore if there are more than one DB path, as it would be hard
     // to predict whether it is a trivial move.
+    CS561Log::Log("File number in before TryExtendNonL0TrivialMove(): " + std::to_string(start_level_inputs_.size()));
     const std::vector<FileMetaData*>& level_files =
         vstorage_->LevelFiles(start_level_);
     const size_t kMaxMultiTrivialMove = 4;
@@ -859,7 +869,7 @@ bool LevelCompactionBuilder::PickFileToCompact() {
     vstorage_->GetOverlappingInputs(output_level_, &smallest, &largest,
                                     &output_level_inputs.files);
     if (output_level_inputs.empty()) {
-      if (start_level_ > 0 &&
+      if (start_level_ > 0 && !CS561Option::skip_extend_non_l0_trivial_move &&
           TryExtendNonL0TrivialMove(index,
                                     ioptions_.compaction_pri ==
                                         kRoundRobin /* only_expand_right */)) {

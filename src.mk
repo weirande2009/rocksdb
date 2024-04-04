@@ -165,6 +165,7 @@ LIB_SOURCES =                                                   \
   cs561/request_info_collector.cc                               \
   cs561/version_forest.cc			                                  \
   cs561/cs561_log.cc			                                      \
+  cs561/cs561_option.cc                                         \
   port/mmap.cc                                                  \
   port/port_posix.cc                                            \
   port/win/env_default.cc                                       \
