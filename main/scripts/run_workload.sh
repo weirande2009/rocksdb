@@ -11,7 +11,7 @@ run_once() {
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example $4 $1 $2 $3 $5 0
+    ./simple_example $4 $1 $2 $3 $5 0 0
 }
 
 run_baseline() {
@@ -24,10 +24,10 @@ run_baseline() {
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example kRoundRobin $1 $2 $3 0
+    ./simple_example kRoundRobin $1 $2 $3 0 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0
+    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0 0
 }
 
 run_all_baselines() {
@@ -40,20 +40,20 @@ run_all_baselines() {
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example kRoundRobin $1 $2 $3 $4 0
+    ./simple_example kRoundRobin $1 $2 $3 $4 0 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0
+    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kOldestLargestSeqFirst $1 $2 $3 $4 0
+    ./simple_example kOldestLargestSeqFirst $1 $2 $3 $4 0 0
 
     find $2 -mindepth 1 -delete
-    ./simple_example kOldestSmallestSeqFirst $1 $2 $3 $4 0
+    ./simple_example kOldestSmallestSeqFirst $1 $2 $3 $4 0 0
 }
 
 run_enumerate() {
-    if ! [ $# -eq 6 ]; then
+    if ! [ $# -eq 7 ]; then
         echo 'in this shell script, there will be six parameters, which are:'
         echo '1. the number of runs'
         echo '2. the number of all inserted bytes'
@@ -61,6 +61,7 @@ run_enumerate() {
         echo '4. the path of the experiment workspace'
         echo '5. the workload path'
         echo '6. whether to skip trivial move'
+        echo '7. whether to skip extend non-l0 trivial move'
         exit 1
     fi
     for i in $(seq 1 $1)
@@ -68,7 +69,7 @@ run_enumerate() {
         echo 'run' $i
         echo 'run' $i >> $4/out.txt
         find $3 -mindepth 1 -delete
-        ./simple_example kEnumerateAll $2 $3 $4 $5 $6
+        ./simple_example kEnumerateAll $2 $3 $4 $5 $6 $7
 
         # check whether to stop
         ./check_finish_enumeration $4

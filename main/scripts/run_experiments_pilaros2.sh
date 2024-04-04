@@ -101,6 +101,7 @@
 #     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 &
 # done
 
-./load_gen --output_path workloads/1.txt -I 8000000 -U 0 -D 0 -E 8 -K 4
-total_bytes=$((8000000 * 8))
-./scripts/run_for_a_type.sh 800 /scratchNVM1/ranw/rocksdb/ experiment_non_skip workloads/1.txt $total_bytes 0
+./load_gen --output_path workloads/test/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+total_bytes=$((4000000 * 64))
+# ./scripts/run_for_a_type.sh 800 /mnt/ramd/ranw/rocksdb/ experiment workloads/1.txt $total_bytes 0
+time ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/1.txt

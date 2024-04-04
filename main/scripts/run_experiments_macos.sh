@@ -169,6 +169,7 @@
 # # time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment1 kMinOverlappingRatio $total_bytes workloads/1.txt
 # ./scripts/run_for_a_type.sh 1000 mnt/rocksdb/ experiment1 workloads/1.txt $total_bytes
 
-./load_gen --output_path workloads/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
+# ./load_gen --output_path workloads/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 4
 total_bytes=$((2000000 * 64))
-./scripts/run_for_a_type.sh 20 mnt/rocksdb/ experiment_non_skip workloads/1.txt $total_bytes 1
+./scripts/run_for_a_type.sh 2 mnt/rocksdb/ experiment workloads/1.txt $total_bytes 0 1
+# time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/1.txt
