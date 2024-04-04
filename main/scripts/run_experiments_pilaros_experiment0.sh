@@ -22,14 +22,8 @@ mkdir -p $workspace_dir_optimal
 ./load_gen --output_path $workload_dir/type3.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
 ./load_gen --output_path $workload_dir/type4.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
 ./load_gen --output_path $workload_dir/type5.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-total_bytes=$((4000000 * 64))
-
-enumeration_runs=4500
-rocksdb_dir=/mnt/ramd/ranw
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run4 $workload_dir_test_skip/type1.txt $total_bytes 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run5 $workload_dir_test_skip/type2.txt $total_bytes 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir_non_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 0 &
-
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run4 $workload_dir_test_skip/type1.txt $total_bytes 1 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run5 $workload_dir_test_skip/type2.txt $total_bytes 1 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 1 &
+./load_gen --output_path $workload_dir/type6.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/type7.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/type8.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/type9.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/type10.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8

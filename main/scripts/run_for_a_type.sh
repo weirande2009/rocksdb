@@ -26,4 +26,4 @@ initialize_workspace $3
 
 # run_all_baselines $5 $2 $3 $4
 
-run_enumerate $1 $5 $2 $3 $4 $6 $7
+time run_enumerate $1 $5 $2 $3 $4 $6 $7 > $3/out.txt

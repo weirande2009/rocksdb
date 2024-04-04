@@ -66,18 +66,19 @@
 
 workload_dir=workloads/test/
 mkdir -p $workload_dir
-./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
 total_bytes=$((2000000 * 64))
 
-workspace_dir=workspace/test/memory/concurrent_12
+workspace_dir=workspace/test/memory/test_optimal
 mkdir -p $workspace_dir
 
 enumeration_runs=40
 rocksdb_dir=/mnt/ramd/ranw
-for i in {1..15}
-do
-    ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 0 &
-done
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir/run1 $workload_dir/1.txt $total_bytes 0 1 &
+# for i in {1..15}
+# do
+#     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 0 &
+# done
 
 # rocksdb_dir=/scratchNVM1/ranw
 # for i in {7..11}
@@ -101,7 +102,7 @@ done
 #     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 &
 # done
 
-./load_gen --output_path workloads/test/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-total_bytes=$((4000000 * 64))
-# ./scripts/run_for_a_type.sh 800 /mnt/ramd/ranw/rocksdb/ experiment workloads/1.txt $total_bytes 0
-time ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/test/1.txt
+# ./load_gen --output_path workloads/test/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+# total_bytes=$((4000000 * 64))
+# # ./scripts/run_for_a_type.sh 800 /mnt/ramd/ranw/rocksdb/ experiment workloads/1.txt $total_bytes 0
+# time ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/test/1.txt
