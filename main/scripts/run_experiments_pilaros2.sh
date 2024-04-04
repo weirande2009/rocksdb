@@ -104,4 +104,4 @@
 ./load_gen --output_path workloads/test/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
 total_bytes=$((4000000 * 64))
 # ./scripts/run_for_a_type.sh 800 /mnt/ramd/ranw/rocksdb/ experiment workloads/1.txt $total_bytes 0
-time ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/1.txt
+time ./scripts/run_once_existing.sh /mnt/ramd/ranw/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/test/1.txt
