@@ -74,7 +74,7 @@ mkdir -p $workspace_dir
 
 enumeration_runs=40
 rocksdb_dir=/mnt/ramd/ranw
-for i in {1..12}
+for i in {1..15}
 do
     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 0 &
 done
