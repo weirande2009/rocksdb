@@ -15,7 +15,7 @@ workspace_dir_skip=workspace/compare_optimal_policies/2000000_2000000_0_64_8_mem
 workspace_dir_optimal=workspace/compare_optimal_policies/2000000_2000000_0_64_8_memory/first_run/optimal
 total_bytes=$((4000000 * 64))
 
-enumeration_runs=15000
+enumeration_runs=12000
 rocksdb_dir=/mnt/ramd/ranw/optimal
 mkdir -p $rocksdb_dir
 

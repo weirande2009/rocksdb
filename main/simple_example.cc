@@ -298,7 +298,7 @@ int main(int argc, char* argv[]) {
   }
   // parse parameter
   std::string compaction_strategy = argv[1];
-  uint64_t total_written_bytes = std::stoi(argv[2]);
+  uint64_t total_written_bytes = std::stoull(argv[2]);
   kDBPath = argv[3];
   std::string experiment_path = argv[4];
   std::string workload_path = argv[5];
