@@ -16,7 +16,7 @@ workspace_dir_optimal=workspace/compare_optimal_policies/2000000_2000000_0_64_8_
 total_bytes=$((4000000 * 64))
 
 enumeration_runs=15000
-rocksdb_dir=/mnt/ramd/ranw/nonskip
+rocksdb_dir=/mnt/ramd/ranw/optimal
 mkdir -p $rocksdb_dir
 
 ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1 &
