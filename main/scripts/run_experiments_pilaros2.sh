@@ -64,20 +64,20 @@
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 1 &
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run3 $workload_dir_test_skip/type3.txt $total_bytes 1 &
 
-# workload_dir=workloads/stability_checking/2000000_0_0_64_8_memory_nvm1_test_speed/concurrent_12
-# mkdir -p $workload_dir
-# ./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
-# total_bytes=$((2000000 * 64))
+workload_dir=workloads/test/
+mkdir -p $workload_dir
+./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+total_bytes=$((2000000 * 64))
 
-# workspace_dir=workspace/stability_checking/2000000_0_0_64_8_memory_nvm1_test_speed/concurrent_12
-# mkdir -p $workspace_dir
+workspace_dir=workspace/test/memory/concurrent_12
+mkdir -p $workspace_dir
 
-# enumeration_runs=300
-# rocksdb_dir=/mnt/ramd/ranw
-# for i in {1..6}
-# do
-#     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 &
-# done
+enumeration_runs=40
+rocksdb_dir=/mnt/ramd/ranw
+for i in {1..12}
+do
+    ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 0 &
+done
 
 # rocksdb_dir=/scratchNVM1/ranw
 # for i in {7..11}
