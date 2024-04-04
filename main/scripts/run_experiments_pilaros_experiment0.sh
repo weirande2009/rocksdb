@@ -17,13 +17,13 @@ mkdir -p $workload_dir
 mkdir -p $workspace_dir_non_skip
 mkdir -p $workspace_dir_skip
 mkdir -p $workspace_dir_optimal
-./load_gen --output_path $workload_dir/type1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type2.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type3.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type4.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type5.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type6.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type7.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type8.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type9.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/type10.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/2.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/3.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/4.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/5.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/6.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/7.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/8.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/9.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+./load_gen --output_path $workload_dir/10.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8

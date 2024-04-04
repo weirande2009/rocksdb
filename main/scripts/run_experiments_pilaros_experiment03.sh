@@ -19,13 +19,13 @@ enumeration_runs=15000
 rocksdb_dir=/mnt/ramd/ranw/optimal
 mkdir -p $rocksdb_dir
 
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1 &
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1 &
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb7/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1 &
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb8/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb9/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1 &
-# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb10/ $workspace_dir/run$i $workload_dir/1.txt $total_bytes 0 1
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir/run1 $workload_dir/1.txt $total_bytes 0 1 &
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir/run2 $workload_dir/2.txt $total_bytes 0 1
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir/run3 $workload_dir/3.txt $total_bytes 0 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir/run4 $workload_dir/4.txt $total_bytes 0 1
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir/run5 $workload_dir/5.txt $total_bytes 0 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir/run6 $workload_dir/6.txt $total_bytes 0 1
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb7/ $workspace_dir/run7 $workload_dir/7.txt $total_bytes 0 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb8/ $workspace_dir/run8 $workload_dir/8.txt $total_bytes 0 1
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb9/ $workspace_dir/run9 $workload_dir/9.txt $total_bytes 0 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb10/ $workspace_dir/run10 $workload_dir/10.txt $total_bytes 0 1
