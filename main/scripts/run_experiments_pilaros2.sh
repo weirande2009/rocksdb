@@ -72,7 +72,7 @@ total_bytes=$((2000000 * 64))
 workspace_dir=workspace/test/memory/test_optimal
 mkdir -p $workspace_dir
 
-enumeration_runs=40
+enumeration_runs=4000
 rocksdb_dir=/mnt/ramd/ranw
 ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir/run1 $workload_dir/1.txt $total_bytes 0 1 &
 # for i in {1..15}
