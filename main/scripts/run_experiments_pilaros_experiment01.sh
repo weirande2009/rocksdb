@@ -15,17 +15,21 @@ workspace_dir_skip=workspace/compare_optimal_policies/2000000_2000000_0_64_8_mem
 workspace_dir_optimal=workspace/compare_optimal_policies/2000000_2000000_0_64_8_memory/first_run/optimal
 total_bytes=$((4000000 * 64))
 
-enumeration_runs=12000
+enumeration_runs=15000
 rocksdb_dir=/mnt/ramd/ranw/skip
 mkdir -p $rocksdb_dir
 
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_skip/run1 $workload_dir/1.txt $total_bytes 1 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_skip/run2 $workload_dir/2.txt $total_bytes 1 0
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir_skip/run3 $workload_dir/3.txt $total_bytes 1 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run4 $workload_dir/4.txt $total_bytes 1 0
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run5 $workload_dir/5.txt $total_bytes 1 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run6 $workload_dir/6.txt $total_bytes 1 0
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb7/ $workspace_dir_skip/run7 $workload_dir/7.txt $total_bytes 1 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb8/ $workspace_dir_skip/run8 $workload_dir/8.txt $total_bytes 1 0
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb9/ $workspace_dir_skip/run9 $workload_dir/9.txt $total_bytes 1 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb10/ $workspace_dir_skip/run10 $workload_dir/10.txt $total_bytes 1 0
+write_buffer_size=$((8 * 1024 * 1024))
+target_file_size_base=$((8 * 1024 * 1024))
+target_file_number=4
+
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_skip/run1 $workload_dir/1.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number &
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_skip/run2 $workload_dir/2.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir_skip/run3 $workload_dir/3.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number &
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run4 $workload_dir/4.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run5 $workload_dir/5.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number &
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run6 $workload_dir/6.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb7/ $workspace_dir_skip/run7 $workload_dir/7.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number &
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb8/ $workspace_dir_skip/run8 $workload_dir/8.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb9/ $workspace_dir_skip/run9 $workload_dir/9.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number &
+./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb10/ $workspace_dir_skip/run10 $workload_dir/10.txt $total_bytes 1 0 $write_buffer_size $target_file_size_base $target_file_number

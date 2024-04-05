@@ -76,19 +76,9 @@ void runWorkload(Options& op, WriteOptions& write_op,
   DB* db;
 
   op.create_if_missing = true;
-  op.write_buffer_size = 8 * 1024 * 1024;
-  op.target_file_size_base = 8 * 1024 * 1024;
-  // op.target_file_size_multiplier = 1;
   op.level0_file_num_compaction_trigger = 4;
   op.max_bytes_for_level_multiplier = 4;
-  op.max_bytes_for_level_base = 32 * 1024 * 1024;
-
   op.level_compaction_dynamic_level_bytes = false;
-
-  // int64_t bytes_per_sec = 1024 * 1024;
-  // std::shared_ptr<rocksdb::RateLimiter> rate_limiter;
-  // rate_limiter.reset(rocksdb::NewGenericRateLimiter(bytes_per_sec));
-  // op.rate_limiter = rate_limiter;
 
   // set the compaction strategy
   if (compaction_strategy == "kRoundRobin") {
@@ -285,7 +275,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
 }
 
 int main(int argc, char* argv[]) {
-  if (argc != 8) {
+  if (argc != 11) {
     std::cout << "There should three parameters: " << std::endl;
     std::cout << "1. Compaction strategy" << std::endl;
     std::cout << "2. Total written bytes in the workload" << std::endl;
@@ -294,6 +284,9 @@ int main(int argc, char* argv[]) {
     std::cout << "5. The workload path" << std::endl;
     std::cout << "6. Skip trivial move" << std::endl;
     std::cout << "7. Skip extend non-L0 trivial move" << std::endl;
+    std::cout << "8. Write buffer size" << std::endl;
+    std::cout << "9. Target file size base" << std::endl;
+    std::cout << "10. Target file number" << std::endl;
     return -1;
   }
   // parse parameter
@@ -304,6 +297,9 @@ int main(int argc, char* argv[]) {
   std::string workload_path = argv[5];
   bool skip_trivial_move = std::stoi(argv[6]);
   bool skip_extend_non_l0_trivial_move = std::stoi(argv[7]);
+  uint64_t write_buffer_size = std::stoull(argv[8]);
+  uint64_t target_file_size_base = std::stoull(argv[9]);
+  uint64_t target_file_number = std::stoull(argv[10]);
 
   CS561Log::SetLogRootPath(experiment_path);
 
@@ -316,12 +312,18 @@ int main(int argc, char* argv[]) {
   CS561Log::Log("Workload path: " + workload_path);
   CS561Log::Log("Skip trivial move: " + std::to_string(skip_trivial_move));
   CS561Log::Log("Skip extend non-L0 trivial move: " + std::to_string(skip_extend_non_l0_trivial_move));
+  CS561Log::Log("Write buffer size: " + std::to_string(write_buffer_size));
+  CS561Log::Log("Target file size base: " + std::to_string(target_file_size_base));
+  CS561Log::Log("Target file number: " + std::to_string(target_file_number));
   
   AllFilesEnumerator::GetInstance();
   CS561Option::skip_trivial_move = skip_trivial_move;
   CS561Option::skip_extend_non_l0_trivial_move = skip_extend_non_l0_trivial_move;
 
   Options options;
+  options.write_buffer_size = write_buffer_size;
+  options.target_file_size_base = target_file_size_base;
+  options.max_bytes_for_level_base = target_file_number * target_file_size_base;
   WriteOptions write_op;
   ReadOptions read_op;
   runWorkload(options, write_op, read_op, compaction_strategy, total_written_bytes, experiment_path, workload_path);
