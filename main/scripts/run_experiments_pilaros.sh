@@ -1,5 +1,5 @@
 # # test speed of nvm and memory by running run_once
-
+source ./scripts/run_workload.sh
 # workload_dir=workloads/test/2000000_0_0_64_0125
 # mkdir -p $workload_dir
 # ./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
@@ -237,4 +237,5 @@ mkdir -p $rocksdb_dir
 
 # time ./load_gen --output_path workloads/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
 
-time ./scripts/run_once_existing.sh $rocksdb_dir experiment kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
+# time ./scripts/run_once_existing.sh $rocksdb_dir experiment kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
+time run_all_baselines $total_bytes $rocksdb_dir experiment workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
