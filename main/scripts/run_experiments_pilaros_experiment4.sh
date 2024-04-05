@@ -66,46 +66,46 @@ num_workloads=2
 rocksdb_root_dir=/scratchNVM1/ranw/10_1024_size
 num_operation=$((10 * 1024 * 1024))
 entry_size=1024
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size 10_1024_size & # workload 1: 100% insert, 0% update
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size 10_1024_size & # workload 2: 75% insert, 25% update
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size 10_1024_size & # workload 3: 50% insert, 50% update
+run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_10_1024 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_10_1024 & # workload 2: 75% insert, 25% update
+run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_10_1024   # workload 3: 50% insert, 50% update
 
 # run experiments on 20m operations, 1024 bytes entry size
 rocksdb_root_dir=/scratchNVM1/ranw/20_1024_size
 num_operation=$((20 * 1024 * 1024))
 entry_size=1024
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size 20_1024_size & # workload 1: 100% insert, 0% update
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size 20_1024_size & # workload 2: 75% insert, 25% update
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size 20_1024_size & # workload 3: 50% insert, 50% update
+run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_20_1024 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_20_1024 & # workload 2: 75% insert, 25% update
+run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_20_1024   # workload 3: 50% insert, 50% update
 
 # run experiments on 40m operations, 1024 bytes entry size
 rocksdb_root_dir=/scratchNVM1/ranw/40_1024_size
 num_operation=$((40 * 1024 * 1024))
 entry_size=1024
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size 40_1024_size & # workload 1: 100% insert, 0% update
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size 40_1024_size & # workload 2: 75% insert, 25% update
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size 40_1024_size & # workload 3: 50% insert, 50% update
+run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_40_1024 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_40_1024 & # workload 2: 75% insert, 25% update
+run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_40_1024   # workload 3: 50% insert, 50% update
 
 # run experiments on 5m operations, 2048 bytes entry size
 rocksdb_root_dir=/scratchNVM1/ranw/5_2048_size
 num_operation=$((5 * 1024 * 1024))
 entry_size=2048
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_2048_size & # workload 1: 100% insert, 0% update
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_2048_size & # workload 2: 75% insert, 25% update
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_2048_size & # workload 3: 50% insert, 50% update
+run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_2048 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_2048 & # workload 2: 75% insert, 25% update
+run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_2048   # workload 3: 50% insert, 50% update
 
 # run experiments on 5m operations, 4096 bytes entry size
 rocksdb_root_dir=/scratchNVM1/ranw/5_4096_size
 num_operation=$((5 * 1024 * 1024))
 entry_size=4096
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_4096_size & # workload 1: 100% insert, 0% update
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_4096_size & # workload 2: 75% insert, 25% update
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_4096_size & # workload 3: 50% insert, 50% update
+run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_4096 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_4096 & # workload 2: 75% insert, 25% update
+run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_4096   # workload 3: 50% insert, 50% update
 
 # run experiments on 5m operations, 8192 bytes entry size
 rocksdb_root_dir=/scratchNVM1/ranw/5_8192_size
 num_operation=$((5 * 1024 * 1024))
 entry_size=8192
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_8192_size & # workload 1: 100% insert, 0% update
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_8192_size & # workload 2: 75% insert, 25% update
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size 5_8192_size & # workload 3: 50% insert, 50% update
+run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_8192 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_8192 & # workload 2: 75% insert, 25% update
+run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size size_5_8192   # workload 3: 50% insert, 50% update

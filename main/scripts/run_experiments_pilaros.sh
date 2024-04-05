@@ -199,23 +199,42 @@
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run2 $workload_dir_test_skip/type2.txt $total_bytes 1 &
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run3 $workload_dir_test_skip/type3.txt $total_bytes 1 &
 
-workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_nvm/complete_test_concurrent_3_test_skip_again2
-workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_nvm/complete_test_concurrent_3_test_skip_again2/non_skip
-workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_nvm/complete_test_concurrent_3_test_skip_again2/skip
-mkdir -p $workload_dir_test_skip
-mkdir -p $workspace_dir_non_skip
-mkdir -p $workspace_dir_skip
-./load_gen --output_path $workload_dir_test_skip/type4.txt -I 1600000 -U 400000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir_test_skip/type5.txt -I 1400000 -U 600000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir_test_skip/type6.txt -I 1200000 -U 800000 -D 0 -E 64 -K 8
-total_bytes=$((2000000 * 64))
+# workload_dir_test_skip=workloads/consistency_checking/2000000_0_0_64_8_nvm/complete_test_concurrent_3_test_skip_again2
+# workspace_dir_non_skip=workspace/consistency_checking/2000000_0_0_64_8_nvm/complete_test_concurrent_3_test_skip_again2/non_skip
+# workspace_dir_skip=workspace/consistency_checking/2000000_0_0_64_8_nvm/complete_test_concurrent_3_test_skip_again2/skip
+# mkdir -p $workload_dir_test_skip
+# mkdir -p $workspace_dir_non_skip
+# mkdir -p $workspace_dir_skip
+# ./load_gen --output_path $workload_dir_test_skip/type4.txt -I 1600000 -U 400000 -D 0 -E 64 -K 8
+# ./load_gen --output_path $workload_dir_test_skip/type5.txt -I 1400000 -U 600000 -D 0 -E 64 -K 8
+# ./load_gen --output_path $workload_dir_test_skip/type6.txt -I 1200000 -U 800000 -D 0 -E 64 -K 8
+# total_bytes=$((2000000 * 64))
 
-enumeration_runs=4500
-rocksdb_dir=/scratchNVM1/ranw
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run4 $workload_dir_test_skip/type1.txt $total_bytes 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run5 $workload_dir_test_skip/type2.txt $total_bytes 0 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir_non_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 0 &
+# enumeration_runs=4500
+# rocksdb_dir=/scratchNVM1/ranw
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb1/ $workspace_dir_non_skip/run4 $workload_dir_test_skip/type1.txt $total_bytes 0 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb2/ $workspace_dir_non_skip/run5 $workload_dir_test_skip/type2.txt $total_bytes 0 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb3/ $workspace_dir_non_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 0 &
 
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run4 $workload_dir_test_skip/type1.txt $total_bytes 1 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run5 $workload_dir_test_skip/type2.txt $total_bytes 1 &
-./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run4 $workload_dir_test_skip/type1.txt $total_bytes 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run5 $workload_dir_test_skip/type2.txt $total_bytes 1 &
+# ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 1 &
+
+workload_size=$((5 * 1024 * 1024 * 1024))
+entry_size=1024
+num_operation=$((workload_size / entry_size))
+percentage_insert=100
+percentage_update=0
+num_insert=$((num_operation * percentage_insert / 100))
+num_update=$((num_operation * percentage_update / 100))
+total_bytes=$((num_operation * entry_size))
+write_buffer_size=$((64 * 1024 * 1024))
+target_file_size_base=$((64 * 1024 * 1024))
+target_file_number=4
+
+rocksdb_dir=/scratchNVM1/ranw/test
+mkdir -p $rocksdb_dir
+
+# time ./load_gen --output_path workloads/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+
+time ./scripts/run_once_existing.sh $rocksdb_dir experiment kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
