@@ -67,6 +67,21 @@ void backgroundJobMayComplete(DB* db) {
   }
 }
 
+void ReadWorkload(std::ifstream& workload_file, std::vector<std::string>& workload) {
+  std::string line;
+  uint64_t total_bytes = 0;
+  // const uint64_t max_bytes = 5 * 1024 * 1024 * 1024;
+  const uint64_t max_bytes = 1024 * 1024 * 1024;
+  workload.clear();
+  while (std::getline(workload_file, line)) {
+    total_bytes += line.length();
+    workload.push_back(line);
+    if (total_bytes >= max_bytes) {
+      break;
+    }
+  }
+}
+
 void runWorkload(Options& op, WriteOptions& write_op,
                  ReadOptions& read_op,
                  std::string compaction_strategy,
@@ -151,14 +166,14 @@ void runWorkload(Options& op, WriteOptions& write_op,
   }
 
   // read the whole workload
-  CS561Log::Log("Reading workload ...");
+  // CS561Log::Log("Reading workload ...");
   std::vector<std::string> workload;
-  std::string line;
-  while (std::getline(workload_file, line)) {
-    workload.push_back(line);
-  }
-  workload_file.close();
-  CS561Log::Log("Finish reading workload");
+  // std::string line;
+  // while (std::getline(workload_file, line)) {
+  //   workload.push_back(line);
+  // }
+  // workload_file.close();
+  // CS561Log::Log("Finish reading workload");
 
   // Clearing the system cache
   // std::cout << "Clearing system cache ..." << std::endl; 
@@ -177,59 +192,66 @@ void runWorkload(Options& op, WriteOptions& write_op,
   char instruction;
   std::string value, key, start_key, end_key;
   CS561Log::Log("Start running workload ...");
-  for (size_t i = 0; i < workload.size(); i++){
-    std::stringstream ss(workload[i]);
-    ss >> instruction;
-    switch (instruction) {
-      case 'I':  // insert
-      case 'U':  // update
-        ss >> key >> value;
-        inserted_bytes += key.length() + value.length();
-        // Put key-value
-        s = db->Put(write_op, key, value);
-        if (!s.ok()) std::cerr << s.ToString() << std::endl;
-        assert(s.ok());
-        break;
-
-      case 'Q':  // probe: point query
-        ss >> key;
-        s = db->Get(read_op, key, &value);
-        // if (!s.ok()) std::cerr << s.ToString() << "key =
-        // " << key << std::endl; assert(s.ok());
-        break;
-
-      case 'S':  // scan: range query
-        ss >> start_key >> end_key;
-        it->Refresh();
-        assert(it->status().ok());
-        for (it->Seek(start_key); it->Valid(); it->Next()) {
-          // std::cout << "found key = " <<
-          // it->key().ToString() << std::endl;
-          if (it->key().ToString() == end_key) {
-            break;
-          }
-        }
-        if (!it->status().ok()) {
-          std::cerr << it->status().ToString() << std::endl;
-        }
-        break;
-      case 'D':
-        ss >> key;
-        s = db->Delete(write_op, key);
-        if (!s.ok()) std::cerr << s.ToString() << std::endl;
-        assert(s.ok());
-        break;
-      default:
-        return;
-        // std::cerr << "ERROR: Case match NOT found !!" <<
-        // std::endl;
-        break;
+  for (;;) {
+    ReadWorkload(workload_file, workload);
+    std::cout << "workload size = " << workload.size() << std::endl;
+    if (workload.empty()) {
+      break;
     }
+    for (size_t i = 0; i < workload.size(); i++){
+      std::stringstream ss(workload[i]);
+      ss >> instruction;
+      switch (instruction) {
+        case 'I':  // insert
+        case 'U':  // update
+          ss >> key >> value;
+          inserted_bytes += key.length() + value.length();
+          // Put key-value
+          s = db->Put(write_op, key, value);
+          if (!s.ok()) std::cerr << s.ToString() << std::endl;
+          assert(s.ok());
+          break;
 
-    if (total_bytes >= inserted_bytes)
-      AllFilesEnumerator::GetInstance().GetCollector().UpdateLeftBytes(total_bytes - inserted_bytes);
+        case 'Q':  // probe: point query
+          ss >> key;
+          s = db->Get(read_op, key, &value);
+          // if (!s.ok()) std::cerr << s.ToString() << "key =
+          // " << key << std::endl; assert(s.ok());
+          break;
+
+        case 'S':  // scan: range query
+          ss >> start_key >> end_key;
+          it->Refresh();
+          assert(it->status().ok());
+          for (it->Seek(start_key); it->Valid(); it->Next()) {
+            // std::cout << "found key = " <<
+            // it->key().ToString() << std::endl;
+            if (it->key().ToString() == end_key) {
+              break;
+            }
+          }
+          if (!it->status().ok()) {
+            std::cerr << it->status().ToString() << std::endl;
+          }
+          break;
+        case 'D':
+          ss >> key;
+          s = db->Delete(write_op, key);
+          if (!s.ok()) std::cerr << s.ToString() << std::endl;
+          assert(s.ok());
+          break;
+        default:
+          return;
+          // std::cerr << "ERROR: Case match NOT found !!" <<
+          // std::endl;
+          break;
+      }
+
+      if (total_bytes >= inserted_bytes)
+        AllFilesEnumerator::GetInstance().GetCollector().UpdateLeftBytes(total_bytes - inserted_bytes);
+    }
   }
-
+  
   FlushOptions flush_options;
   db->Flush(flush_options);
   backgroundJobMayComplete(db);

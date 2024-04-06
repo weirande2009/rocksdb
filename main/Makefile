@@ -21,7 +21,10 @@ CFLAGS += -Wstrict-prototypes
 all: simple_example
 
 simple_example: librocksdb simple_example.cc
-	$(CXX) $(CXXFLAGS) $@.cc -o$@ ../librocksdb.a -I../include -I.. -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS) -lstdc++fs
+	$(CXX) $(CXXFLAGS) $@.cc -o$@ ../librocksdb.a -I../include -I.. -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
+
+simple_example_backup: librocksdb simple_example.cc
+	$(CXX) $(CXXFLAGS) simple_example.cc -o$@ ../librocksdb.a -I../include -I.. -O2 -std=c++17 $(PLATFORM_LDFLAGS) $(PLATFORM_CXXFLAGS) $(EXEC_LDFLAGS)
 
 clean:
 	rm -rf ./simple_example

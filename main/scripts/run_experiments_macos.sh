@@ -1,3 +1,6 @@
+# source ./scripts/run_workload.sh
+source ./scripts/run_workload.sh
+
 # multiple times for a type
 # ./scripts/run_for_a_type.sh 7200000 800000 0 tmp/multi_times_7200k_800k_0 800 1 mnt/rocksdb/ experiment 8
 # ./scripts/run_for_a_type.sh 7200000 800000 0 tmp/multi_times_7200k_800k_0 800 1 mnt/rocksdb/ experiment 8
@@ -196,4 +199,3 @@ time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment kMinOverlappingRatio
 # real    2m22.592s
 # user    0m51.763s
 # sys     0m24.548s
-
