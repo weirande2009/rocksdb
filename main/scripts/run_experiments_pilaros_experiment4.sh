@@ -60,7 +60,7 @@ run_multiple_times_for_baseline() {
     rm -rf $rocksdb_dir
 }
 
-num_workloads=2
+num_workloads=10
 
 # run experiments on 10m operations, 1024 bytes entry size
 rocksdb_root_dir=/scratchNVM1/ranw/10_1024_size
