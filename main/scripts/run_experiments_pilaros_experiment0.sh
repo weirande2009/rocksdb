@@ -9,21 +9,35 @@
 # Expected result:
 # 1. select a proper policy between skip and non-skip
 
-workload_dir=workloads/compare_optimal_policies/2000000_2000000_0_64_8_memory/first_run
-workspace_dir_non_skip=workspace/compare_optimal_policies/2000000_2000000_0_64_8_memory/first_run/non_skip
-workspace_dir_skip=workspace/compare_optimal_policies/2000000_2000000_0_64_8_memory/first_run/skip
-workspace_dir_optimal=workspace/compare_optimal_policies/2000000_2000000_0_64_8_memory/first_run/optimal
+entry_size=64
+num_operation=2500000
+workload_size=$((num_operation * entry_size))
+percentage_insert=50
+percentage_update=50
+num_insert=$((num_operation * percentage_insert / 100))
+num_update=$((num_operation * percentage_update / 100))
+total_bytes=$((num_operation * entry_size))
+write_buffer_size=$((8 * 1024 * 1024))
+target_file_size_base=$((8 * 1024 * 1024))
+target_file_number=4
+
+dir_name=${num_insert}_${num_update}_0_${entry_size}_8_memory/first_run
+workload_dir=workloads/compare_optimal_policies/$dir_name
+workspace_dir_non_skip=workspace/compare_optimal_policies/$dir_name/non_skip
+workspace_dir_skip=workspace/compare_optimal_policies/$dir_name/skip
+workspace_dir_optimal=workspace/compare_optimal_policies/$dir_name/optimal
 mkdir -p $workload_dir
 mkdir -p $workspace_dir_non_skip
 mkdir -p $workspace_dir_skip
 mkdir -p $workspace_dir_optimal
-./load_gen --output_path $workload_dir/1.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/2.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/3.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/4.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/5.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/6.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/7.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/8.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/9.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
-./load_gen --output_path $workload_dir/10.txt -I 2000000 -U 2000000 -D 0 -E 64 -K 8
+
+./load_gen --output_path $workload_dir/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/2.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/3.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/4.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/5.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/6.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/7.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/8.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/9.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+./load_gen --output_path $workload_dir/10.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8

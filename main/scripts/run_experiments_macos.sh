@@ -172,30 +172,18 @@ source ./scripts/run_workload.sh
 # # time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment1 kMinOverlappingRatio $total_bytes workloads/1.txt
 # ./scripts/run_for_a_type.sh 1000 mnt/rocksdb/ experiment1 workloads/1.txt $total_bytes
 
-workload_size=$((5 * 1024 * 1024 * 1024))
-entry_size=1024
-num_operation=$((workload_size / entry_size))
-percentage_insert=100
-percentage_update=0
+entry_size=64
+num_operation=2500000
+workload_size=$((num_operation * entry_size))
+percentage_insert=50
+percentage_update=50
 num_insert=$((num_operation * percentage_insert / 100))
 num_update=$((num_operation * percentage_update / 100))
 total_bytes=$((num_operation * entry_size))
-write_buffer_size=$((64 * 1024 * 1024))
-target_file_size_base=$((64 * 1024 * 1024))
+write_buffer_size=$((8 * 1024 * 1024))
+target_file_size_base=$((8 * 1024 * 1024))
 target_file_number=4
 
 time ./load_gen --output_path workloads/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
 
 time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
-# ./load_gen --output_path workloads/1.txt -I 2000000 -U 0 -D 0 -E 64 -K 8
-# total_bytes=$((2000000 * 64))
-# ./scripts/run_for_a_type.sh 1 mnt/rocksdb/ experiment workloads/1.txt $total_bytes 1 0
-# time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/1.txt
-
-# real    0m58.818s
-# user    0m47.013s
-# sys     0m10.515s
-
-# real    2m22.592s
-# user    0m51.763s
-# sys     0m24.548s
