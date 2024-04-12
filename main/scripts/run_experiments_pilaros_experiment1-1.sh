@@ -42,14 +42,14 @@ run_multiple_times_for_a_type() {
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
     experiment_root_name=compare_optimal_with_baselines
-    experiment_name=${num_operation}_${entry_size}_8_nvme1/first_run/${percentage_insert}_${percentage_update}
+    experiment_name=${num_operation}_${entry_size}_8_memory/first_run/${percentage_insert}_${percentage_update}
     dir_name=$experiment_root_name/$experiment_name
     workload_dir=workloads/$dir_name
     workspace_dir=workspace/$dir_name
     mkdir -p $workload_dir
     mkdir -p $workspace_dir
     
-    rocksdb_dir=/scratchNVM1/ranw/$dir_name
+    rocksdb_dir=/mnt/ramd/ranw/$dir_name
     mkdir -p $rocksdb_dir
 
     enumeration_runs=15000
