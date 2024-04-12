@@ -54,7 +54,7 @@ run_multiple_times_for_a_type() {
 
     enumeration_runs=15000
 
-    for i in $(seq 1 $n_workloads)
+    for i in $(seq 2 $n_workloads)
     do  
         ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
 
@@ -64,7 +64,7 @@ run_multiple_times_for_a_type() {
     rm -rf $rocksdb_dir
 }
 
-num_workloads=1
+num_workloads=10
 
 run_multiple_times_for_a_type 100 0 $num_workloads & # workload 1: 100% insert, 0% update
 run_multiple_times_for_a_type 90 10 $num_workloads & # workload 2: 90% insert, 10% update
