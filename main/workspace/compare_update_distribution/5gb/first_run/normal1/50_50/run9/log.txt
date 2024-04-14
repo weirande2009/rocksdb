@@ -6174,3 +6174,2270 @@ File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw 
 2024-04-05 12:51:00 --- (INFO)Total running time: 49410345us
 2024-04-05 12:51:00 --- (INFO)total written bytes: 11790938505, left bytes: 0
 2024-04-05 12:51:00 --- (INFO)compaction_time: 44681972us
+2024-04-12 18:09:45 --- (INFO)==================================================
+2024-04-12 18:09:45 --- (INFO)Program information: 
+2024-04-12 18:09:45 --- (INFO)Compaction strategy: kSelectLastSimilar
+2024-04-12 18:09:45 --- (INFO)Total workload size: 5368709120
+2024-04-12 18:09:45 --- (INFO)Database path: /scratchNVM1/ranw/normal1/50_50
+2024-04-12 18:09:45 --- (INFO)Experiment path: workspace/compare_update_distribution/5gb/first_run/normal1/50_50/run9
+2024-04-12 18:09:45 --- (INFO)Workload path: workloads/compare_update_distribution/5gb/first_run/normal1/50_50/9.txt
+2024-04-12 18:09:45 --- (INFO)Skip trivial move: 0
+2024-04-12 18:09:45 --- (INFO)Skip extend non-L0 trivial move: 0
+2024-04-12 18:09:45 --- (INFO)Write buffer size: 67108864
+2024-04-12 18:09:45 --- (INFO)Target file size base: 67108864
+2024-04-12 18:09:45 --- (INFO)Target file number: 4
+2024-04-12 18:09:45 --- (INFO)Reading workload ...
+2024-04-12 18:09:50 --- (INFO)Finish reading workload
+2024-04-12 18:09:50 --- (INFO)Start running workload ...
+2024-04-12 18:09:52 --- (INFO)compaction start level[0], compaction files[15,13,11,9], start level files[15,13,11,9], compactionStrategy[0], baseLevel[1], 
+Compaction 1 in level 1 Choice: file No.0
+Hash value: 477f4ed724ed29e3
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!%pS"Ao		^^v@H"~I	64580			0				1033280			65613280		67209459	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!"#pRJN		,[|)Dm3g	64685			0				1034960			65719960		67313388	0					
+1			,[|J<)g~		;=s)nyr,	64685			0				1034960			65719960		67312968	0					
+2			;=tbB;7R		M/e{Mh,,	64681			0				1034896			65715896		67309560	0					
+3			M/fRS.(Y		^^{3B+K{	64269			0				1028304			65297304		66880799	0					
+
+2024-04-12 18:09:52 --- (INFO)compaction start level[1], compaction files[16,17,20,21], start level files[16,17,20,21], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:09:53 --- (INFO)compaction start level[0], compaction files[27,25,23,19], start level files[27,25,23,19], compactionStrategy[0], baseLevel[1], 
+Compaction 2 in level 1 Choice: file No.4
+Hash value: 016c014bdb8e073c
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!*G5(Bx		^^v7,AX;	64580			0				1033280			65613280		67209746	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!#LwnG\		,[{_rqqt	65184			0				1042944			66226944		67832230	1016				
+1			,[}&@q//		;=rc@!U?	64884			0				1038144			65922144		67520256	1020				
+2			;=vK+Oz{		M/cZ<PMW	64358			0				1029728			65387728		66973468	1029				
+3			M/g:85^6		^^za+(ra	63893			0				1022288			64915288		66490275	1030				
+4*			^^~iZcoo		^^~iZcoo	1				0				16				1016			2058		0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"#pRJN		,[|)Dm3g	64685			0				1034960			65719960		67313388	0					
+1			,[|J<)g~		;=s)nyr,	64685			0				1034960			65719960		67312968	0					
+2			;=tbB;7R		M/e{Mh,,	64681			0				1034896			65715896		67309560	0					
+3			M/fRS.(Y		^^{3B+K{	64269			0				1028304			65297304		66880799	0					
+
+2024-04-12 18:09:54 --- (INFO)compaction start level[1], compaction files[36], start level files[28,31,32,33,36], compactionStrategy[0], baseLevel[1], 
+Compaction 3 in level 1 Choice: file No.3
+Hash value: d0a85105fac2841a
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!*G5(Bx		^^v7,AX;	64580			0				1033280			65613280		67209746	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!#LwnG\		,[{_rqqt	65184			0				1042944			66226944		67832230	1016				
+1			,[}&@q//		;=rc@!U?	64884			0				1038144			65922144		67520256	1020				
+2			;=vK+Oz{		M/cZ<PMW	64358			0				1029728			65387728		66973468	1029				
+3*			M/g:85^6		^^za+(ra	63893			0				1022288			64915288		66490275	1030				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"#pRJN		,[|)Dm3g	64685			0				1034960			65719960		67313388	0					
+1			,[|J<)g~		;=s)nyr,	64685			0				1034960			65719960		67312968	0					
+2			;=tbB;7R		M/e{Mh,,	64681			0				1034896			65715896		67309560	0					
+3			M/fRS.(Y		^^{3B+K{	64269			0				1028304			65297304		66880799	0					
+4			^^~iZcoo		^^~iZcoo	1				0				16				1016			2058		0					
+
+2024-04-12 18:09:54 --- (INFO)compaction start level[1], compaction files[33], start level files[28,31,32,33], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:09:55 --- (INFO)Written bytes for this compaction to level 2: 133366201
+2024-04-12 18:09:55 --- (INFO)Current written bytes after compact to level 2: 5296387699
+2024-04-12 18:09:55 --- (INFO)compaction start level[0], compaction files[42,40,35,30], start level files[42,40,35,30], compactionStrategy[0], baseLevel[1], 
+Compaction 4 in level 1 Choice: file No.0
+Hash value: 91fa4a59b4d6ec92
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		^^tB5Gs}	64580			0				1033280			65613280		67209296	0					
+1			!!):_k`4		^^~i}.JU	64580			0				1033280			65613280		67209355	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!@v_>/		,X`X}%1g	129389			0				2070224			131459224		134632835	511					
+1			,X`q0kP-		;8z*ME3H	129385			0				2070160			131455160		134632817	1023				
+2			;8{SHQ=B		M.pLH-q_	129377			0				2070032			131447032		134630175	1023				
+3			M.pZOlaG		^^zFa3:K	64595			0				1033520			65628520		67220221	3056				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"#pRJN		,[|)Dm3g	64685			0				1034960			65719960		67313388	0					
+1			,[|J<)g~		;=s)nyr,	64685			0				1034960			65719960		67312968	0					
+2			;=tbB;7R		M/e{Mh,,	64681			0				1034896			65715896		67309560	0					
+3			M/fRS.(Y		V/*$}@7b	64689			0				1035024			65724024		67315576	0					
+4			V/*<*4/i		^^{3B+K{	63473			0				1015568			64488568		66050625	0					
+5			^^~iZcoo		^^~iZcoo	1				0				16				1016			2058		0					
+
+2024-04-12 18:09:57 --- (INFO)compaction start level[1], compaction files[43], start level files[43,46,47,50], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:09:57 --- (INFO)Written bytes for this compaction to level 2: 201919085
+2024-04-12 18:09:57 --- (INFO)Current written bytes after compact to level 2: 5584332272
+Compaction 5 in level 1 Choice: file No.1
+Hash value: d4cb60ce26813334
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"d2>p'		^^~FO_]n	64580			0				1033280			65613280		67209617	0					
+1			!!"@,~jt		^^x*OY}$	64580			0				1033280			65613280		67209478	0					
+2			!!!3Jo{"		^^tB5Gs}	64580			0				1033280			65613280		67209296	0					
+3			!!):_k`4		^^~i}.JU	64580			0				1033280			65613280		67209355	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			,X`q0kP-		;8z*ME3H	129385			0				2070160			131455160		134632817	1023				
+1*			;8{SHQ=B		M.pLH-q_	129377			0				2070032			131447032		134630175	1023				
+2			M.pZOlaG		^^zFa3:K	64595			0				1033520			65628520		67220221	3056				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|J<)g~		;=s)nyr,	64685			0				1034960			65719960		67312968	0					
+4			;=tbB;7R		M/e{Mh,,	64681			0				1034896			65715896		67309560	0					
+5			M/fRS.(Y		V/*$}@7b	64689			0				1035024			65724024		67315576	0					
+6			V/*<*4/i		^^{3B+K{	63473			0				1015568			64488568		66050625	0					
+7			^^~iZcoo		^^~iZcoo	1				0				16				1016			2058		0					
+
+2024-04-12 18:09:57 --- (INFO)compaction start level[1], compaction files[47], start level files[46,47,50], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:09:58 --- (INFO)Written bytes for this compaction to level 2: 269236531
+2024-04-12 18:09:58 --- (INFO)Current written bytes after compact to level 2: 5729620771
+2024-04-12 18:09:58 --- (INFO)compaction start level[0], compaction files[63,59,55,52,49,45], start level files[63,59,55,52,49,45], compactionStrategy[0], baseLevel[1], 
+Compaction 6 in level 1 Choice: file No.6
+Hash value: 22c3748da7f99ea9
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^}qyMu5	52731			0				843696			53574696		54879540	0					
+1			!!"t]6(^		^^z*F3WA	50467			0				807472			51274472		52523863	0					
+2			!!"<R\_?		^^vfDdK9	62140			0				994240			63134240		64670681	0					
+3			!!1fl`[v		^^}]f;fT	64571			0				1033136			65604136		67200034	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		(ZE#=k0z	64789			0				1036624			65825624		67418721	2044				
+1			(ZEp!~&*		1^pY_f[r	129401			0				2070416			131471416		134632055	1023				
+2			1^p]roJM		;:`H]!pg	129354			0				2069664			131423664		134588445	512					
+3			;:fL=42.		G2$!3;nD	64480			0				1031680			65511680		67099481	2054				
+4			G2%0(ei]		V/)erhN3	113677			0				1818832			115495832		118290766	1165				
+5			V/*nVx5R		^^zFa3:K	79755			0				1276080			81031080		82990525	814					
+6*			^^{pw}>u		^^~i}.JU	4				0				64				4064			5159		408					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|J<)g~		;:bt=D34	64685			0				1034960			65719960		67312980	0					
+4			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+5			A6Np3U[M		G2$_/O7)	64697			0				1035152			65732152		67319217	0					
+6			G2%2`G!Y		M/e{Mh,,	64664			0				1034624			65698624		67284953	0					
+7			M/fRS.(Y		V/*$}@7b	64689			0				1035024			65724024		67315576	0					
+8			V/*<*4/i		^^{3B+K{	63473			0				1015568			64488568		66050625	0					
+9			^^~iZcoo		^^~iZcoo	1				0				16				1016			2058		0					
+
+2024-04-12 18:10:00 --- (INFO)compaction start level[1], compaction files[80], start level files[66,69,72,75,76,79,80], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:00 --- (INFO)Written bytes for this compaction to level 2: 6223
+2024-04-12 18:10:00 --- (INFO)Current written bytes after compact to level 2: 6056776434
+Compaction 7 in level 1 Choice: file No.2
+Hash value: b8b3a38357ab03e5
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^}qyMu5	52731			0				843696			53574696		54879540	0					
+1			!!"t]6(^		^^z*F3WA	50467			0				807472			51274472		52523863	0					
+2			!!"<R\_?		^^vfDdK9	62140			0				994240			63134240		64670681	0					
+3			!!1fl`[v		^^}]f;fT	64571			0				1033136			65604136		67200034	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		(ZE#=k0z	64789			0				1036624			65825624		67418721	2044				
+1			(ZEp!~&*		1^pY_f[r	129401			0				2070416			131471416		134632055	1023				
+2*			1^p]roJM		;:`H]!pg	129354			0				2069664			131423664		134588445	512					
+3			;:fL=42.		G2$!3;nD	64480			0				1031680			65511680		67099481	2054				
+4			G2%0(ei]		V/)erhN3	113677			0				1818832			115495832		118290766	1165				
+5			V/*nVx5R		^^zFa3:K	79755			0				1276080			81031080		82990525	814					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|J<)g~		;:bt=D34	64685			0				1034960			65719960		67312980	0					
+4			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+5			A6Np3U[M		G2$_/O7)	64697			0				1035152			65732152		67319217	0					
+6			G2%2`G!Y		M/e{Mh,,	64664			0				1034624			65698624		67284953	0					
+7			M/fRS.(Y		V/*$}@7b	64689			0				1035024			65724024		67315576	0					
+8			V/*<*4/i		^^{3B+K{	63473			0				1015568			64488568		66050625	0					
+9			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:00 --- (INFO)compaction start level[1], compaction files[72], start level files[66,69,72,75,76,79], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:00 --- (INFO)Written bytes for this compaction to level 2: 201883605
+2024-04-12 18:10:00 --- (INFO)Current written bytes after compact to level 2: 6168874695
+Compaction 8 in level 1 Choice: file No.4
+Hash value: 098a3e3b7b29bf28
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^t\j'cs	56291			0				900656			57191656		58584116	0					
+1			!!#{0(,V		^^}qyMu5	55501			0				888016			56389016		57762228	0					
+2			!!"t]6(^		^^}qyMu5	52731			0				843696			53574696		54879540	0					
+3			!!"t]6(^		^^z*F3WA	50467			0				807472			51274472		52523863	0					
+4			!!"<R\_?		^^vfDdK9	62140			0				994240			63134240		64670681	0					
+5			!!1fl`[v		^^}]f;fT	64571			0				1033136			65604136		67200034	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		(ZE#=k0z	64789			0				1036624			65825624		67418721	2044				
+1			(ZEp!~&*		1^pY_f[r	129401			0				2070416			131471416		134632055	1023				
+2			;:fL=42.		G2$!3;nD	64480			0				1031680			65511680		67099481	2054				
+3			G2%0(ei]		V/)erhN3	113677			0				1818832			115495832		118290766	1165				
+4*			V/*nVx5R		^^zFa3:K	79755			0				1276080			81031080		82990525	814					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|J<)g~		3A4EchX1	64697			0				1035152			65732152		67313024	0					
+4			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+5			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+6			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+7			A6Np3U[M		G2$_/O7)	64697			0				1035152			65732152		67319217	0					
+8			G2%2`G!Y		M/e{Mh,,	64664			0				1034624			65698624		67284953	0					
+9			M/fRS.(Y		V/*$}@7b	64689			0				1035024			65724024		67315576	0					
+10			V/*<*4/i		^^{3B+K{	63473			0				1015568			64488568		66050625	0					
+11			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:00 --- (INFO)compaction start level[1], compaction files[79], start level files[66,69,75,76,79], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:01 --- (INFO)Written bytes for this compaction to level 2: 149018142
+2024-04-12 18:10:01 --- (INFO)Current written bytes after compact to level 2: 6247469285
+2024-04-12 18:10:01 --- (INFO)compaction start level[0], compaction files[92,87,82,78,74,71,68], start level files[92,87,82,78,74,71,68], compactionStrategy[0], baseLevel[1], 
+Compaction 9 in level 1 Choice: file No.3
+Hash value: add22fa100439851
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"<R\_?		^^}Q]C],	56614			0				905824			57519824		58920447	0					
+1			!!$%(l/{		^^|Ke\'~	56451			0				903216			57354216		58750602	0					
+2			!!%di/1D		^^z*F3WA	56544			0				904704			57448704		58847542	0					
+3			!!"t]6(^		^^w@k,tT	56491			0				903856			57394856		58791958	0					
+4			!!#{0(,V		^^t\j'cs	56444			0				903104			57347104		58743740	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		$]tVY7gW	54378			0				870048			55248048		56579307	1218				
+1			$]u)%nJC		(ZE0t*@h	53671			0				858736			54529736		55843779	1234				
+2			(ZEp!~&*		,[{_rqqt	55390			0				886240			56276240		57632068	1195				
+3*			,[|IWV%{		3"Lvk+1+	129409			0				2070544			131479544		134625032	512					
+4			3"M~faj$		A6MdA{@~	85552			0				1368832			86920832		89025045	3096				
+5			A6OLV5>6		G2$!3;nD	53734			0				859744			54593744		55914128	1232				
+6			G2%0(ei]		M/eoY@Ke	53793			0				860688			54653688		55975774	1230				
+7			M/f&&[}w		V/)y%(=5	114336			0				1829376			116165376		118966132	579					
+8			V/+%Yy`z		^^}qyMu5	32248			0				515968			32763968		33558740	4547				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|J<)g~		3A4EchX1	64697			0				1035152			65732152		67313024	0					
+4			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+5			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+6			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+7			A6Np3U[M		G2$_/O7)	64697			0				1035152			65732152		67319217	0					
+8			G2%2`G!Y		M/e{Mh,,	64664			0				1034624			65698624		67284953	0					
+9			M/fRS.(Y		V/*$}@7b	64689			0				1035024			65724024		67315576	0					
+10			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+11			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+12			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+13			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:03 --- (INFO)compaction start level[1], compaction files[99], start level files[94,95,98,99,102,105,106,109,112], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:04 --- (INFO)Written bytes for this compaction to level 2: 201917038
+2024-04-12 18:10:04 --- (INFO)Current written bytes after compact to level 2: 6662869144
+Compaction 10 in level 1 Choice: file No.6
+Hash value: e86b8e83af396be4
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^z*F3WA	56584			0				905344			57489344		58889351	0					
+1			!!"<R\_?		^^}Q]C],	56614			0				905824			57519824		58920447	0					
+2			!!$%(l/{		^^|Ke\'~	56451			0				903216			57354216		58750602	0					
+3			!!%di/1D		^^z*F3WA	56544			0				904704			57448704		58847542	0					
+4			!!"t]6(^		^^w@k,tT	56491			0				903856			57394856		58791958	0					
+5			!!#{0(,V		^^t\j'cs	56444			0				903104			57347104		58743740	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		$]tVY7gW	54378			0				870048			55248048		56579307	1218				
+1			$]u)%nJC		(ZE0t*@h	53671			0				858736			54529736		55843779	1234				
+2			(ZEp!~&*		,[{_rqqt	55390			0				886240			56276240		57632068	1195				
+3			3"M~faj$		A6MdA{@~	85552			0				1368832			86920832		89025045	3096				
+4			A6OLV5>6		G2$!3;nD	53734			0				859744			54593744		55914128	1232				
+5			G2%0(ei]		M/eoY@Ke	53793			0				860688			54653688		55975774	1230				
+6*			M/f&&[}w		V/)y%(=5	114336			0				1829376			116165376		118966132	579					
+7			V/+%Yy`z		^^}qyMu5	32248			0				515968			32763968		33558740	4547				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+4			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+5			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+6			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+7			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+8			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+9			A6Np3U[M		G2$_/O7)	64697			0				1035152			65732152		67319217	0					
+10			G2%2`G!Y		M/e{Mh,,	64664			0				1034624			65698624		67284953	0					
+11			M/fRS.(Y		V/*$}@7b	64689			0				1035024			65724024		67315576	0					
+12			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+13			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+14			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+15			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:04 --- (INFO)compaction start level[1], compaction files[109], start level files[94,95,98,102,105,106,109,112], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:04 --- (INFO)Written bytes for this compaction to level 2: 186251373
+2024-04-12 18:10:04 --- (INFO)Current written bytes after compact to level 2: 6761868549
+2024-04-12 18:10:04 --- (INFO)compaction start level[0], compaction files[123,119,115,111,108,104,101,97], start level files[123,119,115,111,108,104,101,97], compactionStrategy[0], baseLevel[1], 
+Compaction 11 in level 1 Choice: file No.6
+Hash value: adb4b2336af71f25
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^}qyMu5	56460			0				903360			57363360		58759967	0					
+1			!!$%(l/{		^^|'db&Y	56545			0				904720			57449720		58848693	0					
+2			!!(%Y3;d		^^|ZMeN[	56565			0				905040			57470040		58869231	0					
+3			!!$%(l/{		^^z*F3WA	56678			0				906848			57584848		58987061	0					
+4			!!"t]6(^		^^|'db&Y	56533			0				904528			57437528		58835928	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		$]tVY7gW	68638			0				1098208			69736208		71411776	965					
+1			$]u$aPtH		(ZE0t*@h	67827			0				1085232			68912232		70567837	976					
+2			(ZEp!~&*		,[{_rqqt	69867			0				1117872			70984872		72689919	947					
+3			,[|9\ZlJ		7>r}_|F>	64800			0				1036800			65836800		67432358	4088				
+4			7>u#t|>L		A6MdA{@~	91779			0				1468464			93247464		95499934	1442				
+5			A6OLV5>6		G2$U;mp[	67889			0				1086224			68975224		70639977	975					
+6*			G2%0(ei]		M/eoY@Ke	67958			0				1087328			69045328		70711979	974					
+7			M/f&&[}w		Z-;uwD^A	59565			0				953040			60518040		61985474	4188				
+8			Z-?q''Iz		^^}qyMu5	29189			0				467024			29656024		30375157	2754				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+4			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+5			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+6			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+7			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+8			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+9			A6Np3U[M		G2$_/O7)	64697			0				1035152			65732152		67319217	0					
+10			G2%2`G!Y		M/e{Mh,,	64664			0				1034624			65698624		67284953	0					
+11			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+12			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+13			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+14			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+15			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+16			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+17			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:07 --- (INFO)compaction start level[1], compaction files[139], start level files[125,128,129,132,135,136,139,142,143], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:07 --- (INFO)Written bytes for this compaction to level 2: 137971069
+2024-04-12 18:10:07 --- (INFO)Current written bytes after compact to level 2: 7080978797
+Compaction 12 in level 1 Choice: file No.5
+Hash value: 4e7388da95ec24ab
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!D{EH~\		^^}qyMu5	56629			0				906064			57535064		58935982	0					
+1			!!"t]6(^		^^}qyMu5	56460			0				903360			57363360		58759967	0					
+2			!!$%(l/{		^^|'db&Y	56545			0				904720			57449720		58848693	0					
+3			!!(%Y3;d		^^|ZMeN[	56565			0				905040			57470040		58869231	0					
+4			!!$%(l/{		^^z*F3WA	56678			0				906848			57584848		58987061	0					
+5			!!"t]6(^		^^|'db&Y	56533			0				904528			57437528		58835928	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		$]tVY7gW	68638			0				1098208			69736208		71411776	965					
+1			$]u$aPtH		(ZE0t*@h	67827			0				1085232			68912232		70567837	976					
+2			(ZEp!~&*		,[{_rqqt	69867			0				1117872			70984872		72689919	947					
+3			,[|9\ZlJ		7>r}_|F>	64800			0				1036800			65836800		67432358	4088				
+4			7>u#t|>L		A6MdA{@~	91779			0				1468464			93247464		95499934	1442				
+5*			A6OLV5>6		G2$U;mp[	67889			0				1086224			68975224		70639977	975					
+6			M/f&&[}w		Z-;uwD^A	59565			0				953040			60518040		61985474	4188				
+7			Z-?q''Iz		^^}qyMu5	29189			0				467024			29656024		30375157	2754				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+4			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+5			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+6			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+7			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+8			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+9			A6Np3U[M		G2$_/O7)	64697			0				1035152			65732152		67319217	0					
+10			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+11			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+12			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+13			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+14			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+15			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+16			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+17			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+18			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+19			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:07 --- (INFO)compaction start level[1], compaction files[136], start level files[125,128,129,132,135,136,142,143], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:08 --- (INFO)Written bytes for this compaction to level 2: 137933437
+2024-04-12 18:10:08 --- (INFO)Current written bytes after compact to level 2: 7147994090
+Compaction 13 in level 1 Choice: file No.2
+Hash value: a328cc1d1071f8bb
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!%di/1D		^^}qyMu5	56432			0				902912			57334912		58730761	0					
+1			!!D{EH~\		^^}qyMu5	56629			0				906064			57535064		58935982	0					
+2			!!"t]6(^		^^}qyMu5	56460			0				903360			57363360		58759967	0					
+3			!!$%(l/{		^^|'db&Y	56545			0				904720			57449720		58848693	0					
+4			!!(%Y3;d		^^|ZMeN[	56565			0				905040			57470040		58869231	0					
+5			!!$%(l/{		^^z*F3WA	56678			0				906848			57584848		58987061	0					
+6			!!"t]6(^		^^|'db&Y	56533			0				904528			57437528		58835928	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		$]tVY7gW	68638			0				1098208			69736208		71411776	965					
+1			$]u$aPtH		(ZE0t*@h	67827			0				1085232			68912232		70567837	976					
+2*			(ZEp!~&*		,[{_rqqt	69867			0				1117872			70984872		72689919	947					
+3			,[|9\ZlJ		7>r}_|F>	64800			0				1036800			65836800		67432358	4088				
+4			7>u#t|>L		A6MdA{@~	91779			0				1468464			93247464		95499934	1442				
+5			M/f&&[}w		Z-;uwD^A	59565			0				953040			60518040		61985474	4188				
+6			Z-?q''Iz		^^}qyMu5	29189			0				467024			29656024		30375157	2754				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		,[|)Dm3g	64672			0				1034752			65706752		67286312	0					
+3			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+4			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+5			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+6			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+7			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+8			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+9			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+10			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+11			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+12			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+13			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+14			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+15			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+16			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+17			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+18			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+19			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+20			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+21			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:08 --- (INFO)compaction start level[1], compaction files[129], start level files[125,128,129,132,135,142,143], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:08 --- (INFO)Written bytes for this compaction to level 2: 139949949
+2024-04-12 18:10:08 --- (INFO)Current written bytes after compact to level 2: 7219173223
+2024-04-12 18:10:08 --- (INFO)compaction start level[0], compaction files[154,149,145,141,138,134,131,127], start level files[154,149,145,141,138,134,131,127], compactionStrategy[0], baseLevel[1], 
+Compaction 14 in level 1 Choice: file No.1
+Hash value: 58eafa0427075935
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!%di/1D		^^|'db&Y	56510			0				904160			57414160		58811840	0					
+1			!!"t]6(^		^^|'db&Y	56533			0				904528			57437528		58836200	0					
+2			!!"t]6(^		^^w@k,tT	56462			0				903392			57365392		58761924	0					
+3			!!"t]6(^		^^kA}TSt	56515			0				904240			57419240		58817232	0					
+4			!!"t]6(^		^^|'db&Y	56614			0				905824			57519824		58920131	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		$]tVY7gW	82826			0				1325216			84151216		86167627	799					
+1*			$]tsCfY0		(ZE0t*@h	82143			0				1314288			83457288		85457367	806					
+2			(ZFRc[sF		11[AG3(E	66929			0				1070864			67999864		69644982	4037				
+3			11[BD5KR		7>r}_|F>	57273			0				916368			58189368		59596207	2312				
+4			7>u#t|>L		A6MdA{@~	115526			0				1848416			117374416		120204486	1146				
+5			A6O/;We#		P?9Uc38f	68415			0				1094640			69509640		71194881	4936				
+6			P?;nD=]/		Z-<8PtSB	71648			0				1146368			72794368		74556560	2558				
+7			Z->#MKFq		^^}qyMu5	40721			0				651536			41372536		42373945	1974				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]uSumVf		(ZE6(ig$	64701			0				1035216			65736216		67316247	0					
+2			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+3			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+4			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+5			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+6			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+7			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+8			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+9			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+10			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+11			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+12			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+13			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+14			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+15			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+16			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+17			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+18			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+19			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+20			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+21			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+22			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+23			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:10 --- (INFO)compaction start level[1], compaction files[162], start level files[161,162,165,168,169,172,175,176], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:11 --- (INFO)Written bytes for this compaction to level 2: 152745673
+2024-04-12 18:10:11 --- (INFO)Current written bytes after compact to level 2: 7586846279
+Compaction 15 in level 1 Choice: file No.0
+Hash value: 1168222f3ae40f71
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^w@k,tT	56560			0				904960			57464960		58864053	0					
+1			!!%di/1D		^^|'db&Y	56510			0				904160			57414160		58811840	0					
+2			!!"t]6(^		^^|'db&Y	56533			0				904528			57437528		58836200	0					
+3			!!"t]6(^		^^w@k,tT	56462			0				903392			57365392		58761924	0					
+4			!!"t]6(^		^^kA}TSt	56515			0				904240			57419240		58817232	0					
+5			!!"t]6(^		^^|'db&Y	56614			0				905824			57519824		58920131	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!3Jo{"		$]tVY7gW	82826			0				1325216			84151216		86167627	799					
+1			(ZFRc[sF		11[AG3(E	66929			0				1070864			67999864		69644982	4037				
+2			11[BD5KR		7>r}_|F>	57273			0				916368			58189368		59596207	2312				
+3			7>u#t|>L		A6MdA{@~	115526			0				1848416			117374416		120204486	1146				
+4			A6O/;We#		P?9Uc38f	68415			0				1094640			69509640		71194881	4936				
+5			P?;nD=]/		Z-<8PtSB	71648			0				1146368			72794368		74556560	2558				
+6			Z->#MKFq		^^}qyMu5	40721			0				651536			41372536		42373945	1974				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!@v_>/		$]tqUwg6	64701			0				1035216			65736216		67316526	0					
+1			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+2			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+3			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+4			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+5			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+6			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+7			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+8			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+9			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+10			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+11			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+12			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+13			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+14			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+15			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+16			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+17			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+18			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+19			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+20			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+21			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+22			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+23			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+24			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+25			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:11 --- (INFO)compaction start level[1], compaction files[161], start level files[161,165,168,169,172,175,176], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:11 --- (INFO)Written bytes for this compaction to level 2: 153456896
+2024-04-12 18:10:11 --- (INFO)Current written bytes after compact to level 2: 7654156103
+2024-04-12 18:10:11 --- (INFO)compaction start level[0], compaction files[187,182,178,174,171,167,164,159], start level files[187,182,178,174,171,167,164,159], compactionStrategy[0], baseLevel[1], 
+Compaction 16 in level 1 Choice: file No.4
+Hash value: 7212a592a9cda639
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!%di/1D		^^~v6(me	56397			0				902352			57299352		58694437	0					
+1			!!$%(l/{		^^z*F3WA	56435			0				902960			57337960		58733852	0					
+2			!!(mFX>-		^^{|,S1z	56507			0				904112			57411112		58808725	0					
+3			!!#{0(,V		^^w@k,tT	56515			0				904240			57419240		58817025	0					
+4			!!$%(l/{		^^w@k,tT	56500			0				904000			57404000		58801688	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		*VD[$Pwd	66380			0				1062080			67442080		69075179	5537				
+1			*VDn*)D0		11[AG3(E	80308			0				1284928			81592928		83559853	2539				
+2			11[BD5KR		7>s*>Pm(	75371			0				1205936			76576936		78424182	1757				
+3			7>u#t|>L		;:a9OftP	42897			0				686352			43583352		44636010	1542				
+4*			;:c?{eI(		A6MdA{@~	96239			0				1539824			97778824		100129169	688					
+5			A6O/;We#		M&p(j`Qq	77416			0				1238656			78654656		80559728	3464				
+6			M&rHT.[,		SO*4TO})	60731			0				971696			61702696		63195316	2235				
+7			SO+JTe;"		Z-=VbV,6	65976			0				1055616			67031616		68650742	1774				
+8			Z->#MKFq		^*[mbkV2	42874			0				685984			43559984		44612200	1545				
+9			^*\xDq4Q		^^}qyMu5	9197			0				147152			9344152			9570380		1539				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+12			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+13			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+14			;:c1&-7,		A6N?-`Q5	64697			0				1035152			65732152		67319381	0					
+15			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+16			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+17			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+18			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+19			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+20			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+21			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+22			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+23			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+24			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+25			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+26			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+27			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:14 --- (INFO)compaction start level[1], compaction files[197], start level files[189,192,193,196,197,200,203,206,207,210], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:14 --- (INFO)Written bytes for this compaction to level 2: 167416457
+2024-04-12 18:10:14 --- (INFO)Current written bytes after compact to level 2: 8015550119
+Compaction 17 in level 1 Choice: file No.8
+Hash value: 6021483d40888112
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^|'db&Y	56581			0				905296			57486296		58886192	0					
+1			!!%di/1D		^^~v6(me	56397			0				902352			57299352		58694437	0					
+2			!!$%(l/{		^^z*F3WA	56435			0				902960			57337960		58733852	0					
+3			!!(mFX>-		^^{|,S1z	56507			0				904112			57411112		58808725	0					
+4			!!#{0(,V		^^w@k,tT	56515			0				904240			57419240		58817025	0					
+5			!!$%(l/{		^^w@k,tT	56500			0				904000			57404000		58801688	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		*VD[$Pwd	66380			0				1062080			67442080		69075179	5537				
+1			*VDn*)D0		11[AG3(E	80308			0				1284928			81592928		83559853	2539				
+2			11[BD5KR		7>s*>Pm(	75371			0				1205936			76576936		78424182	1757				
+3			7>u#t|>L		;:a9OftP	42897			0				686352			43583352		44636010	1542				
+4			A6O/;We#		M&p(j`Qq	77416			0				1238656			78654656		80559728	3464				
+5			M&rHT.[,		SO*4TO})	60731			0				971696			61702696		63195316	2235				
+6			SO+JTe;"		Z-=VbV,6	65976			0				1055616			67031616		68650742	1774				
+7			Z->#MKFq		^*[mbkV2	42874			0				685984			43559984		44612200	1545				
+8*			^*\xDq4Q		^^}qyMu5	9197			0				147152			9344152			9570380		1539				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+12			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+13			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+14			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+15			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+16			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+17			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+18			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+19			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+20			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+21			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+22			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+23			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+24			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+25			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+26			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+27			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+28			^*\Xj64k		^^{3B+K{	13826			0				221216			14047216		14385598	0					
+29			^^{pw}>u		^^~i}.JU	5				0				80				5080			6223		0					
+
+2024-04-12 18:10:14 --- (INFO)compaction start level[1], compaction files[210], start level files[189,192,193,196,200,203,206,207,210], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:14 --- (INFO)Written bytes for this compaction to level 2: 23955484
+2024-04-12 18:10:14 --- (INFO)Current written bytes after compact to level 2: 8028653251
+Compaction 18 in level 1 Choice: file No.7
+Hash value: 9e2d908ed6132c53
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^z*F3WA	56514			0				904224			57418224		58816258	0					
+1			!!"t]6(^		^^|'db&Y	56581			0				905296			57486296		58886192	0					
+2			!!%di/1D		^^~v6(me	56397			0				902352			57299352		58694437	0					
+3			!!$%(l/{		^^z*F3WA	56435			0				902960			57337960		58733852	0					
+4			!!(mFX>-		^^{|,S1z	56507			0				904112			57411112		58808725	0					
+5			!!#{0(,V		^^w@k,tT	56515			0				904240			57419240		58817025	0					
+6			!!$%(l/{		^^w@k,tT	56500			0				904000			57404000		58801688	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		*VD[$Pwd	66380			0				1062080			67442080		69075179	5537				
+1			*VDn*)D0		11[AG3(E	80308			0				1284928			81592928		83559853	2539				
+2			11[BD5KR		7>s*>Pm(	75371			0				1205936			76576936		78424182	1757				
+3			7>u#t|>L		;:a9OftP	42897			0				686352			43583352		44636010	1542				
+4			A6O/;We#		M&p(j`Qq	77416			0				1238656			78654656		80559728	3464				
+5			M&rHT.[,		SO*4TO})	60731			0				971696			61702696		63195316	2235				
+6			SO+JTe;"		Z-=VbV,6	65976			0				1055616			67031616		68650742	1774				
+7*			Z->#MKFq		^*[mbkV2	42874			0				685984			43559984		44612200	1545				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+12			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+13			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+14			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+15			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+16			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+17			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+18			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+19			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+20			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+21			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+22			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+23			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+24			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+25			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+26			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+27			Z->J8';)		^*\R,_Z/	64701			0				1035216			65736216		67316241	0					
+28			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:14 --- (INFO)compaction start level[1], compaction files[207], start level files[189,192,193,196,200,203,206,207], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:15 --- (INFO)Written bytes for this compaction to level 2: 111906839
+2024-04-12 18:10:15 --- (INFO)Current written bytes after compact to level 2: 8087388890
+Compaction 19 in level 1 Choice: file No.3
+Hash value: dd8364a311b7cb23
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^z*F3WA	56514			0				904224			57418224		58816258	0					
+1			!!"t]6(^		^^|'db&Y	56581			0				905296			57486296		58886192	0					
+2			!!%di/1D		^^~v6(me	56397			0				902352			57299352		58694437	0					
+3			!!$%(l/{		^^z*F3WA	56435			0				902960			57337960		58733852	0					
+4			!!(mFX>-		^^{|,S1z	56507			0				904112			57411112		58808725	0					
+5			!!#{0(,V		^^w@k,tT	56515			0				904240			57419240		58817025	0					
+6			!!$%(l/{		^^w@k,tT	56500			0				904000			57404000		58801688	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		*VD[$Pwd	66380			0				1062080			67442080		69075179	5537				
+1			*VDn*)D0		11[AG3(E	80308			0				1284928			81592928		83559853	2539				
+2			11[BD5KR		7>s*>Pm(	75371			0				1205936			76576936		78424182	1757				
+3*			7>u#t|>L		;:a9OftP	42897			0				686352			43583352		44636010	1542				
+4			A6O/;We#		M&p(j`Qq	77416			0				1238656			78654656		80559728	3464				
+5			M&rHT.[,		SO*4TO})	60731			0				971696			61702696		63195316	2235				
+6			SO+JTe;"		Z-=VbV,6	65976			0				1055616			67031616		68650742	1774				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+12			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+13			7>uG=G-`		;:bt=D34	64641			0				1034256			65675256		67254015	0					
+14			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+15			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+16			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+17			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+18			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+19			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+20			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+21			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+22			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+23			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+24			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+25			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+26			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+27			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+28			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+29			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:15 --- (INFO)compaction start level[1], compaction files[196], start level files[189,192,193,196,200,203,206], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:15 --- (INFO)Written bytes for this compaction to level 2: 111868356
+2024-04-12 18:10:15 --- (INFO)Current written bytes after compact to level 2: 8137123998
+2024-04-12 18:10:15 --- (INFO)compaction start level[0], compaction files[220,214,209,205,202,199,195,191], start level files[220,214,209,205,202,199,195,191], compactionStrategy[0], baseLevel[1], 
+Compaction 20 in level 1 Choice: file No.8
+Hash value: 55ce4c6fc88b9019
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!y"#72		^^t\j'cs	56497			0				903952			57400952		58798776	0					
+1			!!"t]6(^		^^z*F3WA	56598			0				905568			57503568		58903841	0					
+2			!!"LG&7w		^^w@k,tT	56382			0				902112			57284112		58678885	0					
+3			!!"t]6(^		^^vfDdK9	56548			0				904768			57452768		58851888	0					
+4			!!$%(l/{		^^}Q1C3!	56715			0				907440			57622440		59025412	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		(=O?i!{v	74197			0				1187152			75384152		77205687	3820				
+1			(=Om*3vo		,RS"U3Yi	58059			0				928944			58987944		60409274	2589				
+2			,RSS-?16		11[AG3(E	77468			0				1239488			78707488		80598067	1778				
+3			11[BD5KR		7>s*>Pm(	93321			0				1493136			94814136		97094972	1419				
+4			7>xs*NEf		D/]]C].J	64921			0				1038736			65959736		67557764	5253				
+5			D/^3"YAH		J+^LH1Ul	54255			0				868080			55123080		56456260	2501				
+6			J+`G8zFW		P?:=HXv!	65848			0				1053568			66901568		68517307	2062				
+7			P?;AR-h-		V/)y%(=5	67250			0				1076000			68326000		69974631	1740				
+8*			V/*<)/3P		Z-=VbV,6	52296			0				836736			53132736		54413739	1266				
+9			Z-@%HoXS		^^~v6(me	19056			0				304896			19360896		19830866	7015				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+12			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+13			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+14			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+15			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+16			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+17			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+18			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+19			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+20			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+21			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+22			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+23			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+24			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+25			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+26			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+27			V/*<*4/i		Z-=cQ?\j	64701			0				1035216			65736216		67316303	0					
+28			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+29			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+30			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:17 --- (INFO)compaction start level[1], compaction files[241], start level files[225,226,229,230,233,236,237,240,241,242], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:18 --- (INFO)Written bytes for this compaction to level 2: 121705218
+2024-04-12 18:10:18 --- (INFO)Current written bytes after compact to level 2: 8522949479
+Compaction 21 in level 1 Choice: file No.3
+Hash value: 0ed9953cfda98de4
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^|'db&Y	56532			0				904512			57436512		58835016	0					
+1			!!!y"#72		^^t\j'cs	56497			0				903952			57400952		58798776	0					
+2			!!"t]6(^		^^z*F3WA	56598			0				905568			57503568		58903841	0					
+3			!!"LG&7w		^^w@k,tT	56382			0				902112			57284112		58678885	0					
+4			!!"t]6(^		^^vfDdK9	56548			0				904768			57452768		58851888	0					
+5			!!$%(l/{		^^}Q1C3!	56715			0				907440			57622440		59025412	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		(=O?i!{v	74197			0				1187152			75384152		77205687	3820				
+1			(=Om*3vo		,RS"U3Yi	58059			0				928944			58987944		60409274	2589				
+2			,RSS-?16		11[AG3(E	77468			0				1239488			78707488		80598067	1778				
+3*			11[BD5KR		7>s*>Pm(	93321			0				1493136			94814136		97094972	1419				
+4			7>xs*NEf		D/]]C].J	64921			0				1038736			65959736		67557764	5253				
+5			D/^3"YAH		J+^LH1Ul	54255			0				868080			55123080		56456260	2501				
+6			J+`G8zFW		P?:=HXv!	65848			0				1053568			66901568		68517307	2062				
+7			P?;AR-h-		V/)y%(=5	67250			0				1076000			68326000		69974631	1740				
+8			Z-@%HoXS		^^~v6(me	19056			0				304896			19360896		19830866	7015				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[Ux)h(		3A4EchX1	64688			0				1035008			65723008		67291422	0					
+12			3A5}_QsZ		7>u!Q!,(	64701			0				1035216			65736216		67316566	0					
+13			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+14			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+15			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+16			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+17			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+18			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+19			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+20			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+21			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+22			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+23			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+24			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+25			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+26			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+27			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+28			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+29			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+30			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+31			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:18 --- (INFO)compaction start level[1], compaction files[230], start level files[225,226,229,230,233,236,237,240,242], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:18 --- (INFO)Written bytes for this compaction to level 2: 226031442
+2024-04-12 18:10:18 --- (INFO)Current written bytes after compact to level 2: 8643294905
+2024-04-12 18:10:18 --- (INFO)compaction start level[0], compaction files[252,248,244,239,235,232,228,224], start level files[252,248,244,239,235,232,228,224], compactionStrategy[0], baseLevel[1], 
+Compaction 22 in level 1 Choice: file No.9
+Hash value: b6958e5b636e4304
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^w@k,tT	56617			0				905872			57522872		58923578	0					
+1			!!"t]6(^		^^l*cGRV	56336			0				901376			57237376		58631101	0					
+2			!!#wrj~;		^^w@k,tT	56441			0				903056			57344056		58740331	0					
+3			!!"t]6(^		^^w@k,tT	56455			0				903280			57358280		58754953	0					
+4			!!!~;9]F		^^~|k,,-	56546			0				904736			57450736		58849947	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?O<A'[1	47884			0				766144			48650144		49822513	2766				
+1			$?P?Ak-@		(=O?i!{v	54725			0				875600			55600600		56940076	2759				
+2			(=Oa"dN&		,RS"U3Yi	74147			0				1186352			75333352		77143154	2027				
+3			,RSS-?16		/)(Z?b[|	48685			0				778960			49463960		50649351	1468				
+4			/))\fv~e		11[AG3(E	45357			0				725712			46082712		47187026	1460				
+5			11]$+s^_		=Ri:?opE	70884			0				1134144			72018144		73762384	5625				
+6			=RiF9~V9		D/]]C].J	56734			0				907744			57641744		59035315	2903				
+7			D/^3"YAH		J+_%}M~f	69111			0				1105776			70216776		71911241	1964				
+8			J+_t?IaO		P?:@dpVw	81494			0				1303904			82797904		84793277	1666				
+9*			P?;AR-h-		SO*4TO})	45742			0				731872			46473872		47593202	1448				
+10			SO*mc(Mg		Z-=.u[>3	51289			0				820624			52109624		53367466	3325				
+11			Z-=s:Z9:		^^~v6(me	31798			0				508768			32306768		33089780	4204				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+12			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+13			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+14			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+15			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+16			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+17			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+18			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+19			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+20			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+21			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+22			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+23			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+24			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+25			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+26			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+27			P?:XvE&"		SO*4TO})	64705			0				1035280			65740280		67317133	0					
+28			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+29			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+30			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+31			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+32			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+33			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:21 --- (INFO)compaction start level[1], compaction files[272], start level files[255,258,259,262,263,264,267,268,271,272,275,276], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:21 --- (INFO)Written bytes for this compaction to level 2: 107787480
+2024-04-12 18:10:21 --- (INFO)Current written bytes after compact to level 2: 9043211602
+Compaction 23 in level 1 Choice: file No.4
+Hash value: 2be1b48bdc271f18
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^w@k,tT	56579			0				905264			57484264		58883675	0					
+1			!!"t]6(^		^^w@k,tT	56617			0				905872			57522872		58923578	0					
+2			!!"t]6(^		^^l*cGRV	56336			0				901376			57237376		58631101	0					
+3			!!#wrj~;		^^w@k,tT	56441			0				903056			57344056		58740331	0					
+4			!!"t]6(^		^^w@k,tT	56455			0				903280			57358280		58754953	0					
+5			!!!~;9]F		^^~|k,,-	56546			0				904736			57450736		58849947	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?O<A'[1	47884			0				766144			48650144		49822513	2766				
+1			$?P?Ak-@		(=O?i!{v	54725			0				875600			55600600		56940076	2759				
+2			(=Oa"dN&		,RS"U3Yi	74147			0				1186352			75333352		77143154	2027				
+3			,RSS-?16		/)(Z?b[|	48685			0				778960			49463960		50649351	1468				
+4*			/))\fv~e		11[AG3(E	45357			0				725712			46082712		47187026	1460				
+5			11]$+s^_		=Ri:?opE	70884			0				1134144			72018144		73762384	5625				
+6			=RiF9~V9		D/]]C].J	56734			0				907744			57641744		59035315	2903				
+7			D/^3"YAH		J+_%}M~f	69111			0				1105776			70216776		71911241	1964				
+8			J+_t?IaO		P?:@dpVw	81494			0				1303904			82797904		84793277	1666				
+9			SO*mc(Mg		Z-=.u[>3	51289			0				820624			52109624		53367466	3325				
+10			Z-=s:Z9:		^^~v6(me	31798			0				508768			32306768		33089780	4204				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))lm.,u		11[Ap?:b	64709			0				1035344			65744344		67312591	0					
+11			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+12			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+13			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+14			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+15			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+16			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+17			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+18			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+19			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+20			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+21			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+22			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+23			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+24			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+25			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+26			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+27			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+28			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+29			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+30			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+31			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+32			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+33			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+34			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:21 --- (INFO)compaction start level[1], compaction files[263], start level files[255,258,259,262,263,264,267,268,271,275,276], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:21 --- (INFO)Written bytes for this compaction to level 2: 107202608
+2024-04-12 18:10:21 --- (INFO)Current written bytes after compact to level 2: 9105522050
+Compaction 24 in level 1 Choice: file No.3
+Hash value: 5c3641fce00ccb1f
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"}j96Q		^^zsowWU	56645			0				906320			57551320		58952468	0					
+1			!!"t]6(^		^^w@k,tT	56579			0				905264			57484264		58883675	0					
+2			!!"t]6(^		^^w@k,tT	56617			0				905872			57522872		58923578	0					
+3			!!"t]6(^		^^l*cGRV	56336			0				901376			57237376		58631101	0					
+4			!!#wrj~;		^^w@k,tT	56441			0				903056			57344056		58740331	0					
+5			!!"t]6(^		^^w@k,tT	56455			0				903280			57358280		58754953	0					
+6			!!!~;9]F		^^~|k,,-	56546			0				904736			57450736		58849947	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?O<A'[1	47884			0				766144			48650144		49822513	2766				
+1			$?P?Ak-@		(=O?i!{v	54725			0				875600			55600600		56940076	2759				
+2			(=Oa"dN&		,RS"U3Yi	74147			0				1186352			75333352		77143154	2027				
+3*			,RSS-?16		/)(Z?b[|	48685			0				778960			49463960		50649351	1468				
+4			11]$+s^_		=Ri:?opE	70884			0				1134144			72018144		73762384	5625				
+5			=RiF9~V9		D/]]C].J	56734			0				907744			57641744		59035315	2903				
+6			D/^3"YAH		J+_%}M~f	69111			0				1105776			70216776		71911241	1964				
+7			J+_t?IaO		P?:@dpVw	81494			0				1303904			82797904		84793277	1666				
+8			SO*mc(Mg		Z-=.u[>3	51289			0				820624			52109624		53367466	3325				
+9			Z-=s:Z9:		^^~v6(me	31798			0				508768			32306768		33089780	4204				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		,[|)Dm3g	5121			0				81936			5202936			5327653		0					
+9			,[|IWV%{		/))2J])[	64709			0				1035344			65744344		67313025	0					
+10			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+11			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+12			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+16			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+17			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+18			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+19			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+20			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+21			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+22			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+23			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+24			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+25			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+26			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+27			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+28			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+29			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+30			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+31			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+32			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+33			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+34			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+35			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:21 --- (INFO)compaction start level[1], compaction files[262], start level files[255,258,259,262,264,267,268,271,275,276], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:22 --- (INFO)Written bytes for this compaction to level 2: 115540846
+2024-04-12 18:10:22 --- (INFO)Current written bytes after compact to level 2: 9171298544
+Compaction 25 in level 1 Choice: file No.6
+Hash value: 77000861d7b5742a
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"}j96Q		^^zsowWU	56645			0				906320			57551320		58952468	0					
+1			!!"t]6(^		^^w@k,tT	56579			0				905264			57484264		58883675	0					
+2			!!"t]6(^		^^w@k,tT	56617			0				905872			57522872		58923578	0					
+3			!!"t]6(^		^^l*cGRV	56336			0				901376			57237376		58631101	0					
+4			!!#wrj~;		^^w@k,tT	56441			0				903056			57344056		58740331	0					
+5			!!"t]6(^		^^w@k,tT	56455			0				903280			57358280		58754953	0					
+6			!!!~;9]F		^^~|k,,-	56546			0				904736			57450736		58849947	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?O<A'[1	47884			0				766144			48650144		49822513	2766				
+1			$?P?Ak-@		(=O?i!{v	54725			0				875600			55600600		56940076	2759				
+2			(=Oa"dN&		,RS"U3Yi	74147			0				1186352			75333352		77143154	2027				
+3			11]$+s^_		=Ri:?opE	70884			0				1134144			72018144		73762384	5625				
+4			=RiF9~V9		D/]]C].J	56734			0				907744			57641744		59035315	2903				
+5			D/^3"YAH		J+_%}M~f	69111			0				1105776			70216776		71911241	1964				
+6*			J+_t?IaO		P?:@dpVw	81494			0				1303904			82797904		84793277	1666				
+7			SO*mc(Mg		Z-=.u[>3	51289			0				820624			52109624		53367466	3325				
+8			Z-=s:Z9:		^^~v6(me	31798			0				508768			32306768		33089780	4204				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+9			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+10			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+11			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+12			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+16			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+17			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+18			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+19			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+20			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+21			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+22			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+23			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+24			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+25			J+_Za\>Q		M&r7nR4x	64705			0				1035280			65740280		67314693	0					
+26			M&rZwJ_K		M/e{Mh,,	3212			0				51392			3263392			3342190		0					
+27			M/f&&[}w		P?:BNuH7	64705			0				1035280			65740280		67316585	0					
+28			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+29			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+30			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+31			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+32			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+33			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+34			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+35			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:22 --- (INFO)compaction start level[1], compaction files[271], start level files[255,258,259,264,267,268,271,275,276], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:22 --- (INFO)Written bytes for this compaction to level 2: 209128728
+2024-04-12 18:10:22 --- (INFO)Current written bytes after compact to level 2: 9284043272
+2024-04-12 18:10:22 --- (INFO)compaction start level[0], compaction files[292,287,283,278,274,270,266,261,257], start level files[292,287,283,278,274,270,266,261,257], compactionStrategy[0], baseLevel[1], 
+Compaction 26 in level 1 Choice: file No.7
+Hash value: d6e851414642f270
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!$%(l/{		^^}qyMu5	56591			0				905456			57496456		58896295	0					
+1			!!!A,TF,		^^}qyMu5	56303			0				900848			57203848		58596796	0					
+2			!!#{0(,V		^^l_x,Xx	56468			0				903488			57371488		58768290	0					
+3			!!"t]6(^		^^}qyMu5	56655			0				906480			57561480		58962843	0					
+4			!!"t]6(^		^^|'db&Y	56476			0				903616			57379616		58776460	0					
+5			!!#{0(,V		^^}qyMu5	56452			0				903232			57355232		58751740	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?P%@,<)	62533			0				1000528			63533528		65059143	2118				
+1			$?P?Ak-@		(=O?i!{v	71107			0				1137712			72244712		73979489	2124				
+2			(=Oa"dN&		*VD[$Pwd	50270			0				804320			51074320		52298436	1672				
+3			*VDn*)D0		,RS"U3Yi	42051			0				672816			42723816		43747429	1575				
+4			,RS9i3oQ		4@xP-dAd	59282			0				948512			60230512		61688260	5932				
+5			4@y\"&uX		=Ri:?opE	80694			0				1291104			81985104		83967765	3299				
+6			=RiF9~V9		D/]]C].J	74617			0				1193872			75810872		77639534	2208				
+7*			D/^3"YAH		G)B!]J({	41791			0				668656			42459656		43482175	1585				
+8			G)B4YmVP		L.<UvX3`	52592			0				841472			53433472		54721740	2581				
+9			L.<uOYfW		V/)y%(=5	74423			0				1190768			75613768		77437512	3983				
+10			V/*DJ)tm		^*\3&&'<	65100			0				1041600			66141600		67741702	3531				
+11			^*]$8lr8		^^~|k,,-	8053			0				128848			8181848			8380102		2927				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+9			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+10			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+11			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+12			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+16			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+17			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+18			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+19			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+20			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+21			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+22			D/]j?#VB		G)B!]J({	64705			0				1035280			65740280		67314405	0					
+23			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+24			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+25			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+26			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+27			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+28			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+29			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+30			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+31			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+32			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+33			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+34			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+35			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+36			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:25 --- (INFO)compaction start level[1], compaction files[310], start level files[295,298,299,302,303,306,309,310,311,314,317,318], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:25 --- (INFO)Written bytes for this compaction to level 2: 104395084
+2024-04-12 18:10:25 --- (INFO)Current written bytes after compact to level 2: 9674909835
+Compaction 27 in level 1 Choice: file No.3
+Hash value: bbc259cfef001289
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^w@k,tT	11588			0				185408			11773408		12064283	0					
+1			!!-Zp?LS		^^}qyMu5	56624			0				905984			57529984		58930575	0					
+2			!!$%(l/{		^^}qyMu5	56591			0				905456			57496456		58896295	0					
+3			!!!A,TF,		^^}qyMu5	56303			0				900848			57203848		58596796	0					
+4			!!#{0(,V		^^l_x,Xx	56468			0				903488			57371488		58768290	0					
+5			!!"t]6(^		^^}qyMu5	56655			0				906480			57561480		58962843	0					
+6			!!"t]6(^		^^|'db&Y	56476			0				903616			57379616		58776460	0					
+7			!!#{0(,V		^^}qyMu5	56452			0				903232			57355232		58751740	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?P%@,<)	62533			0				1000528			63533528		65059143	2118				
+1			$?P?Ak-@		(=O?i!{v	71107			0				1137712			72244712		73979489	2124				
+2			(=Oa"dN&		*VD[$Pwd	50270			0				804320			51074320		52298436	1672				
+3*			*VDn*)D0		,RS"U3Yi	42051			0				672816			42723816		43747429	1575				
+4			,RS9i3oQ		4@xP-dAd	59282			0				948512			60230512		61688260	5932				
+5			4@y\"&uX		=Ri:?opE	80694			0				1291104			81985104		83967765	3299				
+6			=RiF9~V9		D/]]C].J	74617			0				1193872			75810872		77639534	2208				
+7			G)B4YmVP		L.<UvX3`	52592			0				841472			53433472		54721740	2581				
+8			L.<uOYfW		V/)y%(=5	74423			0				1190768			75613768		77437512	3983				
+9			V/*DJ)tm		^*\3&&'<	65100			0				1041600			66141600		67741702	3531				
+10			^*]$8lr8		^^~|k,,-	8053			0				128848			8181848			8380102		2927				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDr5LHw		,RS&_U?y	64709			0				1035344			65744344		67311136	0					
+8			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+9			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+10			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+11			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+12			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+16			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+17			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+18			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+19			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+20			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+21			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+22			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+23			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+24			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+25			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+26			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+27			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+28			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+29			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+30			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+31			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+32			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+33			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+34			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+35			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+36			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+37			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:25 --- (INFO)compaction start level[1], compaction files[302], start level files[295,298,299,302,303,306,309,311,314,317,318], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:26 --- (INFO)Written bytes for this compaction to level 2: 104679415
+2024-04-12 18:10:26 --- (INFO)Current written bytes after compact to level 2: 9779589250
+Compaction 28 in level 1 Choice: file No.2
+Hash value: bb140eb13385efeb
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^w@k,tT	11588			0				185408			11773408		12064283	0					
+1			!!-Zp?LS		^^}qyMu5	56624			0				905984			57529984		58930575	0					
+2			!!$%(l/{		^^}qyMu5	56591			0				905456			57496456		58896295	0					
+3			!!!A,TF,		^^}qyMu5	56303			0				900848			57203848		58596796	0					
+4			!!#{0(,V		^^l_x,Xx	56468			0				903488			57371488		58768290	0					
+5			!!"t]6(^		^^}qyMu5	56655			0				906480			57561480		58962843	0					
+6			!!"t]6(^		^^|'db&Y	56476			0				903616			57379616		58776460	0					
+7			!!#{0(,V		^^}qyMu5	56452			0				903232			57355232		58751740	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?P%@,<)	62533			0				1000528			63533528		65059143	2118				
+1			$?P?Ak-@		(=O?i!{v	71107			0				1137712			72244712		73979489	2124				
+2*			(=Oa"dN&		*VD[$Pwd	50270			0				804320			51074320		52298436	1672				
+3			,RS9i3oQ		4@xP-dAd	59282			0				948512			60230512		61688260	5932				
+4			4@y\"&uX		=Ri:?opE	80694			0				1291104			81985104		83967765	3299				
+5			=RiF9~V9		D/]]C].J	74617			0				1193872			75810872		77639534	2208				
+6			G)B4YmVP		L.<UvX3`	52592			0				841472			53433472		54721740	2581				
+7			L.<uOYfW		V/)y%(=5	74423			0				1190768			75613768		77437512	3983				
+8			V/*DJ)tm		^*\3&&'<	65100			0				1041600			66141600		67741702	3531				
+9			^*]$8lr8		^^~|k,,-	8053			0				128848			8181848			8380102		2927				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=P!~o:f		(ZE6(ig$	17418			0				278688			17696688		18118571	0					
+6			(ZE?Ja)`		*VDls=$P	64709			0				1035344			65744344		67311160	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	35928			0				574848			36502848		37369919	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+12			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+13			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+14			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+15			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+16			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+17			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+18			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+19			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+20			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+21			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+22			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+23			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+24			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+25			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+26			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+27			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+28			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+29			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+30			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+31			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+32			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+33			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+34			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+35			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+36			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+37			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+38			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:26 --- (INFO)compaction start level[1], compaction files[299], start level files[295,298,299,303,306,309,311,314,317,318], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:26 --- (INFO)Written bytes for this compaction to level 2: 129801160
+2024-04-12 18:10:26 --- (INFO)Current written bytes after compact to level 2: 9909390410
+Compaction 29 in level 1 Choice: file No.4
+Hash value: a57e6e658a1de691
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^w@k,tT	11588			0				185408			11773408		12064283	0					
+1			!!-Zp?LS		^^}qyMu5	56624			0				905984			57529984		58930575	0					
+2			!!$%(l/{		^^}qyMu5	56591			0				905456			57496456		58896295	0					
+3			!!!A,TF,		^^}qyMu5	56303			0				900848			57203848		58596796	0					
+4			!!#{0(,V		^^l_x,Xx	56468			0				903488			57371488		58768290	0					
+5			!!"t]6(^		^^}qyMu5	56655			0				906480			57561480		58962843	0					
+6			!!"t]6(^		^^|'db&Y	56476			0				903616			57379616		58776460	0					
+7			!!#{0(,V		^^}qyMu5	56452			0				903232			57355232		58751740	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!db|}h		$?P%@,<)	62533			0				1000528			63533528		65059143	2118				
+1			$?P?Ak-@		(=O?i!{v	71107			0				1137712			72244712		73979489	2124				
+2			,RS9i3oQ		4@xP-dAd	59282			0				948512			60230512		61688260	5932				
+3			4@y\"&uX		=Ri:?opE	80694			0				1291104			81985104		83967765	3299				
+4*			=RiF9~V9		D/]]C].J	74617			0				1193872			75810872		77639534	2208				
+5			G)B4YmVP		L.<UvX3`	52592			0				841472			53433472		54721740	2581				
+6			L.<uOYfW		V/)y%(=5	74423			0				1190768			75613768		77437512	3983				
+7			V/*DJ)tm		^*\3&&'<	65100			0				1041600			66141600		67741702	3531				
+8			^*]$8lr8		^^~|k,,-	8053			0				128848			8181848			8380102		2927				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	35928			0				574848			36502848		37369919	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+12			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+13			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+14			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+15			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+16			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+17			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+18			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+19			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+20			=RiBkMdw		@-2Ud<W=	64709			0				1035344			65744344		67314560	0					
+21			@-2[pz7#		A6N?-`Q5	31518			0				504288			32022288		32787410	0					
+22			A6Np3U[M		D/]ikj/W	64705			0				1035280			65740280		67314311	0					
+23			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+24			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+25			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+26			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+27			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+28			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+29			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+30			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+31			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+32			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+33			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+34			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+35			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+36			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+37			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+38			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:26 --- (INFO)compaction start level[1], compaction files[309], start level files[295,298,303,306,309,311,314,317,318], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:27 --- (INFO)Written bytes for this compaction to level 2: 231563112
+2024-04-12 18:10:27 --- (INFO)Current written bytes after compact to level 2: 10140953522
+Compaction 30 in level 2 Choice: file No.0
+Hash value: c0c66c2d86429a96
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!"t]6(^		^^w@k,tT	11588			0				185408			11773408		12064283	0					
+1			!!-Zp?LS		^^}qyMu5	56624			0				905984			57529984		58930575	0					
+2			!!$%(l/{		^^}qyMu5	56591			0				905456			57496456		58896295	0					
+3			!!!A,TF,		^^}qyMu5	56303			0				900848			57203848		58596796	0					
+4			!!#{0(,V		^^l_x,Xx	56468			0				903488			57371488		58768290	0					
+5			!!"t]6(^		^^}qyMu5	56655			0				906480			57561480		58962843	0					
+6			!!"t]6(^		^^|'db&Y	56476			0				903616			57379616		58776460	0					
+7			!!#{0(,V		^^}qyMu5	56452			0				903232			57355232		58751740	0					
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!db|}h		$?P%@,<)	62533			0				1000528			63533528		65059143	0					
+1			$?P?Ak-@		(=O?i!{v	71107			0				1137712			72244712		73979489	0					
+2			,RS9i3oQ		4@xP-dAd	59282			0				948512			60230512		61688260	0					
+3			4@y\"&uX		=Ri:?opE	80694			0				1291104			81985104		83967765	0					
+4			G)B4YmVP		L.<UvX3`	52592			0				841472			53433472		54721740	0					
+5			L.<uOYfW		V/)y%(=5	74423			0				1190768			75613768		77437512	0					
+6			V/*DJ)tm		^*\3&&'<	65100			0				1041600			66141600		67741702	0					
+7			^*]$8lr8		^^~|k,,-	8053			0				128848			8181848			8380102		0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	35928			0				574848			36502848		37369919	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+12			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+13			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+14			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+15			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+16			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+17			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+18			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+19			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+20			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+21			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+22			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+23			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+24			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+25			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+26			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+27			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+28			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+29			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+30			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+31			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+32			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+33			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+34			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+35			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+36			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+37			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+38			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+39			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+2024-04-12 18:10:27 --- (INFO)compaction start level[2], compaction files[184,185,188,179], start level files[184,185,188,179,180,327,328,325,326,285,288,281,284,249,250,253,254,221,222,211,329,330,331,332,319,322,155,146,289,290,293,294,279,280,124,245,246,217,218,216], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:27 --- (INFO)compaction start level[0], compaction files[324,321,316,313,308,305,301,297], start level files[324,321,316,313,308,305,301,297], compactionStrategy[0], baseLevel[1], 
+Compaction 31 in level 1 Choice: file No.0
+Hash value: 79b6e8c9656c09ba
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	0					
+1			&N6sY1n7		,RRz*+xg	60445			0				967120			61412120		62890348	4913				
+2			,RS9i3oQ		2N'YTt-g	65162			0				1042592			66204592		67803354	4380				
+3			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	2954				
+4			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	2378				
+5			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	4729				
+6			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	4905				
+7			SO*mc(Mg		V/)y%(=5	47744			0				763904			48507904		49671516	1064				
+8			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	2875				
+9			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	2396				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+1			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+2			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+3			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+4			,'RsDqig		,RS&_U?y	35928			0				574848			36502848		37369919	0					
+5			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+6			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+7			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+8			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+9			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+10			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+11			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+12			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+13			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+14			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+15			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+16			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+17			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+18			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+19			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+20			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+21			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+22			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+23			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+24			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+25			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+26			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+27			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+28			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+29			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+30			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+31			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+32			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+33			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+34			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+35			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+
+2024-04-12 18:10:29 --- (INFO)compaction start level[1], compaction files[333], start level files[333,334,335,336,337,338,339,340,341,342], compactionStrategy[0], baseLevel[1], 
+Compaction 32 in level 1 Choice: file No.6
+Hash value: d13ab55461adbdc4
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			&N6sY1n7		,RRz*+xg	60445			0				967120			61412120		62890348	4913				
+1			,RS9i3oQ		2N'YTt-g	65162			0				1042592			66204592		67803354	4380				
+2			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	2954				
+3			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	2378				
+4			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	4729				
+5			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	4905				
+6*			SO*mc(Mg		V/)y%(=5	47744			0				763904			48507904		49671516	1064				
+7			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	2875				
+8			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	2396				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	0					
+1			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+2			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+3			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+4			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+5			,'RsDqig		,RS&_U?y	35928			0				574848			36502848		37369919	0					
+6			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+7			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+8			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+9			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+10			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+11			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+12			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+13			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+14			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+15			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+16			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+17			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+18			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+19			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+20			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+21			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+22			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+23			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+24			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+25			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+26			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+27			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+28			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+29			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+30			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+31			SO*HT}^h		V/*$}@7b	49615			0				793840			50408840		51617655	0					
+32			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+33			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+34			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+35			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+36			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+
+2024-04-12 18:10:29 --- (INFO)compaction start level[1], compaction files[340], start level files[334,335,336,337,338,339,340,341,342], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:29 --- (INFO)Written bytes for this compaction to level 2: 95474250
+2024-04-12 18:10:29 --- (INFO)Current written bytes after compact to level 2: 10920617348
+Compaction 33 in level 2 Choice: file No.1
+Hash value: 72ea7fc90206f133
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			&N6sY1n7		,RRz*+xg	60445			0				967120			61412120		62890348	0					
+1*			,RS9i3oQ		2N'YTt-g	65162			0				1042592			66204592		67803354	0					
+2			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	0					
+3			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	0					
+4			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	0					
+5			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	0					
+6			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	0					
+7			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	1786				
+1			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+2			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+3			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+4			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+5			,'RsDqig		,RS&_U?y	35928			0				574848			36502848		37369919	0					
+6			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+7			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+8			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+9			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+10			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+11			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+12			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+13			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+14			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+15			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+16			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+17			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+18			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+19			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+20			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+21			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+22			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+23			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+24			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+25			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+26			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+27			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+28			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+29			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+30			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+31			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+32			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+33			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+34			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+35			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+36			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+37			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+
+2024-04-12 18:10:29 --- (INFO)compaction start level[2], compaction files[180,327,328,325], start level files[333,180,327,328,325,326,285,288,281,284,249,250,253,254,221,222,211,329,330,331,332,319,322,155,146,289,290,293,294,279,280,343,344,245,246,217,218,216], compactionStrategy[0], baseLevel[1], 
+Compaction 34 in level 1 Choice: file No.0
+Hash value: 9e31f61b23ae6b1b
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			&N6sY1n7		,RRz*+xg	60445			0				967120			61412120		62890348	608					
+1			,RS9i3oQ		2N'YTt-g	65162			0				1042592			66204592		67803354	4380				
+2			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	2954				
+3			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	2378				
+4			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	4729				
+5			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	4905				
+6			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	2875				
+7			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	2396				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	0					
+1			,'RsDqig		,RS&_U?y	35928			0				574848			36502848		37369919	0					
+2			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+3			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+4			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+5			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+6			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+7			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+8			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+9			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+10			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+11			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+12			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+13			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+14			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+15			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+16			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+17			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+18			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+19			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+20			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+21			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+22			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+23			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+24			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+25			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+26			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+27			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+28			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+29			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+30			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+31			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+32			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+33			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+
+2024-04-12 18:10:29 --- (INFO)compaction start level[1], compaction files[334], start level files[334,335,336,337,338,339,341,342], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:30 --- (INFO)Written bytes for this compaction to level 2: 98652217
+2024-04-12 18:10:30 --- (INFO)Current written bytes after compact to level 2: 11019269565
+Compaction 35 in level 2 Choice: file No.2
+Hash value: 3003fa15c4180c59
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			,RS9i3oQ		2N'YTt-g	65162			0				1042592			66204592		67803354	0					
+1			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	0					
+2*			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	0					
+3			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	0					
+4			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	0					
+5			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	0					
+6			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	1786				
+1			&N6sY1n7		,'R+qa-:	56673			0				906768			57579768		58965127	4592				
+2			,'RsDqig		,RS&_U?y	38156			0				610496			38766496		39687090	0					
+3			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+4			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+5			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+6			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+7			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+8			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+9			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+10			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+11			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+12			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+13			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+14			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+15			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+16			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+17			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+18			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+19			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+20			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+21			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+22			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+23			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+24			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+25			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+26			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+27			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+28			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+29			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+30			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+31			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+32			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+33			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+34			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+
+2024-04-12 18:10:30 --- (INFO)compaction start level[2], compaction files[346,285,288,281], start level files[333,345,346,285,288,281,284,249,250,253,254,221,222,211,329,330,331,332,319,322,155,146,289,290,293,294,279,280,343,344,245,246,217,218,216], compactionStrategy[0], baseLevel[1], 
+Compaction 36 in level 1 Choice: file No.0
+Hash value: 57b2ff8c0eed8696
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			,RS9i3oQ		2N'YTt-g	65162			0				1042592			66204592		67803354	1619				
+1			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	2954				
+2			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	2378				
+3			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	4729				
+4			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	4905				
+5			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	2875				
+6			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	2396				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	0					
+1			&N6sY1n7		,'R+qa-:	56673			0				906768			57579768		58965127	0					
+2			0>80.`:-		11[Ap?:b	38352			0				613632			38965632		39891820	0					
+3			11[BD5KR		2N(1.*lz	64713			0				1035408			65748408		67311485	0					
+4			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+5			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+6			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+7			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+8			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+9			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+10			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+11			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+12			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+13			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+14			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+15			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+16			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+17			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+18			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+19			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+20			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+21			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+22			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+23			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+24			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+25			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+26			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+27			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+28			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+29			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+30			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	38156			0				610496			38766496		39687090	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+
+2024-04-12 18:10:30 --- (INFO)compaction start level[1], compaction files[335], start level files[335,336,337,338,339,341,342], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:30 --- (INFO)Written bytes for this compaction to level 2: 168138220
+2024-04-12 18:10:30 --- (INFO)Current written bytes after compact to level 2: 11187407785
+Compaction 37 in level 2 Choice: file No.3
+Hash value: 9b7cdd8c63f95778
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	0					
+1			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	0					
+2			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	0					
+3*			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	0					
+4			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	0					
+5			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	1786				
+1			&N6sY1n7		,'R+qa-:	56673			0				906768			57579768		58965127	4592				
+2			,RS9i3oQ		2)uJUL.i	129417			0				2070672			131487672		134624321	1390				
+3			2)udK&C0		2N(1.*lz	32221			0				515536			32736536		33513899	0					
+4			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+5			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+6			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+7			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+8			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+9			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+10			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+11			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+12			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+13			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+14			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+15			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+16			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+17			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+18			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+19			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+20			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+21			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+22			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+23			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+24			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+25			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+26			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+27			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+28			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+29			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+30			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	38156			0				610496			38766496		39687090	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+
+2024-04-12 18:10:30 --- (INFO)compaction start level[2], compaction files[348,250,253,254], start level files[333,345,347,348,250,253,254,221,222,211,329,330,331,332,319,322,155,146,289,290,293,294,279,280,343,344,245,246,217,218,216], compactionStrategy[0], baseLevel[1], 
+Compaction 38 in level 2 Choice: file No.3
+Hash value: 8ef66617860d811c
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	0					
+1			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	0					
+2			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	0					
+3*			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	0					
+4			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	0					
+5			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	1786				
+1			&N6sY1n7		,'R+qa-:	56673			0				906768			57579768		58965127	4592				
+2			,RS9i3oQ		2)uJUL.i	129417			0				2070672			131487672		134624321	1390				
+3			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+4			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+5			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+6			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+7			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+8			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+9			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+10			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+11			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+12			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+13			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+14			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+15			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+16			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+17			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+18			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+19			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+20			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+21			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+22			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+23			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+24			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+25			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+26			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	38156			0				610496			38766496		39687090	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+12			2)udK&C0		2N(1.*lz	32221			0				515536			32736536		33513899	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+
+2024-04-12 18:10:30 --- (INFO)compaction start level[2], compaction files[221,222,211,329], start level files[333,345,347,221,222,211,329,330,331,332,319,322,155,146,289,290,293,294,279,280,343,344,245,246,217,218,216], compactionStrategy[0], baseLevel[1], 
+Compaction 39 in level 1 Choice: file No.0
+Hash value: 0fca96c1fe5b8b3e
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0*			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	0					
+1			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	0					
+2			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	3946				
+3			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	4905				
+4			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	2875				
+5			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	2396				
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	0					
+1			&N6sY1n7		,'R+qa-:	56673			0				906768			57579768		58965127	0					
+2			,RS9i3oQ		2)uJUL.i	129417			0				2070672			131487672		134624321	0					
+3			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+4			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+5			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+6			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+7			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+8			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+9			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+10			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+11			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+12			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+13			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+14			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+15			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+16			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+17			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+18			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+19			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+20			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+21			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+22			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	38156			0				610496			38766496		39687090	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+12			2)udK&C0		2N(1.*lz	32221			0				515536			32736536		33513899	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+16			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+17			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+18			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+19			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+
+2024-04-12 18:10:30 --- (INFO)compaction start level[1], compaction files[336,337], start level files[336,337,338,339,341,342], compactionStrategy[0], baseLevel[1], 
+Compaction 40 in level 2 Choice: file No.5
+Hash value: fa30c24285c9d356
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	0					
+1			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	0					
+2			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	0					
+3			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	1786				
+1			&N6sY1n7		,'R+qa-:	56673			0				906768			57579768		58965127	4592				
+2			,RS9i3oQ		2)uJUL.i	129417			0				2070672			131487672		134624321	1390				
+3			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	2954				
+4			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	2378				
+5			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+6			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+7			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+8			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+9			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+10			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+11			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+12			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+13			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+14			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+15			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+16			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+17			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+18			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+19			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+20			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+21			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+22			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+23			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+24			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	38156			0				610496			38766496		39687090	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+12			2)udK&C0		2N(1.*lz	32221			0				515536			32736536		33513899	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+16			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+17			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+18			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+19			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+
+2024-04-12 18:10:30 --- (INFO)compaction start level[2], compaction files[330,331,332,319], start level files[333,345,347,336,337,330,331,332,319,322,155,146,289,290,293,294,279,280,343,344,245,246,217,218,216], compactionStrategy[0], baseLevel[1], 
+Compaction 41 in level 2 Choice: file No.5
+Hash value: a71911eff257dd77
+Information of files in level 0: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+
+Information of files in level 1: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			=Rii`X!6		J+_%}M~f	84607			0				1353712			85960712		88034270	0					
+1			J+_YrO@}		SO*4TO})	63569			0				1017104			64586104		66150450	0					
+2			V/*DJ)tm		\Ea{"+I)	64687			0				1034992			65721992		67309898	0					
+3			\EcDt:J|		^^~|k,,-	28148			0				450368			28598368		29288811	0					
+
+Information of files in level 2: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!A,TF,		&N5s>XVs	121621			0				1945936			123566936		126526395	1786				
+1			&N6sY1n7		,'R+qa-:	56673			0				906768			57579768		58965127	4592				
+2			,RS9i3oQ		2)uJUL.i	129417			0				2070672			131487672		134624321	1390				
+3			2N(|)0bI		9U=axhE_	75296			0				1204736			76500736		78347980	2954				
+4			9U=~@Dco		=Ri:?opE	46291			0				740656			47031656		48166554	2378				
+5			F'mQ-\6:		G)B!]J({	35651			0				570416			36221416		37084472	0					
+6			G)B-U!DT		G2$_/O7)	3176			0				50816			3226816			3304721		0					
+7			G2%0(ei]		J+_71Q$^	64705			0				1035280			65740280		67314186	0					
+8			J+_Za\>Q		L.<UvX3`	64709			0				1035344			65744344		67311810	0					
+9			L.<qCHYR		N0&*8@jm	64709			0				1035344			65744344		67311535	0					
+10			N0&IUBQs		P1v6y[N\	64709			0				1035344			65744344		67311431	0					
+11			P1v_RA0(		P?:BNuH7	6915			0				110640			7025640			7193952		0					
+12			P?:XvE&"		RA'.xNs(	64709			0				1035344			65744344		67311817	0					
+13			RA'NGjd4		SO*4TO})	38910			0				622560			39532560		40475663	0					
+14			SO*HT}^h		U?]"lcS$	64713			0				1035408			65748408		67313599	0					
+15			U?]7hxYK		V/*$}@7b	27072			0				433152			27505152		28160651	0					
+16			V/*<)/3P		X;_"bH3A	64709			0				1035344			65744344		67313100	0					
+17			X;_?imo,		Z-=cQ?\j	52288			0				836608			53124608		54392118	0					
+18			Z->#MKFq		\EcDG`7G	64709			0				1035344			65744344		67314705	0					
+19			\EcDt:J|		^*\R,_Z/	42866			0				685856			43551856		44592134	0					
+20			^*\Xj64k		^^~i}.JU	23028			0				368448			23396448		23955484	0					
+
+Information of files in level 3: 
+File No.	Smallest key	Largest key	Entry number	Deletion number	Raw key size	Raw value size	File size	Overlapping ratio	
+0			!!!3Jo{"		"O+U42_3	64713			0				1035408			65748408		67313889	0					
+1			"O+Z1K0'		$?P(wTsz	64713			0				1035408			65748408		67313899	0					
+2			$?PF1.72		$]tqUwg6	18101			0				289616			18390616		18829108	0					
+3			$]tsCfY0		&N5uN0m?	64713			0				1035408			65748408		67313806	0					
+4			&N6=P"WE		(=OZ^+Sm	64713			0				1035408			65748408		67313296	0					
+5			(=Oa"dN&		)LOiLzh8	64713			0				1035408			65748408		67309344	0					
+6			)LP1g([V		*VDls=$P	60081			0				961296			61042296		62491816	0					
+7			*VDn*)D0		,'RStNU+	64713			0				1035408			65748408		67309496	0					
+8			,'RsDqig		,RS&_U?y	38156			0				610496			38766496		39687090	0					
+9			,RSG/i2T		.*Z=US(t	64713			0				1035408			65748408		67310321	0					
+10			.*Z\^Yq=		/))2J])[	46369			0				741904			47110904		48230525	0					
+11			/))\fv~e		0>8-@W>;	64713			0				1035408			65748408		67310788	0					
+12			2)udK&C0		2N(1.*lz	32221			0				515536			32736536		33513899	0					
+13			2N(9OEBp		4@xpkUX*	64713			0				1035408			65748408		67313886	0					
+14			4@x|C:vn		6L=!YN<_	64709			0				1035344			65744344		67313502	0					
+15			6L=$tz#{		7>u!Q!,(	23160			0				370560			23530560		24092569	0					
+16			7>u#t|>L		9U=hC/]e	64709			0				1035344			65744344		67314462	0					
+17			9U=l;LMm		;:bt=D34	42829			0				685264			43514264		44553894	0					
+18			;:c1&-7,		=Ri:?opE	64709			0				1035344			65744344		67314487	0					
+19			=RiBkMdw		?KO/Bcc!	64709			0				1035344			65744344		67310877	0					
+20			?KO2hPJn		ABg^-$wN	64713			0				1035408			65748408		67314251	0					
+21			ABh'w4'O		C:?zQSDA	64709			0				1035344			65744344		67310315	0					
+22			C:@S;O,m		D/]ikj/W	28482			0				455712			28937712		29627669	0					
+23			D/]j?#VB		F'mNs^Al	64709			0				1035344			65744344		67310612	0					
+
+2024-04-12 18:10:30 --- (INFO)compaction start level[2], compaction files[322,155,146,289], start level files[333,345,347,336,337,322,155,146,289,290,293,294,279,280,343,344,245,246,217,218,216], compactionStrategy[0], baseLevel[1], 
+2024-04-12 18:10:30 --- (INFO)Total running time: 40545887us
+2024-04-12 18:10:30 --- (INFO)total written bytes: 11187407785, left bytes: 0
+2024-04-12 18:10:30 --- (INFO)compaction_time: 36137849us
