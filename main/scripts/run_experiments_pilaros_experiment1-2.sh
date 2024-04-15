@@ -19,7 +19,7 @@
 source ./scripts/run_workload.sh
 
 run_multiple_times_for_a_type() {
-    if ! [ $# -eq 3 ]; then
+    if ! [ $# -eq 4 ]; then
         echo 'in this shell script, there will be three parameters, which are:'
         echo '1. percentage_insert'
         echo '2. percentage_update'
