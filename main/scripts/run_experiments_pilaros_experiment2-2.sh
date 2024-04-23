@@ -55,11 +55,11 @@ run_multiple_times_for_baseline() {
 
         initialize_workspace $workspace_dir_nvme1/run$i
         run_all_baselines $workload_size $rocksdb_dir_nvme1 $workspace_dir_nvme1/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
-        run_once $workload_size $rocksdb_dir $workspace_dir/run$i kSelectLastSimilar $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
+        run_once $workload_size $rocksdb_dir_nvme1 $workspace_dir/run$i kSelectLastSimilar $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
 
         initialize_workspace $workspace_dir_ssd/run$i
         run_all_baselines $workload_size $rocksdb_dir_ssd $workspace_dir_ssd/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
-        run_once $workload_size $rocksdb_dir $workspace_dir/run$i kSelectLastSimilar $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
+        run_once $workload_size $rocksdb_dir_ssd $workspace_dir/run$i kSelectLastSimilar $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
         
         # if this is not the first run, remove the workload file
         rm $workload_dir/${i}.txt
