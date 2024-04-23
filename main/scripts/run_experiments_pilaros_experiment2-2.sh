@@ -62,7 +62,9 @@ run_multiple_times_for_baseline() {
         run_once $workload_size $rocksdb_dir_ssd $workspace_dir/run$i kSelectLastSimilar $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
         
         # if this is not the first run, remove the workload file
-        rm $workload_dir/${i}.txt
+        if [ $i -ne 1 ]; then
+            rm $workload_dir/${i}.txt
+        fi
     done
 
     rm -rf $rocksdb_dir_nvme1
@@ -72,9 +74,10 @@ run_multiple_times_for_baseline() {
 num_workloads=10
 
 # run experiments on SSD & NVMe
-run_multiple_times_for_baseline 80 10 10 $num_workloads &
-run_multiple_times_for_baseline 80 12 8 $num_workloads &
-run_multiple_times_for_baseline 80 14 6 $num_workloads &
-run_multiple_times_for_baseline 80 16 4 $num_workloads &
+run_multiple_times_for_baseline 80 19 1 $num_workloads &
 run_multiple_times_for_baseline 80 18 2 $num_workloads &
-run_multiple_times_for_baseline 80 20 0 $num_workloads
+run_multiple_times_for_baseline 80 17 3 $num_workloads
+
+# 80 19 1
+# 80 18 2
+# 80 17 3

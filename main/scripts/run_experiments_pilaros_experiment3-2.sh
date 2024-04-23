@@ -52,7 +52,9 @@ run_multiple_times_for_baseline() {
         initialize_workspace $workspace_dir/run$i
         run_all_baselines $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
         run_once $workload_size $rocksdb_dir $workspace_dir/run$i kSelectLastSimilar $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
-        rm $workload_dir/${i}.txt
+        if [ $i -ne 1 ]; then
+            rm $workload_dir/${i}.txt
+        fi
     done
 
     rm -rf $rocksdb_dir
@@ -62,84 +64,48 @@ num_workloads=10
 
 # run experiments on zipfian(0.8)
 rocksdb_root_dir=/scratchNVM1/ranw/zipfian1
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 80 19 1 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 & # workload 1: 100% insert, 0% update
 sleep 60
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 & # workload 2: 90% insert, 10% update
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 & # workload 2: 90% insert, 10% update
 sleep 60
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 & # workload 3: 80% insert, 20% update
-sleep 60
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 & # workload 4: 70% insert, 30% update
-sleep 60
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 & # workload 5: 60% insert, 40% update
-sleep 60
-run_multiple_times_for_baseline 80 20 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1   # workload 6: 50% insert, 50% update
+run_multiple_times_for_baseline 80 17 3 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1   # workload 6: 50% insert, 50% update
 
 # # run experiments on zipfian(1)
 rocksdb_root_dir=/scratchNVM1/ranw/zipfian2
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 80 19 1 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 & # workload 1: 100% insert, 0% update
 sleep 60
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 & # workload 2: 90% insert, 10% update
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 & # workload 2: 90% insert, 10% update
 sleep 60
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 & # workload 3: 80% insert, 20% update
-sleep 60
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 & # workload 4: 70% insert, 30% update
-sleep 60
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 & # workload 5: 60% insert, 40% update
-sleep 60
-run_multiple_times_for_baseline 80 20 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2   # workload 6: 50% insert, 50% update
+run_multiple_times_for_baseline 80 17 3 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2   # workload 6: 50% insert, 50% update
 
 # # run experiments on zipfian(1.2)
 rocksdb_root_dir=/scratchNVM1/ranw/zipfian3
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 80 19 1 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 & # workload 1: 100% insert, 0% update
 sleep 60
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 & # workload 2: 90% insert, 10% update
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 & # workload 2: 90% insert, 10% update
 sleep 60
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 & # workload 3: 80% insert, 20% update
-sleep 60
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 & # workload 4: 70% insert, 30% update
-sleep 60
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 & # workload 5: 60% insert, 40% update
-sleep 60
-run_multiple_times_for_baseline 80 20 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3   # workload 6: 50% insert, 50% update
+run_multiple_times_for_baseline 80 17 3 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3   # workload 6: 50% insert, 50% update
 
 # run experiments on normal(0.5, 0.5)
 rocksdb_root_dir=/scratchNVM1/ranw/normal1
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 80 19 1 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 & # workload 1: 100% insert, 0% update
 sleep 60
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 & # workload 2: 90% insert, 10% update
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 & # workload 2: 90% insert, 10% update
 sleep 60
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 & # workload 3: 80% insert, 20% update
-sleep 60
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 & # workload 4: 70% insert, 30% update
-sleep 60
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 & # workload 5: 60% insert, 40% update
-sleep 60
-run_multiple_times_for_baseline 80 20 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1   # workload 6: 50% insert, 50% update
+run_multiple_times_for_baseline 80 17 3 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1   # workload 6: 50% insert, 50% update
 
 # # run experiments on normal(0.5, 1)
 rocksdb_root_dir=/scratchNVM1/ranw/normal2
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 80 19 1 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & # workload 1: 100% insert, 0% update
 sleep 60
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & # workload 2: 90% insert, 10% update
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & # workload 2: 90% insert, 10% update
 sleep 60
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & # workload 3: 80% insert, 20% update
-sleep 60
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & # workload 4: 70% insert, 30% update
-sleep 60
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & # workload 5: 60% insert, 40% update
-sleep 60
-run_multiple_times_for_baseline 80 20 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2   # workload 6: 50% insert, 50% update
+run_multiple_times_for_baseline 80 17 3 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2   # workload 6: 50% insert, 50% update
 
 # # run experiments on normal(0.5, 2)
 rocksdb_root_dir=/scratchNVM1/ranw/normal3
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 80 19 1 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & # workload 1: 100% insert, 0% update
 sleep 60
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & # workload 2: 90% insert, 10% update
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & # workload 2: 90% insert, 10% update
 sleep 60
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & # workload 3: 80% insert, 20% update
-sleep 60
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & # workload 4: 70% insert, 30% update
-sleep 60
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & # workload 5: 60% insert, 40% update
-sleep 60
-run_multiple_times_for_baseline 80 20 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3   # workload 6: 50% insert, 50% update
+run_multiple_times_for_baseline 80 17 3 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3   # workload 6: 50% insert, 50% update
