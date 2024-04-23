@@ -1,8 +1,5 @@
-a=1
-echo $a
-
-a=2
-echo $a
-
-a=3
-echo $a
+a=1000
+b=1
+c=2
+d=$(((b + c) * a))
+echo $d
