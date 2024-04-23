@@ -56,9 +56,7 @@ run_multiple_times_for_baseline() {
         initialize_workspace $workspace_dir/run$i
         run_all_baselines $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
         run_once $workload_size $rocksdb_dir $workspace_dir/run$i kSelectLastSimilar $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
-        if [ $i -ne 1 ]; then
-            rm $workload_dir/${i}.txt
-        fi
+        rm $workload_dir/${i}.txt
     done
 
     rm -rf $rocksdb_dir
