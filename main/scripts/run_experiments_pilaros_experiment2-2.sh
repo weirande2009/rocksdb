@@ -51,7 +51,7 @@ run_multiple_times_for_baseline() {
 
     for i in $(seq 1 $n_workloads)
     do  
-        ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D $ -E $entry_size -K 8
+        ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D $num_delete -E $entry_size -K 8
 
         initialize_workspace $workspace_dir_nvme1/run$i
         run_all_baselines $workload_size $rocksdb_dir_nvme1 $workspace_dir_nvme1/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
