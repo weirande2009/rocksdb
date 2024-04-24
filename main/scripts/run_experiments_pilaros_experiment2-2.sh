@@ -74,9 +74,11 @@ run_multiple_times_for_baseline() {
 num_workloads=10
 
 # run experiments on SSD & NVMe
-run_multiple_times_for_baseline 80 19 1 $num_workloads &
-run_multiple_times_for_baseline 80 18 2 $num_workloads &
-run_multiple_times_for_baseline 80 17 3 $num_workloads
+run_multiple_times_for_baseline 80 10 10 $num_workloads &
+run_multiple_times_for_baseline 80 12 8 $num_workloads &
+run_multiple_times_for_baseline 80 14 6 $num_workloads &
+run_multiple_times_for_baseline 80 16 4 $num_workloads &
+run_multiple_times_for_baseline 80 18 2 $num_workloads
 
 # 80 19 1
 # 80 18 2
