@@ -173,7 +173,7 @@ source ./scripts/run_workload.sh
 # ./scripts/run_for_a_type.sh 1000 mnt/rocksdb/ experiment1 workloads/1.txt $total_bytes
 
 entry_size=64
-num_operation=3000000
+num_operation=$((3 * 1024 * 1024))
 workload_size=$((num_operation * entry_size))
 percentage_insert=50
 percentage_update=50
