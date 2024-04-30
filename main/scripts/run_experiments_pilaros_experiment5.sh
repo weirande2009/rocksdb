@@ -13,7 +13,7 @@
 source ./scripts/run_workload.sh
 
 run_multiple_times_for_baseline() {
-    if ! [ $# -eq 7 ]; then
+    if ! [ $# -eq 5 ]; then
         echo 'get the number of parameters:' $#
         echo 'in this shell script, there will be three parameters, which are:'
         echo '1. percentage_insert'
