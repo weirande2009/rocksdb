@@ -37,7 +37,7 @@ run_multiple_times_for_baseline() {
     num_update=$((num_operation * percentage_update / 100))
     num_delete=$((num_operation * percentage_delete / 100))
     workload_size=$(((num_insert + num_update) * entry_size))
-    dir_name=compare_update_distribution/5gb/first_run/$7/${percentage_insert}_${percentage_update}_${percentage_delete}
+    dir_name=compare_distribution/5gb/first_run/$7/${percentage_insert}_${percentage_update}_${percentage_delete}
     workload_dir=workloads/$dir_name
     workspace_dir=workspace/$dir_name
     mkdir -p $workload_dir
@@ -60,50 +60,97 @@ run_multiple_times_for_baseline() {
 
 num_workloads=10
 
+rocksdb_root_dir=/scratchNVM1/ranw/uniform
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir uniform &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir uniform &
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir uniform 
+
+# insert distribution
 # run experiments on normal(0.5, 0.5)
-# rocksdb_root_dir=/scratchNVM1/ranw/normal1
-# run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 &
-# run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 &
-# run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 &
-# run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 &
-# run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 
+rocksdb_root_dir=/scratchNVM1/ranw/insert/normal1
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 insert_normal1 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 insert_normal1 &
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 insert_normal1 &
 
-# # # run experiments on normal(0.5, 1)
-# rocksdb_root_dir=/scratchNVM1/ranw/normal2
-# run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 &
-# run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & 
-# run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & 
-# run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 & 
-# run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2   
+# # run experiments on normal(0.5, 1)
+rocksdb_root_dir=/scratchNVM1/ranw/insert/normal2
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 insert_normal2 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 insert_normal2 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 insert_normal2 
 
-# # # run experiments on normal(0.5, 2)
-# rocksdb_root_dir=/scratchNVM1/ranw/normal3
-# run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 &
-# run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & 
-# run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & 
-# run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 & 
-# run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3   
+# # run experiments on normal(0.5, 2)
+rocksdb_root_dir=/scratchNVM1/ranw/insert/normal3
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 insert_normal3 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 insert_normal3 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 insert_normal3 &
 
 # run experiments on normal(0.5, 0.01)
-rocksdb_root_dir=/scratchNVM1/ranw/normal4
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 normal4 &
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 normal4 & 
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 normal4 & 
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 normal4 & 
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 normal4   
+rocksdb_root_dir=/scratchNVM1/ranw/insert/normal4
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 insert_normal4 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 insert_normal4 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.01 insert_normal4 
 
 # # run experiments on normal(0.5, 0.05)
-rocksdb_root_dir=/scratchNVM1/ranw/normal5
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 normal5 &
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 normal5 & 
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 normal5 & 
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 normal5 & 
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 normal5   
+rocksdb_root_dir=/scratchNVM1/ranw/insert/normal5
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 insert_normal5 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 insert_normal5 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.05 insert_normal5 &
 
 # # run experiments on normal(0.5, 0.1)
-rocksdb_root_dir=/scratchNVM1/ranw/normal6
-run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 normal6 &
-run_multiple_times_for_baseline 80 12 8 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 normal6 & 
-run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 normal6 & 
-run_multiple_times_for_baseline 80 16 4 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 normal6 & 
-run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 normal6   
+rocksdb_root_dir=/scratchNVM1/ranw/insert/normal6
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 insert_normal6 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 insert_normal6 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.1 insert_normal6 
+
+# update distribution
+# run experiments on normal(0.5, 0.5)
+rocksdb_root_dir=/scratchNVM1/ranw/update/normal1
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.5 update_normal1 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.5 update_normal1 &
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.5 update_normal1 &
+
+# # run experiments on normal(0.5, 1)
+rocksdb_root_dir=/scratchNVM1/ranw/update/normal2
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1 update_normal2 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1 update_normal2 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1 update_normal2   
+
+# # run experiments on normal(0.5, 2)
+rocksdb_root_dir=/scratchNVM1/ranw/update/normal3
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 2 update_normal3 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 2 update_normal3 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 2 update_normal3 &
+
+# run experiments on normal(0.5, 0.01)
+rocksdb_root_dir=/scratchNVM1/ranw/update/normal4
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.01 update_normal4 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.01 update_normal4 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.01 update_normal4   
+
+# run experiments on normal(0.5, 0.05)
+rocksdb_root_dir=/scratchNVM1/ranw/update/normal5
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.05 update_normal5 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.05 update_normal5 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.05 update_normal5 &
+
+# run experiments on normal(0.5, 0.1)
+rocksdb_root_dir=/scratchNVM1/ranw/update/normal6
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.1 update_normal6 &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.1 update_normal6 & 
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.1 update_normal6   
+
+# insert and update distribution
+rocksdb_root_dir=/scratchNVM1/ranw/both/normal
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 1\ --UD\ 1 both_normal &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 1\ --UD\ 1 both_normal &
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 1\ --UD\ 1 both_normal &
+
+rocksdb_root_dir=/scratchNVM1/ranw/both/beta
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 2\ --UD\ 2 both_beta &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 2\ --UD\ 2 both_beta &
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 2\ --UD\ 2 both_beta  
+
+rocksdb_root_dir=/scratchNVM1/ranw/both/zipfian
+run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 3\ --UD\ 3 both_zipfian &
+run_multiple_times_for_baseline 80 14 6 $num_workloads $rocksdb_root_dir --ID\ 3\ --UD\ 3 both_zipfian &
+run_multiple_times_for_baseline 80 18 2 $num_workloads $rocksdb_root_dir --ID\ 3\ --UD\ 3 both_zipfian  

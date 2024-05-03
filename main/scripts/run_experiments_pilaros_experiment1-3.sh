@@ -39,10 +39,10 @@ run_multiple_times_for_a_type() {
     
     entry_size=64
     num_operation=$((3 * 1024 * 1024))
-    workload_size=$((num_operation * entry_size))
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
     num_delete=$((num_operation * percentage_delete / 100))
+    workload_size=$(((num_insert + num_update) * entry_size))
     experiment_root_name=compare_optimal_with_baselines
     experiment_name=${num_operation}_${entry_size}_8_memory/first_run/${percentage_insert}_${percentage_update}_${percentage_delete}
     dir_name=$experiment_root_name/$experiment_name

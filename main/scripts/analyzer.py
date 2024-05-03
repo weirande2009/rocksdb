@@ -108,30 +108,53 @@ def collect():
     # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_policies/1250000_1250000_0_64_8_memory/first_run'
     # names = ['50_50', '60_40', '70_30', '80_20', '90_10', '100_0']
     # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/2500000_64_8_nvme1/first_run'
-    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/2500000_64_8_memory/first_run'
+    root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/2500000_64_8_memory/first_run'
+    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_delete/5gb/first_run/5242880'
     # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_workload_size/first_run'
-    root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/case_study/first_run/100_0'
-    # for name in names:
-    #     directory = root_path + '/' + name
-    #     analyze_a_type(directory)
-    analyze_a_type(root_path)
+    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/case_study/first_run/100_0'
+    # names = ['80_10_10', '80_12_8', '80_14_6', '80_16_4', '80_18_2']
+    names = ['100_0_5', '100_0_10', '100_0_15', '100_0_20', '100_0_25', '100_0_30', '100_0_35', '100_0_40', '100_0_45', '100_0_50']
+    for name in names:
+        directory = root_path + '/' + name
+        analyze_a_type(directory)
+    # analyze_a_type(root_path)
+    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_devices/5gb/first_run'
+    # names_1 = ['80_10_10', '80_12_8', '80_14_6', '80_16_4', '80_18_2', '80_20']
+    # names_2 = ['nvme1', 'ssd']
+    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_update_distribution/5gb/first_run'
+    # names_1 = ['normal1', 'normal2', 'normal3', 'normal4', 'normal5', 'normal6']
+    names_1 = ['normal1', 'normal2', 'normal3', 'zipfian1', 'zipfian2', 'zipfian3']
+    # names_2 = ['80_10_10', '80_12_8', '80_14_6', '80_16_4', '80_18_2']
+    names_2 = ['90_10_0', '70_30_0', '50_50_0']
+    for name1 in names_1:
+        for name2 in names_2:
+            directory = root_path + '/' + name1 + '/' + name2
+            analyze_a_type(directory)
 
 
 def collect_2():
-    names = ['normal1', 'normal2', 'normal3', 'zipfian1', 'zipfian2', 'zipfian3']
-    root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_update_distribution/5gb/first_run'
+    # names = ['normal1', 'normal2', 'normal3', 'zipfian1', 'zipfian2', 'zipfian3']
+    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_update_distribution/5gb/first_run'
     # names = ['size_5_2048', 'size_5_4096', 'size_5_8192', 'size_10_1024', 'size_20_1024', 'size_40_1024']
     # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_workload_size/first_run'
-    for name in names:
-        directory = root_path + '/' + name
-        arrange(directory)
+    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_update_distribution/5gb/first_run'
+    # names = ['80_10_10', '80_12_8', '80_14_6', '80_16_4', '80_18_2', '80_20']
+    # for name in names:
+    #     directory = root_path + '/' + name
+    #     arrange(directory)
     # arrange('/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_policies/1250000_1250000_0_64_8_memory/first_run')
     # arrange('/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/2500000_64_8_nvme1/first_run')
     # arrange('/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/2500000_64_8_memory/first_run')
+    root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/2500000_64_8_memory/first_run'
+    # names = ['80_10_10', '80_12_8', '80_14_6', '80_16_4', '80_18_2', '80_20']
+    names = ['normal1', 'normal2', 'normal3', 'zipfian1', 'zipfian2', 'zipfian3']
+    for name in names:
+        directory = root_path + '/' + name
+        arrange(directory)
 
 def main():
-    collect()
-    # collect_2()
+    # collect()
+    collect_2()
 
 if __name__ == '__main__':
     main()

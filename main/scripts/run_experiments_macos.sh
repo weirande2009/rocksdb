@@ -186,4 +186,25 @@ target_file_number=4
 
 time ./load_gen --output_path workloads/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
 
-time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
+time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment_large kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
+
+# ./load_gen --output_path workload.txt -I 4194304 -U 524288 -D 524288 -E 1024 -K 8 --UD 1 --ID_NMP 0.5 --ID_NDEV 0.1
+# ./load_gen --output_path workload.txt -I 4194304 -U 524288 -D 524 -E 1024 -K 8 --UD 1 --ID_NMP 0.5 --ID_NDEV 0.1
+
+entry_size=64
+num_operation=$((3 * 1024))
+workload_size=$((num_operation * entry_size))
+percentage_insert=50
+percentage_update=50
+num_insert=$((num_operation * percentage_insert / 100))
+num_update=$((num_operation * percentage_update / 100))
+total_bytes=$((num_operation * entry_size))
+write_buffer_size=$((8 * 1024))
+target_file_size_base=$((8 * 1024))
+target_file_number=4
+
+time ./load_gen --output_path workloads/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+
+time ./scripts/run_once_existing.sh mnt/rocksdb/ experiment_small kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
+
+
