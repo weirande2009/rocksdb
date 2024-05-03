@@ -62,9 +62,9 @@ num_workloads=10
 
 # no distribution
 rocksdb_root_dir=/scratchNVM1/ranw/uniform
-run_multiple_times_for_baseline 90 10 0 $num_workloads $rocksdb_root_dir uniform &
-run_multiple_times_for_baseline 70 30 0 $num_workloads $rocksdb_root_dir uniform &
-run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir uniform 
+run_multiple_times_for_baseline 90 10 0 $num_workloads $rocksdb_root_dir --ID\ 0 uniform &
+run_multiple_times_for_baseline 70 30 0 $num_workloads $rocksdb_root_dir --ID\ 0 uniform &
+run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --ID\ 0 uniform 
 
 # insert distribution
 rocksdb_root_dir=/scratchNVM1/ranw/insert/normal1
