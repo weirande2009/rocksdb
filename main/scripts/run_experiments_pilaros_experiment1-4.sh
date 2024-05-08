@@ -71,29 +71,29 @@ run_multiple_times_for_a_type() {
 
 num_workloads=10
 
-rocksdb_root_dir=/mnt/ramd/ranw/zipfian1
-run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 &
-run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 &
-run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 &
-rocksdb_root_dir=/mnt/ramd/ranw/zipfian2
-run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 &
-run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 &
-run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2
+# rocksdb_root_dir=/mnt/ramd/ranw/zipfian1
+# run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 &
+# run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 &
+# run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.8 zipfian1 &
+# rocksdb_root_dir=/mnt/ramd/ranw/zipfian2
+# run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 &
+# run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2 &
+# run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1 zipfian2
 
-rocksdb_root_dir=/mnt/ramd/ranw/zipfian3
-run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 &
-run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 &
-run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 &
+# rocksdb_root_dir=/mnt/ramd/ranw/zipfian3
+# run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 &
+# run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 &
+# run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.2 zipfian3 &
 rocksdb_root_dir=/mnt/ramd/ranw/normal1
-run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 &
-run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1 &
-run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 0.5 normal1
+run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.5 normal1 &
+run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.5 normal1 &
+run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.5 normal1 &
 
 rocksdb_root_dir=/mnt/ramd/ranw/normal2
-run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 &
-run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 &
-run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 1 normal2 &
-rocksdb_root_dir=/mnt/ramd/ranw/normal3
-run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 &
-run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3 &
-run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --ID_NMP\ 0.5\ --ID_NDEV\ 2 normal3
+# run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1 normal2 &
+# run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1 normal2 &
+# run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1 normal2 &
+# rocksdb_root_dir=/mnt/ramd/ranw/normal3
+run_multiple_times_for_a_type 90 10 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 2 normal3 &
+run_multiple_times_for_a_type 70 30 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 2 normal3 &
+run_multiple_times_for_a_type 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 2 normal3
