@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source ./scripts/tools.sh
 source ./scripts/run_workload.sh
 
 if ! [ $# -eq 9 ]; then

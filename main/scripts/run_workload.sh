@@ -50,15 +50,23 @@ run_all_baselines() {
     fi
     find $2 -mindepth 1 -delete
     ./simple_example kRoundRobin $1 $2 $3 $4 0 0 $5 $6 $7
+    cp $2/LOG $3/LOG_RR
 
     find $2 -mindepth 1 -delete
     ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0 0 $5 $6 $7
+    cp $2/LOG $3/LOG_MOR
 
     find $2 -mindepth 1 -delete
     ./simple_example kOldestLargestSeqFirst $1 $2 $3 $4 0 0 $5 $6 $7
+    cp $2/LOG $3/LOG_OLSF
 
     find $2 -mindepth 1 -delete
     ./simple_example kOldestSmallestSeqFirst $1 $2 $3 $4 0 0 $5 $6 $7
+    cp $2/LOG $3/LOG_OSSF
+
+    find $2 -mindepth 1 -delete
+    ./simple_example kSelectLastSimilar $1 $2 $3 $4 0 0 $5 $6 $7
+    cp $2/LOG $3/LOG_SLS
 }
 
 run_enumerate() {

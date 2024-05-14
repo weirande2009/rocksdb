@@ -63,8 +63,8 @@ std::string PickingHistoryCollector::serialize_Fsize_vec(
 }
 
 void PickingHistoryCollector::UpdateWA(size_t new_WA) {
-  WA += new_WA;
-  WA_corresponding_left_bytes = left_bytes;
+  WA.fetch_add(new_WA);
+  WA_corresponding_left_bytes.store(left_bytes.load());
 }
 
 void PickingHistoryCollector::UpdateCompactionTime(
@@ -80,7 +80,7 @@ bool PickingHistoryCollector::CheckContinue() {
 
 void PickingHistoryCollector::UpdateLeftBytes(
     size_t new_left_bytes) {
-  left_bytes = new_left_bytes;
+  left_bytes.store(new_left_bytes);
 }
 
 VersionForest& PickingHistoryCollector::GetVersionForest() {

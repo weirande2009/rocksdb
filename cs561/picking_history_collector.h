@@ -4,6 +4,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <atomic>
 
 //#include "version_set.h"
 #include "cs561/cs561_log.h"
@@ -27,14 +28,14 @@ class PickingHistoryCollector {
   size_t global_min_WA_corresponding_left_bytes;
 
   // current WA
-  size_t WA;
-  size_t WA_corresponding_left_bytes;
+  std::atomic<size_t> WA;
+  std::atomic<size_t> WA_corresponding_left_bytes;
 
   // current compaction time
   size_t compaction_time;
 
   // remaining bytes to be inserted
-  size_t left_bytes;
+  std::atomic<size_t> left_bytes;
 
   // Information of each compaction for a run
   std::vector<CompactionInfo> compactions_info;

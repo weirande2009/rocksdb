@@ -58,7 +58,7 @@ run_multiple_times_for_baseline() {
     rm -rf $rocksdb_dir
 }
 
-num_workloads=10
+num_workloads=1
 
 rocksdb_root_dir=/scratchNVM1/ranw/uniform
 # run_multiple_times_for_baseline 80 10 10 $num_workloads $rocksdb_root_dir --ID\ 0 uniform &

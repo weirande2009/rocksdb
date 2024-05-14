@@ -47,6 +47,8 @@
 #include "util/mutexlock.h"
 #include "util/stop_watch.h"
 
+#include "cs561/all_files_enumerator.h"
+
 namespace ROCKSDB_NAMESPACE {
 
 const char* GetFlushReasonString(FlushReason flush_reason) {
@@ -1082,6 +1084,18 @@ Status FlushJob::WriteLevel0Table() {
   cfd_->internal_stats()->AddCFStats(
       InternalStats::BYTES_FLUSHED,
       stats.bytes_written + stats.bytes_written_blob);
+  
+  // WEI RAN
+  // log the current wa
+  AllFilesEnumerator::GetInstance().GetCollector().UpdateWA(stats.bytes_written + stats.bytes_written_blob);
+  std::string log_str = "Written bytes for this flush: " + std::to_string(stats.bytes_written + stats.bytes_written_blob);
+  CS561Log::Log(log_str);
+  log_str = "Current written bytes after this flush: " + std::to_string(AllFilesEnumerator::GetInstance().GetCollector().GetWA());
+  CS561Log::Log(log_str);
+  if (AllFilesEnumerator::GetInstance().strategy == AllFilesEnumerator::CompactionStrategy::EnumerateAll) {
+    AllFilesEnumerator::GetInstance().Pruning();
+  }
+
   RecordFlushIOStats();
 
   return s;

@@ -194,7 +194,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
   CS561Log::Log("Start running workload ...");
   for (;;) {
     ReadWorkload(workload_file, workload);
-    std::cout << "workload size = " << workload.size() << std::endl;
+    // std::cout << "workload size = " << workload.size() << std::endl;
     if (workload.empty()) {
       break;
     }
@@ -247,8 +247,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
           break;
       }
 
-      if (total_bytes >= inserted_bytes)
-        AllFilesEnumerator::GetInstance().GetCollector().UpdateLeftBytes(total_bytes - inserted_bytes);
+      AllFilesEnumerator::GetInstance().GetCollector().UpdateLeftBytes(total_bytes - inserted_bytes);
     }
   }
   
@@ -266,6 +265,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
 
   // std::cout << "Total running time: " << durationInMicroseconds.count() << "us" << std::endl;
   CS561Log::Log("Total running time: " + std::to_string(durationInMicroseconds.count()) + "us");
+  AllFilesEnumerator::GetInstance().GetCollector().DumpWAMinimum();
   AllFilesEnumerator::GetInstance().GetCollector().DumpToFile();
 
   std::string result_path = experiment_path + "/result.txt";
@@ -278,7 +278,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
       std::cerr << "Cannot open result file" << std::endl;
       exit(-1);
     }
-    result_file << "Strategy\tWB\tDuration" << std::endl;
+    result_file << "Strategy\tWB\tWA\tDuration" << std::endl;
     result_file.close();
   }
   std::ofstream result_file;
@@ -290,7 +290,9 @@ void runWorkload(Options& op, WriteOptions& write_op,
 
   // strategy WA duration
   if (compaction_strategy != "kEnumerateAll"){
-    result_file << compaction_strategy << "\t" << AllFilesEnumerator::GetInstance().GetCollector().GetWA() << "\t" << durationInMicroseconds.count() << std::endl;
+    result_file << compaction_strategy << "\t" << AllFilesEnumerator::GetInstance().GetCollector().GetWA() 
+                                       << "\t" << static_cast<double>(AllFilesEnumerator::GetInstance().GetCollector().GetWA()) / total_bytes
+                                       << "\t" << durationInMicroseconds.count() << std::endl;
   }
 
   return;
