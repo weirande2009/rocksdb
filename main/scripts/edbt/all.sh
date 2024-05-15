@@ -1,6 +1,6 @@
-./scripts/edbt/distribution.sh
-./scripts/edbt/distribution_delete.sh
-./scripts/edbt/device.sh
-./scripts/edbt/device_delete.sh
-./scripts/edbt/scalability.sh
-./scripts/edbt/delete.sh
+./scripts/edbt/distribution.sh > distribution.txt
+./scripts/edbt/distribution_delete.sh > distribution_delete.txt
+./scripts/edbt/device.sh > device.txt
+./scripts/edbt/device_delete.sh > device_delete.txt
+./scripts/edbt/scalability.sh > scalability.txt
+./scripts/edbt/delete.sh > delete.txt
