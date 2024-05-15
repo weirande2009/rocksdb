@@ -36,9 +36,9 @@ run_multiple_times_for_baseline() {
     num_delete=$((num_operation * percentage_delete / 100))
     workload_size=$(((num_insert + num_update) * entry_size))
     dir_name=compare_devices/5gb/first_run/${percentage_insert}_${percentage_update}_${percentage_delete}
-    workload_dir=workloads/$dir_name
-    workspace_dir_nvme1=workspace/$dir_name/nvme1
-    workspace_dir_ssd=workspace/$dir_name/ssd
+    workload_dir=workloads/edbt/$dir_name
+    workspace_dir_nvme1=workspace/edbt/$dir_name/nvme1
+    workspace_dir_ssd=workspace/edbt/$dir_name/ssd
     mkdir -p $workload_dir
     mkdir -p $workspace_dir_nvme1
     mkdir -p $workspace_dir_ssd
@@ -75,8 +75,6 @@ run_multiple_times_for_baseline 80 10 10 $num_workloads &
 run_multiple_times_for_baseline 80 12 8 $num_workloads &
 run_multiple_times_for_baseline 80 14 6 $num_workloads &
 run_multiple_times_for_baseline 80 16 4 $num_workloads &
-run_multiple_times_for_baseline 80 18 2 $num_workloads
+run_multiple_times_for_baseline 80 18 2 $num_workloads &
 
-# 80 19 1
-# 80 18 2
-# 80 17 3
+wait $(jobs -p)

@@ -84,8 +84,14 @@ int AllFilesEnumerator::MaybeSelectLastSimilarFile(const std::vector<FileMetaDat
   if (candidate_files.size() == 1) {
     return static_cast<int>(min_overlap_index);
   }
+
+  CS561Log::Log("Encounter a case in SelectLastSimilarFile");
+
   // If the candidate file has no next file, directly select it
   if (candidate_files.back() == files.size() - 1) {
+    if (min_overlap_index == candidate_files.back()) {
+      CS561Log::Log("Select the same file as MinOverlappingRatio in SelectLastSimilarFile");
+    }
     return static_cast<int>(candidate_files.back());
   }
 
@@ -97,6 +103,10 @@ int AllFilesEnumerator::MaybeSelectLastSimilarFile(const std::vector<FileMetaDat
       min_combined_or = file_overlapping_ratio[candidate_files[i]] * 0.05 - file_overlapping_ratio[candidate_files[i]+1];
       selected_file_index = candidate_files[i];
     }
+  }
+
+  if (min_overlap_index == selected_file_index) {
+    CS561Log::Log("Select the same file as MinOverlappingRatio in SelectLastSimilarFile");
   }
 
   // std::cout << "selected_file_index: " << selected_file_index << std::endl;

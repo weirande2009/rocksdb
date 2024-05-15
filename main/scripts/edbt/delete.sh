@@ -68,9 +68,14 @@ run_multiple_times_for_baseline 100 0 5 $num_workloads $rocksdb_root_dir &
 run_multiple_times_for_baseline 100 0 10 $num_workloads $rocksdb_root_dir &
 run_multiple_times_for_baseline 100 0 15 $num_workloads $rocksdb_root_dir &
 run_multiple_times_for_baseline 100 0 20 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 25 $num_workloads $rocksdb_root_dir 
+run_multiple_times_for_baseline 100 0 25 $num_workloads $rocksdb_root_dir &
+
+wait $(jobs -p)
+
 run_multiple_times_for_baseline 100 0 30 $num_workloads $rocksdb_root_dir &
 run_multiple_times_for_baseline 100 0 35 $num_workloads $rocksdb_root_dir &
 run_multiple_times_for_baseline 100 0 40 $num_workloads $rocksdb_root_dir &
 run_multiple_times_for_baseline 100 0 45 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 50 $num_workloads $rocksdb_root_dir
+run_multiple_times_for_baseline 100 0 50 $num_workloads $rocksdb_root_dir &
+
+wait $(jobs -p)

@@ -16,7 +16,7 @@ def read_result(directory):
         if len(line) == 0:
             continue
         res = line.split("\t")
-        result[res[0]] = [int(res[1]), int(res[2])]
+        result[res[0]] = [int(res[1]), float(res[2]), int(res[3])]
     result_file.close()
     return result
 
@@ -182,19 +182,27 @@ def collect_depth_1():
     # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/2500000_64_8_memory/first_run'
     # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/307200_64_8_memory/first_run/buffer_size_1MB'
     # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_optimal_with_baselines/225280_64_8_memory/first_run/buffer_size_512KB'
-    root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_delete/5gb/first_run/5242880'
+    # root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/compare_delete/5gb/first_run/5242880'
+    root_path = '/Users/weiran/BU/Thesis/rocksdb/main/workspace/edbt/compare_distribution/5gb/first_run/proportion'
 
     # dir1
     # names = ['50_50', '60_40', '70_30', '80_20', '90_10', '100_0']
     # names = ['50_50_0', '60_40_0', '70_30_0', '80_20_0', '90_10_0', '100_0_0']
     # names = ['80_10_10', '80_12_8', '80_14_6', '80_16_4', '80_18_2']
-    names = ['100_0_5', '100_0_10', '100_0_15', '100_0_20', '100_0_25', '100_0_30', '100_0_35', '100_0_40', '100_0_45', '100_0_50']
+    # names = ['100_0_5', '100_0_10', '100_0_15', '100_0_20', '100_0_25', '100_0_30', '100_0_35', '100_0_40', '100_0_45', '100_0_50']
 
     # walk through
-    for name in names:
-        directory = root_path + '/' + name
-        analyze_a_type(directory)
-        analyze_a_type_short(directory)
+    # for name in names:
+    #     directory = root_path + '/' + name
+    #     analyze_a_type(directory)
+    #     analyze_a_type_short(directory)
+
+    for dir in os.listdir(root_path):
+        if not os.path.isdir(os.path.join(root_path, dir)):
+            continue
+        sub_path = os.path.join(root_path, dir)
+        analyze_a_type(sub_path)
+        analyze_a_type_short(sub_path)
 
 def collect_depth_2():
     # root path
@@ -330,8 +338,8 @@ def collect_2():
     arrange_short(root_path)
 
 def main():
-    # collect_depth_1()
-    collect_depth_2()
+    collect_depth_1()
+    # collect_depth_2()
     # collect_2()
 
 if __name__ == '__main__':
