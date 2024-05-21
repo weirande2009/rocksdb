@@ -80,7 +80,9 @@ rocksdb_root_dir=/scratchNVM1/ranw/delete
 
 # wait $(jobs -p)
 
-wait 3317694
+while ps -p 3317694 > /dev/null; do
+    sleep 1
+done
 
 run_multiple_times_for_baseline 50 50 5 $num_workloads $rocksdb_root_dir &
 run_multiple_times_for_baseline 50 50 10 $num_workloads $rocksdb_root_dir &
