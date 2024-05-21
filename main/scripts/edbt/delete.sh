@@ -64,18 +64,29 @@ num_workloads=10
 
 # run experiments on normal(0.5, 0.01)
 rocksdb_root_dir=/scratchNVM1/ranw/delete
-run_multiple_times_for_baseline 100 0 5 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 10 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 15 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 20 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 25 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 5 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 10 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 15 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 20 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 25 $num_workloads $rocksdb_root_dir &
 
-wait $(jobs -p)
+# wait $(jobs -p)
 
-run_multiple_times_for_baseline 100 0 30 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 35 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 40 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 45 $num_workloads $rocksdb_root_dir &
-run_multiple_times_for_baseline 100 0 50 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 30 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 35 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 40 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 45 $num_workloads $rocksdb_root_dir &
+# run_multiple_times_for_baseline 100 0 50 $num_workloads $rocksdb_root_dir &
+
+# wait $(jobs -p)
+
+wait 3317694
+
+run_multiple_times_for_baseline 50 50 5 $num_workloads $rocksdb_root_dir &
+run_multiple_times_for_baseline 50 50 10 $num_workloads $rocksdb_root_dir &
+run_multiple_times_for_baseline 50 50 15 $num_workloads $rocksdb_root_dir &
+run_multiple_times_for_baseline 50 50 20 $num_workloads $rocksdb_root_dir &
+run_multiple_times_for_baseline 50 50 25 $num_workloads $rocksdb_root_dir &
+run_multiple_times_for_baseline 50 50 30 $num_workloads $rocksdb_root_dir &
 
 wait $(jobs -p)
