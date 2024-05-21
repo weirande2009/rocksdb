@@ -9,7 +9,7 @@
 # For each type of workload, we run 10 times.
 # Each line contains the min, max, mean, and median, 25% and 75% quantile of the 10 runs
 
-source ./scripts/run_workload_backup.sh
+source ./scripts/run_workload.sh
 
 run_multiple_times_for_baseline() {
     if ! [ $# -eq 7 ]; then
