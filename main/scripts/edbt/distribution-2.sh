@@ -62,67 +62,55 @@ update_distribution() {
 
     # normal distribution
     rocksdb_root_dir=/scratchNVM1/ranw/update/normal1
-    distribution=--UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.001
     experiment_name=update_distribution_influence/normal1
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.001 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/normal2
-    distribution=--UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.01
     experiment_name=update_distribution_influence/normal2
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.01 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/normal3
-    distribution=--UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.1
     experiment_name=update_distribution_influence/normal3
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 0.1 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/normal4
-    distribution=--UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1
     experiment_name=update_distribution_influence/normal4
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 1 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/normal5
-    distribution=--UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 10
     experiment_name=update_distribution_influence/normal5
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 10 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/normal6
-    distribution=--UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 100
     experiment_name=update_distribution_influence/normal6
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 1\ --UD_NMP\ 0.5\ --UD_NDEV\ 100 $experiment_name &
 
     wait $(jobs -p)
 
     # zipfian distribution
     rocksdb_root_dir=/scratchNVM1/ranw/update/zipfian1
-    distribution=--UD\ 3\ --UD_ZALPHA\ 0.1
     experiment_name=update_distribution_influence/zipfian1
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.1 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/zipfian1
-    distribution=--UD\ 3\ --UD_ZALPHA\ 0.4
     experiment_name=update_distribution_influence/zipfian1
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.4 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/zipfian1
-    distribution=--UD\ 3\ --UD_ZALPHA\ 0.7
     experiment_name=update_distribution_influence/zipfian1
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 0.7 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/zipfian1
-    distribution=--UD\ 3\ --UD_ZALPHA\ 1.0
     experiment_name=update_distribution_influence/zipfian1
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.0 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/zipfian1
-    distribution=--UD\ 3\ --UD_ZALPHA\ 1.3
     experiment_name=update_distribution_influence/zipfian1
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.3 $experiment_name &
 
     rocksdb_root_dir=/scratchNVM1/ranw/update/zipfian1
-    distribution=--UD\ 3\ --UD_ZALPHA\ 1.6
     experiment_name=update_distribution_influence/zipfian1
-    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir $distribution $experiment_name &
+    run_multiple_times_for_baseline 50 50 0 $num_workloads $rocksdb_root_dir --UD\ 3\ --UD_ZALPHA\ 1.6 $experiment_name &
 
     wait $(jobs -p)
 }
