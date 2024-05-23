@@ -72,9 +72,9 @@ run_multiple_times_for_a_type() {
         ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_non_skip/rocksdb$i/ $workspace_dir_skip/run$i $workload_dir/${i}.txt $workload_size 1 0 $write_buffer_size $target_file_size_base $target_file_number &
         ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_optimal/rocksdb$i/ $workspace_dir_optimal/run$i $workload_dir/${i}.txt $workload_size 1 1 $write_buffer_size $target_file_size_base $target_file_number &
 
-        rm -rf $workload_dir/${i}.txt
-
         wait $(jobs -p)
+
+        rm -rf $workload_dir/${i}.txt
     done
 
     rm -rf $rocksdb_dir_skip
