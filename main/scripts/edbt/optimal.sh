@@ -86,16 +86,16 @@ num_workloads=10
 
 entry_size=64
 num_operation=2500000
-run_multiple_times_for_a_type 90 10 $entry_size $num_operation $num_workloads &
+run_multiple_times_for_a_type 90 10 $num_workloads $entry_size $num_operation &
 
 entry_size=64
 num_operation=2500000
-run_multiple_times_for_a_type 70 30 $entry_size $num_operation $num_workloads &
+run_multiple_times_for_a_type 70 30 $num_workloads $entry_size $num_operation &
 
 wait $(jobs -p)
 
 entry_size=64
 num_operation=2500000
-run_multiple_times_for_a_type 50 50 $entry_size $num_operation $num_workloads &
+run_multiple_times_for_a_type 50 50 $num_workloads $entry_size $num_operation &
 
 wait $(jobs -p)
