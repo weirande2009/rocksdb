@@ -56,13 +56,11 @@ run_multiple_times_for_baseline() {
         initialize_workspace $workspace_dir_ssd/run$i
         run_all_baselines $workload_size $rocksdb_dir_ssd $workspace_dir_ssd/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
         
-        # if this is not the first run, remove the workload file
-        if [ $i -ne 1 ]; then
-            rm $workload_dir/${i}.txt
-        fi
+        rm $workload_dir/${i}.txt
     done
 
-    rm -rf $rocksdb_dir
+    rm -rf $rocksdb_dir_nvme1
+    rm -rf $rocksdb_dir_ssd
 }
 
 num_workloads=10
@@ -71,6 +69,9 @@ num_workloads=10
 run_multiple_times_for_baseline 100 0 $num_workloads & # workload 1: 100% insert, 0% update
 run_multiple_times_for_baseline 90 10 $num_workloads & # workload 2: 90% insert, 10% update
 run_multiple_times_for_baseline 80 20 $num_workloads & # workload 3: 80% insert, 20% update
+
+wait $(jobs -p)
+
 run_multiple_times_for_baseline 70 30 $num_workloads & # workload 4: 70% insert, 30% update
 run_multiple_times_for_baseline 60 40 $num_workloads & # workload 5: 60% insert, 40% update
 run_multiple_times_for_baseline 50 50 $num_workloads & # workload 6: 50% insert, 50% update
