@@ -61,7 +61,7 @@ run_multiple_times_for_a_type() {
     rocksdb_dir=/mnt/ramd/ranw/$dir_name/$type
     mkdir -p $rocksdb_dir
 
-    enumeration_runs=15000
+    enumeration_runs=10000
 
     for i in $(seq 1 $n_workloads)
     do  
