@@ -233,17 +233,21 @@ target_file_number=4
 thread=20
 enumeration_runs=20
 
-workload_dir=workload/edbt/compare_optimal_policies/test
-mkdir -p $workload_dir
+workload_base_dir=workload/edbt/compare_optimal_policies/test
+
 workspace_dir=workspace/edbt/compare_optimal_policies/test
 mkdir -p $workspace_dir
 rocksdb_dir=/mnt/ramd/ranw/test
 mkdir -p $rocksdb_dir
 
-time ./load_gen --output_path $workload_dir/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+time ./load_gen --output_path $workload_base_dir/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
 
 for i in $(seq 1 $thread)
 do  
+    workload_dir=workload_base_dir/$i
+    mkdir -p $workload_dir
+    
+    cp $workload_base_dir/1.txt $workload_dir/1.txt
     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $workload_size 1 1 $write_buffer_size $target_file_size_base $target_file_number &
 done
 
