@@ -46,11 +46,19 @@ run_multiple_times_for_a_type() {
     experiment_root_name=edbt/compare_optimal_policies
     experiment_name=${num_operation}_${entry_size}_8_memory/first_run/${percentage_insert}_${percentage_update}
     dir_name=$experiment_root_name/$experiment_name
+
     workload_dir=workloads/$dir_name
+    workload_dir_skip=workloads/$dir_name/skip
+    workload_dir_non_skip=workloads/$dir_name/non_skip
+    workload_dir_optimal=workloads/$dir_name/optimal
+    mkdir -p $workload_dir
+    mkdir -p $workload_dir_skip
+    mkdir -p $workload_dir_non_skip
+    mkdir -p $workload_dir_optimal
+
     workspace_dir_skip=workspace/$dir_name/skip
     workspace_dir_non_skip=workspace/$dir_name/non_skip
     workspace_dir_optimal=workspace/$dir_name/optimal
-    mkdir -p $workload_dir
     mkdir -p $workspace_dir_skip
     mkdir -p $workspace_dir_non_skip
     mkdir -p $workspace_dir_optimal
@@ -62,15 +70,18 @@ run_multiple_times_for_a_type() {
     mkdir -p $rocksdb_dir_non_skip
     mkdir -p $rocksdb_dir_optimal
 
-    enumeration_runs=30000
+    enumeration_runs=15000
 
     for i in $(seq 1 $n_workloads)
     do  
         ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+        cp $workload_dir/${i}.txt $workload_dir_skip/${i}.txt
+        cp $workload_dir/${i}.txt $workload_dir_non_skip/${i}.txt
+        cp $workload_dir/${i}.txt $workload_dir_optimal/${i}.txt
 
-        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_skip/rocksdb$i/ $workspace_dir_non_skip/run$i $workload_dir/${i}.txt $workload_size 0 0 $write_buffer_size $target_file_size_base $target_file_number &
-        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_non_skip/rocksdb$i/ $workspace_dir_skip/run$i $workload_dir/${i}.txt $workload_size 1 0 $write_buffer_size $target_file_size_base $target_file_number &
-        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_optimal/rocksdb$i/ $workspace_dir_optimal/run$i $workload_dir/${i}.txt $workload_size 1 1 $write_buffer_size $target_file_size_base $target_file_number &
+        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_skip/rocksdb$i/ $workspace_dir_non_skip/run$i $workload_dir_non_skip/${i}.txt $workload_size 0 0 $write_buffer_size $target_file_size_base $target_file_number &
+        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_non_skip/rocksdb$i/ $workspace_dir_skip/run$i $workload_dir_skip/${i}.txt $workload_size 1 0 $write_buffer_size $target_file_size_base $target_file_number &
+        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir_optimal/rocksdb$i/ $workspace_dir_optimal/run$i $workload_dir_optimal/${i}.txt $workload_size 1 1 $write_buffer_size $target_file_size_base $target_file_number &
 
         wait $(jobs -p)
 
@@ -94,8 +105,8 @@ run_multiple_times_for_a_type 70 30 $num_workloads $entry_size $num_operation &
 
 wait $(jobs -p)
 
-entry_size=64
-num_operation=2500000
-run_multiple_times_for_a_type 50 50 $num_workloads $entry_size $num_operation &
+# entry_size=64
+# num_operation=2500000
+# run_multiple_times_for_a_type 50 50 $num_workloads $entry_size $num_operation &
 
-wait $(jobs -p)
+# wait $(jobs -p)
