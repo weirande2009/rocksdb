@@ -230,7 +230,7 @@ total_bytes=$((num_operation * entry_size))
 write_buffer_size=$((8 * 1024 * 1024))
 target_file_size_base=$((8 * 1024 * 1024))
 target_file_number=4
-thread=20
+thread=30
 enumeration_runs=20
 
 workload_base_dir=workload/edbt/compare_optimal_policies/test
@@ -246,7 +246,7 @@ for i in $(seq 1 $thread)
 do  
     workload_dir=workload_base_dir/$i
     mkdir -p $workload_dir
-    
+
     cp $workload_base_dir/1.txt $workload_dir/1.txt
     ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/1.txt $workload_size 1 1 $write_buffer_size $target_file_size_base $target_file_number &
 done
