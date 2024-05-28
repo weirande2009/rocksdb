@@ -821,7 +821,7 @@ void AllFilesEnumerator::Terminate() {
   // CS561Log::Log("Terminate program due to early stop");
   // Terminate program
   CS561Log::Log("Terminate program");
-  exit(1);
+  _exit(1);
 }
 
 void AllFilesEnumerator::Pruning() {
