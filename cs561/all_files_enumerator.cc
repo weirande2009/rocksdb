@@ -813,12 +813,14 @@ AllFilesEnumerator::GetCollector() {
 
 void AllFilesEnumerator::Terminate() {
   // Before termination, dump version forests to file
+  CS561Log::Log("Start to dump version forests to file");
   collector.GetVersionForest().DumpToFile();
   // record WA and minimum in this run
   // collector.DumpWAResult();
   // Log
   // CS561Log::Log("Terminate program due to early stop");
   // Terminate program
+  CS561Log::Log("Terminate program");
   exit(1);
 }
 
