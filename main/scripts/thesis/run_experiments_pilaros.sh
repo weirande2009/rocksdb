@@ -219,23 +219,39 @@ source ./scripts/run_workload.sh
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb4/ $workspace_dir_skip/run4 $workload_dir_test_skip/type1.txt $total_bytes 1 &
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb5/ $workspace_dir_skip/run5 $workload_dir_test_skip/type2.txt $total_bytes 1 &
 # ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb6/ $workspace_dir_skip/run6 $workload_dir_test_skip/type3.txt $total_bytes 1 &
-
-workload_size=$((5 * 1024 * 1024 * 1024))
-entry_size=1024
-num_operation=$((workload_size / entry_size))
-percentage_insert=100
-percentage_update=0
+entry_size=64
+num_operation=2500000
+workload_size=$((num_operation * entry_size))
+percentage_insert=90
+percentage_update=10
 num_insert=$((num_operation * percentage_insert / 100))
 num_update=$((num_operation * percentage_update / 100))
 total_bytes=$((num_operation * entry_size))
-write_buffer_size=$((64 * 1024 * 1024))
-target_file_size_base=$((64 * 1024 * 1024))
+write_buffer_size=$((8 * 1024 * 1024))
+target_file_size_base=$((8 * 1024 * 1024))
 target_file_number=4
+thread=20
+n_workloads=20
 
-rocksdb_dir=/scratchNVM1/ranw/test
-mkdir -p $rocksdb_dir
+for i in $(seq 1 $n_workloads)
+do  
 
-# time ./load_gen --output_path workloads/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+    workload_dir=workload/edbt/compare_optimal_policies/test/$i
+    mkdir -p $workload_dir
 
-# time ./scripts/run_once_existing.sh $rocksdb_dir experiment kMinOverlappingRatio $total_bytes workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
-time run_all_baselines $total_bytes $rocksdb_dir experiment workloads/1.txt $write_buffer_size $target_file_size_base $target_file_number
+    workspace_dir=workspace/edbt/compare_optimal_policies/test/$i
+    mkdir -p $workspace_dir
+
+    rocksdb_dir=/mnt/ramd/ranw/test
+    mkdir -p $rocksdb_dir
+
+    time ./load_gen --output_path $workload_dir/1.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
+    for j in $(seq 1 $thread)
+    do  
+        time ./scripts/run_once_existing.sh $rocksdb_dir $workspace_dir/experiment$j kMinOverlappingRatio $total_bytes $workload_dir/1.txt $write_buffer_size $target_file_size_base $target_file_number $
+    done
+
+    wait $(jobs -p)
+
+done
+
