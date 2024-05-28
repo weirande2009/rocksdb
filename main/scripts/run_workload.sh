@@ -88,7 +88,7 @@ run_enumerate() {
     do
         echo 'run' $i
         find $3 -mindepth 1 -delete
-        ./simple_example kEnumerateAll $2 $3 $4 $5 $6 $7 $8 $9 ${10}
+        ./simple_example_backup kEnumerateAll $2 $3 $4 $5 $6 $7 $8 $9 ${10}
 
         # check whether to stop
         ./check_finish_enumeration $4
