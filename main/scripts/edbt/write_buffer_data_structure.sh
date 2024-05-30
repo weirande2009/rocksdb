@@ -55,7 +55,7 @@ run_multiple_times_for_baseline() {
     for i in $(seq 1 $n_workloads)
     do  
         initialize_workspace $workspace_dir/run$i
-        run_all_baselines $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/1.txt $write_buffer_size $target_file_size_base $target_file_number $write_buffer_data_structure
+        run_all_baselines_2 $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/1.txt $write_buffer_size $target_file_size_base $target_file_number $write_buffer_data_structure
     done
     rm $workload_dir/1.txt
 
