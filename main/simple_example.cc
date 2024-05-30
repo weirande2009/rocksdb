@@ -87,7 +87,8 @@ void runWorkload(Options& op, WriteOptions& write_op,
                  std::string compaction_strategy,
                  uint64_t total_written_bytes,
                  const std::string& experiment_path,
-                 const std::string& workload_path) {
+                 const std::string& workload_path,
+                 const std::string& write_buffer_data_structure) {
   DB* db;
 
   op.create_if_missing = true;
@@ -124,28 +125,20 @@ void runWorkload(Options& op, WriteOptions& write_op,
   // set the total bytes to be inserted to database
   uint64_t total_bytes = total_written_bytes;
 
-  {
-    op.memtable_factory = std::shared_ptr<VectorRepFactory>(
-        new VectorRepFactory);
+  if (write_buffer_data_structure == "Vector"){
+    op.memtable_factory = std::shared_ptr<VectorRepFactory>(new VectorRepFactory);
     op.allow_concurrent_memtable_write = false;
-  }
-
-  {
-      // op.memtable_factory =
-      // std::shared_ptr<SkipListFactory>(new
-      // SkipListFactory);
-  }
-
-  {
-      // op.memtable_factory =
-      // std::shared_ptr<MemTableRepFactory>(NewHashSkipListRepFactory());
-      // op.allow_concurrent_memtable_write = false;
-  }
-
-  {
-    // op.memtable_factory =
-    // std::shared_ptr<MemTableRepFactory>(NewHashLinkListRepFactory());
-    // op.allow_concurrent_memtable_write = false;
+  } else if (write_buffer_data_structure == "SkipList"){
+    op.memtable_factory = std::shared_ptr<SkipListFactory>(new SkipListFactory);
+  } else if (write_buffer_data_structure == "HashSkipList"){
+    op.memtable_factory = std::shared_ptr<MemTableRepFactory>(NewHashSkipListRepFactory());
+    op.allow_concurrent_memtable_write = false;
+  } else if (write_buffer_data_structure == "HashLinkList"){
+    op.memtable_factory = std::shared_ptr<MemTableRepFactory>(NewHashLinkListRepFactory());
+    op.allow_concurrent_memtable_write = false;
+  } else {
+    std::cerr << "Invalid write buffer data structure" << std::endl;
+    exit(-1);
   }
 
   // BlockBasedTableOptions table_options;
@@ -299,7 +292,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
 }
 
 int main(int argc, char* argv[]) {
-  if (argc != 11) {
+  if (argc != 12) {
     std::cout << "There should three parameters: " << std::endl;
     std::cout << "1. Compaction strategy" << std::endl;
     std::cout << "2. Total written bytes in the workload" << std::endl;
@@ -311,6 +304,7 @@ int main(int argc, char* argv[]) {
     std::cout << "8. Write buffer size" << std::endl;
     std::cout << "9. Target file size base" << std::endl;
     std::cout << "10. Target file number" << std::endl;
+    std::cout << "11. Write buffer data structure" << std::endl;
     return -1;
   }
   // parse parameter
@@ -324,6 +318,7 @@ int main(int argc, char* argv[]) {
   uint64_t write_buffer_size = std::stoull(argv[8]);
   uint64_t target_file_size_base = std::stoull(argv[9]);
   uint64_t target_file_number = std::stoull(argv[10]);
+  std::string write_buffer_data_structure = argv[11];
 
   CS561Log::SetLogRootPath(experiment_path);
 
@@ -339,6 +334,7 @@ int main(int argc, char* argv[]) {
   CS561Log::Log("Write buffer size: " + std::to_string(write_buffer_size));
   CS561Log::Log("Target file size base: " + std::to_string(target_file_size_base));
   CS561Log::Log("Target file number: " + std::to_string(target_file_number));
+  CS561Log::Log("Write buffer data structure: " + write_buffer_data_structure);
   
   AllFilesEnumerator::GetInstance();
   CS561Option::skip_trivial_move = skip_trivial_move;
@@ -350,7 +346,7 @@ int main(int argc, char* argv[]) {
   options.max_bytes_for_level_base = target_file_number * target_file_size_base;
   WriteOptions write_op;
   ReadOptions read_op;
-  runWorkload(options, write_op, read_op, compaction_strategy, total_written_bytes, experiment_path, workload_path);
+  runWorkload(options, write_op, read_op, compaction_strategy, total_written_bytes, experiment_path, workload_path, write_buffer_data_structure);
   
   AllFilesEnumerator::GetInstance().GetCollector().GetVersionForest().DumpToFile();
   return 0;
