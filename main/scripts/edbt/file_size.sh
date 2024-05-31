@@ -20,12 +20,14 @@ run_multiple_times_for_baseline() {
         echo '6. entry_size'
         echo '7. experiment name'
         echo '8. write buffer size'
+        echo '9. target file size base'
+        echo '10. target file number'
         exit 1
     fi
 
     write_buffer_size=$8
-    target_file_size_base=$8
-    target_file_number=4
+    target_file_size_base=$9
+    target_file_number=${10}
 
     percentage_insert=$1
     percentage_update=$2
@@ -49,7 +51,7 @@ run_multiple_times_for_baseline() {
     do  
         ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
         initialize_workspace $workspace_dir/run$i
-        run_all_baselines $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
+        run_all_baselines_2 $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number Vector
         rm $workload_dir/${i}.txt
     done
 
@@ -61,48 +63,57 @@ file_size() {
 
     num_operation=$((5 * 1024 * 1024))
     entry_size=1024
+    buffer_size=$((64 * 1024 * 1024))
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/16M
     experiment_name=16M
-    buffer_size=$((16 * 1024 * 1024))
-    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((16 * 1024 * 1024))
+    target_file_number=16
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/32M
     experiment_name=32M
-    buffer_size=$((32 * 1024 * 1024))
-    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((32 * 1024 * 1024))
+    target_file_number=8
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/64M
     experiment_name=64M
-    buffer_size=$((64 * 1024 * 1024))
-    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((64 * 1024 * 1024))
+    target_file_number=4
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/128M
     experiment_name=128M
-    buffer_size=$((128 * 1024 * 1024))
-    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((128 * 1024 * 1024))
+    target_file_number=2
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     wait $(jobs -p)
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/16M
     experiment_name=16M
-    buffer_size=$((16 * 1024 * 1024))
-    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((16 * 1024 * 1024))
+    target_file_number=16
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/32M
     experiment_name=32M
-    buffer_size=$((32 * 1024 * 1024))
-    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((32 * 1024 * 1024))
+    target_file_number=8
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/64M
     experiment_name=64M
-    buffer_size=$((64 * 1024 * 1024))
-    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((64 * 1024 * 1024))
+    target_file_number=4
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     rocksdb_root_dir=/scratchNVM1/ranw/file_size/128M
     experiment_name=128M
-    buffer_size=$((128 * 1024 * 1024))
-    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size &
+    file_size_base=$((128 * 1024 * 1024))
+    target_file_number=2
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number &
 
     wait $(jobs -p)
 }
