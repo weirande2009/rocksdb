@@ -40,7 +40,7 @@ run_multiple_times_for_baseline() {
     num_update=$((num_operation * percentage_update / 100))
     num_delete=$((num_operation * percentage_delete / 100))
     workload_size=$(((num_insert + num_update) * entry_size))
-    dir_name=instability_mor/$7/${num_operation}_${entry_size}/${percentage_insert}_${percentage_update}_${percentage_delete}
+    dir_name=file_size/$7/${num_operation}_${entry_size}/${percentage_insert}_${percentage_update}_${percentage_delete}
     workload_dir=workloads/edbt/$dir_name
     workspace_dir=workspace/edbt/$dir_name
     mkdir -p $workload_dir
