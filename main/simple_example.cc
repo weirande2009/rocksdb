@@ -93,7 +93,6 @@ void runWorkload(Options& op, WriteOptions& write_op,
 
   op.create_if_missing = true;
   op.level0_file_num_compaction_trigger = 4;
-  op.max_bytes_for_level_multiplier = 4;
   op.level_compaction_dynamic_level_bytes = false;
 
   // set the compaction strategy
@@ -292,7 +291,7 @@ void runWorkload(Options& op, WriteOptions& write_op,
 }
 
 int main(int argc, char* argv[]) {
-  if (argc != 12) {
+  if (argc != 13) {
     std::cout << "There should three parameters: " << std::endl;
     std::cout << "1. Compaction strategy" << std::endl;
     std::cout << "2. Total written bytes in the workload" << std::endl;
@@ -305,6 +304,7 @@ int main(int argc, char* argv[]) {
     std::cout << "9. Target file size base" << std::endl;
     std::cout << "10. Target file number" << std::endl;
     std::cout << "11. Write buffer data structure" << std::endl;
+    std::cout << "12. Max bytes for level multiplier" << std::endl;
     return -1;
   }
   // parse parameter
@@ -319,6 +319,7 @@ int main(int argc, char* argv[]) {
   uint64_t target_file_size_base = std::stoull(argv[9]);
   uint64_t target_file_number = std::stoull(argv[10]);
   std::string write_buffer_data_structure = argv[11];
+  uint64_t max_bytes_for_level_multiplier = std::stoull(argv[12]);
 
   CS561Log::SetLogRootPath(experiment_path);
 
@@ -335,6 +336,7 @@ int main(int argc, char* argv[]) {
   CS561Log::Log("Target file size base: " + std::to_string(target_file_size_base));
   CS561Log::Log("Target file number: " + std::to_string(target_file_number));
   CS561Log::Log("Write buffer data structure: " + write_buffer_data_structure);
+  CS561Log::Log("Max bytes for level multiplier: " + std::to_string(max_bytes_for_level_multiplier));
   
   AllFilesEnumerator::GetInstance();
   CS561Option::skip_trivial_move = skip_trivial_move;
@@ -344,6 +346,7 @@ int main(int argc, char* argv[]) {
   options.write_buffer_size = write_buffer_size;
   options.target_file_size_base = target_file_size_base;
   options.max_bytes_for_level_base = target_file_number * target_file_size_base;
+  options.max_bytes_for_level_multiplier = max_bytes_for_level_multiplier;
   WriteOptions write_op;
   ReadOptions read_op;
   runWorkload(options, write_op, read_op, compaction_strategy, total_written_bytes, experiment_path, workload_path, write_buffer_data_structure);
