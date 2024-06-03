@@ -60,29 +60,29 @@ run_multiple_times_for_baseline() {
 
 num_workloads=10
 
-experiment_name=40_1024_size
-rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
-num_operation=$((40 * 1024 * 1024))
-entry_size=1024
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# experiment_name=40_1024_size
+# rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
+# num_operation=$((40 * 1024 * 1024))
+# entry_size=1024
+# run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 
-experiment_name=80_512_size
-rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
-num_operation=$((80 * 1024 * 1024))
-entry_size=512
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# experiment_name=80_512_size
+# rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
+# num_operation=$((80 * 1024 * 1024))
+# entry_size=512
+# run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 
-experiment_name=20_1024_size
-rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
-num_operation=$((20 * 1024 * 1024))
-entry_size=1024
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# experiment_name=20_1024_size
+# rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
+# num_operation=$((20 * 1024 * 1024))
+# entry_size=1024
+# run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 
 experiment_name=40_512_size
 rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
@@ -92,13 +92,13 @@ run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_oper
 run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 
-experiment_name=10_1024_size
-rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
-num_operation=$((10 * 1024 * 1024))
-entry_size=1024
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# experiment_name=10_1024_size
+# rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
+# num_operation=$((10 * 1024 * 1024))
+# entry_size=1024
+# run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 
 experiment_name=20_512_size
 rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
