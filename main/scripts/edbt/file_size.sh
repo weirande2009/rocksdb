@@ -57,7 +57,7 @@ run_multiple_times_for_baseline() {
             ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
         fi
         initialize_workspace $workspace_dir/run$i
-        run_all_baselines $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number Vector
+        run_all_baselines $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number Vector $max_bytes_for_level_multiplier
         rm $workload_dir/${i}.txt
     done
 

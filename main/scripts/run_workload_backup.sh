@@ -39,7 +39,7 @@ run_baseline() {
 }
 
 run_all_baselines() {
-    if ! [ $# -eq 8 ]; then
+    if ! [ $# -eq 9 ]; then
         echo 'in this shell script, there will be three parameters, which are:'
         echo '1. the number of all inserted bytes'
         echo '2. the path of the rocksdb'
