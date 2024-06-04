@@ -38,7 +38,7 @@ run_multiple_times_for_baseline() {
 
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
-    dir_name=compare_workload_size/fourth_run/$7/${percentage_insert}_${percentage_update}
+    dir_name=compare_workload_size/fifth_run/$7/${percentage_insert}_${percentage_update}
     workload_dir=workloads/edbt/$dir_name
     workspace_dir=workspace/edbt/$dir_name
     mkdir -p $workload_dir
@@ -58,7 +58,7 @@ run_multiple_times_for_baseline() {
     rm -rf $rocksdb_dir
 }
 
-num_workloads=10
+num_workloads=5
 
 experiment_name=40_1024_size
 rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
