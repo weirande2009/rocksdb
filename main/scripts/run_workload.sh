@@ -1,7 +1,7 @@
 #!/bin/bash
 
 run_once() {
-    if ! [ $# -eq 9 ]; then
+    if ! [ $# -eq 10 ]; then
         echo 'in this function, there will be three parameters, which are:'
         echo '1. the number of all inserted bytes'
         echo '2. the path of the rocksdb'
@@ -12,10 +12,11 @@ run_once() {
         echo '7. target file size base'
         echo '8. target file number' 
         echo '9. write buffer data structure'
+        echo '10. max_bytes_for_level_base_multiplier'
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example $4 $1 $2 $3 $5 0 0 $6 $7 $8 $9
+    ./simple_example $4 $1 $2 $3 $5 0 0 $6 $7 $8 $9 ${10}
     cp $2/LOG $3/LOG
 }
 
@@ -161,6 +162,26 @@ run_all_baselines_3() {
     cp $2/LOG $3/LOG_OSSF
     rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
     echo "kOldestSmallestSeqFirst: $rocksdb_size" >> $3/rocksdb_size.txt
+}
+
+run_all_baselines_4() {
+    if ! [ $# -eq 8 ]; then
+        echo 'in this shell script, there will be three parameters, which are:'
+        echo '1. the number of all inserted bytes'
+        echo '2. the path of the rocksdb'
+        echo '3. the path of the experiment workspace'
+        echo '4. the workload path'
+        echo '5. write buffer size'
+        echo '6. target file size base'
+        echo '7. target file number' 
+        echo '8. write buffer data structure'
+        exit 1
+    fi
+    find $2 -mindepth 1 -delete
+    ./simple_example kSelectLastSimilar $1 $2 $3 $4 0 0 $5 $6 $7 $8
+    cp $2/LOG $3/LOG_SLS
+    rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
+    echo "kSelectLastSimilar: $rocksdb_size" >> $3/rocksdb_size.txt
 }
 
 run_enumerate() {
