@@ -200,7 +200,10 @@ void runWorkload(Options& op, WriteOptions& write_op,
           inserted_bytes += key.length() + value.length();
           // Put key-value
           s = db->Put(write_op, key, value);
-          if (!s.ok()) std::cerr << s.ToString() << std::endl;
+          if (!s.ok()) {
+            std::cout << s.ToString() << std::endl;
+            exit(-1);
+          }
           assert(s.ok());
           break;
 
@@ -209,6 +212,10 @@ void runWorkload(Options& op, WriteOptions& write_op,
           s = db->Get(read_op, key, &value);
           // if (!s.ok()) std::cerr << s.ToString() << "key =
           // " << key << std::endl; assert(s.ok());
+          if (!s.ok()) {
+            std::cerr << s.ToString() << std::endl;
+          }
+          std::cout << key << " " << value << std::endl;
           break;
 
         case 'S':  // scan: range query
@@ -302,7 +309,7 @@ int main(int argc, char* argv[]) {
     std::cout << "7. Skip extend non-L0 trivial move" << std::endl;
     std::cout << "8. Write buffer size" << std::endl;
     std::cout << "9. Target file size base" << std::endl;
-    std::cout << "10. Target file number" << std::endl;
+    std::cout << "10. Max bytes for level base" << std::endl;
     std::cout << "11. Write buffer data structure" << std::endl;
     std::cout << "12. Max bytes for level multiplier" << std::endl;
     return -1;
@@ -317,7 +324,7 @@ int main(int argc, char* argv[]) {
   bool skip_extend_non_l0_trivial_move = std::stoi(argv[7]);
   uint64_t write_buffer_size = std::stoull(argv[8]);
   uint64_t target_file_size_base = std::stoull(argv[9]);
-  uint64_t target_file_number = std::stoull(argv[10]);
+  uint64_t max_bytes_for_level_base = std::stoull(argv[10]);
   std::string write_buffer_data_structure = argv[11];
   uint64_t max_bytes_for_level_multiplier = std::stoull(argv[12]);
 
@@ -334,7 +341,7 @@ int main(int argc, char* argv[]) {
   CS561Log::Log("Skip extend non-L0 trivial move: " + std::to_string(skip_extend_non_l0_trivial_move));
   CS561Log::Log("Write buffer size: " + std::to_string(write_buffer_size));
   CS561Log::Log("Target file size base: " + std::to_string(target_file_size_base));
-  CS561Log::Log("Target file number: " + std::to_string(target_file_number));
+  CS561Log::Log("Max bytes for level base: " + std::to_string(max_bytes_for_level_base));
   CS561Log::Log("Write buffer data structure: " + write_buffer_data_structure);
   CS561Log::Log("Max bytes for level multiplier: " + std::to_string(max_bytes_for_level_multiplier));
   
@@ -345,7 +352,7 @@ int main(int argc, char* argv[]) {
   Options options;
   options.write_buffer_size = write_buffer_size;
   options.target_file_size_base = target_file_size_base;
-  options.max_bytes_for_level_base = target_file_number * target_file_size_base;
+  options.max_bytes_for_level_base = max_bytes_for_level_base;
   options.max_bytes_for_level_multiplier = max_bytes_for_level_multiplier;
   WriteOptions write_op;
   ReadOptions read_op;
