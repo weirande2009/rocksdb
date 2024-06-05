@@ -27,7 +27,7 @@ run_multiple_times_for_baseline() {
 
     write_buffer_size=$((64 * 1024 * 1024))
     target_file_size_base=$((64 * 1024 * 1024))
-    target_file_number=4
+    max_bytes_for_level_base=$((4 * 64 * 1024 * 1024))
 
     percentage_insert=$1
     percentage_update=$2
@@ -38,7 +38,7 @@ run_multiple_times_for_baseline() {
 
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
-    dir_name=compare_workload_size/sixth_run/$7/${percentage_insert}_${percentage_update}
+    dir_name=compare_workload_size/seventh_run/$7/${percentage_insert}_${percentage_update}
     workload_dir=workloads/edbt/$dir_name
     workspace_dir=workspace/edbt/$dir_name
     mkdir -p $workload_dir
@@ -51,21 +51,26 @@ run_multiple_times_for_baseline() {
     do  
         time ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
         initialize_workspace $workspace_dir/run$i
-        time run_all_baselines_4 $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number Vector
+        run_once $workload_size $rocksdb_dir $workspace_dir/run$i kRoundRobin $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base Vector 4
+        run_once $workload_size $rocksdb_dir $workspace_dir/run$i kMinOverlappingRatio $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base Vector 4
         rm $workload_dir/${i}.txt
     done
 
     rm -rf $rocksdb_dir
 }
 
-num_workloads=10
+num_workloads=2
 
 experiment_name=40_1024_size
 rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
 num_operation=$((40 * 1024 * 1024))
 entry_size=1024
 # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size ${experiment_name}_1 &
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size ${experiment_name}_2 &
+run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size ${experiment_name}_3 &
+
+wait $(jobs -p)
 # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 
 # experiment_name=80_512_size
