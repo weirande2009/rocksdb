@@ -97,7 +97,7 @@ insert_distribution() {
 }
 
 update_distribution() {
-    num_workloads=10
+    num_workloads=20
 
     # run experiments on normal(0.5, 0.5)
     rocksdb_root_dir=/scratchNVM1/ranw/update/normal1
@@ -173,7 +173,7 @@ both_distribution() {
 }
 
 uniform_distribution() {
-    num_workloads=10
+    num_workloads=20
 
     # no distribution
     rocksdb_root_dir=/scratchNVM1/ranw/uniform
