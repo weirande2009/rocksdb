@@ -25,6 +25,9 @@ run_multiple_times_for_baseline() {
     write_buffer_size=$((64 * 1024 * 1024))
     target_file_size_base=$((64 * 1024 * 1024))
     target_file_number=4
+    max_bytes_for_level_base=$((target_file_size_base * target_file_number))
+    write_buffer_data_structure=Vector
+    max_bytes_for_level_multiplier=4
 
     percentage_insert=$1
     percentage_update=$2
@@ -50,7 +53,7 @@ run_multiple_times_for_baseline() {
     do  
         ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D $num_delete -E $entry_size -K 8 $6
         initialize_workspace $workspace_dir/run$i
-        run_all_baselines $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $target_file_number
+        run_all_baselines_with_refined_mor $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base $write_buffer_data_structure $max_bytes_for_level_multiplier
         rm $workload_dir/${i}.txt
     done
 
