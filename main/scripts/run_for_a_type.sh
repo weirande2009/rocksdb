@@ -12,10 +12,10 @@ if ! [ $# -eq 12 ]; then
     echo $7
     echo $8
     echo $9
-    echo ${10}
-    echo ${11}
-    echo ${12}
-    echo ${13}
+    echo ${10} '+123'
+    echo ${11} '+123'
+    echo ${12} '+123'
+    echo ${13} '+123'
     echo 'in this shell script, there will be six parameters, which are: got'
     echo '1. the number of times to run kEnumerate for each workload'
     echo '2. the path of rocksdb'
