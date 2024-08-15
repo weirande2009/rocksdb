@@ -247,14 +247,16 @@ run_enumerate() {
         echo '7. whether to skip extend non-l0 trivial move'
         echo '8. write buffer size'
         echo '9. target file size base'
-        echo '10. target file number' 
+        echo '10. max bytes for level base' 
+        echo '11. write buffer data structure'
+        echo '12. max bytes for level multiplier'
         exit 1
     fi
     for i in $(seq 1 $1)
     do
         echo 'run' $i
         find $3 -mindepth 1 -delete
-        ./simple_example kEnumerateAll $2 $3 $4 $5 $6 $7 $8 $9 ${10}
+        ./simple_example kEnumerateAll $2 $3 $4 $5 $6 $7 $8 $9 ${10} ${11} ${12}
 
         # check whether to stop
         ./check_finish_enumeration $4

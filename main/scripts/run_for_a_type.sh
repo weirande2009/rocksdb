@@ -13,7 +13,9 @@ if ! [ $# -eq 10 ]; then
     echo '7. whether to skip extend non-l0 trivial move'
     echo '8. write buffer size'
     echo '9. target file size base'
-    echo '10. target file number' 
+    echo '10. max bytes for level base' 
+    echo '11. write buffer data structure'
+    echo '12. max bytes for level multiplier'
     exit 1
 fi
 
@@ -26,6 +28,6 @@ fi
 # initialize the workspace
 initialize_workspace $3
 
-run_all_baselines $5 $2 $3 $4 $8 $9 ${10}
+run_all_baselines $5 $2 $3 $4 $8 $9 ${10} ${11} ${12}
 
-time run_enumerate $1 $5 $2 $3 $4 $6 $7 $8 $9 ${10} > $3/out.txt
+time run_enumerate $1 $5 $2 $3 $4 $6 $7 $8 $9 ${10} ${11} ${12} > $3/out.txt
