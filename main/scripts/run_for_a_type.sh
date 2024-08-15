@@ -2,7 +2,7 @@
 
 source ./scripts/run_workload.sh
 
-if ! [ $# -eq 10 ]; then
+if ! [ $# -eq 12 ]; then
     echo 'in this shell script, there will be six parameters, which are:'
     echo '1. the number of times to run kEnumerate for each workload'
     echo '2. the path of rocksdb'

@@ -236,7 +236,7 @@ run_all_baselines_4() {
 }
 
 run_enumerate() {
-    if ! [ $# -eq 10 ]; then
+    if ! [ $# -eq 12 ]; then
         echo 'in this shell script, there will be six parameters, which are:'
         echo '1. the number of runs'
         echo '2. the number of all inserted bytes'
