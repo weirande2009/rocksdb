@@ -67,7 +67,7 @@ run_multiple_times_for_a_type() {
     for i in $(seq 1 $n_workloads)
     do  
         ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
-        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/${i}.txt $workload_size $type $param $write_buffer_size $target_file_size_base $max_bytes_for_level_base Vector 4 &
+        ./scripts/run_for_a_type.sh $enumeration_runs $rocksdb_dir/rocksdb$i/ $workspace_dir/run$i $workload_dir/${i}.txt $workload_size $param $write_buffer_size $target_file_size_base $max_bytes_for_level_base Vector 4 &
     done
 
     wait $(jobs -p) 
