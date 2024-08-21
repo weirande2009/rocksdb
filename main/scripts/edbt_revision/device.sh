@@ -54,11 +54,13 @@ run_multiple_times_for_baseline() {
         ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
 
         initialize_workspace $workspace_dir_nvme1/run$i
-        run_all_baselines_with_refined_mor $workload_size $rocksdb_dir_nvme1 $workspace_dir_nvme1/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base $write_buffer_data_structure $max_bytes_for_level_multiplier
+        run_all_baselines_with_refined_mor $workload_size $rocksdb_dir_nvme1 $workspace_dir_nvme1/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base $write_buffer_data_structure $max_bytes_for_level_multiplier &
 
         initialize_workspace $workspace_dir_ssd/run$i
-        run_all_baselines_with_refined_mor $workload_size $rocksdb_dir_ssd $workspace_dir_ssd/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base $write_buffer_data_structure $max_bytes_for_level_multiplier
+        run_all_baselines_with_refined_mor $workload_size $rocksdb_dir_ssd $workspace_dir_ssd/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base $write_buffer_data_structure $max_bytes_for_level_multiplier &
         
+        wait $(jobs -p)
+
         rm $workload_dir/${i}.txt
     done
 
@@ -69,14 +71,10 @@ run_multiple_times_for_baseline() {
 num_workloads=10
 
 # run experiments on SSD & NVMe
-run_multiple_times_for_baseline 100 0 $num_workloads & # workload 1: 100% insert, 0% update
-run_multiple_times_for_baseline 90 10 $num_workloads & # workload 2: 90% insert, 10% update
-run_multiple_times_for_baseline 80 20 $num_workloads & # workload 3: 80% insert, 20% update
+run_multiple_times_for_baseline 100 0 $num_workloads # workload 1: 100% insert, 0% update
+run_multiple_times_for_baseline 90 10 $num_workloads # workload 2: 90% insert, 10% update
+run_multiple_times_for_baseline 80 20 $num_workloads # workload 3: 80% insert, 20% update
+run_multiple_times_for_baseline 70 30 $num_workloads # workload 4: 70% insert, 30% update
+run_multiple_times_for_baseline 60 40 $num_workloads # workload 5: 60% insert, 40% update
+run_multiple_times_for_baseline 50 50 $num_workloads # workload 6: 50% insert, 50% update
 
-wait $(jobs -p)
-
-run_multiple_times_for_baseline 70 30 $num_workloads & # workload 4: 70% insert, 30% update
-run_multiple_times_for_baseline 60 40 $num_workloads & # workload 5: 60% insert, 40% update
-run_multiple_times_for_baseline 50 50 $num_workloads & # workload 6: 50% insert, 50% update
-
-wait $(jobs -p)
