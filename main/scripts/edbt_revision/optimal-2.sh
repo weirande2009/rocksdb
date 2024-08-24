@@ -77,13 +77,18 @@ run_multiple_times_for_a_type() {
 
 num_workloads=20
 entry_size=64
-num_operation=2000000
+num_operation=2500000
 
-# run_multiple_times_for_a_type 100 0 $num_workloads $entry_size $num_operation skip 1\ 0 &
-# run_multiple_times_for_a_type 80 20 $num_workloads $entry_size $num_operation skip 1\ 0 &
-# run_multiple_times_for_a_type 60 40 $num_workloads $entry_size $num_operation skip 1\ 0 &
+run_multiple_times_for_a_type 100 0 $num_workloads $entry_size $num_operation skip 1\ 0 &
+run_multiple_times_for_a_type 80 20 $num_workloads $entry_size $num_operation skip 1\ 0 &
 
+wait $(jobs -p)
+
+run_multiple_times_for_a_type 60 40 $num_workloads $entry_size $num_operation skip 1\ 0 &
 run_multiple_times_for_a_type 90 10 $num_workloads $entry_size $num_operation skip 1\ 0 &
+
+wait $(jobs -p)
+
 run_multiple_times_for_a_type 70 30 $num_workloads $entry_size $num_operation skip 1\ 0 &
 run_multiple_times_for_a_type 50 50 $num_workloads $entry_size $num_operation skip 1\ 0 &
 
