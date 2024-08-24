@@ -35,7 +35,7 @@ run_multiple_times_for_baseline() {
 
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
-    dir_name=edbt_revision/compare_devices/5gb/first_run/${percentage_insert}_${percentage_update}
+    dir_name=edbt_revision/compare_devices/5gb/second_run/${percentage_insert}_${percentage_update}
     workload_dir=workloads/$dir_name
     workspace_dir_nvme1=workspace/$dir_name/nvme1
     workspace_dir_ssd=workspace/$dir_name/ssd
@@ -68,7 +68,7 @@ run_multiple_times_for_baseline() {
     rm -rf $rocksdb_dir_ssd
 }
 
-num_workloads=20
+num_workloads=10
 
 # run experiments on SSD & NVMe
 run_multiple_times_for_baseline 100 0 $num_workloads # workload 1: 100% insert, 0% update
