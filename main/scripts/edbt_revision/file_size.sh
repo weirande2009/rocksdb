@@ -62,7 +62,7 @@ run_multiple_times_for_baseline() {
         initialize_workspace $workspace_dir/run$i
         run_all_baselines_with_refined_mor $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base Vector $max_bytes_for_level_multiplier
         if [ $delete_workload -eq 1 ]; then
-            rm $workload_dir/${i}.txt
+            rm -rf $workload_dir/${i}.txt
         fi
     done
 
