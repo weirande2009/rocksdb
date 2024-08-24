@@ -59,9 +59,12 @@ run_multiple_times_for_baseline() {
         if [ $generate_workload -eq 1 ]; then
             ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
         fi
+        echo 'initialize_workspace'
         initialize_workspace $workspace_dir/run$i
+        echo 'run workload'
         run_all_baselines_with_refined_mor $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base Vector $max_bytes_for_level_multiplier
         if [ $delete_workload -eq 1 ]; then
+        echo 'remove workload'
             rm -rf $workload_dir/${i}.txt
         fi
     done
