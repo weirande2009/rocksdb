@@ -36,9 +36,9 @@ run_multiple_times_for_baseline() {
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
     dir_name=edbt_revision/compare_devices/5gb/second_run/${percentage_insert}_${percentage_update}
-    workload_dir=workloads/$dir_name
-    workspace_dir_nvme1=workspace/$dir_name/nvme1
-    workspace_dir_ssd=workspace/$dir_name/ssd
+    workload_dir=/scratchHDDb/ranw/workloads/$dir_name
+    workspace_dir_nvme1=/scratchHDDb/ranw/workspace/$dir_name/nvme1
+    workspace_dir_ssd=/scratchHDDb/ranw/workspace/$dir_name/ssd
     mkdir -p $workload_dir
     mkdir -p $workspace_dir_nvme1
     mkdir -p $workspace_dir_ssd
