@@ -45,7 +45,7 @@ run_multiple_times_for_baseline() {
 
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
-    dir_name=file_size/first_run/$7/$max_bytes_for_level_multiplier/${percentage_insert}_${percentage_update}
+    dir_name=file_size/fourth_run/$7/$max_bytes_for_level_multiplier/${percentage_insert}_${percentage_update}
     workload_dir=workloads/edbt_revision/file_size/fourth_run/$7/${percentage_insert}_${percentage_update}
     workspace_dir=workspace/edbt_revision/$dir_name
     mkdir -p $workload_dir
