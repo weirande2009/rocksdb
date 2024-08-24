@@ -6,7 +6,7 @@
 # There will be 6 plots, each plot contains 5 lines, each line represents 
 # Each line contains the min, max, mean, and median, 25% and 75% quantile of the 10 runs
 
-source ./scripts/run_workload_backup.sh
+source ./scripts/run_workload.sh
 
 run_multiple_times_for_baseline() {
     if ! [ $# -eq 13 ]; then
