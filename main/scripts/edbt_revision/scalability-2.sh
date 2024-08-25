@@ -61,7 +61,7 @@ run_multiple_times_for_baseline() {
     rm -rf $rocksdb_dir
 }
 
-sleep 7200
+sleep 10800
 
 num_workloads=20
 
