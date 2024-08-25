@@ -42,8 +42,8 @@ run_multiple_times_for_baseline() {
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
     dir_name=compare_workload_size/first_run/$7/${percentage_insert}_${percentage_update}
-    workload_dir=workloads/edbt_revision/$dir_name
-    workspace_dir=workspace/edbt_revision/$dir_name
+    workload_dir=/scratchHDDb/ranw/workloads/edbt_revision/$dir_name
+    workspace_dir=/scratchHDDb/ranw/workspace/edbt_revision/$dir_name
     mkdir -p $workload_dir
     mkdir -p $workspace_dir
     
@@ -60,6 +60,8 @@ run_multiple_times_for_baseline() {
 
     rm -rf $rocksdb_dir
 }
+
+sleep 7200
 
 num_workloads=20
 
