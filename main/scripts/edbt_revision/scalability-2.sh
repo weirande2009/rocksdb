@@ -41,7 +41,7 @@ run_multiple_times_for_baseline() {
 
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
-    dir_name=compare_workload_size/first_run/$7/${percentage_insert}_${percentage_update}
+    dir_name=compare_workload_size/second_run/$7/${percentage_insert}_${percentage_update}
     workload_dir=/scratchHDDb/ranw/workloads/edbt_revision/$dir_name
     workspace_dir=/scratchHDDb/ranw/workspace/edbt_revision/$dir_name
     mkdir -p $workload_dir
@@ -53,8 +53,8 @@ run_multiple_times_for_baseline() {
     for i in $(seq 1 $n_workloads)
     do  
         ./load_gen --output_path $workload_dir/${i}.txt -I $num_insert -U $num_update -D 0 -E $entry_size -K 8
-        initialize_workspace $workspace_dir/run$i
-        run_all_baselines_with_refined_mor $workload_size $rocksdb_dir $workspace_dir/run$i $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base $write_buffer_data_structure $max_bytes_for_level_multiplier
+        initialize_workspace $workspace_dir/run${i}
+        run_all_baselines_with_refined_mor $workload_size $rocksdb_dir $workspace_dir/run${i} $workload_dir/${i}.txt $write_buffer_size $target_file_size_base $max_bytes_for_level_base $write_buffer_data_structure $max_bytes_for_level_multiplier
         rm $workload_dir/${i}.txt
     done
 
@@ -63,18 +63,10 @@ run_multiple_times_for_baseline() {
 
 num_workloads=20
 
-experiment_name=40_512_size
-rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
-num_operation=$((40 * 1024 * 1024))
-entry_size=512
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
-
 experiment_name=80_512_size
 rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
 num_operation=$((80 * 1024 * 1024))
 entry_size=512
-run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
+# run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 run_multiple_times_for_baseline 75 25 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
 run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name
