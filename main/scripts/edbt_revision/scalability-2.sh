@@ -65,6 +65,7 @@ sleep 10800
 
 num_workloads=20
 
+experiment_name=40_512_size
 rocksdb_root_dir=/scratchNVM1/ranw/$experiment_name
 num_operation=$((40 * 1024 * 1024))
 entry_size=512
