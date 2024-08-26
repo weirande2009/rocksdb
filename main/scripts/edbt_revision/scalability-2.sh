@@ -41,7 +41,7 @@ run_multiple_times_for_baseline() {
 
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
-    dir_name=compare_workload_size/second_run/$7/${percentage_insert}_${percentage_update}
+    dir_name=compare_workload_size/third_run/$7/${percentage_insert}_${percentage_update}
     workload_dir=/scratchHDDb/ranw/workloads/edbt_revision/$dir_name
     workspace_dir=/scratchHDDb/ranw/workspace/edbt_revision/$dir_name
     mkdir -p $workload_dir
