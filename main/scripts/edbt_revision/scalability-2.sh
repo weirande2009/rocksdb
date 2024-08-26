@@ -61,8 +61,6 @@ run_multiple_times_for_baseline() {
     rm -rf $rocksdb_dir
 }
 
-sleep 10800
-
 num_workloads=20
 
 experiment_name=40_512_size
