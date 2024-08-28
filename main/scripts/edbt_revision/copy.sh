@@ -1,4 +1,4 @@
-src=/scratchHDDb/ranw/workloads/edbt_revision/compare_workload_size/third_run/80_512_size/75_25
+src=/scratchHDDb/ranw/workspace/edbt_revision/compare_workload_size/third_run/80_512_size/75_25
 dst=/scratchHDDa/ranw/rocksdb/main/workspace/edbt_revision/compare_workload_size/third_run/80_512_size/75_25
 
 
