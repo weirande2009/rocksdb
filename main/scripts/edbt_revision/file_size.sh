@@ -45,7 +45,7 @@ run_multiple_times_for_baseline() {
 
     num_insert=$((num_operation * percentage_insert / 100))
     num_update=$((num_operation * percentage_update / 100))
-    dir_name=edbt_revision/file_size/second_run/$7/$max_bytes_for_level_multiplier/${percentage_insert}_${percentage_update}
+    dir_name=edbt_revision/file_size/third_run/$7/$max_bytes_for_level_multiplier/${percentage_insert}_${percentage_update}
     workload_dir=/scratchHDDb/ranw/workloads/$dir_name
     workspace_dir=/scratchHDDb/ranw/workspace/$dir_name
     mkdir -p $workload_dir
@@ -79,7 +79,7 @@ file_size() {
     experiment_name=16M
     file_size_base=$((16 * 1024 * 1024))
     target_file_number=16
-    # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
@@ -88,7 +88,7 @@ file_size() {
     experiment_name=32M
     file_size_base=$((32 * 1024 * 1024))
     target_file_number=8
-    # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
@@ -97,7 +97,7 @@ file_size() {
     experiment_name=64M
     file_size_base=$((64 * 1024 * 1024))
     target_file_number=4
-    # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
@@ -106,7 +106,7 @@ file_size() {
     experiment_name=128M
     file_size_base=$((128 * 1024 * 1024))
     target_file_number=2
-    # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
@@ -116,7 +116,7 @@ file_size() {
     experiment_name=16M
     file_size_base=$((16 * 1024 * 1024))
     target_file_number=16
-    # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
@@ -125,7 +125,7 @@ file_size() {
     experiment_name=32M
     file_size_base=$((32 * 1024 * 1024))
     target_file_number=8
-    # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
@@ -134,7 +134,7 @@ file_size() {
     experiment_name=64M
     file_size_base=$((64 * 1024 * 1024))
     target_file_number=4
-    # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
@@ -143,7 +143,7 @@ file_size() {
     experiment_name=128M
     file_size_base=$((128 * 1024 * 1024))
     target_file_number=2
-    # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
+    run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 4 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
