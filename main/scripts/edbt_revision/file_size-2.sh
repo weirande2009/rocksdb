@@ -31,7 +31,8 @@ run_multiple_times_for_baseline() {
     write_buffer_size=$8
     target_file_size_base=$9
     target_file_number=${10}
-    max_bytes_for_level_base=$((target_file_size_base * target_file_number))
+    # max_bytes_for_level_base=$((target_file_size_base * target_file_number))
+    max_bytes_for_level_base=$((256 * 1024 * 1024))
     max_bytes_for_level_multiplier=${11}
     generate_workload=${12}
     delete_workload=${13}
@@ -92,6 +93,12 @@ file_size() {
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 6 1 0
     # run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 8 0 0
     run_multiple_times_for_baseline 50 50 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $target_file_number 10 0 1
+
+    rocksdb_root_dir=/scratchNVM1/ranw/file_size/5G
+    experiment_name=5G
+    file_size_base=$((5 * 1024 * 1024 * 1024))
+    max_bytes_for_level_base=$((256 * 1024 * 1024))
+    run_multiple_times_for_baseline 100 0 $num_workloads $rocksdb_root_dir $num_operation $entry_size $experiment_name $buffer_size $file_size_base $max_bytes_for_level_base 4 1 1
 }
 
 file_size
