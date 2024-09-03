@@ -298,7 +298,8 @@ void runWorkload(Options& op, WriteOptions& write_op,
 }
 
 int main(int argc, char* argv[]) {
-  if (argc != 13) {
+  if (argc != 14) {
+    std::cout << "Got " << argc << " parameters" << std::endl;
     std::cout << "There should three parameters: " << std::endl;
     std::cout << "1. Compaction strategy" << std::endl;
     std::cout << "2. Total written bytes in the workload" << std::endl;
@@ -312,6 +313,7 @@ int main(int argc, char* argv[]) {
     std::cout << "10. Max bytes for level base" << std::endl;
     std::cout << "11. Write buffer data structure" << std::endl;
     std::cout << "12. Max bytes for level multiplier" << std::endl;
+    std::cout << "13. Level compaction dynamic file size" << std::endl;
     return -1;
   }
   // parse parameter
@@ -327,6 +329,7 @@ int main(int argc, char* argv[]) {
   uint64_t max_bytes_for_level_base = std::stoull(argv[10]);
   std::string write_buffer_data_structure = argv[11];
   uint64_t max_bytes_for_level_multiplier = std::stoull(argv[12]);
+  bool level_compaction_dynamic_file_size = std::stoi(argv[13]);
 
   CS561Log::SetLogRootPath(experiment_path);
 
@@ -354,6 +357,7 @@ int main(int argc, char* argv[]) {
   options.target_file_size_base = target_file_size_base;
   options.max_bytes_for_level_base = max_bytes_for_level_base;
   options.max_bytes_for_level_multiplier = max_bytes_for_level_multiplier;
+  options.level_compaction_dynamic_file_size = level_compaction_dynamic_file_size;
   WriteOptions write_op;
   ReadOptions read_op;
   runWorkload(options, write_op, read_op, compaction_strategy, total_written_bytes, experiment_path, workload_path, write_buffer_data_structure);

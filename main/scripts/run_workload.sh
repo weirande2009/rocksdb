@@ -16,7 +16,7 @@ run_once() {
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example $4 $1 $2 $3 $5 0 0 $6 $7 $8 $9 ${10}
+    ./simple_example $4 $1 $2 $3 $5 0 0 $6 $7 $8 $9 ${10} 1
     cp $2/LOG $3/LOG_$4
     rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
     echo "$4: $rocksdb_size" >> $3/rocksdb_size.txt
@@ -92,34 +92,35 @@ run_all_baselines_with_refined_mor() {
         echo '7. max bytes for level base' 
         echo '8. write buffer data structure'
         echo '9. max bytes for level multiplier'
+        echo '10. level compaction dynamic file size'
         exit 1
     fi
     find $2 -mindepth 1 -delete
-    ./simple_example kRoundRobin $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9
+    ./simple_example kRoundRobin $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9 ${10}
     cp $2/LOG $3/LOG_RR
     rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
     echo "kRoundRobin: $rocksdb_size" >> $3/rocksdb_size.txt
 
     find $2 -mindepth 1 -delete
-    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9
+    ./simple_example kMinOverlappingRatio $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9 ${10}
     cp $2/LOG $3/LOG_MOR
     rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
     echo "kMinOverlappingRatio: $rocksdb_size" >> $3/rocksdb_size.txt
 
     find $2 -mindepth 1 -delete
-    ./simple_example kOldestLargestSeqFirst $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9
+    ./simple_example kOldestLargestSeqFirst $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9 ${10}
     cp $2/LOG $3/LOG_OLSF
     rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
     echo "kOldestLargestSeqFirst: $rocksdb_size" >> $3/rocksdb_size.txt
 
     find $2 -mindepth 1 -delete
-    ./simple_example kOldestSmallestSeqFirst $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9
+    ./simple_example kOldestSmallestSeqFirst $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9 ${10}
     cp $2/LOG $3/LOG_OSSF
     rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
     echo "kOldestSmallestSeqFirst: $rocksdb_size" >> $3/rocksdb_size.txt
 
     find $2 -mindepth 1 -delete
-    ./simple_example kSelectLastSimilar $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9
+    ./simple_example kSelectLastSimilar $1 $2 $3 $4 0 0 $5 $6 $7 $8 $9 ${10}
     cp $2/LOG $3/LOG_RMOR
     rocksdb_size=$(du -sk $2 | awk '{ printf "%dK\n", $1 }')
     echo "kRefinedMOR: $rocksdb_size" >> $3/rocksdb_size.txt
@@ -281,7 +282,7 @@ initialize_workspace() {
     fi
 
     if [ ! -d $1 ]; then
-        mkdir $1
+        mkdir -p $1
     fi
     if [ ! -d $1/history ]; then
         mkdir $1/history
