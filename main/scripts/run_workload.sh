@@ -81,7 +81,7 @@ run_all_baselines() {
 }
 
 run_all_baselines_with_refined_mor() {
-    if ! [ $# -eq 9 ]; then
+    if ! [ $# -eq 10 ]; then
         echo 'in this shell script, there will be three parameters, which are:'
         echo '1. the number of all inserted bytes'
         echo '2. the path of the rocksdb'
